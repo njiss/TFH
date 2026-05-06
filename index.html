@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Faceless Brand Business Model · The Female Hustlers®</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0EA;
+    --cream-dark: #EDE7DF;
+    --blush: #E8C9C9;
+    --blush-light: #F2DEDE;
+    --burgundy: #6B2737;
+    --burgundy-dark: #4A1A25;
+    --burgundy-light: #8B3A4D;
+    --text: #2C1810;
+    --text-muted: #7A6A64;
+    --sidebar-w: 280px;
+    --tag-foundation: #D4B896;
+    --tag-brand: #C9B8D4;
+    --tag-strategy: #B8C9D4;
+    --tag-revenue: #B8D4C0;
+    --tag-mindset: #D4C9B8;
+    --tag-scale: #D4B8C9;
+    --tag-open: #E8D5B0;
+    --tag-act: #2C1810;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── AUTH SCREEN ─── */
+  #auth-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #auth-screen::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--blush-light) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  #auth-screen::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .auth-card {
+    background: white;
+    border: 1px solid var(--blush);
+    padding: 56px 48px;
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 48px rgba(107,39,55,0.08);
+  }
+
+  .auth-logo {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .auth-logo .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .auth-logo .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--burgundy);
+    display: block;
+  }
+
+  .auth-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--blush);
+    margin: 24px auto;
+  }
+
+  .auth-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .auth-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--cream-dark);
+    margin-bottom: 28px;
+  }
+
+  .auth-tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+  }
+
+  .auth-tab.active {
+    color: var(--burgundy);
+    border-bottom-color: var(--burgundy);
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--blush);
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus {
+    border-color: var(--burgundy);
+    background: white;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: var(--burgundy);
+    color: white;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+
+  .btn-primary:hover { background: var(--burgundy-dark); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .auth-error {
+    background: #FDE8E8;
+    border: 1px solid #F5C6C6;
+    color: #C0392B;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  .auth-success {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    color: #2E7D32;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  .auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── APP LAYOUT ─── */
+  #app {
+    display: none;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: white;
+    border-right: 1px solid var(--blush);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .sidebar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--burgundy);
+    display: block;
+    line-height: 1.3;
+  }
+
+  .sidebar-tagline {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 16px 0;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+
+  .nav-item:hover { background: var(--cream); }
+
+  .nav-item.active {
+    background: var(--blush-light);
+    border-left-color: var(--burgundy);
+  }
+
+  .nav-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .nav-item.active .nav-num {
+    background: var(--burgundy);
+    color: white;
+  }
+
+  .nav-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-label {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-item.active .nav-label { color: var(--burgundy); }
+
+  .nav-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+
+  .tag-open { background: var(--tag-open); color: #7A5C20; }
+  .tag-foundation { background: var(--tag-foundation); color: #5C3D10; }
+  .tag-brand { background: var(--tag-brand); color: #4A3060; }
+  .tag-strategy { background: var(--tag-strategy); color: #204060; }
+  .tag-revenue { background: var(--tag-revenue); color: #1A4A28; }
+  .tag-mindset { background: var(--tag-mindset); color: #4A3A10; }
+  .tag-scale { background: var(--tag-scale); color: #4A1A35; }
+  .tag-act { background: var(--tag-act); color: white; }
+
+  .sidebar-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .progress-bar-wrap {
+    margin-bottom: 12px;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .progress-bar {
+    height: 3px;
+    background: var(--cream-dark);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--burgundy);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .btn-logout {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--blush);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-logout:hover {
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+  }
+
+  /* Main content */
+  .main {
+    margin-left: var(--sidebar-w);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Chapter sections */
+  .chapter-page {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .chapter-page.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Chapter hero */
+  .chapter-hero {
+    padding: 64px 72px 48px;
+    border-bottom: 1px solid var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--blush-light) 0%, transparent 65%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .chapter-num-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 300;
+    color: var(--blush);
+    line-height: 1;
+    position: absolute;
+    right: 64px;
+    top: 24px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .chapter-tag-hero {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .chapter-tag-hero::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--burgundy);
+  }
+
+  .chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .chapter-title em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+
+  .chapter-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content area */
+  .chapter-body {
+    padding: 56px 72px;
+    max-width: 900px;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--blush);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .section-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  /* Worksheet blocks */
+  .worksheet {
+    background: white;
+    border: 1px solid var(--blush);
+    padding: 32px;
+    margin-bottom: 28px;
+  }
+
+  .worksheet-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .worksheet-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .field-row {
+    margin-bottom: 16px;
+  }
+
+  .field-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .field-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--cream-dark);
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+
+  .field-input:focus {
+    border-color: var(--burgundy);
+    background: white;
+  }
+
+  /* Prompt boxes */
+  .prompt-box {
+    background: var(--burgundy);
+    padding: 28px 32px;
+    margin: 28px 0;
+    position: relative;
+  }
+
+  .prompt-box-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .prompt-box-text {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .copy-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .copy-btn:hover { background: rgba(255,255,255,0.25); }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    margin: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--burgundy);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  /* Table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0 28px;
+  }
+
+  .data-table th {
+    background: var(--burgundy);
+    color: white;
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .data-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--cream-dark);
+    color: var(--text);
+    vertical-align: top;
+  }
+
+  .data-table tr:nth-child(even) td { background: var(--cream); }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--blush);
+    padding: 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--burgundy);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* Two col */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  /* Numbered steps */
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .step-list li {
+    counter-increment: step;
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    align-items: flex-start;
+  }
+
+  .step-list li:last-child { border-bottom: none; }
+
+  .step-list li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--burgundy);
+    flex-shrink: 0;
+    width: 40px;
+    line-height: 1.2;
+  }
+
+  .step-content strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* Chapter nav */
+  .chapter-nav {
+    padding: 32px 72px;
+    border-top: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--blush);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+  }
+
+  .nav-btn.next {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    color: white;
+  }
+
+  .nav-btn.next:hover { background: var(--burgundy-dark); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); }
+    .main { margin-left: 0; }
+    .chapter-hero { padding: 40px 24px 32px; }
+    .chapter-body { padding: 40px 24px; }
+    .chapter-title { font-size: 36px; }
+    .two-col { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; }
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ─── AUTH SCREEN ─── -->
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="wordmark">The Faceless Brand Business Model</span>
+      <span class="brand">The Female Hustlers®</span>
+    </div>
+    <div class="auth-divider"></div>
+
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="switchTab('login')">Sign In</div>
+      <div class="auth-tab" onclick="switchTab('signup')">Create Account</div>
+    </div>
+
+    <div id="auth-error" class="auth-error"></div>
+    <div id="auth-success" class="auth-success"></div>
+
+    <!-- Login -->
+    <div id="login-form">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="login-email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="••••••••">
+      </div>
+      <button class="btn-primary" onclick="handleLogin()">Enter the Portal</button>
+    </div>
+
+    <!-- Signup -->
+    <div id="signup-form" class="hidden">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="signup-name" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="signup-email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="signup-password" placeholder="Min. 6 characters">
+      </div>
+      <button class="btn-primary" onclick="handleSignup()">Create My Account</button>
+    </div>
+
+    <div class="auth-footer">Seven Chapters · One System · Your Brand</div>
+  </div>
+</div>
+
+<!-- ─── APP ─── -->
+<div id="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-brand">The Faceless Brand</span>
+      <span class="sidebar-title">Business Model</span>
+      <div class="sidebar-tagline">The Female Hustlers®</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-item active" onclick="showChapter(0)" id="nav-0">
+        <div class="nav-num">0</div>
+        <div class="nav-text"><span class="nav-label">The Introduction</span></div>
+        <span class="nav-tag tag-open">Open</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(1)" id="nav-1">
+        <div class="nav-num">1</div>
+        <div class="nav-text"><span class="nav-label">Niche Mastery & Market Proof</span></div>
+        <span class="nav-tag tag-foundation">Foundation</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(2)" id="nav-2">
+        <div class="nav-num">2</div>
+        <div class="nav-text"><span class="nav-label">Logo, Brand & Page Design</span></div>
+        <span class="nav-tag tag-brand">Brand</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(3)" id="nav-3">
+        <div class="nav-num">3</div>
+        <div class="nav-text"><span class="nav-label">The Growth Formula</span></div>
+        <span class="nav-tag tag-strategy">Strategy</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(4)" id="nav-4">
+        <div class="nav-num">4</div>
+        <div class="nav-text"><span class="nav-label">Content That Goes Viral</span></div>
+        <span class="nav-tag tag-strategy">Strategy</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(5)" id="nav-5">
+        <div class="nav-num">5</div>
+        <div class="nav-text"><span class="nav-label">7 Monetization Strategies</span></div>
+        <span class="nav-tag tag-revenue">Revenue</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(6)" id="nav-6">
+        <div class="nav-num">6</div>
+        <div class="nav-text"><span class="nav-label">The Success Mindset</span></div>
+        <span class="nav-tag tag-mindset">Mindset</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(7)" id="nav-7">
+        <div class="nav-num">7</div>
+        <div class="nav-text"><span class="nav-label">Your Instagram Toolkit</span></div>
+        <span class="nav-tag tag-scale">Scale</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(8)" id="nav-8">
+        <div class="nav-num">✦</div>
+        <div class="nav-text"><span class="nav-label">Conclusion · Your Next Step</span></div>
+        <span class="nav-tag tag-act">Act</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="progress-bar-wrap">
+        <div class="progress-label">
+          <span>Your Progress</span>
+          <span id="progress-pct">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Chapter 0: Introduction -->
+    <div class="chapter-page active" id="chapter-0">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">0</div>
+        <div class="chapter-tag-hero">Open · Welcome</div>
+        <h1 class="chapter-title">The <em>Introduction</em></h1>
+        <p class="chapter-desc">The best time to build a faceless brand as a woman is right now. Here is exactly why — and how this system works.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">Why Now</div>
+        <h2 class="section-title">The Faceless Opportunity</h2>
+        <p class="section-text">Instagram has shifted. You no longer need to show your face, have a huge following, or be a photographer. The faceless brand model lets you build a profitable Instagram page around a theme — not a personality. You stay anonymous, work from anywhere, and earn real income.</p>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-num">9,600</span>
+            <span class="stat-label">Avg. monthly reach per page</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">$18K</span>
+            <span class="stat-label">Realistic first-year revenue</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Chapters to your brand</span>
+          </div>
+        </div>
+
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Seven Chapters. One System.</h2>
+        <p class="section-text">Each chapter builds on the last. Complete them in order. By the end, you'll have a fully set-up faceless Instagram brand with content, growth, and monetization in place.</p>
+
+        <ul class="step-list">
+          <li><div class="step-content"><strong>Niche Mastery & Market Proof</strong><p>Find a high-profit niche and validate it has money in it before you invest time.</p></div></li>
+          <li><div class="step-content"><strong>Logo, Brand & Page Design</strong><p>Create a scroll-stopping aesthetic that makes people instantly follow.</p></div></li>
+          <li><div class="step-content"><strong>The Growth Formula</strong><p>The exact posting strategy, hashtag system, and engagement loop that compounds followers.</p></div></li>
+          <li><div class="step-content"><strong>Content That Goes Viral</strong><p>Templates, hooks, and content pillars that reliably produce viral posts.</p></div></li>
+          <li><div class="step-content"><strong>7 Monetization Strategies</strong><p>From affiliate links to digital products — seven ways to turn followers into income.</p></div></li>
+          <li><div class="step-content"><strong>The Success Mindset</strong><p>The mental frameworks that separate pages that quit at 500 followers from those that reach 100K.</p></div></li>
+          <li><div class="step-content"><strong>Your Instagram Toolkit</strong><p>Every app, tool, and resource you need — curated and ready to use.</p></div></li>
+        </ul>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Your First Claude Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I want to build a faceless Instagram brand. I'm interested in [your interest]. Help me think through whether this could work as a faceless theme page, and what kind of content would perform well in this niche."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Your Starting Point</div>
+          <div class="worksheet-sub">Before anything else — write down where you are now. This becomes your before/after story.</div>
+          <div class="field-row">
+            <label class="field-label">Why do you want to build a faceless brand?</label>
+            <textarea class="field-input" rows="3" placeholder="Be honest. Freedom, income, privacy, creativity..."></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">What does success look like in 6 months?</label>
+            <textarea class="field-input" rows="2" placeholder="Be specific — followers, income, time spent..."></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">How many hours per week can you commit?</label>
+            <input class="field-input" type="text" placeholder="e.g. 5 hours per week">
+          </div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <div></div>
+        <button class="nav-btn next" onclick="showChapter(1)">Chapter 1 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 1: Niche Mastery -->
+    <div class="chapter-page" id="chapter-1">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">1</div>
+        <div class="chapter-tag-hero">Foundation · Niche</div>
+        <h1 class="chapter-title">Niche Mastery &<br><em>Market Proof</em></h1>
+        <p class="chapter-desc">How to find high-profit niches and validate they have money in them before you invest a single hour.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">The Framework</div>
+        <h2 class="section-title">The 3-Filter Niche Method</h2>
+        <p class="section-text">Not all niches are equal. A great faceless niche passes three filters: it has a passionate audience, it has proven money (people are already buying), and it works without a face. Run your ideas through all three.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Niche Filter</th><th>What to Check</th><th>Green Flag</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Passion</strong></td><td>Do people obsess over this topic?</td><td>Active hashtags, fan pages, subreddits</td></tr>
+            <tr><td><strong>Money</strong></td><td>Are people spending in this space?</td><td>Affiliate programs, courses, products exist</td></tr>
+            <tr><td><strong>Faceless-able</strong></td><td>Can it work without showing a person?</td><td>Quote pages, aesthetic pages, info pages thrive</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Niche Validation Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I'm considering building a faceless Instagram page in the [niche] space. Can you validate this niche by telling me: 1) How passionate is this audience, 2) What products/services people spend money on, 3) Examples of successful faceless pages in this space, 4) The biggest content opportunities I'm missing?"</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Niche Brainstorm</div>
+          <div class="worksheet-sub">List 5 niches you're drawn to. Then rate each 1–10 on passion, money potential, and faceless-ability.</div>
+          <div class="field-row">
+            <label class="field-label">Niche Idea #1</label>
+            <input class="field-input" type="text" placeholder="e.g. Minimalist home decor">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Niche Idea #2</label>
+            <input class="field-input" type="text" placeholder="e.g. Female self-development">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Niche Idea #3</label>
+            <input class="field-input" type="text" placeholder="e.g. Aesthetic travel quotes">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Niche Idea #4</label>
+            <input class="field-input" type="text" placeholder="e.g. Luxury lifestyle motivation">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Niche Idea #5</label>
+            <input class="field-input" type="text" placeholder="e.g. Women & money mindset">
+          </div>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Chosen Niche</div>
+          <div class="worksheet-sub">After validation, commit to one. You can always expand later — for now, niche down.</div>
+          <div class="field-row">
+            <label class="field-label">My Niche</label>
+            <input class="field-input" type="text" placeholder="One specific niche">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My Target Audience (who exactly)</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. Women 25–35 who want financial freedom but feel stuck in their 9–5"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Why this niche has money in it</label>
+            <textarea class="field-input" rows="2" placeholder="Name 3 products/services people already buy in this space"></textarea>
+          </div>
+        </div>
+
+        <div class="section-label">Competitor Analysis</div>
+        <h2 class="section-title">Study What's Already Working</h2>
+        <p class="section-text">Find 3 successful faceless pages in your niche. Study their content, posting frequency, engagement, and monetization. Don't copy — understand the formula.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Competitor Research</div>
+          <div class="worksheet-sub">Find 3 pages in your niche with 10K+ followers. Record what you notice.</div>
+          <div class="two-col">
+            <div class="field-row">
+              <label class="field-label">Page 1 — Handle</label>
+              <input class="field-input" type="text" placeholder="@handle">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Page 1 — Followers</label>
+              <input class="field-input" type="text" placeholder="e.g. 45K">
+            </div>
+          </div>
+          <div class="field-row">
+            <label class="field-label">What content performs best for them?</label>
+            <textarea class="field-input" rows="2" placeholder="Carousel quotes, reels, infographics..."></textarea>
+          </div>
+          <div class="two-col">
+            <div class="field-row">
+              <label class="field-label">Page 2 — Handle</label>
+              <input class="field-input" type="text" placeholder="@handle">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Page 2 — Followers</label>
+              <input class="field-input" type="text" placeholder="e.g. 82K">
+            </div>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Gap you spotted (what they're NOT doing)</label>
+            <textarea class="field-input" rows="2" placeholder="What content angle is missing that you could own?"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(0)">← Introduction</button>
+        <button class="nav-btn next" onclick="showChapter(2)">Chapter 2 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 2: Brand & Design -->
+    <div class="chapter-page" id="chapter-2">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">2</div>
+        <div class="chapter-tag-hero">Brand · Identity</div>
+        <h1 class="chapter-title">Logo, Brand &<br><em>Page Design</em></h1>
+        <p class="chapter-desc">Create a scroll-stopping aesthetic that makes people hit follow before they've even read a caption.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">Brand Identity</div>
+        <h2 class="section-title">Your Brand DNA</h2>
+        <p class="section-text">A faceless brand lives and dies by its aesthetic. Before you design anything, define the feeling your page should evoke. Every color, font, and image choice should serve that feeling.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Brand Personality</div>
+          <div class="worksheet-sub">Circle or type the words that describe your brand's vibe.</div>
+          <div class="field-row">
+            <label class="field-label">3 Words That Describe My Brand</label>
+            <input class="field-input" type="text" placeholder="e.g. Elegant, Empowering, Minimal">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My Brand Color Palette (hex codes or descriptions)</label>
+            <input class="field-input" type="text" placeholder="e.g. Cream, dusty rose, champagne gold">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Fonts I'm drawn to</label>
+            <input class="field-input" type="text" placeholder="e.g. Cormorant Garamond (serif) + DM Sans (clean)">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Pages/brands I want mine to feel like</label>
+            <textarea class="field-input" rows="2" placeholder="Name 3 Instagram pages or brands with aesthetics you love"></textarea>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Brand Identity Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I'm building a faceless Instagram brand in the [niche] niche. My target audience is [audience]. I want the brand to feel [3 words]. Can you suggest: 1) A brand name that works without a face, 2) A color palette with hex codes, 3) Font pairings, 4) A bio that converts visitors to followers, 5) A content aesthetic direction?"</p>
+        </div>
+
+        <div class="section-label">Page Setup</div>
+        <h2 class="section-title">The Perfect Instagram Page</h2>
+        <p class="section-text">Your profile is your storefront. Every element needs to work together to convert a stranger into a follower in under 3 seconds.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Page Setup Checklist</div>
+          <div class="worksheet-sub">Check each item off as you complete it.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"> <span>Account switched to Creator or Business account</span></li>
+            <li><input type="checkbox"> <span>Username chosen — simple, memorable, niche-relevant</span></li>
+            <li><input type="checkbox"> <span>Profile photo — logo or aesthetic image (no face needed)</span></li>
+            <li><input type="checkbox"> <span>Bio written — who you help + what you post + CTA</span></li>
+            <li><input type="checkbox"> <span>Link in bio set up (Linktree or Stan Store)</span></li>
+            <li><input type="checkbox"> <span>Highlight covers created and branded</span></li>
+            <li><input type="checkbox"> <span>First 9 posts planned for a cohesive grid</span></li>
+          </ul>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Page Details</div>
+          <div class="field-row">
+            <label class="field-label">My Username</label>
+            <input class="field-input" type="text" placeholder="@yourusername">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My Bio (write it here first)</label>
+            <textarea class="field-input" rows="3" placeholder="Line 1: Who you help&#10;Line 2: What they get&#10;Line 3: CTA + link"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">My Link in Bio URL</label>
+            <input class="field-input" type="text" placeholder="https://linktr.ee/yourpage">
+          </div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(1)">← Chapter 1</button>
+        <button class="nav-btn next" onclick="showChapter(3)">Chapter 3 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 3: Growth Formula -->
+    <div class="chapter-page" id="chapter-3">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">3</div>
+        <div class="chapter-tag-hero">Strategy · Growth</div>
+        <h1 class="chapter-title">The <em>Growth Formula</em></h1>
+        <p class="chapter-desc">The exact posting cadence, hashtag system, and engagement loop that compounds your following week over week.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">The System</div>
+        <h2 class="section-title">How Faceless Pages Actually Grow</h2>
+        <p class="section-text">Growth on Instagram is not random. It follows a predictable pattern: consistent posting + strategic hashtags + active engagement in the first hour = algorithmic push. Here's the formula broken down.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Element</th><th>Recommended</th><th>Why It Matters</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Posting Frequency</strong></td><td>4–5x per week</td><td>Consistency trains the algorithm to show your content</td></tr>
+            <tr><td><strong>Best Times</strong></td><td>7–9am or 6–8pm (your audience's TZ)</td><td>Higher immediate engagement = wider reach</td></tr>
+            <tr><td><strong>Reels vs Carousels</strong></td><td>3 reels : 2 carousels per week</td><td>Reels reach new people; carousels build saves</td></tr>
+            <tr><td><strong>Hashtags</strong></td><td>5–10 targeted tags</td><td>Quality over quantity since 2023 algorithm shift</td></tr>
+            <tr><td><strong>Engagement Window</strong></td><td>First 60 min after posting</td><td>Reply to every comment — algorithm rewards activity</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Growth Strategy Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I run a faceless Instagram page in the [niche] niche with [X] followers. My audience is [demographic]. Create me a 4-week growth plan including: posting schedule, content mix (reels vs carousels vs stories), hashtag strategy, and engagement tactics I should do daily."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Weekly Content Plan</div>
+          <div class="worksheet-sub">Map out your posting week so it becomes a non-negotiable routine.</div>
+          <table class="data-table">
+            <thead>
+              <tr><th>Day</th><th>Content Type</th><th>Topic/Hook Idea</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Monday</td><td><input class="field-input" type="text" placeholder="e.g. Carousel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
+              <tr><td>Tuesday</td><td><input class="field-input" type="text" placeholder="e.g. Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
+              <tr><td>Wednesday</td><td><input class="field-input" type="text" placeholder="Rest or Story"></td><td><input class="field-input" type="text" placeholder="Engagement day"></td></tr>
+              <tr><td>Thursday</td><td><input class="field-input" type="text" placeholder="e.g. Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
+              <tr><td>Friday</td><td><input class="field-input" type="text" placeholder="e.g. Carousel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
+              <tr><td>Weekend</td><td><input class="field-input" type="text" placeholder="Optional Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Monthly Growth Tracker</div>
+          <div class="worksheet-sub">Track these numbers every 30 days to see what's working.</div>
+          <table class="data-table">
+            <thead>
+              <tr><th>Month</th><th>Followers</th><th>Avg. Reach</th><th>Best Post</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Month 1</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 2</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 3</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(2)">← Chapter 2</button>
+        <button class="nav-btn next" onclick="showChapter(4)">Chapter 4 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 4: Content -->
+    <div class="chapter-page" id="chapter-4">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">4</div>
+        <div class="chapter-tag-hero">Strategy · Content</div>
+        <h1 class="chapter-title">Content That<br><em>Goes Viral</em></h1>
+        <p class="chapter-desc">The hooks, formats, and content pillars that reliably produce posts people save, share, and follow you for.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">The Pillars</div>
+        <h2 class="section-title">Your 3 Content Pillars</h2>
+        <p class="section-text">Every viral faceless page has 3 content pillars — recurring themes the audience comes back for. Your pillars should mix: one educates, one inspires, one entertains or entertains. Rotate between them so your page never goes stale.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Content Pillars</div>
+          <div class="field-row">
+            <label class="field-label">Pillar 1 — Educational (teaches something)</label>
+            <input class="field-input" type="text" placeholder="e.g. Money tips for women in their 20s">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Example post idea</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. '5 things I wish I knew about investing at 22'"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Pillar 2 — Inspirational (motivates, shifts mindset)</label>
+            <input class="field-input" type="text" placeholder="e.g. Wealthy woman aesthetic & mindset quotes">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Example post idea</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. Carousel: 'What your bank account looks like when you stop apologizing for wanting more'"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Pillar 3 — Relatable / Entertaining</label>
+            <input class="field-input" type="text" placeholder="e.g. POV: being the first financially free woman in your family">
+          </div>
+        </div>
+
+        <div class="section-label">Viral Hooks</div>
+        <h2 class="section-title">Hooks That Stop the Scroll</h2>
+        <p class="section-text">The first line of your caption and the first frame of your reel determines everything. Here are hook formulas that work consistently for faceless pages.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Hook Type</th><th>Formula</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>The Bold Claim</strong></td><td>"Most women will never build wealth because of this one habit."</td></tr>
+            <tr><td><strong>The POV</strong></td><td>"POV: You finally stopped playing small and this happened."</td></tr>
+            <tr><td><strong>The List</strong></td><td>"7 things quietly wealthy women never say out loud."</td></tr>
+            <tr><td><strong>The Question</strong></td><td>"Why are you working harder but earning less than ever?"</td></tr>
+            <tr><td><strong>The Secret</strong></td><td>"The thing no one tells you about building a brand online."</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Content Batch Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I run a faceless Instagram page called [page name] in the [niche] niche. My audience is [audience description]. Generate 10 content ideas for this week — mix of reels and carousels. For each idea give me: the hook (first line/frame), the content format, and the caption opening line."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Content Bank — This Week</div>
+          <div class="worksheet-sub">Use the prompt above to generate ideas, then log them here.</div>
+          <div class="field-row">
+            <label class="field-label">Post Idea #1 — Hook</label>
+            <input class="field-input" type="text" placeholder="Write your opening hook">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Post Idea #2 — Hook</label>
+            <input class="field-input" type="text" placeholder="Write your opening hook">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Post Idea #3 — Hook</label>
+            <input class="field-input" type="text" placeholder="Write your opening hook">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Post Idea #4 — Hook</label>
+            <input class="field-input" type="text" placeholder="Write your opening hook">
+          </div>
+          <div class="field-row">
+            <label class="field-label">Post Idea #5 — Hook</label>
+            <input class="field-input" type="text" placeholder="Write your opening hook">
+          </div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(3)">← Chapter 3</button>
+        <button class="nav-btn next" onclick="showChapter(5)">Chapter 5 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 5: Monetization -->
+    <div class="chapter-page" id="chapter-5">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">5</div>
+        <div class="chapter-tag-hero">Revenue · Income</div>
+        <h1 class="chapter-title">7 Monetization<br><em>Strategies</em></h1>
+        <p class="chapter-desc">Seven proven ways to turn your faceless page into real income — from day one to $20,000+.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">Income Streams</div>
+        <h2 class="section-title">The 7 Ways Faceless Pages Earn</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>#</th><th>Strategy</th><th>When to Start</th><th>Income Potential</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td><strong>Affiliate Marketing</strong> — promote others' products for commission</td><td>Day 1</td><td>$500–$5K/mo</td></tr>
+            <tr><td>02</td><td><strong>Digital Products</strong> — guides, templates, presets, ebooks</td><td>500+ followers</td><td>$1K–$10K/mo</td></tr>
+            <tr><td>03</td><td><strong>UGC Creation</strong> — make content for brands (no face needed)</td><td>Day 1</td><td>$200–$2K/post</td></tr>
+            <tr><td>04</td><td><strong>Paid Shoutouts</strong> — promote other pages to your audience</td><td>5K+ followers</td><td>$50–$500/post</td></tr>
+            <tr><td>05</td><td><strong>Coaching / Consulting</strong> — teach what you know</td><td>1K+ followers</td><td>$500–$5K/client</td></tr>
+            <tr><td>06</td><td><strong>Brand Deals</strong> — sponsored posts with companies</td><td>10K+ followers</td><td>$500–$10K/deal</td></tr>
+            <tr><td>07</td><td><strong>Sell the Page</strong> — build and flip profitable pages</td><td>Anytime</td><td>$5K–$50K+</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Monetization Plan Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I have a faceless Instagram page in the [niche] niche with [X] followers. My audience is [description]. I want to make my first $1,000. Which monetization strategy should I start with, and give me a step-by-step plan to implement it this week?"</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Revenue Plan</div>
+          <div class="worksheet-sub">Map out your income strategy across three phases of growth.</div>
+          <div class="field-row">
+            <label class="field-label">Phase 1 (0–1K followers) — My First Income Source</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. Affiliate marketing for [specific program]"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Phase 2 (1K–10K followers) — Added Income Layer</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. Launch a $27 digital guide about [topic]"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">Phase 3 (10K+ followers) — Scale</label>
+            <textarea class="field-input" rows="2" placeholder="e.g. Brand deals + coaching + evergreen digital products"></textarea>
+          </div>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">$20,000 Revenue Tracker</div>
+          <div class="worksheet-sub">Track your monthly income toward your first $20K milestone.</div>
+          <table class="data-table">
+            <thead>
+              <tr><th>Month</th><th>Source</th><th>Revenue</th><th>Running Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Month 1</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text" placeholder="$0"></td><td><input class="field-input" type="text" placeholder="$0"></td></tr>
+              <tr><td>Month 2</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 3</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 4</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 5</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 6</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(4)">← Chapter 4</button>
+        <button class="nav-btn next" onclick="showChapter(6)">Chapter 6 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 6: Mindset -->
+    <div class="chapter-page" id="chapter-6">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">6</div>
+        <div class="chapter-tag-hero">Mindset · Inner Work</div>
+        <h1 class="chapter-title">The Success<br><em>Mindset</em></h1>
+        <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">The Inner Game</div>
+        <h2 class="section-title">Why Most Pages Quit (And How Not To)</h2>
+        <p class="section-text">Building a faceless brand is simple — not easy. The content is learnable. The growth is predictable. What stops most women is the invisible stuff: self-doubt, comparison, inconsistency when results are slow. This chapter arms you for those moments.</p>
+
+        <ul class="step-list">
+          <li><div class="step-content"><strong>The 90-Day Rule</strong><p>No page looks impressive in the first 30 days. Commit to 90 days of consistency before making any conclusions about whether it's working.</p></div></li>
+          <li><div class="step-content"><strong>Detach From Vanity Metrics</strong><p>Likes feel good. Saves and shares build brands. Follower count doesn't equal income. Track what actually matters.</p></div></li>
+          <li><div class="step-content"><strong>Comparison Is Content Theft</strong><p>Every minute you spend comparing your month 2 to someone's year 3 is a minute you could spend creating. Block. Mute. Focus.</p></div></li>
+          <li><div class="step-content"><strong>Imperfect Posts Beat Perfect Drafts</strong><p>Posting something 80% good today beats posting something perfect never. The algorithm rewards volume + consistency.</p></div></li>
+          <li><div class="step-content"><strong>Your Page Is a Business</strong><p>Treat it like one. Set working hours, track metrics, reinvest earnings. The women who succeed treat this seriously from day one.</p></div></li>
+        </ul>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Mindset Reset Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I've been building my faceless Instagram page for [X weeks/months]. I'm feeling [describe what's blocking you — slow growth, self-doubt, comparison, burnout]. Give me a realistic perspective check, a mindset reframe, and 3 concrete actions I should take this week to get back on track."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Commitment Contract</div>
+          <div class="worksheet-sub">Write this out. Commitment made visible is commitment kept.</div>
+          <div class="field-row">
+            <label class="field-label">I commit to posting __ times per week for 90 days</label>
+            <input class="field-input" type="text" placeholder="e.g. 4 times per week">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My non-negotiable posting days are</label>
+            <input class="field-input" type="text" placeholder="e.g. Mon, Wed, Thu, Sat">
+          </div>
+          <div class="field-row">
+            <label class="field-label">When I feel like quitting, I will remind myself</label>
+            <textarea class="field-input" rows="3" placeholder="Write your personal reason. Make it emotional."></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">My 90-day start date</label>
+            <input class="field-input" type="date">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My 90-day end date (review date)</label>
+            <input class="field-input" type="date">
+          </div>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(5)">← Chapter 5</button>
+        <button class="nav-btn next" onclick="showChapter(7)">Chapter 7 →</button>
+      </div>
+    </div>
+
+    <!-- Chapter 7: Toolkit -->
+    <div class="chapter-page" id="chapter-7">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">7</div>
+        <div class="chapter-tag-hero">Scale · Tools</div>
+        <h1 class="chapter-title">Your Instagram<br><em>Toolkit</em></h1>
+        <p class="chapter-desc">Every app, tool, and resource you need — curated, tested, and ready to use from day one.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">Design & Content</div>
+        <h2 class="section-title">The Faceless Brand Tech Stack</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Tool</th><th>What It's For</th><th>Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Design</strong></td><td>Canva Pro</td><td>Carousels, reels covers, brand kit</td><td>~$13/mo</td></tr>
+            <tr><td><strong>Video</strong></td><td>CapCut</td><td>Reel editing, captions, transitions</td><td>Free</td></tr>
+            <tr><td><strong>AI Content</strong></td><td>Claude / ChatGPT</td><td>Captions, hooks, ideas, strategy</td><td>Free/$20mo</td></tr>
+            <tr><td><strong>Scheduling</strong></td><td>Later or Buffer</td><td>Plan and auto-post content</td><td>Free tier</td></tr>
+            <tr><td><strong>Link in Bio</strong></td><td>Stan Store</td><td>Sell products + links in one place</td><td>Free/paid</td></tr>
+            <tr><td><strong>Analytics</strong></td><td>Instagram Insights</td><td>Track what's working (built-in)</td><td>Free</td></tr>
+            <tr><td><strong>Stock Photos</strong></td><td>Pexels / Unsplash</td><td>Free aesthetic imagery</td><td>Free</td></tr>
+            <tr><td><strong>Fonts</strong></td><td>Google Fonts / DaFont</td><td>Brand typography</td><td>Free</td></tr>
+          </tbody>
+        </table>
+
+        <div class="section-label">My Setup</div>
+        <h2 class="section-title">My Personal Toolkit</h2>
+        <p class="section-text">Log the tools you're committing to. Keep it simple — you don't need everything at once.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Tech Stack</div>
+          <div class="two-col">
+            <div class="field-row">
+              <label class="field-label">Design Tool</label>
+              <input class="field-input" type="text" placeholder="e.g. Canva Pro">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Video Editing</label>
+              <input class="field-input" type="text" placeholder="e.g. CapCut">
+            </div>
+            <div class="field-row">
+              <label class="field-label">AI Writing</label>
+              <input class="field-input" type="text" placeholder="e.g. Claude">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Scheduling</label>
+              <input class="field-input" type="text" placeholder="e.g. Later">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Link in Bio</label>
+              <input class="field-input" type="text" placeholder="e.g. Stan Store">
+            </div>
+            <div class="field-row">
+              <label class="field-label">Stock Images</label>
+              <input class="field-input" type="text" placeholder="e.g. Pexels">
+            </div>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Full Setup Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"I'm setting up my faceless Instagram brand in the [niche] niche. My budget is [amount] per month for tools. Recommend the exact tech stack I need — design, video, scheduling, monetization, and AI tools — and tell me which to start with first and which to add as I grow."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">30-Day Launch Checklist</div>
+          <div class="worksheet-sub">Complete these in order. Your page will be fully live by day 30.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"> <span><strong>Week 1:</strong> Choose niche, validate it, decide on brand name</span></li>
+            <li><input type="checkbox"> <span><strong>Week 1:</strong> Create Instagram account, set to Creator, write bio</span></li>
+            <li><input type="checkbox"> <span><strong>Week 1:</strong> Design logo and brand colors in Canva</span></li>
+            <li><input type="checkbox"> <span><strong>Week 2:</strong> Create first 9 posts (batch in one session)</span></li>
+            <li><input type="checkbox"> <span><strong>Week 2:</strong> Set up link in bio with Stan Store or Linktree</span></li>
+            <li><input type="checkbox"> <span><strong>Week 2:</strong> Sign up for first affiliate program in your niche</span></li>
+            <li><input type="checkbox"> <span><strong>Week 3:</strong> Post first 5 pieces of content</span></li>
+            <li><input type="checkbox"> <span><strong>Week 3:</strong> Engage 30 min/day with accounts in your niche</span></li>
+            <li><input type="checkbox"> <span><strong>Week 4:</strong> Analyse your first posts — what got the most saves?</span></li>
+            <li><input type="checkbox"> <span><strong>Week 4:</strong> Create your first digital product idea</span></li>
+            <li><input type="checkbox"> <span><strong>Day 30:</strong> Review your growth and plan month 2</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(6)">← Chapter 6</button>
+        <button class="nav-btn next" onclick="showChapter(8)">Conclusion →</button>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="chapter-page" id="chapter-8">
+      <div class="chapter-hero">
+        <div class="chapter-num-large">✦</div>
+        <div class="chapter-tag-hero">Act · Your Next Step</div>
+        <h1 class="chapter-title">Conclusion ·<br><em>Your Next Step</em></h1>
+        <p class="chapter-desc">You've done the work. Now it's time to ship it.</p>
+      </div>
+      <div class="chapter-body">
+        <div class="section-label">You Made It</div>
+        <h2 class="section-title">From Workbook to Reality</h2>
+        <p class="section-text">You now have everything you need. A validated niche. A brand identity. A growth strategy. A content system. Seven income streams mapped. The mindset tools. And a full toolkit. The only thing left is to start — and keep going.</p>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Chapters completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">90</span>
+            <span class="stat-label">Days to your first milestone</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Income potential</span>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label">
+            <span>✦ Your Launch Day Prompt</span>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          </div>
+          <p class="prompt-box-text">"Today is day 1 of my faceless Instagram brand. My niche is [niche], my page is called [name], and my audience is [description]. Help me write: 1) My first post caption, 2) My first story sequence (3 frames), 3) My pinned post that introduces the page. Make it magnetic."</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Final Commitment</div>
+          <div class="worksheet-sub">Write it out. This is your contract with yourself.</div>
+          <div class="field-row">
+            <label class="field-label">My page name is</label>
+            <input class="field-input" type="text" placeholder="@yourpagename">
+          </div>
+          <div class="field-row">
+            <label class="field-label">My niche is</label>
+            <input class="field-input" type="text" placeholder="Specific and clear">
+          </div>
+          <div class="field-row">
+            <label class="field-label">I will post my first piece of content on</label>
+            <input class="field-input" type="date">
+          </div>
+          <div class="field-row">
+            <label class="field-label">In 6 months, my page will have</label>
+            <textarea class="field-input" rows="2" placeholder="Followers, income, impact — be specific"></textarea>
+          </div>
+          <div class="field-row">
+            <label class="field-label">The one reason I will not quit</label>
+            <textarea class="field-input" rows="3" placeholder="Your real why. The one that makes you get up and post even when you don't feel like it."></textarea>
+          </div>
+        </div>
+
+        <div style="background: var(--burgundy); padding: 40px; text-align: center; margin-top: 32px;">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 12px;">The Female Hustlers®</p>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; font-style: italic; color: white; line-height: 1.3; margin-bottom: 8px;">Open Claude.<br>Type START.<br>Ship before lunch.</p>
+          <p style="font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em;">Now go build your brand. 🤍</p>
+        </div>
+      </div>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="showChapter(7)">← Chapter 7</button>
+        <button class="nav-btn next" onclick="showChapter(0)">Start Over ↺</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://hvbajlhucrikuunilrgh.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2YmFqbGh1Y3Jpa3V1bmlscmdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwNjA0NTMsImV4cCI6MjA5MzYzNjQ1M30.gsvTgRgjfeGDVlHM7VLLImL9bstpYmhnhacmQE2xU80';
+
+  const { createClient } = supabase;
+  const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  let currentChapter = 0;
+  const totalChapters = 9;
+
+  // ─── AUTH ───
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach((t, i) => {
+      t.classList.toggle('active', (i === 0 && tab === 'login') || (i === 1 && tab === 'signup'));
+    });
+    document.getElementById('login-form').classList.toggle('hidden', tab !== 'login');
+    document.getElementById('signup-form').classList.toggle('hidden', tab !== 'signup');
+    clearMessages();
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('auth-error');
+    el.textContent = msg;
+    el.style.display = 'block';
+    document.getElementById('auth-success').style.display = 'none';
+  }
+
+  function showSuccess(msg) {
+    const el = document.getElementById('auth-success');
+    el.textContent = msg;
+    el.style.display = 'block';
+    document.getElementById('auth-error').style.display = 'none';
+  }
+
+  function clearMessages() {
+    document.getElementById('auth-error').style.display = 'none';
+    document.getElementById('auth-success').style.display = 'none';
+  }
+
+  async function handleSignup() {
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+
+    if (!name || !email || !password) return showError('Please fill in all fields.');
+    if (password.length < 6) return showError('Password must be at least 6 characters.');
+
+    const btn = event.target;
+    btn.disabled = true;
+    btn.textContent = 'Creating Account...';
+
+    const { data, error } = await sb.auth.signUp({
+      email, password,
+      options: { data: { full_name: name } }
+    });
+
+    btn.disabled = false;
+    btn.textContent = 'Create My Account';
+
+    if (error) return showError(error.message);
+
+    if (data.user && !data.session) {
+      showSuccess('Account created! Please check your email to confirm, then sign in.');
+    } else if (data.session) {
+      launchApp();
+    }
+  }
+
+  async function handleLogin() {
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+
+    if (!email || !password) return showError('Please enter your email and password.');
+
+    const btn = event.target;
+    btn.disabled = true;
+    btn.textContent = 'Signing In...';
+
+    const { data, error } = await sb.auth.signInWithPassword({ email, password });
+
+    btn.disabled = false;
+    btn.textContent = 'Enter the Portal';
+
+    if (error) return showError(error.message);
+    launchApp();
+  }
+
+  async function handleLogout() {
+    await sb.auth.signOut();
+    document.getElementById('app').style.display = 'none';
+    document.getElementById('auth-screen').style.display = 'flex';
+    switchTab('login');
+  }
+
+  function launchApp() {
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    showChapter(0);
+  }
+
+  // ─── CHAPTER NAV ───
+  function showChapter(n) {
+    document.querySelectorAll('.chapter-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+
+    document.getElementById('chapter-' + n).classList.add('active');
+    document.getElementById('nav-' + n).classList.add('active');
+
+    currentChapter = n;
+    updateProgress();
+    window.scrollTo(0, 0);
+
+    // Save progress
+    const visited = JSON.parse(localStorage.getItem('fhb_visited') || '[]');
+    if (!visited.includes(n)) {
+      visited.push(n);
+      localStorage.setItem('fhb_visited', JSON.stringify(visited));
+    }
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const visited = JSON.parse(localStorage.getItem('fhb_visited') || '[]');
+    const pct = Math.round((visited.length / totalChapters) * 100);
+    document.getElementById('progress-pct').textContent = pct + '%';
+    document.getElementById('progress-fill').style.width = pct + '%';
+  }
+
+  // ─── COPY PROMPTS ───
+  function copyPrompt(btn) {
+    const text = btn.closest('.prompt-box').querySelector('.prompt-box-text').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => btn.textContent = orig, 2000);
+    });
+  }
+
+  // ─── INIT ───
+  (async () => {
+    const { data: { session } } = await sb.auth.getSession();
+    if (session) launchApp();
+  })();
+
+  // Enter key support
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const loginVisible = !document.getElementById('login-form').classList.contains('hidden');
+      if (loginVisible) handleLogin();
+      else handleSignup();
+    }
+  });
+</script>
+</body>
+</html>
