@@ -1814,6 +1814,118 @@
     showChapter(0);
   }
 
+  // ─── SAVE INDICATOR ───
+  let saveTimer = null;
+  function showSaveStatus(status) {
+    let el = document.getElementById('save-status');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'save-status';
+      el.style.cssText = `
+        position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+        background: var(--burgundy); color: white;
+        padding: 8px 16px; font-family: 'DM Sans', sans-serif;
+        font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+        opacity: 0; transition: opacity 0.3s; pointer-events: none;
+      `;
+      document.body.appendChild(el);
+    }
+    el.textContent = status;
+    el.style.opacity = '1';
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => el.style.opacity = '0', 2000);
+  }
+
+  // ─── SUPABASE ANSWERS TABLE SETUP ───
+  async function ensureTable() {
+    // We store all answers as a single JSON blob per user
+    // Table: user_answers (id, user_id, answers jsonb, updated_at)
+    // Created via Supabase dashboard — we just upsert into it
+  }
+
+  let answersCache = {};
+  let currentUserId = null;
+  let autoSaveTimer = null;
+
+  async function loadAnswers(userId) {
+    currentUserId = userId;
+    try {
+      const { data, error } = await sb
+        .from('user_answers')
+        .select('answers')
+        .eq('user_id', userId)
+        .single();
+
+      if (data && data.answers) {
+        answersCache = data.answers;
+        restoreAnswers();
+      }
+    } catch(e) {
+      // Table might not exist yet — will be created on first save
+    }
+  }
+
+  async function saveAnswers() {
+    if (!currentUserId) return;
+    try {
+      await sb.from('user_answers').upsert({
+        user_id: currentUserId,
+        answers: answersCache,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'user_id' });
+      showSaveStatus('Saved ✓');
+    } catch(e) {
+      showSaveStatus('Save failed');
+    }
+  }
+
+  function restoreAnswers() {
+    // Restore text inputs and textareas
+    document.querySelectorAll('.field-input').forEach(el => {
+      const key = getFieldKey(el);
+      if (key && answersCache[key] !== undefined) {
+        el.value = answersCache[key];
+      }
+    });
+    // Restore checkboxes
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(el => {
+      const key = getFieldKey(el);
+      if (key && answersCache[key] !== undefined) {
+        el.checked = answersCache[key];
+      }
+    });
+  }
+
+  function getFieldKey(el) {
+    // Build a unique key from chapter + field position
+    const chapter = el.closest('.chapter-page');
+    const chapterId = chapter ? chapter.id : 'global';
+    const allFields = Array.from(document.querySelectorAll(`#${chapterId} .field-input, #${chapterId} .checklist input`));
+    const idx = allFields.indexOf(el);
+    return `${chapterId}_field_${idx}`;
+  }
+
+  function attachAutoSave() {
+    // Auto-save text inputs with debounce
+    document.querySelectorAll('.field-input').forEach(el => {
+      el.addEventListener('input', () => {
+        const key = getFieldKey(el);
+        if (key) answersCache[key] = el.value;
+        showSaveStatus('Saving...');
+        clearTimeout(autoSaveTimer);
+        autoSaveTimer = setTimeout(saveAnswers, 1200);
+      });
+    });
+    // Auto-save checkboxes immediately
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(el => {
+      el.addEventListener('change', () => {
+        const key = getFieldKey(el);
+        if (key) answersCache[key] = el.checked;
+        saveAnswers();
+      });
+    });
+  }
+
   // ─── CHAPTER NAV ───
   function showChapter(n) {
     document.querySelectorAll('.chapter-page').forEach(p => p.classList.remove('active'));
@@ -1823,20 +1935,20 @@
     document.getElementById('nav-' + n).classList.add('active');
 
     currentChapter = n;
-    updateProgress();
     window.scrollTo(0, 0);
 
-    // Save progress
-    const visited = JSON.parse(localStorage.getItem('fhb_visited') || '[]');
-    if (!visited.includes(n)) {
-      visited.push(n);
-      localStorage.setItem('fhb_visited', JSON.stringify(visited));
+    // Track visited chapters
+    if (!answersCache['_visited']) answersCache['_visited'] = [];
+    if (!answersCache['_visited'].includes(n)) {
+      answersCache['_visited'].push(n);
+      clearTimeout(autoSaveTimer);
+      autoSaveTimer = setTimeout(saveAnswers, 1200);
     }
     updateProgress();
   }
 
   function updateProgress() {
-    const visited = JSON.parse(localStorage.getItem('fhb_visited') || '[]');
+    const visited = answersCache['_visited'] || [];
     const pct = Math.round((visited.length / totalChapters) * 100);
     document.getElementById('progress-pct').textContent = pct + '%';
     document.getElementById('progress-fill').style.width = pct + '%';
@@ -1853,6 +1965,18 @@
   }
 
   // ─── INIT ───
+  async function launchApp() {
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    const { data: { user } } = await sb.auth.getUser();
+    if (user) {
+      await loadAnswers(user.id);
+      attachAutoSave();
+    }
+    showChapter(0);
+    updateProgress();
+  }
+
   (async () => {
     const { data: { session } } = await sb.auth.getSession();
     if (session) launchApp();
