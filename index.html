@@ -56,22 +56,22 @@
   #app{display:none;min-height:100vh;}
 
   /* ── SIDEBAR ── */
-  .sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);display:flex;flex-direction:column;z-index:100;overflow-y:hidden;}
-  .sidebar-header{padding:20px 20px 16px;border-bottom:1px solid #e8e4e6;margin-bottom:4px;}
-  .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:18px;font-weight:400;color:#1a1a1a;display:block;line-height:1.2;letter-spacing:-0.01em;}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);display:flex;flex-direction:column;z-index:100;overflow-y:hidden;border-radius:0 33px 33px 0;}
+  .sidebar-header{padding:24px 20px 20px;border-bottom:none;margin-bottom:4px;text-align:center;}
+  .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:21px;font-weight:300;color:#1a1a1a;display:block;line-height:1.25;letter-spacing:0;}
   .sidebar-brand-name em{font-style:italic;}
-  .sidebar-by{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#9e9790;display:block;margin-top:5px;}
-  .sidebar-nav{flex:1;padding:8px 12px;display:flex;flex-direction:column;gap:2px;}
-  .nav-item{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;border-radius:10px;transition:var(--transition);}
+  .sidebar-by{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;letter-spacing:0;text-transform:uppercase;color:#9e9790;display:block;margin-top:5px;}
+  .sidebar-nav{flex:1;padding:4px 12px;display:flex;flex-direction:column;gap:0px;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;border-radius:10px;transition:var(--transition);}
   .nav-item:hover{background:transparent;}
   .nav-item.active{background:#ede8ea;border-radius:var(--radius-sm);}
-  .nav-num{width:24px;height:24px;border-radius:50%;background:#e6e3e1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#6b6560;flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
+  .nav-num{width:22px;height:22px;border-radius:50%;background:#e6e3e1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:400;color:#6b6560;flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
   .nav-item.active .nav-num{background:#693040;color:white;}
-  .nav-label{flex:1;font-size:12.5px;font-weight:400;color:#2a2520;line-height:1.3;font-family:'DM Sans',sans-serif;}
-  .nav-item.active .nav-label{font-weight:600;color:#1a1a1a;}
+  .nav-label{flex:1;font-size:12px;font-weight:300;color:#2a2520;line-height:1.3;font-family:'DM Sans',sans-serif;}
+  .nav-item.active .nav-label{font-weight:500;color:#1a1a1a;}
   .nav-tag{font-size:7.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-pill);background:#edd7df;color:#693040;white-space:nowrap;}
   .nav-item.active .nav-tag{background:#edd7df;color:#693040;}
-  .sidebar-footer{padding:12px 16px 20px;border-top:1px solid #e8e4e6;}
+  .sidebar-footer{padding:12px 16px 20px;border-top:none;}
   .progress-wrap{margin-bottom:14px;}
   .progress-label{display:flex;justify-content:space-between;font-size:11px;color:#8b857d;margin-bottom:6px;font-weight:400;font-family:'DM Sans',sans-serif;}
   .progress-bar{height:4px;background:#e1dfdc;border-radius:2px;overflow:hidden;}
@@ -81,9 +81,9 @@
 
   /* ── TOPBAR ── */
   .topbar{position:fixed;top:0;left:var(--sidebar-w);right:0;height:64px;background:#f4e3e9;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:50;border-bottom:1px solid rgba(105,48,64,.06);}
-  .topbar-search{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);border-radius:var(--radius-pill);padding:10px 20px;width:220px;}
-  .topbar-search input{border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;width:100%;}
-  .topbar-search input::placeholder{color:var(--text-muted);}
+  .topbar-search{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.7);border-radius:var(--radius-pill);padding:10px 20px;width:240px;box-shadow:0 1px 4px rgba(105,48,64,.06);}
+  .topbar-search input{border:none;background:transparent;font-family:'Instrument Serif',serif;font-size:15px;font-weight:300;color:#2A1A1F;outline:none;width:100%;}
+  .topbar-search input::placeholder{color:#837f7c;font-family:'Instrument Serif',serif;font-weight:300;}
   .topbar-avatar{display:flex;align-items:center;gap:10px;cursor:pointer;padding:6px 14px 6px 6px;border-radius:var(--radius-pill);transition:var(--transition);background:rgba(255,255,255,.5);}
   .topbar-avatar:hover{background:rgba(255,255,255,.8);}
   .avatar-circle{width:36px;height:36px;border-radius:50%;background:var(--burgundy);display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:500;position:relative;flex-shrink:0;}
@@ -137,18 +137,18 @@
   .intro-bottom{padding:0 56px 56px;}
 
   /* ── CHAPTER PAGES ── */
-  .chapter-hero{padding:48px 56px 40px;position:relative;overflow:hidden;}
-  .chapter-hero::after{content:attr(data-num);position:absolute;right:40px;top:10px;font-family:'Instrument Serif',serif;font-size:140px;font-weight:400;color:rgba(105,48,64,.06);line-height:1;pointer-events:none;user-select:none;}
-  .chapter-tag-hero{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-  .chapter-tag-hero::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--burgundy);border-radius:1px;}
-  .chapter-title{font-family:'Instrument Serif',serif;font-size:52px;font-weight:400;color:#000000;line-height:1.1;margin-bottom:14px;position:relative;z-index:1;}
-  .chapter-title em{font-style:italic;color:#693040;}
-  .chapter-desc{font-size:15px;color:var(--text-muted);max-width:500px;line-height:1.7;position:relative;z-index:1;}
+  .chapter-hero{padding:40px 56px 48px;position:relative;overflow:hidden;border-bottom:1px solid rgba(105,48,64,.08);}
+  .chapter-hero::after{content:attr(data-num);position:absolute;right:56px;top:20px;font-family:'Instrument Serif',serif;font-size:160px;font-weight:300;color:rgba(105,48,64,.09);line-height:1;pointer-events:none;user-select:none;letter-spacing:-4px;}
+  .chapter-tag-hero{display:inline-flex;align-items:center;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#693040;background:rgba(105,48,64,.1);padding:5px 12px;border-radius:20px;margin-bottom:20px;gap:0;}
+  .chapter-tag-hero::before{display:none;}
+  .chapter-title{font-family:'Instrument Serif',serif;font-size:64px;font-weight:300;color:#693040;line-height:1;margin-bottom:20px;position:relative;z-index:1;letter-spacing:-1px;}
+  .chapter-title em{font-style:italic;color:#693040;font-weight:300;}
+  .chapter-desc{font-size:15px;color:#6b6560;max-width:680px;line-height:1.7;position:relative;z-index:1;font-weight:300;}
   .chapter-body{padding:40px 56px 64px;max-width:100%;}
-  .section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;margin-top:40px;display:flex;align-items:center;gap:12px;}
-  .section-label::after{content:'';flex:1;height:1px;background:rgba(105,48,64,.15);}
-  .section-title{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;color:#000000;margin-bottom:10px;}
-  .section-text{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:24px;}
+  .section-label{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#837f7c;margin-bottom:8px;margin-top:48px;display:flex;align-items:center;gap:0;}
+  .section-label::after{content:'';flex:1;height:1px;background:rgba(105,48,64,.12);margin-left:12px;}
+  .section-title{font-family:'Instrument Serif',serif;font-size:32px;font-weight:300;color:#1a1a1a;margin-bottom:10px;}
+  .section-text{font-size:15px;color:#6b6560;line-height:1.8;margin-bottom:24px;font-weight:300;}
   .worksheet{background:white;border-radius:var(--radius);padding:28px;margin-bottom:22px;box-shadow:var(--shadow);transition:var(--transition);}
   .worksheet:hover{box-shadow:var(--shadow-hover);}
   .worksheet-title{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;color:#000000;margin-bottom:4px;}
@@ -272,6 +272,18 @@
   .poc-grid{margin-bottom:32px;}
   .niche-table-wrap{margin-bottom:40px;}
   .info-box{margin-bottom:32px;}
+  .sidebar-divider{height:1px;background:#e8e4e6;margin:0 20px 8px;}
+  .sidebar-footer-divider{height:1px;background:#e8e4e6;margin:8px 20px 12px;}
+  .search-overlay{position:fixed;top:64px;left:var(--sidebar-w);right:0;background:#f4e3e9;z-index:49;padding:24px 40px 32px;border-bottom:1px solid rgba(105,48,64,.08);display:none;}
+  .search-overlay.active{display:block;}
+  .search-results-title{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#837f7c;margin-bottom:16px;}
+  .search-result-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(105,48,64,.07);cursor:pointer;transition:var(--transition);}
+  .search-result-item:hover .search-result-text{color:#693040;}
+  .search-result-item:last-child{border-bottom:none;}
+  .search-result-chapter{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:#edd7df;color:#693040;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+  .search-result-text{font-size:14px;color:#2a2520;line-height:1.4;}
+  .search-result-text mark{background:rgba(105,48,64,.12);color:#693040;border-radius:2px;padding:0 2px;}
+  .search-no-results{font-size:14px;color:#837f7c;font-style:italic;}
   .hidden{display:none!important;}
   .step-card:hover .step-card-num{background:white;color:#693040;}
   .step-card:hover .step-card-title{color:white;}
@@ -316,6 +328,7 @@
       <span class="sidebar-brand-name">The Faceless Brand<br><em>Business Model</em></span>
       <span class="sidebar-by">By The Female Hustlers®</span>
     </div>
+    <div class="sidebar-divider"></div>
     <nav class="sidebar-nav">
       <div class="nav-item active" onclick="showChapter(0)" id="nav-0"><div class="nav-num">0</div><span class="nav-label">The Introduction</span><span class="nav-tag">Open</span></div>
       <div class="nav-item" onclick="showChapter(1)" id="nav-1"><div class="nav-num">1</div><span class="nav-label">The Niche Mastery</span><span class="nav-tag">Foundation</span></div>
@@ -327,6 +340,7 @@
       <div class="nav-item" onclick="showChapter(7)" id="nav-7"><div class="nav-num">7</div><span class="nav-label">The Instagram Toolkit</span><span class="nav-tag">Scale</span></div>
       <div class="nav-item" onclick="showChapter(8)" id="nav-8"><div class="nav-num">8</div><span class="nav-label">Your Next Steps</span><span class="nav-tag">Act</span></div>
     </nav>
+    <div class="sidebar-footer-divider"></div>
     <div class="sidebar-footer">
       <div class="progress-wrap">
         <div class="progress-label"><span>Your Progress</span><span id="progress-pct">0%</span></div>
@@ -338,8 +352,8 @@
 
   <div class="topbar">
     <div class="topbar-search">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" placeholder="Explore">
+      <svg width="14" height="14" fill="none" stroke="#837f7c" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Explore" oninput="handleSearch(this.value)" onkeydown="if(event.key==='Escape')clearSearch()">
     </div>
     <div class="topbar-avatar">
       <div class="avatar-circle" id="avatar-circle">
@@ -406,7 +420,7 @@
     <!-- CHAPTER 1 -->
     <div class="chapter-page" id="chapter-1">
       <div class="chapter-hero" data-num="1">
-        <div class="chapter-tag-hero">Foundation · Niche</div>
+        <div class="chapter-tag-hero">STEP ONE</div>
         <h1 class="chapter-title">The Niche <em>Mastery</em></h1>
         <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
@@ -414,7 +428,7 @@
 
         <!-- BEST NICHES TABLE -->
         <div class="section-label">Top Niches Right Now</div>
-        <h2 class="section-title">Best niches for faceless theme pages right now</h2>
+        <h2 class="section-title">Best <em style="font-style:italic;color:#693040;">niches</em> for faceless theme pages right now</h2>
         <p class="section-text">These niches have proven money, passionate audiences, and work without a face.</p>
 
         <div class="niche-table-wrap">
@@ -587,7 +601,7 @@
 <!-- CHAPTER 2 -->
     <div class="chapter-page" id="chapter-2">
       <div class="chapter-hero" data-num="2">
-        <div class="chapter-tag-hero">Brand · Identity</div>
+        <div class="chapter-tag-hero">STEP TWO</div>
         <h1 class="chapter-title">Logo, Branding &<br><em>Page Design</em></h1>
         <p class="chapter-desc">Create a scroll-stopping aesthetic that makes people hit follow before they've even read a caption.</p>
       </div>
@@ -637,7 +651,7 @@
     <!-- CHAPTER 3 -->
     <div class="chapter-page" id="chapter-3">
       <div class="chapter-hero" data-num="3">
-        <div class="chapter-tag-hero">Strategy · Content</div>
+        <div class="chapter-tag-hero">STEP THREE</div>
         <h1 class="chapter-title">The Content<br><em>Strategy</em></h1>
         <p class="chapter-desc">The content pillars, hooks, and formats that reliably produce posts people save, share, and follow you for.</p>
       </div>
@@ -687,7 +701,7 @@
     <!-- CHAPTER 4 -->
     <div class="chapter-page" id="chapter-4">
       <div class="chapter-hero" data-num="4">
-        <div class="chapter-tag-hero">Strategy · Growth</div>
+        <div class="chapter-tag-hero">STEP FOUR</div>
         <h1 class="chapter-title">The Growth<br><em>Formula</em></h1>
         <p class="chapter-desc">The exact posting cadence, hashtag system, and engagement loop that compounds your following week over week.</p>
       </div>
@@ -744,7 +758,7 @@
     <!-- CHAPTER 5 -->
     <div class="chapter-page" id="chapter-5">
       <div class="chapter-hero" data-num="5">
-        <div class="chapter-tag-hero">Revenue · Income</div>
+        <div class="chapter-tag-hero">STEP FIVE</div>
         <h1 class="chapter-title">The 7 Monetization<br><em>Strategies</em></h1>
         <p class="chapter-desc">Seven proven ways to turn your faceless page into real income — from day one to $20,000+.</p>
       </div>
@@ -797,7 +811,7 @@
     <!-- CHAPTER 6 -->
     <div class="chapter-page" id="chapter-6">
       <div class="chapter-hero" data-num="6">
-        <div class="chapter-tag-hero">Mindset · Inner Work</div>
+        <div class="chapter-tag-hero">STEP SIX</div>
         <h1 class="chapter-title">The Success<br><em>Mindset</em></h1>
         <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K.</p>
       </div>
@@ -836,7 +850,7 @@
     <!-- CHAPTER 7 -->
     <div class="chapter-page" id="chapter-7">
       <div class="chapter-hero" data-num="7">
-        <div class="chapter-tag-hero">Scale · Tools</div>
+        <div class="chapter-tag-hero">STEP SEVEN</div>
         <h1 class="chapter-title">The Instagram<br><em>Toolkit</em></h1>
         <p class="chapter-desc">Every app, tool, and resource you need — curated, tested, and ready to use from day one.</p>
       </div>
@@ -894,7 +908,7 @@
     <!-- CHAPTER 8 -->
     <div class="chapter-page" id="chapter-8">
       <div class="chapter-hero" data-num="✦">
-        <div class="chapter-tag-hero">Act · Final Step</div>
+        <div class="chapter-tag-hero">YOUR NEXT STEP</div>
         <h1 class="chapter-title">Your<br><em>Next Steps</em></h1>
         <p class="chapter-desc">You've done the work. Now it's time to ship it and never look back.</p>
       </div>
@@ -1094,7 +1108,7 @@
       await loadAnswers(user.id);
       attachAutoSave();
     }
-    showChapter(0);updateProgress();
+    showChapter(0);updateProgress();setTimeout(buildSearchIndex,500);
   }
 
   (async()=>{
@@ -1102,6 +1116,100 @@
     if(session)launchApp(session.user);
   })();
 
+
+
+  // ══════════════════════════════════════════════
+  // SEARCH
+  // ══════════════════════════════════════════════
+  const searchIndex = [];
+
+  function buildSearchIndex() {
+    searchIndex.length = 0;
+    const chapterNames = [
+      'The Introduction', 'The Niche Mastery', 'Logo Branding & Page Design',
+      'The Content Strategy', 'The Growth Formula', '7 Monetization Strategies',
+      'The Success Mindset', 'The Instagram Toolkit', 'Your Next Steps'
+    ];
+    for (let i = 0; i <= 8; i++) {
+      const page = document.getElementById('chapter-' + i);
+      if (!page) continue;
+      // Get all text nodes
+      const walker = document.createTreeWalker(page, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const text = node.textContent.trim();
+        if (text.length < 4) continue;
+        // Get context sentence
+        const parent = node.parentElement;
+        if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE') continue;
+        const sentence = text.slice(0, 120);
+        searchIndex.push({
+          chapter: i,
+          chapterName: chapterNames[i],
+          text: sentence,
+          element: parent
+        });
+      }
+    }
+  }
+
+  function handleSearch(query) {
+    const overlay = document.getElementById('search-overlay');
+    const results = document.getElementById('search-results');
+    if (!query || query.trim().length < 2) {
+      overlay.classList.remove('active');
+      return;
+    }
+    if (searchIndex.length === 0) buildSearchIndex();
+    const q = query.toLowerCase().trim();
+    const words = q.split(/\s+/);
+    const matches = [];
+    const seen = new Set();
+    for (const item of searchIndex) {
+      const lower = item.text.toLowerCase();
+      if (words.every(w => lower.includes(w))) {
+        const key = item.chapter + '_' + item.text.slice(0, 40);
+        if (!seen.has(key)) {
+          seen.add(key);
+          matches.push(item);
+          if (matches.length >= 8) break;
+        }
+      }
+    }
+    if (matches.length === 0) {
+      results.innerHTML = '<div class="search-no-results">No results found for "' + query + '"</div>';
+    } else {
+      results.innerHTML = matches.map(m => {
+        const highlighted = m.text.replace(new RegExp('(' + words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi'), '<mark>$1</mark>');
+        return '<div class="search-result-item" onclick="goToChapter(' + m.chapter + ')">'
+          + '<span class="search-result-chapter">' + m.chapterName + '</span>'
+          + '<span class="search-result-text">' + highlighted + '</span>'
+          + '</div>';
+      }).join('');
+    }
+    overlay.classList.add('active');
+  }
+
+  function goToChapter(n) {
+    clearSearch();
+    showChapter(n);
+  }
+
+  function clearSearch() {
+    const overlay = document.getElementById('search-overlay');
+    const input = document.getElementById('search-input');
+    if (overlay) overlay.classList.remove('active');
+    if (input) input.value = '';
+  }
+
+  // Close search on outside click
+  document.addEventListener('click', e => {
+    const overlay = document.getElementById('search-overlay');
+    const search = document.querySelector('.topbar-search');
+    if (overlay && search && !overlay.contains(e.target) && !search.contains(e.target)) {
+      overlay.classList.remove('active');
+    }
+  });
 
   // ── MARKET SELECTION ──
   function selectMarket(el, market) {
