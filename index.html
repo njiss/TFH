@@ -61,13 +61,13 @@
   .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:18px;font-weight:400;color:#1a1a1a;display:block;line-height:1.2;letter-spacing:-0.01em;}
   .sidebar-brand-name em{font-style:italic;}
   .sidebar-by{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#9e9790;display:block;margin-top:5px;}
-  .sidebar-nav{flex:1;padding:6px 12px;display:flex;flex-direction:column;gap:1px;}
-  .nav-item{display:flex;align-items:center;gap:10px;padding:7px 12px;cursor:pointer;border-radius:10px;transition:var(--transition);}
+  .sidebar-nav{flex:1;padding:8px 12px;display:flex;flex-direction:column;gap:2px;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;border-radius:10px;transition:var(--transition);}
   .nav-item:hover{background:transparent;}
   .nav-item.active{background:#ede8ea;border-radius:var(--radius-sm);}
   .nav-num{width:24px;height:24px;border-radius:50%;background:#e6e3e1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#6b6560;flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
   .nav-item.active .nav-num{background:#693040;color:white;}
-  .nav-label{flex:1;font-size:11.5px;font-weight:400;color:#2a2520;line-height:1.2;font-family:'DM Sans',sans-serif;}
+  .nav-label{flex:1;font-size:12.5px;font-weight:400;color:#2a2520;line-height:1.3;font-family:'DM Sans',sans-serif;}
   .nav-item.active .nav-label{font-weight:600;color:#1a1a1a;}
   .nav-tag{font-size:7.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-pill);background:#edd7df;color:#693040;white-space:nowrap;}
   .nav-item.active .nav-tag{background:#edd7df;color:#693040;}
@@ -132,7 +132,7 @@
   .pro-tip-icon{width:30px;height:30px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
   .pro-tip-text{font-size:13px;color:var(--text);line-height:1.6;}
   .pro-tip-text strong{color:var(--burgundy);}
-  .btn-start{display:inline-flex;align-items:center;gap:10px;background:var(--burgundy);color:white;border:none;border-radius:var(--radius-pill);padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(105,48,64,.25);}
+  .btn-start{display:inline-flex;align-items:center;gap:10px;background:var(--burgundy);color:white;border:none;border-radius:var(--radius-pill);padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0;text-transform:uppercase;cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(105,48,64,.25);}
   .btn-start:hover{background:var(--burgundy-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(105,48,64,.3);}
   .intro-bottom{padding:0 56px 56px;}
 
@@ -144,11 +144,11 @@
   .chapter-title{font-family:'Instrument Serif',serif;font-size:52px;font-weight:400;color:#000000;line-height:1.1;margin-bottom:14px;position:relative;z-index:1;}
   .chapter-title em{font-style:italic;color:#693040;}
   .chapter-desc{font-size:15px;color:var(--text-muted);max-width:500px;line-height:1.7;position:relative;z-index:1;}
-  .chapter-body{padding:40px 48px 48px;max-width:100%;}
-  .section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+  .chapter-body{padding:40px 56px 64px;max-width:100%;}
+  .section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;margin-top:40px;display:flex;align-items:center;gap:12px;}
   .section-label::after{content:'';flex:1;height:1px;background:rgba(105,48,64,.15);}
   .section-title{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;color:#000000;margin-bottom:10px;}
-  .section-text{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;}
+  .section-text{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:24px;}
   .worksheet{background:white;border-radius:var(--radius);padding:28px;margin-bottom:22px;box-shadow:var(--shadow);transition:var(--transition);}
   .worksheet:hover{box-shadow:var(--shadow-hover);}
   .worksheet-title{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;color:#000000;margin-bottom:4px;}
@@ -160,7 +160,7 @@
   .prompt-box{background:var(--burgundy);border-radius:var(--radius);padding:26px 28px;margin:22px 0;box-shadow:0 4px 20px rgba(105,48,64,.2);}
   .prompt-box-label{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
   .prompt-box-text{font-size:13.5px;color:rgba(255,255,255,.9);line-height:1.8;font-style:italic;}
-  .copy-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);cursor:pointer;transition:var(--transition);}
+  .copy-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:0;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);cursor:pointer;transition:var(--transition);}
   .copy-btn:hover{background:rgba(255,255,255,.28);}
   .checklist{list-style:none;}
   .checklist li{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(105,48,64,.08);font-size:14px;color:var(--text);line-height:1.5;}
@@ -179,7 +179,7 @@
   .step-content strong{display:block;font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
   .step-content p{font-size:13px;color:var(--text-muted);line-height:1.7;}
   .chapter-nav{padding:24px 56px 48px;display:flex;justify-content:space-between;align-items:center;}
-  .nav-btn{display:flex;align-items:center;gap:8px;padding:12px 24px;border:none;background:white;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--text-muted);cursor:pointer;transition:var(--transition);box-shadow:var(--shadow);}
+  .nav-btn{display:flex;align-items:center;gap:8px;padding:12px 24px;border:none;background:white;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:var(--transition);box-shadow:var(--shadow);}
   .nav-btn:hover{background:white;color:var(--burgundy);box-shadow:var(--shadow-hover);transform:translateY(-1px);}
   .nav-btn.next{background:var(--burgundy);color:white;box-shadow:0 4px 16px rgba(105,48,64,.25);}
   .nav-btn.next:hover{background:var(--burgundy-light);color:white;}
@@ -247,7 +247,7 @@
   .viral-post-preview{width:100%;height:120px;background:#f0e8ec;border:2px dashed #d4b8c4;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;margin-top:8px;}
   .viral-post-preview img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
   .viral-post-preview span{font-size:12px;color:#b89aa4;}
-  .add-page-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#693040;color:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:var(--transition);box-shadow:0 4px 12px rgba(105,48,64,.2);margin:8px 0 0;}
+  .add-page-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#693040;color:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0;text-transform:uppercase;cursor:pointer;transition:var(--transition);box-shadow:0 4px 12px rgba(105,48,64,.2);margin:8px 0 0;}
   .add-page-btn:hover{background:#7d3a4e;transform:translateY(-1px);}
 
   /* ── RANKING TABLE ── */
@@ -268,6 +268,10 @@
   .quote-block{text-align:center;padding:40px 48px;margin:8px 0 32px;}
   .quote-mark{font-family:'Instrument Serif',serif;font-size:48px;color:#d4b8c4;line-height:1;margin-bottom:8px;}
   .quote-block p{font-family:'Instrument Serif',serif;font-size:22px;color:#1a1a1a;line-height:1.5;max-width:600px;margin:0 auto;}
+  .chapter-body .section-label:first-child{margin-top:0;}
+  .poc-grid{margin-bottom:32px;}
+  .niche-table-wrap{margin-bottom:40px;}
+  .info-box{margin-bottom:32px;}
   .hidden{display:none!important;}
   .step-card:hover .step-card-num{background:white;color:#693040;}
   .step-card:hover .step-card-title{color:white;}
@@ -403,54 +407,10 @@
     <div class="chapter-page" id="chapter-1">
       <div class="chapter-hero" data-num="1">
         <div class="chapter-tag-hero">Foundation · Niche</div>
-        <h1 class="chapter-title">The Niche<br><em>Mastery</em></h1>
+        <h1 class="chapter-title">The Niche <em>Mastery</em></h1>
         <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
       <div class="chapter-body">
-
-        <!-- SECTION: 3 CORE MARKETS -->
-        <div class="section-label">The Foundation</div>
-        <h2 class="section-title">Every Profitable Niche Lives in One of Three Markets</h2>
-        <p class="section-text">Every profitable Instagram niche sits inside one of three fundamental human desires. Understanding this gives you a framework for evaluating any niche quickly.</p>
-
-        <div class="market-cards">
-          <div class="market-card" onclick="selectMarket(this,'health')">
-            <div class="market-num">01</div>
-            <div class="market-label">HEALTH</div>
-            <div class="market-title">Feel &amp; live better</div>
-            <p class="market-text">People want to feel better, look better, live longer, have more energy. Fitness, wellness, nutrition and mental health niches live here.</p>
-            <div class="market-check">✓ Selected</div>
-          </div>
-          <div class="market-card" onclick="selectMarket(this,'wealth')">
-            <div class="market-num">02</div>
-            <div class="market-label">WEALTH</div>
-            <div class="market-title">Build security &amp; freedom</div>
-            <p class="market-text">People want to make more money, build security, and create freedom. Business, finance, side hustles, and investing niches live here.</p>
-            <div class="market-check">✓ Selected</div>
-          </div>
-          <div class="market-card" onclick="selectMarket(this,'relationship')">
-            <div class="market-num">03</div>
-            <div class="market-label">RELATIONSHIP</div>
-            <div class="market-title">Love &amp; belonging</div>
-            <p class="market-text">People want love, connection, and belonging. Dating, confidence, self-improvement, and family niches live here.</p>
-            <div class="market-check">✓ Selected</div>
-          </div>
-        </div>
-
-        <div class="info-box" style="margin-bottom:36px;">
-          <p>The most powerful niches sit at the <strong>intersection of two markets</strong>. "Financial confidence for women" touches Wealth and Relationships. "Healthy habits for busy moms" touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.</p>
-        </div>
-
-        <div class="worksheet">
-          <div class="worksheet-title">My Core Market</div>
-          <div class="worksheet-sub">Which market(s) does your niche idea fall into? Select all that apply.</div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
-            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Health</label>
-            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Wealth</label>
-            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Relationships</label>
-          </div>
-          <div class="field-row"><label class="field-label">Why this market excites you</label><textarea class="field-input" rows="2" placeholder="What draws you to this market personally?"></textarea></div>
-        </div>
 
         <!-- BEST NICHES TABLE -->
         <div class="section-label">Top Niches Right Now</div>
@@ -569,8 +529,6 @@
 
         <!-- MARKET RESEARCH EXERCISES (screenshots 6&7) -->
         <div class="section-label" style="margin-top:40px;">Research Findings</div>
-        <h2 class="section-title">Chapter 01 Workbook</h2>
-        <p class="section-text">Tick, score, and write your way through. The reps you do here are the reps that change your account.</p>
 
         <div class="worksheet">
           <div class="worksheet-title">My Market Research Findings</div>
@@ -599,13 +557,13 @@
         <div class="worksheet">
           <div class="worksheet-title">Chapter 01 — Action Steps</div>
           <div class="worksheet-sub">Complete these before moving to Chapter 2.</div>
-          <ul class="action-steps">
-            <li><span class="action-num">1</span><span>List 3 potential niches you are genuinely passionate about.</span></li>
-            <li><span class="action-num">2</span><span>Run the 4-part Proof of Concept Check on each one.</span></li>
-            <li><span class="action-num">3</span><span>Choose your winner niche.</span></li>
-            <li><span class="action-num">4</span><span>Create two Google Sheets — Big Accounts and Small Accounts — and begin research.</span></li>
-            <li><span class="action-num">5</span><span>Sign up for Socialblade.com (free) and Viralfindr.com.</span></li>
-            <li><span class="action-num">6</span><span>Build your viral content database: top 10 posts from 5 big and 5 small accounts in your niche.</span></li>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>List 3 potential niches you are genuinely passionate about.</span></li>
+            <li><input type="checkbox"><span>Run the 4-part Proof of Concept Check on each one.</span></li>
+            <li><input type="checkbox"><span>Choose your winner niche.</span></li>
+            <li><input type="checkbox"><span>Create two Google Sheets — Big Accounts and Small Accounts — and begin research.</span></li>
+            <li><input type="checkbox"><span>Sign up for Socialblade.com (free) and Viralfindr.com.</span></li>
+            <li><input type="checkbox"><span>Build your viral content database: top 10 posts from 5 big and 5 small accounts in your niche.</span></li>
           </ul>
         </div>
 
@@ -1070,18 +1028,30 @@
   }
 
   function attachAutoSave(){
-    document.querySelectorAll('.field-input').forEach(el=>{
-      el.addEventListener('input',()=>{
-        const key=getFieldKey(el);if(key)answersCache[key]=el.value;
-        showSaveStatus('Saving...');clearTimeout(autoSaveTimer);
-        autoSaveTimer=setTimeout(saveAnswers,1200);
-      });
-    });
-    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(el=>{
-      el.addEventListener('change',()=>{
-        const key=getFieldKey(el);if(key)answersCache[key]=el.checked;saveAnswers();
-      });
-    });
+    // Use event delegation so dynamically added inputs also auto-save
+    document.removeEventListener('input', _globalInputHandler);
+    document.removeEventListener('change', _globalChangeHandler);
+    document.addEventListener('input', _globalInputHandler);
+    document.addEventListener('change', _globalChangeHandler);
+  }
+
+  function _globalInputHandler(e){
+    const el = e.target;
+    if(!el.matches('.field-input') && !el.matches('.research-field input') && !el.matches('.research-field textarea') && !el.matches('.research-field select') && !el.matches('.post-links input')) return;
+    const key = getFieldKey(el);
+    if(key) answersCache[key] = el.value;
+    showSaveStatus('Saving...');
+    clearTimeout(autoSaveTimer);
+    autoSaveTimer = setTimeout(saveAnswers, 1200);
+  }
+
+  function _globalChangeHandler(e){
+    const el = e.target;
+    if(el.matches('.checklist input[type="checkbox"]') || el.matches('.choice-pill input') || el.matches('.research-field select')){
+      const key = getFieldKey(el);
+      if(key) answersCache[key] = el.type === 'checkbox' ? el.checked : el.value;
+      saveAnswers();
+    }
   }
 
   function showChapter(n){
