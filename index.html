@@ -14,16 +14,16 @@
     --blush-mid: #d4b8c4;
     --sidebar-bg: #f7f6f5;
     --main-bg: #f4e3e9;
-    --burgundy: #423d37;
-    --burgundy-light: #5c554d;
+    --burgundy: #693040;
+    --burgundy-light: #7d3a4e;
     --text: #2A1A1F;
     --text-muted: #8A7070;
     --sidebar-w: 270px;
     --radius: 16px;
     --radius-sm: 10px;
     --radius-pill: 50px;
-    --shadow: 0 4px 24px rgba(66,61,55,0.08);
-    --shadow-hover: 0 8px 32px rgba(66,61,55,0.14);
+    --shadow: 0 4px 24px rgba(105,48,64,0.08);
+    --shadow-hover: 0 8px 32px rgba(105,48,64,0.14);
     --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -33,7 +33,7 @@
   #auth-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--blush-pale);position:relative;overflow:hidden;}
   #auth-screen::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,var(--blush-light) 0%,transparent 65%);pointer-events:none;}
   #auth-screen::after{content:'';position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;background:radial-gradient(circle,var(--blush-mid) 0%,transparent 65%);opacity:.5;pointer-events:none;}
-  .auth-card{background:white;border-radius:var(--radius);padding:52px 44px;width:100%;max-width:420px;position:relative;z-index:1;box-shadow:0 16px 64px rgba(66,61,55,.12);animation:slideUp .5s cubic-bezier(.4,0,.2,1);}
+  .auth-card{background:white;border-radius:var(--radius);padding:52px 44px;width:100%;max-width:420px;position:relative;z-index:1;box-shadow:0 16px 64px rgba(105,48,64,.12);animation:slideUp .5s cubic-bezier(.4,0,.2,1);}
   @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   .auth-logo{text-align:center;margin-bottom:32px;}
   .auth-logo-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--text);display:block;line-height:1.2;}
@@ -41,13 +41,13 @@
   .auth-logo-sub{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:block;margin-top:6px;}
   .auth-tabs{display:flex;background:var(--blush-pale);border-radius:var(--radius-pill);padding:4px;margin-bottom:28px;}
   .auth-tab{flex:1;padding:9px;text-align:center;font-size:12px;font-weight:500;letter-spacing:.05em;cursor:pointer;color:var(--text-muted);border-radius:var(--radius-pill);transition:var(--transition);}
-  .auth-tab.active{background:white;color:var(--burgundy);box-shadow:0 2px 8px rgba(66,61,55,.1);}
+  .auth-tab.active{background:white;color:var(--burgundy);box-shadow:0 2px 8px rgba(105,48,64,.1);}
   .form-group{margin-bottom:16px;}
   .form-group label{display:block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;}
   .form-group input{width:100%;padding:12px 16px;border:1.5px solid var(--blush-mid);border-radius:var(--radius-sm);background:var(--blush-pale);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);outline:none;transition:var(--transition);}
-  .form-group input:focus{border-color:var(--burgundy);background:white;box-shadow:0 0 0 3px rgba(66,61,55,.08);}
+  .form-group input:focus{border-color:var(--burgundy);background:white;box-shadow:0 0 0 3px rgba(105,48,64,.08);}
   .btn-primary{width:100%;padding:14px;background:var(--burgundy);color:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:8px;}
-  .btn-primary:hover{background:var(--burgundy-light);box-shadow:0 4px 16px rgba(66,61,55,.25);transform:translateY(-1px);}
+  .btn-primary:hover{background:var(--burgundy-light);box-shadow:0 4px 16px rgba(105,48,64,.25);transform:translateY(-1px);}
   .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none;}
   .auth-error{background:#FDE8E8;border:1px solid #F5C6C6;color:#C0392B;padding:11px 14px;font-size:13px;border-radius:var(--radius-sm);margin-bottom:14px;display:none;}
   .auth-success{background:#E8F5E9;border:1px solid #C8E6C9;color:#2E7D32;padding:11px 14px;font-size:13px;border-radius:var(--radius-sm);margin-bottom:14px;display:none;}
@@ -56,31 +56,31 @@
   #app{display:none;min-height:100vh;}
 
   /* ── SIDEBAR ── */
-  .sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
-  .sidebar-header{padding:32px 24px 24px;border-bottom:1px solid #e8e4e6;margin-bottom:8px;}
-  .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:#1a1a1a;display:block;line-height:1.25;letter-spacing:-0.01em;}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);display:flex;flex-direction:column;z-index:100;overflow-y:hidden;}
+  .sidebar-header{padding:20px 20px 16px;border-bottom:1px solid #e8e4e6;margin-bottom:4px;}
+  .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:18px;font-weight:400;color:#1a1a1a;display:block;line-height:1.2;letter-spacing:-0.01em;}
   .sidebar-brand-name em{font-style:italic;}
-  .sidebar-by{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#9e9790;display:block;margin-top:8px;}
-  .sidebar-nav{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:2px;}
-  .nav-item{display:flex;align-items:center;gap:13px;padding:12px 14px;cursor:pointer;border-radius:12px;transition:var(--transition);}
+  .sidebar-by{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#9e9790;display:block;margin-top:5px;}
+  .sidebar-nav{flex:1;padding:6px 12px;display:flex;flex-direction:column;gap:1px;}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:7px 12px;cursor:pointer;border-radius:10px;transition:var(--transition);}
   .nav-item:hover{background:transparent;}
   .nav-item.active{background:#ede8ea;border-radius:var(--radius-sm);}
-  .nav-num{width:28px;height:28px;border-radius:50%;background:#e6e3e1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#6b6560;flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
-  .nav-item.active .nav-num{background:#423d37;color:white;}
-  .nav-label{flex:1;font-size:13px;font-weight:400;color:#2a2520;line-height:1.3;font-family:'DM Sans',sans-serif;}
+  .nav-num{width:24px;height:24px;border-radius:50%;background:#e6e3e1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#6b6560;flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
+  .nav-item.active .nav-num{background:#693040;color:white;}
+  .nav-label{flex:1;font-size:11.5px;font-weight:400;color:#2a2520;line-height:1.2;font-family:'DM Sans',sans-serif;}
   .nav-item.active .nav-label{font-weight:600;color:#1a1a1a;}
-  .nav-tag{font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:var(--radius-pill);background:#e8dde1;color:#7a6870;white-space:nowrap;}
-  .nav-item.active .nav-tag{background:#ddc8d0;color:#423d37;}
-  .sidebar-footer{padding:16px 20px 28px;border-top:1px solid #e8e4e6;}
+  .nav-tag{font-size:7.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-pill);background:#edd7df;color:#693040;white-space:nowrap;}
+  .nav-item.active .nav-tag{background:#edd7df;color:#693040;}
+  .sidebar-footer{padding:12px 16px 20px;border-top:1px solid #e8e4e6;}
   .progress-wrap{margin-bottom:14px;}
-  .progress-label{display:flex;justify-content:space-between;font-size:12px;color:#8b857d;margin-bottom:8px;font-weight:400;font-family:'DM Sans',sans-serif;}
+  .progress-label{display:flex;justify-content:space-between;font-size:11px;color:#8b857d;margin-bottom:6px;font-weight:400;font-family:'DM Sans',sans-serif;}
   .progress-bar{height:4px;background:#e1dfdc;border-radius:2px;overflow:hidden;}
   .progress-fill{height:100%;background:#dbbcc7;border-radius:2px;transition:width .5s ease;}
-  .btn-logout{width:100%;padding:12px;background:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1a1a1a;cursor:pointer;transition:var(--transition);box-shadow:0 1px 4px rgba(66,61,55,.08);}
-  .btn-logout:hover{color:#423d37;box-shadow:0 2px 8px rgba(66,61,55,.12);}
+  .btn-logout{width:100%;padding:10px;background:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1a1a1a;cursor:pointer;transition:var(--transition);box-shadow:0 1px 4px rgba(105,48,64,.08);}
+  .btn-logout:hover{color:#693040;box-shadow:0 2px 8px rgba(105,48,64,.12);}
 
   /* ── TOPBAR ── */
-  .topbar{position:fixed;top:0;left:var(--sidebar-w);right:0;height:64px;background:#f4e3e9;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:50;border-bottom:1px solid rgba(66,61,55,.06);}
+  .topbar{position:fixed;top:0;left:var(--sidebar-w);right:0;height:64px;background:#f4e3e9;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:50;border-bottom:1px solid rgba(105,48,64,.06);}
   .topbar-search{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);border-radius:var(--radius-pill);padding:10px 20px;width:220px;}
   .topbar-search input{border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;width:100%;}
   .topbar-search input::placeholder{color:var(--text-muted);}
@@ -91,39 +91,39 @@
   .avatar-name{font-size:13px;font-weight:500;color:var(--text);}
 
   /* ── MAIN ── */
-  .main{margin-left:var(--sidebar-w);padding-top:64px;min-height:100vh;background:#f4e3e9;}
+  .main{margin-left:var(--sidebar-w);padding-top:64px;min-height:100vh;background:#f4e3e9;width:calc(100% - var(--sidebar-w));}
   .chapter-page{display:none;animation:fadeIn .35s cubic-bezier(.4,0,.2,1);}
   .chapter-page.active{display:block;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* ── INTRO ── */
-  .intro-welcome{padding:56px 48px 0;}
+  .intro-welcome{padding:56px 56px 0;}
   .intro-welcome h1{font-family:'Instrument Serif',serif;font-size:80px;font-weight:400;color:#000000;line-height:1;margin-bottom:8px;}
   .intro-tagline{font-size:15px;color:var(--text-muted);margin-bottom:40px;line-height:1.6;}
   .intro-tagline em{font-style:italic;color:var(--burgundy);}
-  .status-bar{display:flex;gap:12px;margin:0 48px 36px;flex-wrap:wrap;}
-  .status-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);border-radius:var(--radius-pill);padding:10px 18px;font-size:13px;font-weight:500;color:var(--text);box-shadow:0 2px 8px rgba(66,61,55,.06);}
+  .status-bar{display:flex;gap:12px;margin:0 56px 36px;flex-wrap:wrap;}
+  .status-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);border-radius:var(--radius-pill);padding:10px 18px;font-size:13px;font-weight:500;color:var(--text);box-shadow:0 2px 8px rgba(105,48,64,.06);}
   .status-dot{width:8px;height:8px;border-radius:50%;background:#5CB85C;flex-shrink:0;}
-  .intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 48px;margin-bottom:36px;}
+  .intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 56px;margin-bottom:36px;}
   .stat-card{background:#f7f6f5;border-radius:var(--radius);padding:28px 24px;box-shadow:none;border:1.5px solid #e8e5e2;transition:var(--transition);}
   .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);background:white;border-color:#c8b8c0;}
   .stat-num{font-family:'Instrument Serif',serif;font-size:48px;font-weight:400;color:var(--burgundy);line-height:1;display:block;margin-bottom:6px;}
   .stat-label{font-size:12px;color:var(--text-muted);line-height:1.5;}
-  .intro-section{padding:0 48px;margin-bottom:36px;}
+  .intro-section{padding:0 56px;margin-bottom:36px;}
   .intro-section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
-  .intro-section-label::after{content:'';flex:1;height:1px;background:rgba(66,61,55,.15);}
+  .intro-section-label::after{content:'';flex:1;height:1px;background:rgba(105,48,64,.15);}
   .intro-section-title{font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;color:#000000;margin-bottom:8px;}
   .intro-section-text{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:24px;max-width:580px;}
   .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:36px;}
   .step-card{background:#fefafb;border-radius:var(--radius);padding:24px 20px;border:1.5px solid #edd7df;box-shadow:none;transition:var(--transition);cursor:pointer;}
-  .step-card:hover{transform:translateY(-2px);background:#423d37;border-color:#423d37;box-shadow:0 8px 24px rgba(66,61,55,.18);}
+  .step-card:hover{transform:translateY(-2px);background:#693040;border-color:#693040;box-shadow:0 8px 24px rgba(105,48,64,.18);}
   .step-card-num{width:32px;height:32px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;margin-bottom:14px;}
   .step-card-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;font-family:'DM Sans',sans-serif;transition:color .3s;}
   .step-card-text{font-size:12px;color:var(--text-muted);line-height:1.6;font-family:'DM Sans',sans-serif;transition:color .3s;}
   .chapters-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
   .chapter-card{background:#edd7df;border-radius:var(--radius);padding:20px 22px;border:1.5px solid #edd7df;box-shadow:none;display:flex;align-items:center;gap:14px;cursor:pointer;transition:var(--transition);}
-  .chapter-card:hover{transform:translateY(-1px);border-color:#b89aa4;box-shadow:0 4px 20px rgba(66,61,55,.1);background:#edd7df;}
-  .chapter-card-num{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#423d37;flex-shrink:0;}
+  .chapter-card:hover{transform:translateY(-1px);border-color:#b89aa4;box-shadow:0 4px 20px rgba(105,48,64,.1);background:#edd7df;}
+  .chapter-card-num{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#693040;flex-shrink:0;}
   .chapter-card-content{flex:1;min-width:0;}
   .chapter-card-title{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:3px;}
   .chapter-card-sub{font-size:12px;color:var(--text-muted);line-height:1.4;}
@@ -132,21 +132,21 @@
   .pro-tip-icon{width:30px;height:30px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
   .pro-tip-text{font-size:13px;color:var(--text);line-height:1.6;}
   .pro-tip-text strong{color:var(--burgundy);}
-  .btn-start{display:inline-flex;align-items:center;gap:10px;background:var(--burgundy);color:white;border:none;border-radius:var(--radius-pill);padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(66,61,55,.25);}
-  .btn-start:hover{background:var(--burgundy-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(66,61,55,.3);}
-  .intro-bottom{padding:0 48px 56px;}
+  .btn-start{display:inline-flex;align-items:center;gap:10px;background:var(--burgundy);color:white;border:none;border-radius:var(--radius-pill);padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(105,48,64,.25);}
+  .btn-start:hover{background:var(--burgundy-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(105,48,64,.3);}
+  .intro-bottom{padding:0 56px 56px;}
 
   /* ── CHAPTER PAGES ── */
-  .chapter-hero{padding:48px 48px 40px;position:relative;overflow:hidden;}
-  .chapter-hero::after{content:attr(data-num);position:absolute;right:40px;top:10px;font-family:'Instrument Serif',serif;font-size:140px;font-weight:400;color:rgba(66,61,55,.06);line-height:1;pointer-events:none;user-select:none;}
+  .chapter-hero{padding:48px 56px 40px;position:relative;overflow:hidden;}
+  .chapter-hero::after{content:attr(data-num);position:absolute;right:40px;top:10px;font-family:'Instrument Serif',serif;font-size:140px;font-weight:400;color:rgba(105,48,64,.06);line-height:1;pointer-events:none;user-select:none;}
   .chapter-tag-hero{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
   .chapter-tag-hero::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--burgundy);border-radius:1px;}
   .chapter-title{font-family:'Instrument Serif',serif;font-size:52px;font-weight:400;color:#000000;line-height:1.1;margin-bottom:14px;position:relative;z-index:1;}
-  .chapter-title em{font-style:italic;color:#423d37;}
+  .chapter-title em{font-style:italic;color:#693040;}
   .chapter-desc{font-size:15px;color:var(--text-muted);max-width:500px;line-height:1.7;position:relative;z-index:1;}
-  .chapter-body{padding:40px 48px 48px;max-width:880px;}
+  .chapter-body{padding:40px 48px 48px;max-width:100%;}
   .section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
-  .section-label::after{content:'';flex:1;height:1px;background:rgba(66,61,55,.15);}
+  .section-label::after{content:'';flex:1;height:1px;background:rgba(105,48,64,.15);}
   .section-title{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;color:#000000;margin-bottom:10px;}
   .section-text{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:28px;}
   .worksheet{background:white;border-radius:var(--radius);padding:28px;margin-bottom:22px;box-shadow:var(--shadow);transition:var(--transition);}
@@ -155,38 +155,121 @@
   .worksheet-sub{font-size:12.5px;color:var(--text-muted);margin-bottom:18px;line-height:1.6;}
   .field-row{margin-bottom:13px;}
   .field-label{display:block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
-  .field-input{width:100%;padding:11px 14px;border:1.5px solid rgba(66,61,55,.12);border-radius:var(--radius-sm);background:var(--blush-pale);font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text);outline:none;transition:var(--transition);resize:vertical;}
-  .field-input:focus{border-color:var(--burgundy);background:white;box-shadow:0 0 0 3px rgba(66,61,55,.07);}
-  .prompt-box{background:var(--burgundy);border-radius:var(--radius);padding:26px 28px;margin:22px 0;box-shadow:0 4px 20px rgba(66,61,55,.2);}
+  .field-input{width:100%;padding:11px 14px;border:1.5px solid rgba(105,48,64,.12);border-radius:var(--radius-sm);background:var(--blush-pale);font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--text);outline:none;transition:var(--transition);resize:vertical;}
+  .field-input:focus{border-color:var(--burgundy);background:white;box-shadow:0 0 0 3px rgba(105,48,64,.07);}
+  .prompt-box{background:var(--burgundy);border-radius:var(--radius);padding:26px 28px;margin:22px 0;box-shadow:0 4px 20px rgba(105,48,64,.2);}
   .prompt-box-label{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
   .prompt-box-text{font-size:13.5px;color:rgba(255,255,255,.9);line-height:1.8;font-style:italic;}
   .copy-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);cursor:pointer;transition:var(--transition);}
   .copy-btn:hover{background:rgba(255,255,255,.28);}
   .checklist{list-style:none;}
-  .checklist li{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(66,61,55,.08);font-size:14px;color:var(--text);line-height:1.5;}
+  .checklist li{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(105,48,64,.08);font-size:14px;color:var(--text);line-height:1.5;}
   .checklist li:last-child{border-bottom:none;}
   .checklist input[type="checkbox"]{width:17px;height:17px;accent-color:var(--burgundy);flex-shrink:0;margin-top:2px;cursor:pointer;}
   .data-table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;margin:14px 0 22px;border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
   .data-table th{background:var(--burgundy);color:white;padding:11px 15px;text-align:left;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;}
-  .data-table td{padding:11px 15px;border-bottom:1px solid rgba(66,61,55,.07);background:white;color:var(--text);vertical-align:top;}
+  .data-table td{padding:11px 15px;border-bottom:1px solid rgba(105,48,64,.07);background:white;color:var(--text);vertical-align:top;}
   .data-table tr:last-child td{border-bottom:none;}
   .data-table tr:nth-child(even) td{background:#f7f6f5;}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:6px;}
   .step-list{counter-reset:step;list-style:none;margin-bottom:22px;}
-  .step-list li{counter-increment:step;display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(66,61,55,.08);align-items:flex-start;}
+  .step-list li{counter-increment:step;display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(105,48,64,.08);align-items:flex-start;}
   .step-list li:last-child{border-bottom:none;}
   .step-list li::before{content:counter(step,decimal-leading-zero);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--burgundy);flex-shrink:0;width:36px;line-height:1.3;}
   .step-content strong{display:block;font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
   .step-content p{font-size:13px;color:var(--text-muted);line-height:1.7;}
-  .chapter-nav{padding:24px 48px 48px;display:flex;justify-content:space-between;align-items:center;}
+  .chapter-nav{padding:24px 56px 48px;display:flex;justify-content:space-between;align-items:center;}
   .nav-btn{display:flex;align-items:center;gap:8px;padding:12px 24px;border:none;background:white;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--text-muted);cursor:pointer;transition:var(--transition);box-shadow:var(--shadow);}
   .nav-btn:hover{background:white;color:var(--burgundy);box-shadow:var(--shadow-hover);transform:translateY(-1px);}
-  .nav-btn.next{background:var(--burgundy);color:white;box-shadow:0 4px 16px rgba(66,61,55,.25);}
+  .nav-btn.next{background:var(--burgundy);color:white;box-shadow:0 4px 16px rgba(105,48,64,.25);}
   .nav-btn.next:hover{background:var(--burgundy-light);color:white;}
-  #save-status{position:fixed;bottom:24px;right:24px;background:var(--burgundy);color:white;padding:10px 18px;border-radius:var(--radius-pill);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .3s;z-index:9999;pointer-events:none;box-shadow:0 4px 16px rgba(66,61,55,.25);}
-  .nav-item:hover .nav-num{background:#423d37;color:white;}
+  #save-status{position:fixed;bottom:24px;right:24px;background:var(--burgundy);color:white;padding:10px 18px;border-radius:var(--radius-pill);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .3s;z-index:9999;pointer-events:none;box-shadow:0 4px 16px rgba(105,48,64,.25);}
+  .nav-item:hover .nav-num{background:#693040;color:white;}
+
+  /* ── MARKET CARDS ── */
+  .market-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+  .market-card{background:#fefafb;border:1.5px solid #edd7df;border-radius:14px;padding:24px 20px;cursor:pointer;transition:var(--transition);position:relative;}
+  .market-card:hover{border-color:#b89aa4;box-shadow:0 4px 16px rgba(105,48,64,.1);}
+  .market-card.selected{border-color:#693040;background:#fdf6f9;box-shadow:0 0 0 3px rgba(105,48,64,.1);}
+  .market-num{font-family:'Instrument Serif',serif;font-size:28px;color:#d4a8b8;margin-bottom:8px;}
+  .market-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#693040;margin-bottom:6px;}
+  .market-title{font-family:'Instrument Serif',serif;font-size:18px;color:#1a1a1a;margin-bottom:10px;}
+  .market-text{font-size:12.5px;color:#8A7070;line-height:1.6;}
+  .market-check{display:none;position:absolute;top:12px;right:14px;font-size:10px;font-weight:600;color:#693040;background:#edd7df;padding:3px 8px;border-radius:20px;}
+  .market-card.selected .market-check{display:block;}
+
+  /* ── NICHE TABLE ── */
+  .niche-table-wrap{border-radius:14px;overflow:hidden;margin-bottom:32px;box-shadow:var(--shadow);}
+  .niche-table-header{display:grid;grid-template-columns:220px 1fr;gap:16px;background:#693040;color:white;padding:12px 20px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .niche-table-row{display:grid;grid-template-columns:220px 1fr;gap:16px;background:white;padding:16px 20px;border-bottom:1px solid #f3eef0;align-items:center;font-size:13.5px;color:#2A1A1F;transition:background .2s;}
+  .niche-table-row:last-child{border-bottom:none;}
+  .niche-table-row:hover{background:#fdf6f9;}
+  .niche-pill{display:inline-block;background:#edd7df;color:#693040;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;}
+
+  /* ── CHOICE PILLS ── */
+  .choice-pill{display:inline-flex;align-items:center;gap:6px;background:#f7f3f5;border:1.5px solid #edd7df;border-radius:20px;padding:7px 16px;font-size:13px;font-weight:500;color:#2A1A1F;cursor:pointer;transition:var(--transition);}
+  .choice-pill:has(input:checked){background:#edd7df;border-color:#693040;color:#693040;}
+  .choice-pill input{display:none;}
+
+  /* ── POC GRID ── */
+  .poc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .poc-card{background:#fefafb;border:1.5px solid #edd7df;border-radius:14px;padding:28px 24px;transition:var(--transition);}
+  .poc-card:hover{border-color:#b89aa4;box-shadow:0 4px 16px rgba(105,48,64,.08);}
+  .poc-num{width:32px;height:32px;border-radius:50%;background:#edd7df;color:#693040;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;margin-bottom:20px;font-family:'DM Sans',sans-serif;}
+  .poc-title{font-family:'Instrument Serif',serif;font-size:20px;color:#1a1a1a;margin-bottom:10px;}
+  .poc-text{font-size:13px;color:#6b6560;line-height:1.7;}
+
+  /* ── INFO BOX ── */
+  .info-box{background:#fdf0f4;border:1px solid #e8c8d4;border-radius:12px;padding:20px 24px;font-size:14px;color:#2A1A1F;line-height:1.8;}
+  .info-box strong{color:#693040;}
+
+  /* ── RESEARCH PAGES ── */
+  .research-page{background:white;border:1.5px solid #edd7df;border-radius:14px;padding:28px;margin-bottom:20px;transition:var(--transition);}
+  .research-page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #f3eef0;}
+  .research-page-title{font-family:'Instrument Serif',serif;font-size:18px;color:#1a1a1a;}
+  .research-page-remove{background:none;border:none;color:#b89aa4;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;padding:4px 10px;border-radius:20px;transition:var(--transition);}
+  .research-page-remove:hover{background:#fdf0f4;color:#693040;}
+  .research-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px;}
+  .research-field{display:flex;flex-direction:column;gap:5px;}
+  .research-field label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A7070;}
+  .research-field input,.research-field select,.research-field textarea{padding:9px 12px;border:1.5px solid rgba(105,48,64,.12);border-radius:8px;background:#faf8f9;font-family:'DM Sans',sans-serif;font-size:13px;color:#2A1A1F;outline:none;transition:border .2s;width:100%;}
+  .research-field input:focus,.research-field select:focus,.research-field textarea:focus{border-color:#693040;background:white;}
+  .research-field select{cursor:pointer;}
+  .research-sub-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#693040;margin:16px 0 10px;padding-top:14px;border-top:1px solid #f3eef0;}
+  .post-links{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+  .post-links input{padding:8px 10px;border:1.5px solid rgba(105,48,64,.12);border-radius:8px;background:#faf8f9;font-family:'DM Sans',sans-serif;font-size:12px;color:#2A1A1F;outline:none;width:100%;}
+  .profile-upload-area{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .profile-preview{width:56px;height:56px;border-radius:50%;background:#f0e8ec;border:2px dashed #d4b8c4;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+  .profile-preview img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .upload-btn-sm{padding:7px 14px;background:#fefafb;border:1.5px solid #edd7df;border-radius:20px;font-size:11px;font-weight:600;color:#693040;cursor:pointer;font-family:'DM Sans',sans-serif;transition:var(--transition);}
+  .upload-btn-sm:hover{background:#edd7df;}
+  .viral-post-area{margin-top:12px;}
+  .viral-post-preview{width:100%;height:120px;background:#f0e8ec;border:2px dashed #d4b8c4;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;margin-top:8px;}
+  .viral-post-preview img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
+  .viral-post-preview span{font-size:12px;color:#b89aa4;}
+  .add-page-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#693040;color:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:var(--transition);box-shadow:0 4px 12px rgba(105,48,64,.2);margin:8px 0 0;}
+  .add-page-btn:hover{background:#7d3a4e;transform:translateY(-1px);}
+
+  /* ── RANKING TABLE ── */
+  .ranking-table{background:white;border:1.5px solid #edd7df;border-radius:14px;overflow:hidden;margin-bottom:32px;}
+  .ranking-header{display:grid;grid-template-columns:40px 1fr 100px 100px 100px 80px;gap:12px;padding:12px 20px;background:#693040;color:white;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+  .ranking-row{display:grid;grid-template-columns:40px 1fr 100px 100px 100px 80px;gap:12px;padding:12px 20px;border-bottom:1px solid #f3eef0;font-size:13px;align-items:center;transition:background .2s;}
+  .ranking-row:hover{background:#fdf6f9;}
+  .rank-badge{width:24px;height:24px;border-radius:50%;background:#edd7df;color:#693040;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+  .rank-badge.top{background:#693040;color:white;}
+
+  /* ── ACTION STEPS ── */
+  .action-steps{list-style:none;padding:0;}
+  .action-steps li{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #f3eef0;font-size:14px;color:#2A1A1F;line-height:1.5;}
+  .action-steps li:last-child{border-bottom:none;}
+  .action-num{min-width:24px;height:24px;border-radius:50%;background:#693040;color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block{text-align:center;padding:40px 48px;margin:8px 0 32px;}
+  .quote-mark{font-family:'Instrument Serif',serif;font-size:48px;color:#d4b8c4;line-height:1;margin-bottom:8px;}
+  .quote-block p{font-family:'Instrument Serif',serif;font-size:22px;color:#1a1a1a;line-height:1.5;max-width:600px;margin:0 auto;}
   .hidden{display:none!important;}
-  .step-card:hover .step-card-num{background:white;color:#423d37;}
+  .step-card:hover .step-card-num{background:white;color:#693040;}
   .step-card:hover .step-card-title{color:white;}
   .step-card:hover .step-card-text{color:rgba(255,255,255,.7);}
   .chapter-page:not(#chapter-0) .main{background:#eeebe9;}
@@ -324,53 +407,218 @@
         <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
       <div class="chapter-body">
-        <div class="section-label">The Framework</div>
-        <h2 class="section-title">The 3-Filter Niche Method</h2>
-        <p class="section-text">Not all niches are equal. A great faceless niche passes three filters: it has a passionate audience, it has proven money, and it works without a face. Run your ideas through all three before committing.</p>
-        <table class="data-table">
-          <thead><tr><th>Filter</th><th>What to Check</th><th>Green Flag</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Passion</strong></td><td>Do people obsess over this topic?</td><td>Active hashtags, fan pages, subreddits</td></tr>
-            <tr><td><strong>Money</strong></td><td>Are people already spending here?</td><td>Affiliate programs, courses, products exist</td></tr>
-            <tr><td><strong>Faceless-able</strong></td><td>Can it work without showing a person?</td><td>Quote pages, aesthetic pages, info pages thrive</td></tr>
-          </tbody>
-        </table>
+
+        <!-- SECTION: 3 CORE MARKETS -->
+        <div class="section-label">The Foundation</div>
+        <h2 class="section-title">Every Profitable Niche Lives in One of Three Markets</h2>
+        <p class="section-text">Every profitable Instagram niche sits inside one of three fundamental human desires. Understanding this gives you a framework for evaluating any niche quickly.</p>
+
+        <div class="market-cards">
+          <div class="market-card" onclick="selectMarket(this,'health')">
+            <div class="market-num">01</div>
+            <div class="market-label">HEALTH</div>
+            <div class="market-title">Feel &amp; live better</div>
+            <p class="market-text">People want to feel better, look better, live longer, have more energy. Fitness, wellness, nutrition and mental health niches live here.</p>
+            <div class="market-check">✓ Selected</div>
+          </div>
+          <div class="market-card" onclick="selectMarket(this,'wealth')">
+            <div class="market-num">02</div>
+            <div class="market-label">WEALTH</div>
+            <div class="market-title">Build security &amp; freedom</div>
+            <p class="market-text">People want to make more money, build security, and create freedom. Business, finance, side hustles, and investing niches live here.</p>
+            <div class="market-check">✓ Selected</div>
+          </div>
+          <div class="market-card" onclick="selectMarket(this,'relationship')">
+            <div class="market-num">03</div>
+            <div class="market-label">RELATIONSHIP</div>
+            <div class="market-title">Love &amp; belonging</div>
+            <p class="market-text">People want love, connection, and belonging. Dating, confidence, self-improvement, and family niches live here.</p>
+            <div class="market-check">✓ Selected</div>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom:36px;">
+          <p>The most powerful niches sit at the <strong>intersection of two markets</strong>. "Financial confidence for women" touches Wealth and Relationships. "Healthy habits for busy moms" touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Core Market</div>
+          <div class="worksheet-sub">Which market(s) does your niche idea fall into? Select all that apply.</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Health</label>
+            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Wealth</label>
+            <label class="choice-pill"><input type="checkbox" class="field-input-check" name="market"> Relationships</label>
+          </div>
+          <div class="field-row"><label class="field-label">Why this market excites you</label><textarea class="field-input" rows="2" placeholder="What draws you to this market personally?"></textarea></div>
+        </div>
+
+        <!-- BEST NICHES TABLE -->
+        <div class="section-label">Top Niches Right Now</div>
+        <h2 class="section-title">Best niches for faceless theme pages right now</h2>
+        <p class="section-text">These niches have proven money, passionate audiences, and work without a face.</p>
+
+        <div class="niche-table-wrap">
+          <div class="niche-table-header">
+            <div>NICHE</div><div>WHY IT WORKS</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Business &amp; Wealth</span></div>
+            <div>The gold standard. Aspirational audience, willing to spend. A 200k page can charge $150–$300/shoutout, two to three times daily.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Female Empowerment</span></div>
+            <div>Self-worth, confidence, ambition. Passionate, loyal, highly shareable. Strong monetisation through coaching, journals, courses.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Health &amp; Wellness</span></div>
+            <div>Inherently visual and shareable. Reels regularly hit millions of views. Strong supplement, app, and digital programme affiliates.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Mindset &amp; Personal Dev</span></div>
+            <div>Evergreen and relentlessly shareable. Quote posts, carousel infographics, short clips all work. Multiple monetisation paths.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Luxury Lifestyle</span></div>
+            <div>Aspiration-driven. High engagement on aesthetic content. Fashion, travel, and home décor affiliates convert well.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Parenting &amp; Family</span></div>
+            <div>Deeply emotional audience. Massive reach potential. Products, courses, and community monetise strongly.</div>
+          </div>
+        </div>
+
+        <!-- NICHE BRAINSTORM -->
+        <div class="section-label">Your Niche</div>
+        <h2 class="section-title">Niche Brainstorm</h2>
+        <p class="section-text">List your top niche ideas. Then run each through the 3 filters below.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Niche Ideas</div>
+          <div class="worksheet-sub">List up to 5 niches you're drawn to. You'll validate them in the next section.</div>
+          <div class="field-row"><label class="field-label">Niche Idea #1</label><input class="field-input" type="text" placeholder="e.g. Female financial freedom"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #2</label><input class="field-input" type="text" placeholder="e.g. Minimalist aesthetic lifestyle"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #3</label><input class="field-input" type="text" placeholder="e.g. Mindset for ambitious women"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #4</label><input class="field-input" type="text" placeholder="e.g. Healthy habits for busy moms"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #5</label><input class="field-input" type="text" placeholder="e.g. Luxury travel on a budget"></div>
+        </div>
+
+        <!-- PROOF OF CONCEPT CHECK -->
+        <div class="section-label">Validation</div>
+        <h2 class="section-title">The Proof of Concept Check</h2>
+        <p class="section-text">Before committing to any niche, run this 4-part validation. It takes 30–60 minutes and saves months of wasted effort.</p>
+
+        <div class="poc-grid">
+          <div class="poc-card">
+            <div class="poc-num">1</div>
+            <div class="poc-title">The Instagram Search Test</div>
+            <p class="poc-text">Search niche keywords on Instagram (Accounts tab). 5–10 accounts with 50k+ followers posting consistently = <strong>healthy market</strong>. <strong>Ghost town</strong> = too small or too new.</p>
+          </div>
+          <div class="poc-card">
+            <div class="poc-num">2</div>
+            <div class="poc-title">The Growth Rate Check</div>
+            <p class="poc-text">Take your top 10 accounts to Socialblade.com. You want <strong>consistent steady growth</strong> over 30–90 days. 200–500 followers/day means they cracked the algorithm — replicate it.</p>
+          </div>
+          <div class="poc-card">
+            <div class="poc-num">3</div>
+            <div class="poc-title">The Money Test</div>
+            <p class="poc-text">Browse top accounts for 48 hours. Are they promoting in Stories? Shoutout posts for coaches? Affiliate links? <strong>Visible monetisation</strong> = proof money flows.</p>
+          </div>
+          <div class="poc-card">
+            <div class="poc-num">4</div>
+            <div class="poc-title">The Engagement Check</div>
+            <p class="poc-text">Measure save and share ratios on recent posts. <strong>High saves</strong> = audience finds it useful. <strong>High shares</strong> = it moves them emotionally. Both indicate buyers.</p>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin:8px 0 32px;">
+          <div style="display:inline-block;background:#693040;color:white;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:20px;margin-bottom:10px;">IMPORTANT ADVICE</div>
+          <p>Do not choose your niche based on what you think will be popular. <strong>Choose a niche you can create content about for at least 12 months without burning out.</strong> Consistency is your most powerful competitive advantage — and passion is what sustains consistency.</p>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Niche Validation Scorecard</div>
+          <div class="worksheet-sub">Run your top niche through this checklist. <strong>4 of 6</strong> = go for it. <strong>All 6</strong> = all in.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>5+ accounts found with 50k+ followers in this niche</span></li>
+            <li><input type="checkbox"><span>At least 3 are growing consistently (Socialblade.com)</span></li>
+            <li><input type="checkbox"><span>Active shoutout selling or product promotion visible on top pages</span></li>
+            <li><input type="checkbox"><span>Products available on affiliate marketplaces (Digistore24, Clickbank)</span></li>
+            <li><input type="checkbox"><span>Strong engagement — saves, shares, and comments on top posts</span></li>
+            <li><input type="checkbox"><span>I am genuinely passionate and could create content for 12+ months</span></li>
+          </ul>
+          <div class="field-row" style="margin-top:16px;"><label class="field-label">My Chosen Niche</label><input class="field-input" type="text" placeholder="Write your final niche here"></div>
+        </div>
+
+        <!-- MARKET RESEARCH -->
+        <div class="section-label">Market Research</div>
+        <h2 class="section-title">My Market Research Findings</h2>
+        <p class="section-text">Research up to 10 competitor pages using Socialblade and Viralfindr. The more data you collect, the sharper your strategy. After entering all pages, your <strong>Top 10 Ranking</strong> auto-calculates below.</p>
+
+        <div id="research-pages"></div>
+
+        <button class="add-page-btn" onclick="addResearchPage()">+ Add a Page</button>
+
+        <!-- AUTO RANKING -->
+        <div class="section-label" style="margin-top:40px;">Auto Ranking</div>
+        <h2 class="section-title">Your Top 10 Pages — Ranked Automatically</h2>
+        <p class="section-text">Based on avg followers growth/month and avg likes/post. Updates live as you fill in data.</p>
+        <div id="auto-ranking" class="ranking-table">
+          <div class="ranking-header"><span>#</span><span>Handle</span><span>Followers</span><span>Avg Likes</span><span>Growth/mo</span><span>Score</span></div>
+          <div id="ranking-rows"><div style="color:#8A7070;font-size:13px;padding:16px 0;">Add pages above to see your ranking.</div></div>
+        </div>
+
+        <!-- MARKET RESEARCH EXERCISES (screenshots 6&7) -->
+        <div class="section-label" style="margin-top:40px;">Research Findings</div>
+        <h2 class="section-title">Chapter 01 Workbook</h2>
+        <p class="section-text">Tick, score, and write your way through. The reps you do here are the reps that change your account.</p>
+
+        <div class="worksheet">
+          <div class="worksheet-title">My Market Research Findings</div>
+          <div class="worksheet-sub">After your research on Socialblade and Viralfindr, record your top discoveries.</div>
+          <div class="field-row"><label class="field-label">My top 3 big accounts (100k+) and why they work</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 2">
+            <input class="field-input" type="text" placeholder="Account 3">
+          </div>
+          <div class="field-row"><label class="field-label">Content types that perform best in my niche (from Viralfindr)</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 2">
+            <input class="field-input" type="text" placeholder="Content type 3">
+          </div>
+          <div class="field-row"><label class="field-label">Monetisation methods I observed on top pages</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 2">
+            <input class="field-input" type="text" placeholder="Method 3">
+          </div>
+          <div class="field-row"><label class="field-label">The emerging trend or sub-niche I spotted</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Trend 1">
+            <input class="field-input" type="text" placeholder="Trend 2">
+          </div>
+        </div>
+
+        <div class="worksheet">
+          <div class="worksheet-title">Chapter 01 — Action Steps</div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 2.</div>
+          <ul class="action-steps">
+            <li><span class="action-num">1</span><span>List 3 potential niches you are genuinely passionate about.</span></li>
+            <li><span class="action-num">2</span><span>Run the 4-part Proof of Concept Check on each one.</span></li>
+            <li><span class="action-num">3</span><span>Choose your winner niche.</span></li>
+            <li><span class="action-num">4</span><span>Create two Google Sheets — Big Accounts and Small Accounts — and begin research.</span></li>
+            <li><span class="action-num">5</span><span>Sign up for Socialblade.com (free) and Viralfindr.com.</span></li>
+            <li><span class="action-num">6</span><span>Build your viral content database: top 10 posts from 5 big and 5 small accounts in your niche.</span></li>
+          </ul>
+        </div>
+
+        <div class="quote-block">
+          <div class="quote-mark">"</div>
+          <p>Choose a niche you can create content about for 12 months without burning out. Consistency is your edge and passion sustains consistency.</p>
+        </div>
+
         <div class="prompt-box">
           <div class="prompt-box-label"><span>✦ Niche Validation Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
           <p class="prompt-box-text">"I'm considering building a faceless Instagram page in the [niche] space. Validate this niche: 1) How passionate is this audience, 2) What products/services people spend money on, 3) Examples of successful faceless pages in this space, 4) The biggest content opportunities I'm missing."</p>
         </div>
-        <div class="worksheet">
-          <div class="worksheet-title">Niche Brainstorm</div>
-          <div class="worksheet-sub">List 5 niches you're drawn to. Then pick the one that passes all 3 filters.</div>
-          <div class="field-row"><label class="field-label">Niche Idea #1</label><input class="field-input" type="text" placeholder="e.g. Minimalist home decor"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #2</label><input class="field-input" type="text" placeholder="e.g. Female self-development"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #3</label><input class="field-input" type="text" placeholder="e.g. Aesthetic travel quotes"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #4</label><input class="field-input" type="text" placeholder="e.g. Luxury lifestyle motivation"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #5</label><input class="field-input" type="text" placeholder="e.g. Women & money mindset"></div>
-        </div>
-        <div class="worksheet">
-          <div class="worksheet-title">My Chosen Niche</div>
-          <div class="worksheet-sub">After validation, commit to one. Niche down — you can always expand later.</div>
-          <div class="field-row"><label class="field-label">My Niche</label><input class="field-input" type="text" placeholder="One specific niche"></div>
-          <div class="field-row"><label class="field-label">My Target Audience</label><textarea class="field-input" rows="2" placeholder="e.g. Women 25–35 who want financial freedom but feel stuck in their 9–5"></textarea></div>
-          <div class="field-row"><label class="field-label">Why this niche has money in it</label><textarea class="field-input" rows="2" placeholder="Name 3 products/services people already buy in this space"></textarea></div>
-        </div>
-        <div class="section-label">Research</div>
-        <h2 class="section-title">Study What's Already Working</h2>
-        <p class="section-text">Find 3 successful faceless pages in your niche. Study their content, frequency, engagement, and monetization. Don't copy — understand the formula, then do it better.</p>
-        <div class="worksheet">
-          <div class="worksheet-title">Competitor Research</div>
-          <div class="two-col">
-            <div class="field-row"><label class="field-label">Page 1 — Handle</label><input class="field-input" type="text" placeholder="@handle"></div>
-            <div class="field-row"><label class="field-label">Followers</label><input class="field-input" type="text" placeholder="e.g. 45K"></div>
-          </div>
-          <div class="field-row"><label class="field-label">What content performs best for them?</label><textarea class="field-input" rows="2" placeholder="Carousel quotes, reels, infographics..."></textarea></div>
-          <div class="two-col">
-            <div class="field-row"><label class="field-label">Page 2 — Handle</label><input class="field-input" type="text" placeholder="@handle"></div>
-            <div class="field-row"><label class="field-label">Followers</label><input class="field-input" type="text" placeholder="e.g. 82K"></div>
-          </div>
-          <div class="field-row"><label class="field-label">Gap you spotted — what they're NOT doing</label><textarea class="field-input" rows="2" placeholder="What content angle is missing that you could own?"></textarea></div>
-        </div>
+
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(0)">← Introduction</button>
@@ -378,7 +626,7 @@
       </div>
     </div>
 
-    <!-- CHAPTER 2 -->
+<!-- CHAPTER 2 -->
     <div class="chapter-page" id="chapter-2">
       <div class="chapter-hero" data-num="2">
         <div class="chapter-tag-hero">Brand · Identity</div>
@@ -713,7 +961,7 @@
           <div class="field-row"><label class="field-label">In 6 months, my page will have</label><textarea class="field-input" rows="2" placeholder="Followers, income, impact — be specific"></textarea></div>
           <div class="field-row"><label class="field-label">The one reason I will not quit</label><textarea class="field-input" rows="3" placeholder="Your real why. The one that makes you get up and post even when you don't feel like it."></textarea></div>
         </div>
-        <div style="background:var(--burgundy);border-radius:var(--radius);padding:40px;text-align:center;margin-top:8px;box-shadow:0 8px 32px rgba(66,61,55,.2);">
+        <div style="background:var(--burgundy);border-radius:var(--radius);padding:40px;text-align:center;margin-top:8px;box-shadow:0 8px 32px rgba(105,48,64,.2);">
           <p style="font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;">The Female Hustlers®</p>
           <p style="font-family:'Instrument Serif',serif;font-size:36px;font-weight:400;font-style:italic;color:white;line-height:1.3;margin-bottom:12px;">Open Claude.<br>Type START.<br>Ship before lunch.</p>
           <p style="font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.06em;">Now go build your brand. 🤍</p>
@@ -883,6 +1131,142 @@
     const{data:{session}}=await sb.auth.getSession();
     if(session)launchApp(session.user);
   })();
+
+
+  // ── MARKET SELECTION ──
+  function selectMarket(el, market) {
+    el.classList.toggle('selected');
+  }
+
+  // ── RESEARCH PAGES ──
+  let pageCount = 0;
+  const contentTypes = ['Quote posts','Reels','Carousels','Story content','Infographics','Memes','Other posts'];
+
+  function addResearchPage() {
+    pageCount++;
+    const id = 'page_' + pageCount;
+    const wrap = document.getElementById('research-pages');
+    const div = document.createElement('div');
+    div.className = 'research-page';
+    div.id = id;
+    div.innerHTML = `
+      <div class="research-page-header">
+        <div class="research-page-title">Page ${pageCount}</div>
+        <button class="research-page-remove" onclick="removePage('${id}')">✕ Remove</button>
+      </div>
+      <div class="profile-upload-area">
+        <div class="profile-preview" id="pfp_${id}"><span style="font-size:20px;color:#d4b8c4;">👤</span></div>
+        <div>
+          <div style="font-size:12px;color:#8A7070;margin-bottom:6px;">Profile picture</div>
+          <label class="upload-btn-sm" style="cursor:pointer;">Upload photo<input type="file" accept="image/*" style="display:none;" onchange="previewPfp(this,'pfp_${id}')"></label>
+        </div>
+      </div>
+      <div class="research-grid">
+        <div class="research-field"><label>Handle</label><input type="text" placeholder="@handle" oninput="updateRanking()"></div>
+        <div class="research-field"><label>Brand Name</label><input type="text" placeholder="Brand name"></div>
+        <div class="research-field"><label>Niche</label><input type="text" placeholder="e.g. Female finance"></div>
+        <div class="research-field"><label># Followers</label><input type="number" placeholder="e.g. 45000" oninput="updateRanking()"></div>
+        <div class="research-field"><label>Avg Likes / Post</label><input type="number" placeholder="e.g. 1200" oninput="updateRanking()"></div>
+        <div class="research-field"><label>Avg Comments / Post</label><input type="number" placeholder="e.g. 45"></div>
+        <div class="research-field"><label>Engagement Rate %</label><input type="number" step="0.1" placeholder="e.g. 3.2"></div>
+        <div class="research-field"><label>Avg Views / Reel</label><input type="number" placeholder="e.g. 25000"></div>
+        <div class="research-field"><label>Avg Followers Growth / Day</label><input type="number" placeholder="e.g. 120" oninput="updateRanking()"></div>
+        <div class="research-field"><label>Avg Followers Growth / Month</label><input type="number" placeholder="e.g. 3500" oninput="updateRanking()"></div>
+        <div class="research-field"><label>Posting Frequency</label>
+          <select>
+            <option value="">Select...</option>
+            <option>1x per day</option>
+            <option>2x per day</option>
+            <option>4–5x per week</option>
+            <option>2–3x per week</option>
+            <option>1x per week</option>
+          </select>
+        </div>
+      </div>
+      <div class="research-sub-label">Content Types</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        ${contentTypes.map(t => `<label class="choice-pill"><input type="checkbox"> ${t}</label>`).join('')}
+      </div>
+      <div class="research-sub-label">What they're doing well</div>
+      <div class="research-field" style="margin-bottom:12px;"><textarea rows="2" placeholder="e.g. Strong hook in first frame, consistent aesthetic, strong CTA..."></textarea></div>
+      <div class="research-sub-label">A gap you spotted — what you can do better</div>
+      <div class="research-field" style="margin-bottom:16px;"><textarea rows="2" placeholder="e.g. No long-form carousels, no personal story angles, no product of their own..."></textarea></div>
+      <div class="research-sub-label">Top 9 Performing Posts (paste links)</div>
+      <div class="post-links" id="links_${id}">
+        ${Array.from({length:9},(_,i)=>`<input type="url" placeholder="Post link ${i+1}">`).join('')}
+      </div>
+      <div class="viral-post-area">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8A7070;margin-bottom:6px;">Most viral post — upload screenshot</div>
+        <label style="cursor:pointer;">
+          <div class="viral-post-preview" id="viral_${id}"><span>Click to upload</span></div>
+          <input type="file" accept="image/*" style="display:none;" onchange="previewViral(this,'viral_${id}')">
+        </label>
+      </div>
+    `;
+    wrap.appendChild(div);
+    attachAutoSave();
+  }
+
+  function removePage(id) {
+    document.getElementById(id).remove();
+    updateRanking();
+  }
+
+  function previewPfp(input, targetId) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const el = document.getElementById(targetId);
+      el.innerHTML = `<img src="${e.target.result}" alt="pfp">`;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function previewViral(input, targetId) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const el = document.getElementById(targetId);
+      el.innerHTML = `<img src="${e.target.result}" alt="viral post">`;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function updateRanking() {
+    const pages = document.querySelectorAll('.research-page');
+    const data = [];
+    pages.forEach(p => {
+      const inputs = p.querySelectorAll('input[type=number], input[type=text]');
+      const handle = inputs[0]?.value || '—';
+      const followers = parseFloat(inputs[1]?.value) || 0;
+      const avgLikes = parseFloat(inputs[2]?.value) || 0;
+      const growthMonth = parseFloat(inputs[4]?.value) || 0;
+      // Score = weighted: growth (60%) + likes (40%), normalized
+      const score = (growthMonth * 0.6) + (avgLikes * 0.4);
+      if (handle !== '—' || followers > 0) {
+        data.push({ handle, followers, avgLikes, growthMonth, score });
+      }
+    });
+    data.sort((a,b) => b.score - a.score);
+    const top10 = data.slice(0,10);
+    const container = document.getElementById('ranking-rows');
+    if (top10.length === 0) {
+      container.innerHTML = '<div style="color:#8A7070;font-size:13px;padding:16px 0;">Add pages above to see your ranking.</div>';
+      return;
+    }
+    container.innerHTML = top10.map((p,i) => `
+      <div class="ranking-row">
+        <div><div class="rank-badge ${i<3?'top':''}">${i+1}</div></div>
+        <div style="font-weight:500;">@${p.handle}</div>
+        <div>${p.followers>0?p.followers.toLocaleString():'—'}</div>
+        <div>${p.avgLikes>0?p.avgLikes.toLocaleString():'—'}</div>
+        <div>${p.growthMonth>0?'+'+p.growthMonth.toLocaleString()+'/mo':'—'}</div>
+        <div style="font-weight:600;color:#693040;">${Math.round(p.score).toLocaleString()}</div>
+      </div>
+    `).join('');
+  }
 
   document.addEventListener('keydown',e=>{
     if(e.key==='Enter'){
