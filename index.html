@@ -147,7 +147,7 @@
   .chapter-body{padding:40px 56px 64px;max-width:100%;}
   .section-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:#9d7281;margin-bottom:8px;margin-top:48px;display:block;}
   .section-label::after{display:none;}
-  .section-title{font-family:'Instrument Serif',serif;font-size:21px;font-weight:300;color:#5c2434;margin-bottom:16px;}
+  .section-title{font-family:'Instrument Serif',serif;font-size:25px;font-weight:300;color:#5c2434;margin-bottom:16px;}
   .section-text{font-size:15px;color:#6b6560;line-height:1.8;margin-bottom:24px;font-weight:300;}
   .worksheet{background:white;border-radius:var(--radius);padding:28px;margin-bottom:22px;box-shadow:var(--shadow);transition:var(--transition);}
   .worksheet:hover{box-shadow:var(--shadow-hover);}
@@ -168,7 +168,7 @@
   .checklist input[type="checkbox"]{width:17px;height:17px;accent-color:#5c2434;flex-shrink:0;margin-top:2px;cursor:pointer;}
   .data-table{width:100%;border-collapse:separate;border-spacing:0;font-size:10px;margin:14px 0 22px;border-radius:15px;overflow:hidden;}
   .data-table th{background:#5c2434;color:white;padding:12px 20px;text-align:left;font-family:'DM Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
-  .data-table td{padding:12px 20px;border-bottom:4px solid var(--main-bg);background:white;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#5c2434;vertical-align:middle;}
+  .data-table td{padding:12px 20px;border-bottom:4px solid var(--main-bg);background:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:#5c2434;vertical-align:middle;}
   .data-table tr:last-child td{border-bottom:none;}
   .data-table tr:nth-child(even) td{background:#ffffff;}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:6px;}
@@ -201,7 +201,7 @@
   /* ── NICHE TABLE ── */
   .niche-table-wrap{border-radius:15px;overflow:hidden;margin-bottom:40px;}
   .niche-table-header{display:grid;grid-template-columns:240px 1fr;gap:20px;background:#5c2434;color:white;padding:14px 24px;font-family:'DM Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:15px 15px 0 0;}
-  .niche-table-row{display:grid;grid-template-columns:240px 1fr;gap:20px;background:#ffffff;padding:16px 24px;border-bottom:4px solid var(--main-bg);align-items:center;transition:background .2s;border-radius:0;}
+  .niche-table-row{display:grid;grid-template-columns:240px 1fr;gap:20px;background:#ffffff;padding:18px 24px;border-bottom:4px solid var(--main-bg);align-items:center;transition:background .2s;border-radius:0;}
   .niche-table-row:last-child{border-bottom:none;border-radius:0 0 15px 15px;}
   .niche-table-row:hover{background:#fdf6f9;}
   .niche-pill{display:inline-block;background:#eed7df;color:#5c2434;font-family:'DM Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 13px;border-radius:20px;white-space:nowrap;}
@@ -285,7 +285,49 @@
   .search-result-text mark{background:rgba(105,48,64,.12);color:#693040;border-radius:2px;padding:0 2px;}
   .search-no-results{font-size:14px;color:#837f7c;font-style:italic;}
   .chapter-hero-divider{height:1px;background:#dbbcc7;margin:32px 56px 0;}
-  .niche-row-text{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;color:#5c2434;line-height:1.6;}
+  .niche-row-text{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:#5c2434;line-height:1.6;}
+  /* ── VIDEO SECTION ── */
+  .chapter-video-wrap{padding:32px 56px 0;}
+  .chapter-video-container{background:#1a0f13;border-radius:16px;overflow:hidden;position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;max-height:380px;}
+  .chapter-video-container iframe{width:100%;height:100%;border:none;position:absolute;top:0;left:0;}
+  .chapter-video-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;width:100%;height:100%;background:radial-gradient(ellipse at center,#3a1520 0%,#1a0f13 70%);}
+  .chapter-video-placeholder.hidden{display:none;}
+  .chapter-video-play{width:56px;height:56px;display:flex;align-items:center;justify-content:center;}
+  .chapter-video-play svg{filter:drop-shadow(0 0 20px rgba(219,188,199,.4));}
+  .chapter-video-title{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;color:white;letter-spacing:.01em;}
+  .chapter-video-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:#9d7281;letter-spacing:.05em;}
+  .chapter-video-label{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9d7281;margin-bottom:12px;}
+
+  /* ── PROFILE PAGE ── */
+  #page-profile{display:none;position:fixed;top:0;left:var(--sidebar-w);right:0;bottom:0;background:#f4e3e9;z-index:200;overflow-y:auto;animation:fadeIn .25s ease;}
+  .profile-page-header{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-bottom:1px solid #dbbcc7;background:#f4e3e9;position:sticky;top:0;z-index:10;}
+  .profile-page-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:300;color:#5c2434;}
+  .profile-close-btn{background:none;border:none;font-size:20px;color:#9d7281;cursor:pointer;padding:4px 8px;border-radius:8px;transition:var(--transition);font-family:'DM Sans',sans-serif;}
+  .profile-close-btn:hover{background:rgba(92,36,52,.08);color:#5c2434;}
+  .profile-page-body{max-width:620px;margin:0 auto;padding:40px 48px;}
+  .profile-avatar-section{display:flex;align-items:center;gap:24px;margin-bottom:40px;padding:28px;background:white;border-radius:16px;border:1.5px solid #edd7df;}
+  .profile-avatar-large{width:72px;height:72px;border-radius:50%;background:#5c2434;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;font-weight:300;font-family:'Instrument Serif',serif;flex-shrink:0;}
+  .profile-avatar-info h3{font-family:'Instrument Serif',serif;font-size:20px;font-weight:300;color:#5c2434;margin-bottom:4px;}
+  .profile-avatar-info p{font-size:13px;color:#9d7281;font-family:'DM Sans',sans-serif;}
+  .profile-section{background:white;border-radius:16px;border:1.5px solid #edd7df;padding:28px;margin-bottom:20px;}
+  .profile-section-title{font-family:'Instrument Serif',serif;font-size:17px;font-weight:300;color:#5c2434;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #f3eef0;}
+  .profile-field{margin-bottom:18px;}
+  .profile-field label{display:block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9d7281;margin-bottom:7px;}
+  .profile-field input{width:100%;padding:12px 16px;border:1.5px solid #edd7df;border-radius:10px;background:#fdf8fa;font-family:'DM Sans',sans-serif;font-size:14px;color:#2A1A1F;outline:none;transition:var(--transition);}
+  .profile-field input:focus{border-color:#5c2434;background:white;box-shadow:0 0 0 3px rgba(92,36,52,.07);}
+  .profile-field input:disabled{background:#f7f3f5;color:#9d7281;cursor:not-allowed;}
+  .profile-save-btn{width:100%;padding:13px;background:#5c2434;color:white;border:none;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:4px;}
+  .profile-save-btn:hover{background:#7a3248;transform:translateY(-1px);box-shadow:0 4px 12px rgba(92,36,52,.2);}
+  .profile-save-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .profile-msg{text-align:center;font-size:13px;margin-top:10px;font-family:'DM Sans',sans-serif;min-height:18px;}
+  .profile-msg.success{color:#2E7D32;}
+  .profile-msg.error{color:#C0392B;}
+  .profile-danger-zone{background:white;border-radius:16px;border:1.5px solid #f5c6c6;padding:28px;margin-bottom:20px;}
+  .profile-danger-title{font-family:'Instrument Serif',serif;font-size:17px;font-weight:300;color:#C0392B;margin-bottom:8px;}
+  .profile-danger-text{font-size:13px;color:#9d7281;margin-bottom:16px;font-family:'DM Sans',sans-serif;line-height:1.6;}
+  .profile-danger-btn{padding:11px 24px;background:white;border:1.5px solid #f5c6c6;color:#C0392B;border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0;text-transform:uppercase;cursor:pointer;transition:var(--transition);}
+  .profile-danger-btn:hover{background:#FDE8E8;}
+
   .hidden{display:none!important;}
   .step-card:hover .step-card-num{background:white;color:#693040;}
   .step-card:hover .step-card-title{color:white;}
@@ -357,7 +399,7 @@
       <svg width="14" height="14" fill="none" stroke="#837f7c" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="search-input" placeholder="Explore" oninput="handleSearch(this.value)" onkeydown="if(event.key==='Escape')clearSearch()">
     </div>
-    <div class="topbar-avatar">
+    <div class="topbar-avatar" onclick="openProfile()" title="My Profile">
       <div class="avatar-circle" id="avatar-circle">
         <span id="avatar-initials">?</span>
         <div class="avatar-dot"></div>
@@ -427,6 +469,21 @@
         <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-1" onclick="playVideo(1)">
+          <div class="chapter-video-placeholder" id="video-placeholder-1">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">The Niche Mastery</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
 
         <!-- BEST NICHES TABLE -->
@@ -609,6 +666,21 @@
         <p class="chapter-desc">Create a scroll-stopping aesthetic that makes people hit follow before they've even read a caption.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-2" onclick="playVideo(2)">
+          <div class="chapter-video-placeholder" id="video-placeholder-2">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">Logo, Branding & Page Design</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">Brand Identity</div>
         <h2 class="section-title">Your Brand DNA</h2>
@@ -660,6 +732,21 @@
         <p class="chapter-desc">The content pillars, hooks, and formats that reliably produce posts people save, share, and follow you for.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-3" onclick="playVideo(3)">
+          <div class="chapter-video-placeholder" id="video-placeholder-3">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">The Content Strategy</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">The Pillars</div>
         <h2 class="section-title">Your 3 Content Pillars</h2>
@@ -711,6 +798,21 @@
         <p class="chapter-desc">The exact posting cadence, hashtag system, and engagement loop that compounds your following week over week.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-4" onclick="playVideo(4)">
+          <div class="chapter-video-placeholder" id="video-placeholder-4">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">The Growth Formula</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">The System</div>
         <h2 class="section-title">How Faceless Pages Actually Grow</h2>
@@ -769,6 +871,21 @@
         <p class="chapter-desc">Seven proven ways to turn your faceless page into real income — from day one to $20,000+.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-5" onclick="playVideo(5)">
+          <div class="chapter-video-placeholder" id="video-placeholder-5">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">7 Monetization Strategies</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">Income Streams</div>
         <h2 class="section-title">The 7 Ways Faceless Pages Earn</h2>
@@ -823,6 +940,21 @@
         <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-6" onclick="playVideo(6)">
+          <div class="chapter-video-placeholder" id="video-placeholder-6">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">The Success Mindset</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">The Inner Game</div>
         <h2 class="section-title">Why Most Pages Quit (And How Not To)</h2>
@@ -863,6 +995,21 @@
         <p class="chapter-desc">Every app, tool, and resource you need — curated, tested, and ready to use from day one.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-7" onclick="playVideo(7)">
+          <div class="chapter-video-placeholder" id="video-placeholder-7">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">The Instagram Toolkit</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="section-label">Tech Stack</div>
         <h2 class="section-title">The Faceless Brand Tech Stack</h2>
@@ -922,6 +1069,21 @@
         <p class="chapter-desc">You've done the work. Now it's time to ship it and never look back.</p>
       </div>
       <div class="chapter-hero-divider"></div>
+      <div class="chapter-video-wrap">
+        <div class="chapter-video-label">CHAPTER VIDEO</div>
+        <div class="chapter-video-container" id="video-container-8" onclick="playVideo(8)">
+          <div class="chapter-video-placeholder" id="video-placeholder-8">
+            <div class="chapter-video-play">
+              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="#dbbcc7" stroke-width="1" opacity="0.3"/>
+                <polygon points="22,18 22,38 40,28" fill="#dbbcc7"/>
+              </svg>
+            </div>
+            <div class="chapter-video-title">Your Next Steps</div>
+            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+          </div>
+        </div>
+      </div>
       <div class="chapter-body">
         <div class="intro-stats" style="padding:0;margin-bottom:32px;">
           <div class="stat-card"><span class="stat-num">7</span><span class="stat-label">Chapters completed</span></div>
@@ -955,6 +1117,68 @@
       </div>
     </div>
 
+
+  <!-- PROFILE PAGE -->
+  <div id="page-profile">
+    <div class="profile-page-header">
+      <div class="profile-page-title">My Profile</div>
+      <button class="profile-close-btn" onclick="closeProfile()">✕</button>
+    </div>
+    <div class="profile-page-body">
+      <div class="profile-avatar-section">
+        <div class="profile-avatar-large" id="profile-avatar-large">?</div>
+        <div class="profile-avatar-info">
+          <h3 id="profile-display-name">Your Name</h3>
+          <p id="profile-display-email">your@email.com</p>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-section-title">Personal Information</div>
+        <div class="profile-field">
+          <label>Full Name</label>
+          <input type="text" id="profile-name" placeholder="Your full name">
+        </div>
+        <div class="profile-field">
+          <label>Email Address</label>
+          <input type="email" id="profile-email" placeholder="your@email.com" disabled>
+        </div>
+        <button class="profile-save-btn" onclick="saveProfile()">Save Changes</button>
+        <div class="profile-msg" id="profile-msg"></div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-section-title">Change Password</div>
+        <div class="profile-field">
+          <label>New Password</label>
+          <input type="password" id="profile-new-password" placeholder="Min. 6 characters">
+        </div>
+        <div class="profile-field">
+          <label>Confirm New Password</label>
+          <input type="password" id="profile-confirm-password" placeholder="Repeat your new password">
+        </div>
+        <button class="profile-save-btn" onclick="savePassword()">Update Password</button>
+        <div class="profile-msg" id="profile-pw-msg"></div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-section-title">Your Progress</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#9d7281;margin-bottom:12px;line-height:1.6;">
+          Chapters visited and answers saved are stored securely in your account.
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:#fdf8fa;border-radius:10px;padding:14px 18px;border:1px solid #edd7df;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:13px;color:#5c2434;font-weight:500;">Overall Progress</span>
+          <span id="profile-progress-pct" style="font-family:'Instrument Serif',serif;font-size:22px;font-weight:300;color:#5c2434;">0%</span>
+        </div>
+      </div>
+
+      <div class="profile-danger-zone">
+        <div class="profile-danger-title">Sign Out</div>
+        <p class="profile-danger-text">This will sign you out of your account. Your progress and answers are saved and will be here when you return.</p>
+        <button class="profile-danger-btn" onclick="handleLogout()">Sign Out of My Account</button>
+      </div>
+    </div>
+  </div>
   </main>
 </div>
 <div id="save-status"></div>
@@ -1220,6 +1444,107 @@
       overlay.classList.remove('active');
     }
   });
+
+
+  // ══════════════════════════════════════════════
+  // PROFILE PAGE
+  // ══════════════════════════════════════════════
+  function openProfile() {
+    const el = document.getElementById('page-profile');
+    el.style.display = 'block';
+    // Populate fields
+    sb.auth.getUser().then(({ data: { user } }) => {
+      if (!user) return;
+      const name = user.user_metadata?.full_name || '';
+      const email = user.email || '';
+      document.getElementById('profile-name').value = name;
+      document.getElementById('profile-email').value = email;
+      document.getElementById('profile-display-name').textContent = name || 'Your Name';
+      document.getElementById('profile-display-email').textContent = email;
+      // Avatar initials
+      const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,2) || '?';
+      document.getElementById('profile-avatar-large').textContent = initials;
+      // Progress
+      const visited = answersCache['_visited'] || [];
+      const pct = Math.round((visited.length / 9) * 100);
+      document.getElementById('profile-progress-pct').textContent = pct + '%';
+    });
+  }
+
+  function closeProfile() {
+    document.getElementById('page-profile').style.display = 'none';
+  }
+
+  async function saveProfile() {
+    const name = document.getElementById('profile-name').value.trim();
+    const btn = document.querySelector('.profile-section .profile-save-btn');
+    const msg = document.getElementById('profile-msg');
+    if (!name) { msg.textContent = 'Please enter your name.'; msg.className = 'profile-msg error'; return; }
+    btn.disabled = true; btn.textContent = 'SAVING...';
+    const { error } = await sb.auth.updateUser({ data: { full_name: name } });
+    btn.disabled = false; btn.textContent = 'SAVE CHANGES';
+    if (error) {
+      msg.textContent = error.message; msg.className = 'profile-msg error';
+    } else {
+      msg.textContent = 'Profile updated successfully!'; msg.className = 'profile-msg success';
+      // Update topbar
+      document.getElementById('avatar-name').textContent = name.split(' ')[0];
+      document.getElementById('avatar-initials').textContent = name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+      document.getElementById('profile-display-name').textContent = name;
+      document.getElementById('profile-avatar-large').textContent = name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+      setTimeout(() => msg.textContent = '', 3000);
+    }
+  }
+
+  async function savePassword() {
+    const pw = document.getElementById('profile-new-password').value;
+    const pw2 = document.getElementById('profile-confirm-password').value;
+    const msg = document.getElementById('profile-pw-msg');
+    if (pw.length < 6) { msg.textContent = 'Password must be at least 6 characters.'; msg.className = 'profile-msg error'; return; }
+    if (pw !== pw2) { msg.textContent = 'Passwords do not match.'; msg.className = 'profile-msg error'; return; }
+    const { error } = await sb.auth.updateUser({ password: pw });
+    if (error) {
+      msg.textContent = error.message; msg.className = 'profile-msg error';
+    } else {
+      msg.textContent = 'Password updated successfully!'; msg.className = 'profile-msg success';
+      document.getElementById('profile-new-password').value = '';
+      document.getElementById('profile-confirm-password').value = '';
+      setTimeout(() => msg.textContent = '', 3000);
+    }
+  }
+
+  // ══════════════════════════════════════════════
+  // VIDEO PLAYER
+  // ══════════════════════════════════════════════
+  const videoUrls = {
+    0: '', 1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: ''
+  };
+
+  function playVideo(n) {
+    const url = videoUrls[n];
+    if (!url) return; // no video set yet
+    const container = document.getElementById('video-container-' + n);
+    const placeholder = document.getElementById('video-placeholder-' + n);
+    // Convert Loom share URL to embed
+    let embedUrl = url;
+    if (url.includes('loom.com/share/')) {
+      embedUrl = url.replace('loom.com/share/', 'loom.com/embed/');
+    } else if (url.includes('youtube.com/watch?v=')) {
+      embedUrl = url.replace('watch?v=', 'embed/');
+    } else if (url.includes('youtu.be/')) {
+      const id = url.split('youtu.be/')[1];
+      embedUrl = 'https://www.youtube.com/embed/' + id;
+    } else if (url.includes('vimeo.com/')) {
+      const id = url.split('vimeo.com/')[1];
+      embedUrl = 'https://player.vimeo.com/video/' + id;
+    }
+    placeholder.classList.add('hidden');
+    const iframe = document.createElement('iframe');
+    iframe.src = embedUrl + '?autoplay=1';
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    container.appendChild(iframe);
+  }
 
   // ── MARKET SELECTION ──
   function selectMarket(el, market) {
