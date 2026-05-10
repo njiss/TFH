@@ -494,6 +494,101 @@
   .ig-post-inner img{width:100%;height:100%;object-fit:cover;border-radius:4px;}
   .ig-post-caption{border:none;border-bottom:1px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text-muted);outline:none;padding:4px 0;width:100%;font-style:italic;}
 
+
+  /* ── CHAPTER 3 ── */
+  .ch3-quote{background:var(--surface-2);border-radius:14px;padding:36px 40px;text-align:center;margin:32px 0;border:1px solid var(--border);}
+  .ch3-quote-mark{font-family:'Instrument Serif',serif;font-size:36px;color:var(--accent);line-height:1;margin-bottom:12px;}
+  .ch3-quote-text{font-family:'Instrument Serif',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--text);line-height:1.6;max-width:640px;margin:0 auto 14px;}
+  .ch3-quote-author{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);}
+
+  /* ── 6 CONTENT TYPES ── */
+  .content-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;}
+  .content-type-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 18px;transition:var(--transition);box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .content-type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
+  .ct-1::before{background:var(--burgundy);}
+  .ct-2::before{background:#7a3248;}
+  .ct-3::before{background:#9a5060;}
+  .ct-4::before{background:#b07080;}
+  .ct-5::before{background:#c4909a;}
+  .ct-6::before{background:#dbbcc7;}
+  .content-type-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-2px);}
+  .ct-num{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .ct-emoji{font-size:28px;margin-bottom:10px;}
+  .ct-name{font-family:'Instrument Serif',serif;font-size:17px;color:var(--text);margin-bottom:6px;}
+  .ct-signal{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);background:rgba(219,188,199,0.25);border:1px solid rgba(219,188,199,0.4);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:10px;}
+  .ct-note{font-size:12px;color:var(--text-muted);line-height:1.6;font-weight:300;}
+
+  /* ── TOFU/MOFU/BOFU FUNNEL ── */
+  .funnel-stack{display:flex;flex-direction:column;gap:3px;margin-bottom:32px;}
+  .funnel-level{display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:center;padding:24px 28px;border-radius:12px;transition:var(--transition);}
+  .f-tofu{background:rgba(219,188,199,0.15);border:1px solid rgba(219,188,199,0.3);}
+  .f-mofu{background:rgba(219,188,199,0.25);border:1px solid rgba(219,188,199,0.4);}
+  .f-bofu{background:var(--burgundy);border:1px solid var(--burgundy);}
+  .funnel-acronym{font-family:'Instrument Serif',serif;font-size:36px;font-weight:300;color:var(--burgundy);letter-spacing:-1px;}
+  .f-bofu .funnel-acronym{color:rgba(255,255,255,0.9);}
+  .funnel-header{font-family:'Instrument Serif',serif;font-size:15px;color:var(--text);margin-bottom:6px;}
+  .f-bofu .funnel-header{color:rgba(255,255,255,0.85);}
+  .funnel-desc{font-size:12.5px;color:var(--text-muted);line-height:1.6;font-weight:300;}
+  .f-bofu .funnel-desc{color:rgba(255,255,255,0.65);}
+  .funnel-result{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);text-align:right;white-space:nowrap;}
+  .f-bofu .funnel-result{color:rgba(255,255,255,0.6);}
+  .sub-section-title{font-family:'Instrument Serif',serif;font-size:20px;font-weight:300;color:var(--text);margin-bottom:14px;}
+  .split-table{border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:24px;box-shadow:var(--shadow);}
+  .split-header{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--burgundy);color:white;padding:11px 20px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+  .split-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--surface);padding:14px 20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);font-weight:300;align-items:center;transition:var(--transition);}
+  .split-row:hover{background:var(--surface-2);}
+  .split-row strong{color:var(--burgundy);font-weight:600;}
+  .split-row-last{border-radius:0 0 12px 12px;}
+  .she-boss-tip{background:rgba(219,188,199,0.15);border:1px solid rgba(219,188,199,0.35);border-radius:12px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;margin-bottom:48px;}
+  .she-boss-icon{color:var(--burgundy);font-size:16px;flex-shrink:0;margin-top:2px;}
+  .she-boss-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--burgundy);margin-bottom:6px;font-family:'DM Sans',sans-serif;}
+  .she-boss-tip p{font-size:13px;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+  /* ── PILLAR BLOCKS ── */
+  .pillar-block{background:var(--bg);border-radius:10px;padding:20px;margin-bottom:16px;border:1px solid var(--border);}
+  .pillar-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px;font-family:'DM Sans',sans-serif;}
+  .pillar-edu{background:rgba(92,36,52,0.08);color:var(--burgundy);border:1px solid rgba(92,36,52,0.15);}
+  .pillar-ins{background:rgba(219,188,199,0.3);color:var(--burgundy);border:1px solid rgba(219,188,199,0.5);}
+  .pillar-rel{background:rgba(219,188,199,0.15);color:var(--burgundy);border:1px solid rgba(219,188,199,0.3);}
+
+  /* ── HOOKS ── */
+  .hook-examples{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;padding:20px 24px;background:var(--surface-2);border-radius:12px;border:1px solid var(--border);}
+  .hook-ex{display:flex;gap:12px;font-size:14px;color:var(--text-muted);font-style:italic;line-height:1.5;}
+  .hook-dash{color:var(--burgundy);flex-shrink:0;font-style:normal;font-weight:400;}
+  .hook-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px;}
+  .hook-type-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 16px;transition:var(--transition);}
+  .hook-type-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow);transform:translateY(-1px);}
+  .hook-type-name{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .hook-type-ex{font-size:12.5px;color:var(--text-muted);line-height:1.6;font-style:italic;font-weight:300;}
+
+  /* ── HOOK BANK GRID ── */
+  .hook-bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+
+  /* ── 16-STEP ROADMAP ── */
+  .step16-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:48px;box-shadow:var(--shadow);}
+  .step16-col{padding:8px 0;}
+  .step16-item{display:flex;align-items:flex-start;gap:14px;padding:12px 20px;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-muted);line-height:1.5;transition:var(--transition);font-weight:300;}
+  .step16-item:last-child{border-bottom:none;}
+  .step16-item:hover{background:var(--surface-2);color:var(--text);}
+  .step16-num{min-width:22px;height:22px;border-radius:50%;background:rgba(219,188,199,0.25);border:1px solid rgba(219,188,199,0.4);color:var(--burgundy);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:'DM Sans',sans-serif;}
+
+  /* ── WEEKLY PLANNER ── */
+  .weekly-planner{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:12px;}
+  .day-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 10px;transition:var(--transition);}
+  .day-card:hover{border-color:var(--border-hover);}
+  .day-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--burgundy);margin-bottom:10px;text-align:center;font-family:'DM Sans',sans-serif;}
+  .day-fields{display:flex;flex-direction:column;gap:8px;}
+  .day-fields label{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:4px;font-family:'DM Sans',sans-serif;}
+  .day-fields .field-input{font-size:11px;padding:6px 8px;}
+
+  /* ── CONTENT AUDIT ── */
+  .audit-field{margin-bottom:20px;}
+  .audit-mini-label{display:block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+
+  /* ── CH3 MILESTONES ── */
+  .ch3-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch3-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -1218,7 +1313,7 @@
       <div class="chapter-hero" data-num="3">
         <div class="chapter-tag-hero">STEP THREE</div>
         <h1 class="chapter-title">The Content<br><em>Strategy</em></h1>
-        <p class="chapter-desc">The content pillars, hooks, and formats that reliably produce posts people save, share, and follow you for.</p>
+        <p class="chapter-desc">The fastest-growing faceless accounts don't create original content from scratch. They find what already works — and remix it. This chapter shows you the entire system.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -1237,41 +1332,338 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">The Pillars</div>
-        <h2 class="section-title">Your 3 Content Pillars</h2>
-        <p class="section-text">Every viral faceless page runs on 3 content pillars — recurring themes the audience returns for. One educates, one inspires, one entertains. Rotate between them so your page never goes stale.</p>
-        <div class="worksheet">
-          <div class="worksheet-title">My Content Pillars</div>
-          <div class="field-row"><label class="field-label">Pillar 1 — Educational</label><input class="field-input" type="text" placeholder="e.g. Money tips for women in their 20s"></div>
-          <div class="field-row"><label class="field-label">Example post idea</label><textarea class="field-input" rows="2" placeholder="e.g. '5 things I wish I knew about investing at 22'"></textarea></div>
-          <div class="field-row"><label class="field-label">Pillar 2 — Inspirational</label><input class="field-input" type="text" placeholder="e.g. Wealthy woman aesthetic & mindset quotes"></div>
-          <div class="field-row"><label class="field-label">Example post idea</label><textarea class="field-input" rows="2" placeholder="e.g. 'What your bank account looks like when you stop playing small'"></textarea></div>
-          <div class="field-row"><label class="field-label">Pillar 3 — Relatable / Entertaining</label><input class="field-input" type="text" placeholder="e.g. POV: being the first financially free woman in your family"></div>
+
+        <!-- ══ PROGRESS ══ -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 3 Progress</span><span id="ch3-progress-pct">0 / 5 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch3-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch3-milestone">Strategy Chosen</span>
+            <span class="ch3-milestone">Pillars Defined</span>
+            <span class="ch3-milestone">Hooks Written</span>
+            <span class="ch3-milestone">Week Planned</span>
+            <span class="ch3-milestone">Funnel Set ✦</span>
+          </div>
         </div>
-        <div class="section-label">Hooks</div>
-        <h2 class="section-title">Hooks That Stop the Scroll</h2>
-        <table class="data-table">
-          <thead><tr><th>Hook Type</th><th>Formula</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Bold Claim</strong></td><td>"Most women will never build wealth because of this one habit."</td></tr>
-            <tr><td><strong>The POV</strong></td><td>"POV: You finally stopped playing small and this happened."</td></tr>
-            <tr><td><strong>The List</strong></td><td>"7 things quietly wealthy women never say out loud."</td></tr>
-            <tr><td><strong>The Question</strong></td><td>"Why are you working harder but earning less than ever?"</td></tr>
-            <tr><td><strong>The Secret</strong></td><td>"The thing no one tells you about building a brand online."</td></tr>
-          </tbody>
-        </table>
+
+        <!-- ══ THE MINDSET: REMIX NOT COPY ══ -->
+        <div class="section-label" style="margin-top:0;">The Foundation</div>
+        <h2 class="section-title">Never reinvent the wheel — remix it</h2>
+        <p class="section-text">The biggest mistake new theme page owners make is trying to create original content from scratch. They brainstorm, design, post — and get 12 likes. The fastest-growing accounts find content that has already proven to work and recreate it with their own branding. <em>This is not copying. It is strategy.</em></p>
+
+        <div class="ch3-quote">
+          <div class="ch3-quote-mark">"</div>
+          <p class="ch3-quote-text">If you want to be successful, find someone who has already achieved the results you want, and model what they do. You will achieve the same results.</p>
+          <div class="ch3-quote-author">— Tony Robbins</div>
+        </div>
+
+        <!-- ══ 6 CONTENT TYPES ══ -->
+        <div class="section-label">The Content System</div>
+        <h2 class="section-title">The 6 Content Types That Feed Every Algorithm Metric</h2>
+        <p class="section-text">Instagram's algorithm measures six signals. Each content type is built to feed a specific one. Master all six and your page becomes unstoppable.</p>
+
+        <div class="content-types-grid">
+          <div class="content-type-card ct-1">
+            <div class="ct-num">1</div>
+            <div class="ct-emoji">🔁</div>
+            <div class="ct-name">Reposts</div>
+            <div class="ct-signal">Max Likes</div>
+            <div class="ct-note">Algorithm-pre-approved. Always credit the source. Keep to 20–30% of your mix.</div>
+          </div>
+          <div class="content-type-card ct-2">
+            <div class="ct-num">2</div>
+            <div class="ct-emoji">📚</div>
+            <div class="ct-name">Educational Carousels</div>
+            <div class="ct-signal">Max Saves</div>
+            <div class="ct-note">7–10 slides. Slide 1 = hook. Last slide = CTA. Save = future value.</div>
+          </div>
+          <div class="content-type-card ct-3">
+            <div class="ct-num">3</div>
+            <div class="ct-emoji">💬</div>
+            <div class="ct-name">Call-to-Action Posts</div>
+            <div class="ct-signal">Max Comments</div>
+            <div class="ct-note">Easy instruction. "Comment YES if…" Affirmations crush for women's pages.</div>
+          </div>
+          <div class="content-type-card ct-4">
+            <div class="ct-num">4</div>
+            <div class="ct-emoji">🎬</div>
+            <div class="ct-name">Reels</div>
+            <div class="ct-signal">Views + New Followers</div>
+            <div class="ct-note">3–5× more reach than static posts. First 1–2 seconds = everything. Hook hard.</div>
+          </div>
+          <div class="content-type-card ct-5">
+            <div class="ct-num">5</div>
+            <div class="ct-emoji">✨</div>
+            <div class="ct-name">Quote Posts</div>
+            <div class="ct-signal">Shares + Virality</div>
+            <div class="ct-note">Shares are the most powerful distribution signal Instagram has. Make them feel something.</div>
+          </div>
+          <div class="content-type-card ct-6">
+            <div class="ct-num">6</div>
+            <div class="ct-emoji">📖</div>
+            <div class="ct-name">Stories</div>
+            <div class="ct-signal">Trust + Conversion</div>
+            <div class="ct-note">Don't drive growth directly — turn followers into buyers. Product features, polls, DMs.</div>
+          </div>
+        </div>
+
+        <!-- ══ TOFU / MOFU / BOFU ══ -->
+        <div class="section-label">The Funnel</div>
+        <h2 class="section-title">The TOFU / MOFU / BOFU Funnel</h2>
+        <p class="section-text">Not all content serves the same purpose. Before you create a single post, answer one question: <em>am I focused on growing my audience, or monetising it?</em></p>
+
+        <div class="funnel-stack">
+          <div class="funnel-level f-tofu">
+            <div class="funnel-acronym">TOFU</div>
+            <div class="funnel-content">
+              <div class="funnel-header">Top of funnel · Attention</div>
+              <div class="funnel-desc">Content designed to attract new people and grow your following. Easy to understand, broadly relatable, shareable. Trending tips, simple how-tos, viral carousel formats.</div>
+            </div>
+            <div class="funnel-result">PROFILE VISITS<br>+ NEW FOLLOWERS</div>
+          </div>
+          <div class="funnel-level f-mofu">
+            <div class="funnel-acronym">MOFU</div>
+            <div class="funnel-content">
+              <div class="funnel-header">Middle of funnel · Nurture</div>
+              <div class="funnel-desc">Content designed to build trust and deepen relationships. Behind-the-scenes, detailed tutorials, opinion pieces, Stories.</div>
+            </div>
+            <div class="funnel-result">ENGAGEMENT<br>+ LOYALTY</div>
+          </div>
+          <div class="funnel-level f-bofu">
+            <div class="funnel-acronym">BOFU</div>
+            <div class="funnel-content">
+              <div class="funnel-header">Bottom of funnel · Conversion</div>
+              <div class="funnel-desc">Content designed to turn followers into customers. Product features, testimonials, case studies, sales-focused Stories, direct CTAs.</div>
+            </div>
+            <div class="funnel-result">SALES · DMS<br>· SIGN-UPS</div>
+          </div>
+        </div>
+
+        <h3 class="sub-section-title">Your content split changes with your goal</h3>
+        <div class="split-table">
+          <div class="split-header"><span>Your Current Goal</span><span>Recommended Split</span></div>
+          <div class="split-row"><span>Growing audience — no community yet</span><span><strong>80% TOFU</strong> · 20% MOFU</span></div>
+          <div class="split-row"><span>Launching a product — established community</span><span>20% TOFU · 20% MOFU · <strong>60% BOFU</strong></span></div>
+          <div class="split-row split-row-last"><span>Balanced growth + monetisation</span><span>50% TOFU · 30% MOFU · 20% BOFU</span></div>
+        </div>
+
+        <div class="she-boss-tip">
+          <div class="she-boss-icon">♦</div>
+          <div>
+            <div class="she-boss-label">SHE-BOSS TIP</div>
+            <p>If launching a product, run BOFU content for 2–4 weeks then switch back to TOFU/MOFU to rebuild audience health and goodwill. Sustained selling without sustained value will burn your audience quickly.</p>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 1: YOUR STRATEGY ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">Define your content strategy</h2>
+
+        <div class="worksheet" id="ch3-ex1" onclick="unlockCh3Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Content Strategy</div></div></div>
+          <div class="worksheet-sub">Your north star for every post you create. Fill this in once — then use it to make all content decisions.</div>
+          <div class="field-row"><label class="field-label">My current goal (growing / launching / balanced)</label>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <label class="choice-pill"><input type="radio" name="goal" style="display:none;"> 🌱 Growing</label>
+              <label class="choice-pill"><input type="radio" name="goal" style="display:none;"> 🚀 Launching</label>
+              <label class="choice-pill"><input type="radio" name="goal" style="display:none;"> ⚖️ Balanced</label>
+            </div>
+          </div>
+          <div class="field-row"><label class="field-label">My TOFU / MOFU / BOFU split this month</label><input class="field-input" type="text" placeholder="e.g. 70% TOFU · 20% MOFU · 10% BOFU"></div>
+          <div class="field-row"><label class="field-label">My primary content type this month (pick 2)</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> 🔁 Reposts</label>
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> 📚 Carousels</label>
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> 💬 CTA Posts</label>
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> 🎬 Reels</label>
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> ✨ Quote Posts</label>
+              <label class="choice-pill"><input type="checkbox" style="display:none;"> 📖 Stories</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 2: 3 CONTENT PILLARS ══ -->
+        <div class="section-label">Exercise 2</div>
+        <h2 class="section-title">Your 3 Content Pillars</h2>
+        <p class="section-text">Every great faceless page has 3 recurring content pillars — themes the audience comes back for. One educates, one inspires, one entertains or relates. Nail these and you never run out of ideas.</p>
+
+        <div class="worksheet" id="ch3-ex2" onclick="unlockCh3Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My 3 Content Pillars</div></div></div>
+          <div class="worksheet-sub">Define your 3 pillars and give each an example post idea.</div>
+          <div class="pillar-block">
+            <div class="pillar-badge pillar-edu">Pillar 1 · Educate</div>
+            <div class="field-row"><label class="field-label">My education topic</label><input class="field-input" type="text" placeholder="e.g. Money habits for women in their 20s"></div>
+            <div class="field-row"><label class="field-label">3 post ideas inside this pillar</label>
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 1">
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 2">
+              <input class="field-input" type="text" placeholder="Post idea 3">
+            </div>
+          </div>
+          <div class="pillar-block">
+            <div class="pillar-badge pillar-ins">Pillar 2 · Inspire</div>
+            <div class="field-row"><label class="field-label">My inspiration topic</label><input class="field-input" type="text" placeholder="e.g. Wealthy woman mindset quotes &amp; aesthetics"></div>
+            <div class="field-row"><label class="field-label">3 post ideas inside this pillar</label>
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 1">
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 2">
+              <input class="field-input" type="text" placeholder="Post idea 3">
+            </div>
+          </div>
+          <div class="pillar-block">
+            <div class="pillar-badge pillar-rel">Pillar 3 · Relate</div>
+            <div class="field-row"><label class="field-label">My relatable topic</label><input class="field-input" type="text" placeholder="e.g. POV: Being the first financially free woman in your family"></div>
+            <div class="field-row"><label class="field-label">3 post ideas inside this pillar</label>
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 1">
+              <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Post idea 2">
+              <input class="field-input" type="text" placeholder="Post idea 3">
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ HOOKS SECTION ══ -->
+        <div class="section-label">The Hook System</div>
+        <h2 class="section-title">Hooks that stop the scroll</h2>
+        <p class="section-text">Your hook has 0.8 seconds to earn attention. Every viral post does one of three things: makes the viewer feel <em>seen</em>, makes them <em>curious</em>, or makes them slightly <em>uncomfortable</em> — productively.</p>
+
+        <div class="hook-examples">
+          <div class="hook-ex"><span class="hook-dash">—</span><em>"Nobody tells women this about building wealth…"</em></div>
+          <div class="hook-ex"><span class="hook-dash">—</span><em>"I grew from 0 to 50k without showing my face — here's the system."</em></div>
+          <div class="hook-ex"><span class="hook-dash">—</span><em>"Stop doing this if you want [result]. Seriously."</em></div>
+          <div class="hook-ex"><span class="hook-dash">—</span><em>"[Number] things every ambitious woman should stop apologising for."</em></div>
+          <div class="hook-ex"><span class="hook-dash">—</span><em>"She went from [relatable] to [aspirational] in [timeframe]. This is her system."</em></div>
+        </div>
+
+        <div class="hook-types-grid">
+          <div class="hook-type-card"><div class="hook-type-name">Bold Claim</div><div class="hook-type-ex">"Most women will never build wealth because of this one habit."</div></div>
+          <div class="hook-type-card"><div class="hook-type-name">The POV</div><div class="hook-type-ex">"POV: You finally stopped playing small and this is what happened."</div></div>
+          <div class="hook-type-card"><div class="hook-type-name">The List</div><div class="hook-type-ex">"7 things quietly wealthy women never say out loud."</div></div>
+          <div class="hook-type-card"><div class="hook-type-name">The Question</div><div class="hook-type-ex">"Why are you working harder but earning less than ever?"</div></div>
+          <div class="hook-type-card"><div class="hook-type-name">The Secret</div><div class="hook-type-ex">"The thing no one tells you about building a brand without showing your face."</div></div>
+          <div class="hook-type-card"><div class="hook-type-name">The Contrast</div><div class="hook-type-ex">"Everyone said it wouldn't work. Then this happened."</div></div>
+        </div>
+
+        <div class="ch3-quote" style="margin-top:8px;">
+          <div class="ch3-quote-mark">"</div>
+          <p class="ch3-quote-text">Early quantity leads to future quality. Post. Learn. Improve. Repeat.</p>
+        </div>
+
+        <!-- ══ EXERCISE 3: HOOK BANK ══ -->
+        <div class="section-label">Exercise 3</div>
+        <h2 class="section-title">Build your hook bank</h2>
+
+        <div class="worksheet" id="ch3-ex3" onclick="unlockCh3Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Hook Bank — 10 Personalised Hooks</div></div></div>
+          <div class="worksheet-sub">Write 10 hooks personalised to your niche. Use the formulas above. These become your first 10 post openings.</div>
+          <div class="hook-bank-grid">
+            <div class="field-row"><label class="field-label">Hook 1</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 2</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 3</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 4</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 5</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 6</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 7</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 8</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 9</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+            <div class="field-row"><label class="field-label">Hook 10</label><input class="field-input" type="text" placeholder="Write your hook..."></div>
+          </div>
+        </div>
+
+        <!-- ══ 16-STEP CREATION ROADMAP ══ -->
+        <div class="section-label">The Creation Process</div>
+        <h2 class="section-title">The 16-step content creation roadmap</h2>
+        <p class="section-text">Use this checklist every single time you create a post. Every step exists for a reason. Skip one and your results reflect it.</p>
+
+        <div class="step16-grid">
+          <div class="step16-col">
+            <div class="step16-item"><span class="step16-num">1</span><span>Decide who this specific post is for</span></div>
+            <div class="step16-item"><span class="step16-num">2</span><span>Select the content pillar</span></div>
+            <div class="step16-item"><span class="step16-num">3</span><span>Choose topic + working hook</span></div>
+            <div class="step16-item"><span class="step16-num">4</span><span>Verify the value (what does the audience get?)</span></div>
+            <div class="step16-item"><span class="step16-num">5</span><span>Check fit within a series or guide</span></div>
+            <div class="step16-item"><span class="step16-num">6</span><span>Define objective: TOFU / MOFU / BOFU</span></div>
+            <div class="step16-item"><span class="step16-num">7</span><span>Choose format: reel, carousel, image, quote</span></div>
+            <div class="step16-item"><span class="step16-num">8</span><span>Write caption: hook · body · CTA</span></div>
+          </div>
+          <div class="step16-col">
+            <div class="step16-item"><span class="step16-num">9</span><span>Craft your slide-1 hook — most important line</span></div>
+            <div class="step16-item"><span class="step16-num">10</span><span>Select hashtags from your bank of 15–20</span></div>
+            <div class="step16-item"><span class="step16-num">11</span><span>Add a location tag if relevant</span></div>
+            <div class="step16-item"><span class="step16-num">12</span><span>Design in Canva using your brand template</span></div>
+            <div class="step16-item"><span class="step16-num">13</span><span>Post it; reply to every comment in 60 minutes</span></div>
+            <div class="step16-item"><span class="step16-num">14</span><span>Promote in Stories with a poll or curiosity CTA</span></div>
+            <div class="step16-item"><span class="step16-num">15</span><span>Engage actively for the first 2 hours</span></div>
+            <div class="step16-item"><span class="step16-num">16</span><span>After 48h, evaluate against quality ratios</span></div>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 4: WEEKLY CONTENT PLAN ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">Plan your week in one sitting</h2>
+        <p class="section-text">Do this every Tuesday. Plan your full week in advance — type, hook, and format for each post. Never open Instagram wondering what to post.</p>
+
+        <div class="worksheet" id="ch3-ex4" onclick="unlockCh3Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My Weekly Content Plan</div></div></div>
+          <div class="worksheet-sub">Plan your full week in one sitting — every Tuesday if you follow the recommended creator routine.</div>
+          <div class="weekly-planner">
+            <div class="day-card"><div class="day-label">MON</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="e.g. Reel"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="e.g. Talking head"></div></div>
+            <div class="day-card"><div class="day-label">TUE</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="e.g. Carousel"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="e.g. 7 slides"></div></div>
+            <div class="day-card"><div class="day-label">WED</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="e.g. Quote"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="e.g. Static image"></div></div>
+            <div class="day-card"><div class="day-label">THU</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="e.g. Repost"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="e.g. Repost + caption"></div></div>
+            <div class="day-card"><div class="day-label">FRI</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="e.g. CTA Post"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="e.g. Comment poll"></div></div>
+            <div class="day-card"><div class="day-label">SAT</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="Optional"><label>HOOK</label><input class="field-input" type="text" placeholder="Opening line"><label>FORMAT</label><input class="field-input" type="text" placeholder="Format"></div></div>
+            <div class="day-card"><div class="day-label">SUN</div><div class="day-fields"><label>TYPE</label><input class="field-input" type="text" placeholder="Rest / Story"><label>HOOK</label><input class="field-input" type="text" placeholder="Story idea"><label>FORMAT</label><input class="field-input" type="text" placeholder="Stories only"></div></div>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 5: CONTENT FUNNEL AUDIT ══ -->
+        <div class="section-label">Exercise 5</div>
+        <h2 class="section-title">Content Funnel Audit</h2>
+        <p class="section-text">Review your last 10 posts. Be honest about your current split. Data doesn't lie — and it tells you exactly where to adjust.</p>
+
+        <div class="worksheet" id="ch3-ex5" onclick="unlockCh3Step(5)">
+          <div class="exercise-counter"><div class="exercise-num">5</div><div class="exercise-title-wrap"><div class="worksheet-title">My Content Funnel Audit</div></div></div>
+          <div class="worksheet-sub">Review your last 10 posts and answer honestly.</div>
+          <div class="audit-field"><label class="audit-mini-label">MY BEST POST BY SAVES — Format, topic, what made it work</label><input class="field-input" style="margin-bottom:6px;" type="text" placeholder=""><input class="field-input" type="text" placeholder=""></div>
+          <div class="audit-field"><label class="audit-mini-label">MY BEST POST BY SHARES — What emotional trigger did it hit?</label><input class="field-input" style="margin-bottom:6px;" type="text" placeholder=""><input class="field-input" type="text" placeholder=""></div>
+          <div class="audit-field"><label class="audit-mini-label">CONTENT TYPE I WILL DOUBLE DOWN ON BASED ON THE DATA</label><input class="field-input" type="text" placeholder=""></div>
+          <div class="audit-field"><label class="audit-mini-label">CONTENT TYPE I WILL STOP OR CHANGE BASED ON THE DATA</label><input class="field-input" type="text" placeholder=""></div>
+          <div class="audit-field"><label class="audit-mini-label">MY CURRENT TOFU / MOFU / BOFU SPLIT (%)</label><input class="field-input" type="text" placeholder="e.g. 60% / 30% / 10%"></div>
+          <div class="audit-field"><label class="audit-mini-label">WHAT MY SPLIT SHOULD BE BASED ON MY CURRENT GOAL</label><input class="field-input" type="text" placeholder="e.g. 80% TOFU · 20% MOFU (growing phase)"></div>
+        </div>
+
+        <!-- ══ PROMPTS ══ -->
+        <div class="section-label">AI Prompts</div>
+        <h2 class="section-title">Your Content Creation Prompts</h2>
+
         <div class="prompt-box">
           <div class="prompt-box-label"><span>✦ Content Batch Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I run a faceless Instagram page in the [niche] niche. My audience is [description]. Generate 10 content ideas for this week — mix of reels and carousels. For each: the hook, the format, and the opening caption line."</p>
+          <p class="prompt-box-text">"I run a faceless Instagram page in the [niche] niche. My audience is [description]. My content pillars are [pillar 1], [pillar 2], and [pillar 3]. Generate 10 content ideas — mix of carousels, reels, and quote posts. For each: the hook (first line), content format, TOFU/MOFU/BOFU classification, and the opening caption line."</p>
         </div>
+
+        <div class="prompt-box" style="margin-top:16px;">
+          <div class="prompt-box-label"><span>✦ Hook Generator Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I make content for [niche] targeting [audience]. Write 15 scroll-stopping hooks for Instagram — use these formulas: Bold Claim, POV, List, Question, Secret, Contrast. Make them feel personal, emotionally resonant, and specific to my niche."</p>
+        </div>
+
+        <div class="prompt-box" style="margin-top:16px;">
+          <div class="prompt-box-label"><span>✦ Caption Writing Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"Write an Instagram caption for this hook: [your hook]. My niche is [niche]. My audience is [audience]. The caption should follow: Hook (1 line) → Body (3–5 short lines) → CTA (1 line asking to save/share/comment). Keep it punchy, warm, and direct. No hashtags in the caption body."</p>
+        </div>
+
+        <!-- ══ ACTION STEPS ══ -->
+        <div class="section-label">Chapter 3 — Action Steps</div>
         <div class="worksheet">
-          <div class="worksheet-title">My Content Bank — This Week</div>
-          <div class="field-row"><label class="field-label">Post Idea #1 — Hook</label><input class="field-input" type="text" placeholder="Write your opening hook"></div>
-          <div class="field-row"><label class="field-label">Post Idea #2 — Hook</label><input class="field-input" type="text" placeholder="Write your opening hook"></div>
-          <div class="field-row"><label class="field-label">Post Idea #3 — Hook</label><input class="field-input" type="text" placeholder="Write your opening hook"></div>
-          <div class="field-row"><label class="field-label">Post Idea #4 — Hook</label><input class="field-input" type="text" placeholder="Write your opening hook"></div>
-          <div class="field-row"><label class="field-label">Post Idea #5 — Hook</label><input class="field-input" type="text" placeholder="Write your opening hook"></div>
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 03 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 4.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Define your weekly content mix using the TOFU/MOFU/BOFU framework.</span></li>
+            <li><input type="checkbox"><span>Recreate your first 9 posts from your Viralfindr database — adapted with your branding.</span></li>
+            <li><input type="checkbox"><span>Write 10 hook formulas personalised to your niche using the templates above.</span></li>
+            <li><input type="checkbox"><span>Check the content quality ratios on your last 5 posts.</span></li>
+            <li><input type="checkbox"><span>Build a hashtag bank of 15–20 relevant hashtags via Flick Tech.</span></li>
+            <li><input type="checkbox"><span>Set up Facebook Creator Studio for scheduling so content goes out even when you're offline.</span></li>
+          </ul>
         </div>
+
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(2)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">Logo, Branding & Page Design</span></button>
@@ -2100,6 +2492,46 @@
     } catch(e) {}
   }
 
+
+
+  // ── CH3 GAMIFICATION ──
+  const ch3Steps = new Set();
+  function unlockCh3Step(n) {
+    ch3Steps.add(n);
+    const count = ch3Steps.size;
+    const pct = Math.round((count / 5) * 100);
+    const bar = document.getElementById('ch3-bar');
+    const label = document.getElementById('ch3-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 5 unlocked';
+    document.querySelectorAll('.ch3-milestone').forEach((el, i) => {
+      if (ch3Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  // Auto-unlock ch3 when typing
+  document.addEventListener('input', e => {
+    const ws = e.target.closest('.worksheet');
+    if (!ws) return;
+    const id = ws.id;
+    if (id === 'ch3-ex1') unlockCh3Step(1);
+    if (id === 'ch3-ex2') unlockCh3Step(2);
+    if (id === 'ch3-ex3') unlockCh3Step(3);
+    if (id === 'ch3-ex4') unlockCh3Step(4);
+    if (id === 'ch3-ex5') unlockCh3Step(5);
+  });
+  // Radio pills for ch3
+  document.addEventListener('click', e => {
+    const pill = e.target.closest('.choice-pill');
+    if (!pill) return;
+    const radio = pill.querySelector('input[type="radio"]');
+    if (radio) {
+      const name = radio.name;
+      document.querySelectorAll('input[name="'+name+'"]').forEach(r => r.closest('.choice-pill').style.background = '');
+      pill.style.background = 'rgba(219,188,199,0.3)';
+      pill.style.borderColor = 'rgba(219,188,199,0.6)';
+      pill.style.color = 'var(--burgundy)';
+    }
+  });
 
   // ── CH2 GAMIFICATION ──
   const ch2Steps = new Set();
