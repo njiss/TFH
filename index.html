@@ -371,6 +371,129 @@
   .exercise-num{width:28px;height:28px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;flex-shrink:0;}
   .exercise-title-wrap{flex:1;}
   .worksheet-with-num{position:relative;}
+
+  /* ── THREE MARKETS (CH1) ── */
+  .three-markets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+  .three-market-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 20px;cursor:pointer;transition:var(--transition);position:relative;box-shadow:var(--shadow);}
+  .three-market-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-2px);}
+  .three-market-card.selected{border-color:rgba(219,188,199,0.7);background:rgba(219,188,199,0.1);}
+  .three-market-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+  .three-market-num{font-family:'Instrument Serif',serif;font-size:32px;font-weight:300;color:rgba(219,188,199,0.7);line-height:1;}
+  .three-market-icon{font-size:28px;width:48px;height:48px;background:rgba(92,36,52,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;}
+  .three-market-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px;}
+  .three-market-title{font-family:'Instrument Serif',serif;font-size:19px;color:var(--text);margin-bottom:12px;line-height:1.3;}
+  .three-market-text{font-size:13px;color:var(--text-muted);line-height:1.65;font-weight:300;}
+  .three-market-check{display:none;position:absolute;top:12px;right:50%;transform:translateX(50%);font-size:10px;font-weight:600;color:var(--burgundy);background:rgba(219,188,199,0.35);padding:4px 12px;border-radius:20px;border:1px solid rgba(219,188,199,0.6);}
+  .three-market-card.selected .three-market-check{display:block;}
+  .three-market-insight{font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;margin-bottom:48px;padding:24px;background:var(--surface-2);border-radius:12px;border-left:3px solid var(--accent);}
+  .three-market-insight strong{color:var(--burgundy);font-weight:500;}
+
+  /* ── CHAPTER 2 GAMIFICATION ── */
+  .ch2-progress-bar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:56px;box-shadow:var(--shadow);}
+  .ch2-progress-label{display:flex;justify-content:space-between;font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:10px;font-family:'DM Sans',sans-serif;}
+  .ch2-bar{height:6px;background:#fff8fa;border-radius:4px;overflow:hidden;margin-bottom:14px;}
+  .ch2-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--burgundy));border-radius:4px;transition:width .6s cubic-bezier(.4,0,.2,1);}
+  .ch2-milestones{display:flex;justify-content:space-between;gap:4px;}
+  .ch2-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch2-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
+  /* ── HEAT MAP ── */
+  .heatmap-list{display:flex;flex-direction:column;gap:2px;margin-bottom:24px;border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);}
+  .heatmap-row{display:grid;grid-template-columns:52px 1fr 180px;gap:16px;padding:18px 20px;background:var(--surface);border-bottom:1px solid var(--border);align-items:center;transition:var(--transition);}
+  .heatmap-row:last-child{border-bottom:none;}
+  .heatmap-row:hover{background:var(--surface-2);}
+  .heatmap-num{font-family:'Instrument Serif',serif;font-size:28px;font-weight:300;color:rgba(219,188,199,0.5);flex-shrink:0;text-align:center;}
+  .heatmap-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;}
+  .heatmap-desc{font-size:12px;color:var(--text-muted);line-height:1.5;font-weight:300;}
+  .heatmap-bar-wrap{display:flex;align-items:center;gap:8px;}
+  .heatmap-bar{height:6px;border-radius:3px;flex:1;transition:width .8s ease;}
+  .heat-1 .heatmap-bar{background:var(--burgundy);}
+  .heat-2 .heatmap-bar{background:#7a3248;}
+  .heat-3 .heatmap-bar{background:#9a5060;}
+  .heat-4 .heatmap-bar{background:#b07080;}
+  .heat-5 .heatmap-bar{background:#c4909a;}
+  .heat-6 .heatmap-bar{background:#d4a8b0;}
+  .heat-7 .heatmap-bar{background:#e0c0c8;}
+  .heat-8 .heatmap-bar{background:#eed7df;}
+  .heatmap-impact{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);white-space:nowrap;}
+  .heat-1 .heatmap-impact,.heat-2 .heatmap-impact{color:var(--burgundy);}
+  .insight-callout{font-size:13px;font-style:italic;color:var(--text-muted);line-height:1.8;margin-bottom:48px;padding:20px 24px;background:var(--surface-2);border-radius:12px;font-weight:300;}
+
+  /* ── PROFILE AUDIT TABLE ── */
+  .audit-table{border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-bottom:16px;}
+  .audit-header{display:grid;grid-template-columns:1fr 80px 70px;gap:12px;padding:10px 16px;background:var(--burgundy);color:white;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+  .audit-row{display:grid;grid-template-columns:auto 1fr 80px 70px;gap:12px;padding:13px 16px;background:var(--surface);border-top:1px solid var(--border);align-items:center;transition:var(--transition);}
+  .audit-row:hover{background:var(--surface-2);}
+  .audit-num-pill{width:24px;height:24px;border-radius:50%;background:rgba(219,188,199,0.3);border:1px solid rgba(219,188,199,0.5);color:var(--burgundy);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0;font-family:'DM Sans',sans-serif;}
+  .audit-input{width:100%;padding:5px 8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--text);outline:none;text-align:center;}
+  .audit-input:focus{border-color:var(--burgundy);}
+  .audit-target{font-size:13px;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;}
+
+  /* ── RULE LIST ── */
+  .rule-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+  .rule-item{display:flex;gap:16px;font-size:14px;color:var(--text-muted);line-height:1.6;font-weight:300;}
+  .rule-dash{color:var(--burgundy);flex-shrink:0;font-weight:400;font-size:16px;margin-top:1px;}
+
+  /* ── BIO FORMULA BOX ── */
+  .bio-formula-box{background:var(--burgundy);border-radius:14px;padding:32px;margin-bottom:32px;}
+  .bio-formula-header{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .bio-formula-header::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .bio-formula-subtitle{font-family:'Instrument Serif',serif;font-size:28px;font-weight:300;color:white;margin-bottom:24px;line-height:1.2;}
+  .bio-formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;}
+  .bio-formula-label{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:6px;}
+  .bio-formula-desc{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.65;font-weight:300;}
+
+  /* ── PALETTE TABLE ── */
+  .palette-table{display:flex;flex-direction:column;gap:4px;margin-bottom:32px;border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);}
+  .palette-row{display:grid;grid-template-columns:220px 1fr;gap:20px;background:var(--surface);padding:16px 20px;border-bottom:1px solid var(--border);align-items:center;transition:var(--transition);}
+  .palette-row:last-child{border-bottom:none;}
+  .palette-row:hover{background:var(--surface-2);}
+  .palette-pill{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:20px;border:1px solid rgba(0,0,0,0.08);color:#333;white-space:nowrap;text-align:center;}
+  .palette-desc{font-size:13px;color:var(--text-muted);line-height:1.5;font-weight:300;}
+
+  /* ── VOICE SCALE ── */
+  .voice-scale{display:flex;flex-direction:column;gap:2px;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+  .voice-row{display:grid;grid-template-columns:140px 1fr 160px;gap:16px;padding:16px 20px;background:var(--surface);border-bottom:1px solid var(--border);align-items:center;transition:var(--transition);}
+  .voice-row:last-child{border-bottom:none;}
+  .voice-row:hover{background:var(--surface-2);}
+  .voice-left{font-size:13px;color:var(--text-muted);font-weight:300;text-align:left;}
+  .voice-right{font-size:13px;color:var(--text-muted);font-weight:300;text-align:right;}
+  .voice-radios{display:flex;justify-content:center;gap:16px;}
+  .voice-radios input[type="radio"]{width:18px;height:18px;accent-color:var(--burgundy);cursor:pointer;}
+
+  /* ── INSTAGRAM PROFILE MOCK ── */
+  .ig-profile-mock{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px;margin-top:16px;}
+  .ig-profile-top{display:flex;align-items:center;gap:32px;margin-bottom:20px;}
+  .ig-avatar-upload{position:relative;cursor:pointer;flex-shrink:0;}
+  .ig-avatar{width:80px;height:80px;border-radius:50%;background:rgba(219,188,199,0.2);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .ig-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .ig-avatar-edit{position:absolute;bottom:0;right:0;width:24px;height:24px;background:var(--burgundy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;border:2px solid white;}
+  .ig-profile-stats{display:flex;gap:24px;}
+  .ig-stat{text-align:center;}
+  .ig-stat-input{border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);text-align:center;width:60px;outline:none;}
+  .ig-stat-label{font-size:11px;color:var(--text-muted);margin-top:2px;}
+  .ig-profile-info{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+  .ig-username-field{display:flex;align-items:center;gap:4px;}
+  .ig-at{font-size:14px;font-weight:600;color:var(--text-muted);}
+  .ig-text-input{border:none;border-bottom:1px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;padding:6px 0;width:100%;transition:border-color .2s;resize:none;}
+  .ig-text-input:focus{border-color:var(--burgundy);}
+  .ig-username{font-weight:600;font-size:15px;}
+  .ig-name{font-weight:500;color:var(--text);}
+  .ig-bio{line-height:1.6;font-size:13px;}
+  .ig-link{color:var(--burgundy);font-size:12px;}
+  .ig-highlights-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;}
+  .ig-highlights{display:flex;gap:12px;margin-bottom:24px;overflow-x:auto;padding-bottom:4px;}
+  .ig-highlight{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
+  .ig-highlight-circle{width:60px;height:60px;border-radius:50%;background:rgba(219,188,199,0.15);border:2px dashed rgba(219,188,199,0.4);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--text-dim);}
+  .ig-highlight-name{width:60px;text-align:center;font-size:10px;color:var(--text-muted);border:none;background:transparent;outline:none;font-family:'DM Sans',sans-serif;}
+  .ig-grid-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px;}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+  .ig-post{display:flex;flex-direction:column;gap:4px;}
+  .ig-post-inner{aspect-ratio:1;background:rgba(219,188,199,0.1);border:1px dashed rgba(219,188,199,0.35);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--text-dim);cursor:pointer;overflow:hidden;transition:var(--transition);}
+  .ig-post-inner:hover{background:rgba(219,188,199,0.2);}
+  .ig-post-inner img{width:100%;height:100%;object-fit:cover;border-radius:4px;}
+  .ig-post-caption{border:none;border-bottom:1px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text-muted);outline:none;padding:4px 0;width:100%;font-style:italic;}
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -523,6 +646,49 @@
         </div>
       </div>
       <div class="chapter-body">
+
+
+        <!-- 3 CORE MARKETS INFO -->
+        <div class="section-label">The Foundation</div>
+        <h2 class="section-title">Every profitable niche sits inside one of three markets</h2>
+        <p class="section-text">Every profitable Instagram niche sits inside one of three fundamental human desires. Understanding this gives you a framework for evaluating any niche quickly.</p>
+
+        <div class="three-markets-grid">
+          <div class="three-market-card" onclick="selectMarket(this,'health')">
+            <div class="three-market-top">
+              <div class="three-market-num">01</div>
+              <div class="three-market-icon">🏃‍♀️</div>
+            </div>
+            <div class="three-market-label">HEALTH</div>
+            <div class="three-market-title">Feel &amp; live better</div>
+            <p class="three-market-text">People want to feel better, look better, live longer, have more energy. Fitness, wellness, nutrition and mental health niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+          <div class="three-market-card" onclick="selectMarket(this,'wealth')">
+            <div class="three-market-top">
+              <div class="three-market-num">02</div>
+              <div class="three-market-icon">💸</div>
+            </div>
+            <div class="three-market-label">WEALTH</div>
+            <div class="three-market-title">Build security &amp; freedom</div>
+            <p class="three-market-text">People want to make more money, build security, and create freedom. Business, finance, side hustles, and investing niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+          <div class="three-market-card" onclick="selectMarket(this,'relationship')">
+            <div class="three-market-top">
+              <div class="three-market-num">03</div>
+              <div class="three-market-icon">💞</div>
+            </div>
+            <div class="three-market-label">RELATIONSHIP</div>
+            <div class="three-market-title">Love &amp; belonging</div>
+            <p class="three-market-text">People want love, connection, and belonging. Dating, confidence, self-improvement, and family niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+        </div>
+
+        <div class="three-market-insight">
+          The most powerful niches sit at the intersection of two markets. <strong>"Financial confidence for women"</strong> touches Wealth and Relationships. <strong>"Healthy habits for busy moms"</strong> touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.
+        </div>
 
         <!-- BEST NICHES TABLE -->
         <div class="section-label">Top Niches Right Now</div>
@@ -716,40 +882,330 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">Brand Identity</div>
-        <h2 class="section-title">Your Brand DNA</h2>
-        <p class="section-text">A faceless brand lives and dies by its aesthetic. Before you design anything, define the feeling your page should evoke. Every color, font, and image choice must serve that feeling consistently.</p>
+
+        <!-- ══ SECTION 1: WHY YOUR PROFILE IS YOUR STOREFRONT ══ -->
+        <div class="section-label" style="margin-top:0;">Why This Chapter Matters</div>
+        <h2 class="section-title">Your profile is your storefront — and first impressions are instant</h2>
+        <p class="section-text">Someone lands on your page. They decide to follow or leave in under 3 seconds. Before they read a caption or watch a reel, they've already judged your logo, username, bio, and feed. This chapter shows you exactly how to win that 3-second test.</p>
+
+        <!-- GAMIFICATION PROGRESS -->
+        <div class="ch2-progress-bar-wrap">
+          <div class="ch2-progress-label">
+            <span>Chapter 2 Progress</span>
+            <span id="ch2-progress-pct">0 / 6 unlocked</span>
+          </div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch2-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch2-milestone" data-step="1">Profile Audited</span>
+            <span class="ch2-milestone" data-step="2">Username Set</span>
+            <span class="ch2-milestone" data-step="3">Bio Written</span>
+            <span class="ch2-milestone" data-step="4">Brand Defined</span>
+            <span class="ch2-milestone" data-step="5">Voice Scaled</span>
+            <span class="ch2-milestone" data-step="6">Profile Built ✦</span>
+          </div>
+        </div>
+
+        <!-- ══ SECTION 2: HEAT MAP — THE 8 PROFILE ELEMENTS ══ -->
+        <div class="section-label">Heat Map Data</div>
+        <h2 class="section-title">The 8 Profile Elements — ranked by impact</h2>
+        <p class="section-text">When someone lands on your profile, their eyes move in a predictable pattern. Using heat-map data we can rank every element by how much it influences the follow decision.</p>
+
+        <div class="heatmap-list">
+          <div class="heatmap-row heat-1">
+            <div class="heatmap-num">01</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Profile Picture</div>
+              <div class="heatmap-desc">The first thing anyone sees — in search, in comments, in Explore. A strong logo signals professionalism instantly.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:100%"></div><span class="heatmap-impact">Critical</span></div>
+          </div>
+          <div class="heatmap-row heat-2">
+            <div class="heatmap-num">02</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Username / Handle</div>
+              <div class="heatmap-desc">Second eye-stop. Must be clean, keyword-rich, memorable. Sets the expectation for everything that follows.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:90%"></div><span class="heatmap-impact">Critical</span></div>
+          </div>
+          <div class="heatmap-row heat-3">
+            <div class="heatmap-num">03</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Name / Headline</div>
+              <div class="heatmap-desc">Prime SEO real estate. Pack it with searchable keywords. Tells visitors instantly what your page is about.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:82%"></div><span class="heatmap-impact">High</span></div>
+          </div>
+          <div class="heatmap-row heat-4">
+            <div class="heatmap-num">04</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Bio</div>
+              <div class="heatmap-desc">Confirms what username and headline suggested. Gives a compelling reason to follow. Directs action clearly.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:75%"></div><span class="heatmap-impact">High</span></div>
+          </div>
+          <div class="heatmap-row heat-5">
+            <div class="heatmap-num">05</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Feed Layout</div>
+              <div class="heatmap-desc">First visual impression of content quality. A cohesive grid dramatically increases follow rate.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:65%"></div><span class="heatmap-impact">Medium</span></div>
+          </div>
+          <div class="heatmap-row heat-6">
+            <div class="heatmap-num">06</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Highlights</div>
+              <div class="heatmap-desc">Underused. Provide social proof, showcase best content, answer "why follow this account?"</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:50%"></div><span class="heatmap-impact">Medium</span></div>
+          </div>
+          <div class="heatmap-row heat-7">
+            <div class="heatmap-num">07</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Alternative Feeds</div>
+              <div class="heatmap-desc">Reels tab and Tagged tab. Active, high-quality reels signal a growing account.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:35%"></div><span class="heatmap-impact">Low</span></div>
+          </div>
+          <div class="heatmap-row heat-8">
+            <div class="heatmap-num">08</div>
+            <div class="heatmap-content">
+              <div class="heatmap-title">Account Category</div>
+              <div class="heatmap-desc">Small signal — but professional categories add legitimacy.</div>
+            </div>
+            <div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:20%"></div><span class="heatmap-impact">Low</span></div>
+          </div>
+        </div>
+
+        <div class="insight-callout">
+          <em>Most people spend 90% of their effort on content (which is essential) but almost none on elements 1–4 — which are what visitors judge first. A stunning reel that drives 5,000 visits is worth almost nothing if your logo looks amateur.</em>
+        </div>
+
+        <!-- ══ EXERCISE 1: PROFILE AUDIT ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">Audit your current profile</h2>
+        <p class="section-text">Score each element 1–10. Your lowest scores are your biggest growth levers. Fix them first.</p>
+
+        <div class="worksheet" id="ch2-ex1" onclick="unlockCh2Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Profile Audit · Score Each Element 1–10</div></div></div>
+          <div class="worksheet-sub">Rate each of the 8 elements out of 10. Prioritise fixing your lowest scores first.</div>
+          <div class="audit-table">
+            <div class="audit-header"><span>Element</span><span>Score</span><span>Target</span></div>
+            <div class="audit-row"><div class="audit-num-pill">1</div><span>Profile picture — first thing anyone sees</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">2</div><span>Username / Handle — keyword-rich &amp; clean</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">3</div><span>Name / Headline — searchable keywords</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">4</div><span>Bio — compelling, clear, has a CTA</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">5</div><span>Feed Layout — cohesive aesthetic grid</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">6</div><span>Highlights — branded, useful, storytelling</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">7</div><span>Reels tab — active and growing</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+            <div class="audit-row"><div class="audit-num-pill">8</div><span>Account Category — professional setting</span><input class="audit-input" type="number" min="1" max="10" placeholder="—"><span class="audit-target">10</span></div>
+          </div>
+          <div class="field-row" style="margin-top:20px;"><label class="field-label">My 3 lowest-scoring elements (fix these first)</label><textarea class="field-input" rows="2" placeholder="e.g. Profile picture (3/10), Bio (4/10), Highlights (2/10)"></textarea></div>
+        </div>
+
+        <!-- ══ SECTION 3: USERNAME — FOUNDATION OF DISCOVERABILITY ══ -->
+        <div class="section-label">Exercise 2</div>
+        <h2 class="section-title">Username — the foundation of discoverability</h2>
+        <p class="section-text">Instagram is a search engine. People type keywords to find accounts. If your username contains those keywords, you appear in results.</p>
+
+        <div class="rule-list">
+          <div class="rule-item"><span class="rule-dash">—</span><span>Include at least one major keyword from your niche (business, money, wealth, wellness, mindset, confidence).</span></div>
+          <div class="rule-item"><span class="rule-dash">—</span><span>Add a brand word alongside (focus, diary, empire, queens, therapy, code, lab).</span></div>
+          <div class="rule-item"><span class="rule-dash">—</span><span>Keep it short and clean — no random numbers, max one underscore or dot.</span></div>
+          <div class="rule-item"><span class="rule-dash">—</span><span>Make it instantly clear what you post.</span></div>
+        </div>
+        <p class="section-text" style="font-size:12px;font-style:italic;color:var(--text-dim);">Great examples: @money.focus · @wealthqueens · @mindset.diary · @her.empire.co · @earning.tips · @confidence.code</p>
+
+        <div class="worksheet" id="ch2-ex2" onclick="unlockCh2Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Username</div></div></div>
+          <div class="worksheet-sub">Test 3 username ideas before you commit. You can only change once every 14 days.</div>
+          <div class="field-row"><label class="field-label">Username Idea 1</label><input class="field-input" type="text" placeholder="@"></div>
+          <div class="field-row"><label class="field-label">Username Idea 2</label><input class="field-input" type="text" placeholder="@"></div>
+          <div class="field-row"><label class="field-label">Username Idea 3</label><input class="field-input" type="text" placeholder="@"></div>
+          <div class="field-row"><label class="field-label">My Final Username</label><input class="field-input" type="text" placeholder="@yourfinalchoice"></div>
+        </div>
+
+        <!-- ══ THE HEROIC BIO FORMULA ══ -->
+        <div class="section-label">Exercise 3</div>
+        <h2 class="section-title">The Heroic Bio Formula</h2>
+        <p class="section-text">4 lines. 150 characters. One conversion.</p>
+
+        <div class="bio-formula-box">
+          <div class="bio-formula-header">✦ THE HEROIC BIO FORMULA</div>
+          <div class="bio-formula-subtitle">4 lines. 150 characters. One conversion.</div>
+          <div class="bio-formula-grid">
+            <div class="bio-formula-item">
+              <div class="bio-formula-label">LINE 1 — WHAT</div>
+              <div class="bio-formula-desc">What your page helps people with. Keyword-rich, specific. "Business tips for ambitious women", not "Sharing my journey."</div>
+            </div>
+            <div class="bio-formula-item">
+              <div class="bio-formula-label">LINE 3 — PROMISE</div>
+              <div class="bio-formula-desc">A bold promise or social proof. "100k+ women already growing here" or "From broke to building 6 figures."</div>
+            </div>
+            <div class="bio-formula-item">
+              <div class="bio-formula-label">LINE 2 — WHO</div>
+              <div class="bio-formula-desc">Who it's for, described precisely. "For the 9-5 escaper building her empire."</div>
+            </div>
+            <div class="bio-formula-item">
+              <div class="bio-formula-label">LINE 4 — CTA</div>
+              <div class="bio-formula-desc">Clear call to action with link. "Free starter guide below." Always have a link.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="worksheet" id="ch2-ex3" onclick="unlockCh2Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">Write 3 Bio Versions</div></div></div>
+          <div class="worksheet-sub">Write 3 versions. Test one per week. Keep the one that grows followers fastest.</div>
+          <div class="field-row"><label class="field-label">Bio Version 1 — Line 1 (WHAT)</label><input class="field-input" type="text" placeholder="What your page helps people with..."></div>
+          <div class="field-row"><label class="field-label">Line 2 (WHO)</label><input class="field-input" type="text" placeholder="Who it's for..."></div>
+          <div class="field-row"><label class="field-label">Line 3 (PROMISE)</label><input class="field-input" type="text" placeholder="Bold promise or social proof..."></div>
+          <div class="field-row"><label class="field-label">Line 4 (CTA)</label><input class="field-input" type="text" placeholder="Call to action + link..."></div>
+          <div class="field-row" style="margin-top:12px;"><label class="field-label">Bio Version 2 (full)</label><textarea class="field-input" rows="3" placeholder="Write your second bio version here..."></textarea></div>
+          <div class="field-row"><label class="field-label">Bio Version 3 (full)</label><textarea class="field-input" rows="3" placeholder="Write your third bio version here..."></textarea></div>
+        </div>
+
+        <!-- ══ SECTION 4: BRAND IDENTITY ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">Your Brand Identity — color, font, feel</h2>
+        <p class="section-text">A faceless brand lives and dies by its aesthetic. Before you open Canva, define the feeling your page should evoke. Every color and font choice serves that feeling.</p>
+
+        <h3 style="font-family:'Instrument Serif',serif;font-size:20px;font-weight:300;color:var(--text);margin-bottom:16px;">Brand palettes that work for women-led pages</h3>
+        <div class="palette-table">
+          <div class="palette-row"><div class="palette-pill" style="background:#f0d5dc;">ROSE · WHITE · CREAM</div><div class="palette-desc">Warm, feminine, professional. Works across business, wellness, lifestyle.</div></div>
+          <div class="palette-row"><div class="palette-pill" style="background:#c5d5e8;">DEEP BLUE · WHITE · GOLD</div><div class="palette-desc">Confident, wealth-oriented, powerful. Strong for finance and business.</div></div>
+          <div class="palette-row"><div class="palette-pill" style="background:#c8d8c8;">SAGE · CREAM · WARM WHITE</div><div class="palette-desc">Wellness, calm, natural. Best for self-care and mindfulness niches.</div></div>
+          <div class="palette-row"><div class="palette-pill" style="background:#d4d4d4;">BLACK · WHITE · GOLD</div><div class="palette-desc">Luxury, bold, aspirational. Strong for premium products and coaching.</div></div>
+        </div>
+
+        <div class="worksheet" id="ch2-ex4" onclick="unlockCh2Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My Brand Identity Blueprint</div></div></div>
+          <div class="worksheet-sub">Fill this in before you open Canva. Your brand makes the design decisions for you.</div>
+          <div class="field-row"><label class="field-label">3 words that describe my brand feeling</label><input class="field-input" type="text" placeholder="e.g. Elegant, Empowering, Minimal"></div>
+          <div class="field-row"><label class="field-label">My primary brand colour (hex or description)</label><input class="field-input" type="text" placeholder="e.g. Dusty rose #e8c5cf"></div>
+          <div class="field-row"><label class="field-label">My secondary colour</label><input class="field-input" type="text" placeholder="e.g. Cream #f5f0e8"></div>
+          <div class="field-row"><label class="field-label">My accent colour</label><input class="field-input" type="text" placeholder="e.g. Champagne gold #d4af7a"></div>
+          <div class="field-row"><label class="field-label">My font pairing (headline + body)</label><input class="field-input" type="text" placeholder="e.g. Cormorant Garamond + DM Sans"></div>
+          <div class="field-row"><label class="field-label">Pages/brands my aesthetic should feel like</label><textarea class="field-input" rows="2" placeholder="Name 3 Instagram pages or brands with aesthetics you love"></textarea></div>
+        </div>
+
+        <!-- ══ BRAND VOICE SCALE ══ -->
+        <div class="section-label">Exercise 5</div>
+        <h2 class="section-title">My Brand Voice Scale</h2>
+        <p class="section-text">Mark where your voice lives — and where you want it to live. Your voice is your personality. It should be consistent across every post.</p>
+
+        <div class="worksheet" id="ch2-ex5" onclick="unlockCh2Step(5)">
+          <div class="exercise-counter"><div class="exercise-num">5</div><div class="exercise-title-wrap"><div class="worksheet-title">Brand Voice Scale</div></div></div>
+          <div class="worksheet-sub">For each spectrum, select the radio button that best represents your brand voice.</div>
+          <div class="voice-scale">
+            <div class="voice-row"><span class="voice-left">Formal</span><div class="voice-radios"><input type="radio" name="v1" value="1"><input type="radio" name="v1" value="2"><input type="radio" name="v1" value="3"><input type="radio" name="v1" value="4"><input type="radio" name="v1" value="5"></div><span class="voice-right">Casual</span></div>
+            <div class="voice-row"><span class="voice-left">Serious</span><div class="voice-radios"><input type="radio" name="v2" value="1"><input type="radio" name="v2" value="2"><input type="radio" name="v2" value="3"><input type="radio" name="v2" value="4"><input type="radio" name="v2" value="5"></div><span class="voice-right">Warm &amp; Playful</span></div>
+            <div class="voice-row"><span class="voice-left">Corporate</span><div class="voice-radios"><input type="radio" name="v3" value="1"><input type="radio" name="v3" value="2"><input type="radio" name="v3" value="3"><input type="radio" name="v3" value="4"><input type="radio" name="v3" value="5"></div><span class="voice-right">Human &amp; Personal</span></div>
+            <div class="voice-row"><span class="voice-left">Instructional</span><div class="voice-radios"><input type="radio" name="v4" value="1"><input type="radio" name="v4" value="2"><input type="radio" name="v4" value="3"><input type="radio" name="v4" value="4"><input type="radio" name="v4" value="5"></div><span class="voice-right">Empowering</span></div>
+            <div class="voice-row"><span class="voice-left">Broad</span><div class="voice-radios"><input type="radio" name="v5" value="1"><input type="radio" name="v5" value="2"><input type="radio" name="v5" value="3"><input type="radio" name="v5" value="4"><input type="radio" name="v5" value="5"></div><span class="voice-right">Personality-Led</span></div>
+          </div>
+          <div class="field-row" style="margin-top:16px;"><label class="field-label">My brand voice in 2 sentences</label><textarea class="field-input" rows="2" placeholder="e.g. My brand speaks to ambitious women who want financial freedom. The tone is warm, direct, and empowering — like a smart friend who gives real advice."></textarea></div>
+        </div>
+
+        <!-- ══ INSTAGRAM PROFILE TEMPLATE ══ -->
+        <div class="section-label">Exercise 6 — Profile Builder</div>
+        <h2 class="section-title">Build Your Instagram Profile</h2>
+        <p class="section-text">Fill in every element of your profile here first. Getting it right on paper means you'll set it up perfectly on Instagram the first time.</p>
+
+        <div class="worksheet" id="ch2-ex6" onclick="unlockCh2Step(6)">
+          <div class="exercise-counter"><div class="exercise-num">6</div><div class="exercise-title-wrap"><div class="worksheet-title">My Instagram Profile Template</div></div></div>
+          <div class="worksheet-sub">Complete every field. This becomes your profile on Instagram.</div>
+
+          <!-- Profile mock -->
+          <div class="ig-profile-mock">
+            <div class="ig-profile-top">
+              <label class="ig-avatar-upload" title="Upload profile picture">
+                <div class="ig-avatar" id="ig-avatar-preview">
+                  <svg width="32" height="32" fill="var(--text-dim)" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                </div>
+                <input type="file" accept="image/*" style="display:none;" onchange="previewIgAvatar(this)">
+                <div class="ig-avatar-edit">✎</div>
+              </label>
+              <div class="ig-profile-stats">
+                <div class="ig-stat"><input class="ig-stat-input" type="text" placeholder="0" id="ig-posts"><div class="ig-stat-label">posts</div></div>
+                <div class="ig-stat"><input class="ig-stat-input" type="text" placeholder="0" id="ig-followers"><div class="ig-stat-label">followers</div></div>
+                <div class="ig-stat"><input class="ig-stat-input" type="text" placeholder="0" id="ig-following"><div class="ig-stat-label">following</div></div>
+              </div>
+            </div>
+            <div class="ig-profile-info">
+              <div class="ig-username-field"><span class="ig-at">@</span><input class="ig-text-input ig-username" type="text" placeholder="yourusername"></div>
+              <input class="ig-text-input ig-name" type="text" placeholder="Your Name · 3 Keywords Here">
+              <textarea class="ig-text-input ig-bio" rows="4" placeholder="Line 1: What you help people with&#10;Line 2: Who it's for&#10;Line 3: Bold promise&#10;Line 4: 🔗 Free guide below ↓"></textarea>
+              <input class="ig-text-input ig-link" type="text" placeholder="🔗 linktr.ee/yourpage">
+            </div>
+
+            <!-- Highlights -->
+            <div class="ig-highlights-label">Story Highlights</div>
+            <div class="ig-highlights">
+              <div class="ig-highlight"><div class="ig-highlight-circle"><span>+</span></div><input class="ig-highlight-name" type="text" placeholder="About"></div>
+              <div class="ig-highlight"><div class="ig-highlight-circle"><span>+</span></div><input class="ig-highlight-name" type="text" placeholder="Tips"></div>
+              <div class="ig-highlight"><div class="ig-highlight-circle"><span>+</span></div><input class="ig-highlight-name" type="text" placeholder="Results"></div>
+              <div class="ig-highlight"><div class="ig-highlight-circle"><span>+</span></div><input class="ig-highlight-name" type="text" placeholder="Free"></div>
+              <div class="ig-highlight"><div class="ig-highlight-circle"><span>+</span></div><input class="ig-highlight-name" type="text" placeholder="FAQ"></div>
+            </div>
+
+            <!-- 12 post grid -->
+            <div class="ig-grid-label">Your First 12 Posts — Plan the Grid</div>
+            <div class="ig-grid">
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,0)"><div class="ig-post-inner" id="ig-post-0"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,1)"><div class="ig-post-inner" id="ig-post-1"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,2)"><div class="ig-post-inner" id="ig-post-2"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,3)"><div class="ig-post-inner" id="ig-post-3"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,4)"><div class="ig-post-inner" id="ig-post-4"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,5)"><div class="ig-post-inner" id="ig-post-5"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,6)"><div class="ig-post-inner" id="ig-post-6"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,7)"><div class="ig-post-inner" id="ig-post-7"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,8)"><div class="ig-post-inner" id="ig-post-8"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,9)"><div class="ig-post-inner" id="ig-post-9"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,10)"><div class="ig-post-inner" id="ig-post-10"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+              <div class="ig-post"><label><input type="file" accept="image/*" style="display:none;" onchange="previewIgPost(this,11)"><div class="ig-post-inner" id="ig-post-11"><span>+</span></div></label><input class="ig-post-caption" type="text" placeholder="Post idea / hook"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ PROMPT ══ -->
         <div class="prompt-box">
           <div class="prompt-box-label"><span>✦ Brand Identity Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I'm building a faceless Instagram brand in the [niche] niche. My audience is [audience]. I want the brand to feel [3 words]. Suggest: 1) A brand name that works without a face, 2) A color palette with hex codes, 3) Font pairings, 4) A bio that converts visitors to followers, 5) A content aesthetic direction."</p>
+          <p class="prompt-box-text">"I'm building a faceless Instagram brand in the [niche] niche. My audience is [audience]. I want the brand to feel [3 words]. Suggest: 1) A brand name that works without a face, 2) A color palette with hex codes, 3) Font pairings, 4) A bio using the 4-line heroic formula, 5) A content aesthetic direction for my grid."</p>
         </div>
+
+        <!-- ══ PAGE SETUP CHECKLIST ══ -->
+        <div class="section-label">Final Checklist</div>
+        <h2 class="section-title">Page Setup Checklist</h2>
         <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">Brand Personality</div></div></div><div class="worksheet-sub">Define how your brand looks, feels, and sounds before you design anything.</div>
-          <div class="field-row"><label class="field-label">3 Words That Describe My Brand</label><input class="field-input" type="text" placeholder="e.g. Elegant, Empowering, Minimal"></div>
-          <div class="field-row"><label class="field-label">My Brand Color Palette</label><input class="field-input" type="text" placeholder="e.g. Cream, dusty rose, champagne gold"></div>
-          <div class="field-row"><label class="field-label">Fonts I'm drawn to</label><input class="field-input" type="text" placeholder="e.g. Cormorant Garamond + DM Sans"></div>
-          <div class="field-row"><label class="field-label">Pages/brands I want mine to feel like</label><textarea class="field-input" rows="2" placeholder="Name 3 Instagram pages or brands with aesthetics you love"></textarea></div>
-        </div>
-        <div class="section-label">Page Setup</div>
-        <h2 class="section-title">The Perfect Instagram Profile</h2>
-        <div class="worksheet">
-          <div class="worksheet-title">Page Setup Checklist</div>
+          <div class="worksheet-sub">Tick each off before you start posting. Do not skip.</div>
           <ul class="checklist">
             <li><input type="checkbox"><span>Account switched to Creator or Business account</span></li>
-            <li><input type="checkbox"><span>Username chosen — simple, memorable, niche-relevant</span></li>
+            <li><input type="checkbox"><span>Username chosen — keyword-rich, clean, memorable</span></li>
             <li><input type="checkbox"><span>Profile photo — logo or aesthetic image (no face needed)</span></li>
-            <li><input type="checkbox"><span>Bio written — who you help + what you post + CTA</span></li>
+            <li><input type="checkbox"><span>Name field loaded with 3 searchable keywords</span></li>
+            <li><input type="checkbox"><span>Bio written using the 4-line Heroic Bio Formula</span></li>
             <li><input type="checkbox"><span>Link in bio set up (Linktree or Stan Store)</span></li>
+            <li><input type="checkbox"><span>Account category set to a professional option</span></li>
             <li><input type="checkbox"><span>Highlight covers created and branded</span></li>
-            <li><input type="checkbox"><span>First 9 posts planned for a cohesive grid</span></li>
+            <li><input type="checkbox"><span>First 9 posts planned and scheduled for a cohesive grid</span></li>
           </ul>
         </div>
+
+        <!-- ══ ACTION STEPS ══ -->
+        <div class="section-label">Chapter 2 — Action Steps</div>
         <div class="worksheet">
-          <div class="worksheet-title">My Page Details</div>
-          <div class="field-row"><label class="field-label">My Username</label><input class="field-input" type="text" placeholder="@yourusername"></div>
-          <div class="field-row"><label class="field-label">My Bio</label><textarea class="field-input" rows="3" placeholder="Line 1: Who you help&#10;Line 2: What they get&#10;Line 3: CTA + link"></textarea></div>
-          <div class="field-row"><label class="field-label">My Link in Bio URL</label><input class="field-input" type="text" placeholder="https://linktr.ee/yourpage"></div>
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 02 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 3.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Score all 8 profile elements out of 10 and rank them.</span></li>
+            <li><input type="checkbox"><span>Fix your top 3 lowest scores first.</span></li>
+            <li><input type="checkbox"><span>Write 5 bio versions using the Heroic Bio Formula. Test each for one week.</span></li>
+            <li><input type="checkbox"><span>Design your logo and brand palette in Canva — or brief a Fiverr designer.</span></li>
+            <li><input type="checkbox"><span>Plan your first 9 posts using the heroic feed checklist before publishing anything.</span></li>
+            <li><input type="checkbox"><span>Add 3 SEO keywords to your name field today.</span></li>
+          </ul>
         </div>
+
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(1)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Niche Mastery</span></button>
@@ -1644,10 +2100,64 @@
     } catch(e) {}
   }
 
-  // ── MARKET SELECTION ──
+
+  // ── CH2 GAMIFICATION ──
+  const ch2Steps = new Set();
+  function unlockCh2Step(n) {
+    ch2Steps.add(n);
+    updateCh2Progress();
+  }
+  function updateCh2Progress() {
+    const count = ch2Steps.size;
+    const pct = Math.round((count / 6) * 100);
+    const bar = document.getElementById('ch2-bar');
+    const label = document.getElementById('ch2-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 6 unlocked';
+    document.querySelectorAll('.ch2-milestone').forEach((el, i) => {
+      if (ch2Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  // Auto-unlock when user types in ch2 exercises
+  document.addEventListener('input', e => {
+    const worksheet = e.target.closest('.worksheet');
+    if (!worksheet) return;
+    const id = worksheet.id;
+    if (id === 'ch2-ex1') unlockCh2Step(1);
+    if (id === 'ch2-ex2') unlockCh2Step(2);
+    if (id === 'ch2-ex3') unlockCh2Step(3);
+    if (id === 'ch2-ex4') unlockCh2Step(4);
+    if (id === 'ch2-ex5') unlockCh2Step(5);
+    if (id === 'ch2-ex6') unlockCh2Step(6);
+  });
+
+  // ── IG PROFILE MOCK ──
+  function previewIgAvatar(input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const el = document.querySelector('.ig-avatar');
+      if (el) el.innerHTML = '<img src="' + e.target.result + '">';
+    };
+    reader.readAsDataURL(file);
+  }
+  function previewIgPost(input, idx) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const el = document.getElementById('ig-post-' + idx);
+      if (el) el.innerHTML = '<img src="' + e.target.result + '">';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // ── THREE MARKETS SELECTION ──
   function selectMarket(el, market) {
     el.classList.toggle('selected');
   }
+
 
   // ── RESEARCH PAGES ──
   let pageCount = 0;
