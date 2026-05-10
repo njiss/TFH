@@ -589,6 +589,90 @@
   .ch3-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
   .ch3-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
 
+
+  /* ── CHAPTER 4: GROWTH FORMULA ── */
+  .growth-equation-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 28px;text-align:center;margin-bottom:32px;box-shadow:var(--shadow);}
+  .growth-eq-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:20px;font-family:'DM Sans',sans-serif;}
+  .growth-eq-formula{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+  .growth-eq-term{font-family:'Instrument Serif',serif;font-size:clamp(22px,3vw,38px);font-weight:300;color:var(--text);}
+  .growth-eq-result{color:var(--burgundy);}
+  .growth-eq-op{font-size:clamp(18px,2.5vw,28px);color:var(--text-dim);font-weight:300;}
+  .growth-eq-sub{font-size:13px;color:var(--text-muted);font-weight:300;line-height:1.6;}
+
+  .two-problems-box{background:var(--burgundy);border-radius:14px;padding:32px;margin-bottom:40px;box-shadow:0 4px 20px rgba(92,36,52,0.2);}
+  .two-problems-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;}
+  .two-problems-label::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .two-problems-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:300;color:white;margin-bottom:24px;}
+  .two-problems-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .problem-col-title{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .problem-col-desc{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7;font-weight:300;}
+  .problem-col-desc strong{color:white;font-weight:500;}
+
+  .cvr-formula-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;margin-bottom:24px;box-shadow:var(--shadow);}
+
+  .cvr-benchmarks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+  .cvr-bench{border-radius:12px;padding:24px 18px;border:1px solid var(--border);}
+  .cvr-bad{background:var(--surface);border-left:4px solid #d4a8b0;}
+  .cvr-good{background:rgba(219,188,199,0.15);border-left:4px solid var(--accent);}
+  .cvr-great{background:var(--burgundy);border-left:4px solid var(--burgundy);}
+  .cvr-bench-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;font-family:'DM Sans',sans-serif;}
+  .cvr-great .cvr-bench-label{color:rgba(255,255,255,0.55);}
+  .cvr-bench-num{font-family:'Instrument Serif',serif;font-size:32px;font-weight:300;color:var(--burgundy);margin-bottom:8px;line-height:1;}
+  .cvr-great .cvr-bench-num{color:white;}
+  .cvr-bench-desc{font-size:12px;color:var(--text-muted);line-height:1.6;font-weight:300;}
+  .cvr-great .cvr-bench-desc{color:rgba(255,255,255,0.7);}
+
+  .big-stat-callout{display:flex;align-items:center;gap:24px;background:var(--surface-2);border-radius:14px;padding:28px;margin-bottom:48px;border:1px solid var(--border);}
+  .big-stat-num{font-family:'Instrument Serif',serif;font-size:64px;font-weight:300;color:var(--burgundy);line-height:1;flex-shrink:0;}
+  .big-stat-text{font-size:14px;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+  .cvr-calculator{display:flex;flex-direction:column;gap:16px;}
+  .cvr-calc-field{display:flex;flex-direction:column;gap:6px;}
+  .cvr-input{font-size:15px!important;font-family:'Instrument Serif',serif!important;font-weight:300!important;}
+  .cvr-calc-result{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px 22px;text-align:center;}
+  .cvr-result-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px;font-family:'DM Sans',sans-serif;}
+  .cvr-result-num{font-family:'Instrument Serif',serif;font-size:48px;font-weight:300;color:var(--burgundy);line-height:1;margin-bottom:6px;}
+  .cvr-result-verdict{font-size:13px;color:var(--text-muted);font-weight:300;font-style:italic;}
+
+  .diag-quiz{display:flex;flex-direction:column;gap:20px;}
+  .diag-q{display:flex;flex-direction:column;gap:10px;padding:16px 0;border-bottom:1px solid var(--border);}
+  .diag-q:last-of-type{border-bottom:none;}
+  .diag-q-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--text-dim);font-family:'DM Sans',sans-serif;}
+  .diag-q-text{font-size:14px;color:var(--text);font-weight:400;line-height:1.5;}
+  .diag-options{display:flex;gap:8px;flex-wrap:wrap;}
+  .diag-results{background:var(--bg);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+  .diag-result-row{display:flex;gap:10px;font-size:13px;color:var(--text-muted);line-height:1.5;font-weight:300;}
+  .diag-arrow{color:var(--burgundy);flex-shrink:0;font-weight:500;}
+
+  .diag-table{border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:48px;box-shadow:var(--shadow);}
+  .diag-table-header{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--burgundy);color:white;padding:11px 20px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+  .diag-table-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--surface);padding:14px 20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);font-weight:300;transition:var(--transition);}
+  .diag-table-row:hover{background:var(--surface-2);}
+
+  .three-phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+  .phase-card{background:var(--surface);padding:28px 20px;border-right:1px solid var(--border);transition:var(--transition);}
+  .phase-card:last-child{border-right:none;}
+  .phase-card:hover{background:var(--surface-2);}
+  .phase-roman{font-family:'Instrument Serif',serif;font-size:48px;font-weight:300;color:var(--burgundy);line-height:1;margin-bottom:10px;}
+  .phase-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .phase-title{font-family:'Instrument Serif',serif;font-size:19px;color:var(--text);margin-bottom:10px;}
+  .phase-desc{font-size:12.5px;color:var(--text-muted);line-height:1.65;font-weight:300;margin-bottom:14px;}
+  .phase-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(219,188,199,0.25);color:var(--burgundy);border:1px solid rgba(219,188,199,0.4);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .phase-range{font-size:11px;color:var(--text-dim);font-family:'DM Sans',sans-serif;}
+
+  .htn-box{background:var(--burgundy);border-radius:14px;padding:32px;margin-bottom:40px;box-shadow:0 4px 20px rgba(92,36,52,0.2);}
+  .htn-box-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;}
+  .htn-box-label::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .htn-box-title{font-family:'Instrument Serif',serif;font-size:26px;font-weight:300;color:white;margin-bottom:22px;}
+  .htn-rules{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+  .htn-rule{display:flex;gap:14px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;font-weight:300;}
+  .htn-dash{color:rgba(255,255,255,0.5);flex-shrink:0;}
+  .htn-stat{font-size:14px;color:rgba(255,255,255,0.75);font-style:italic;border-top:1px solid rgba(255,255,255,0.15);padding-top:16px;}
+  .htn-stat strong{color:white;}
+
+  .ch4-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch4-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -1676,7 +1760,7 @@
       <div class="chapter-hero" data-num="4">
         <div class="chapter-tag-hero">STEP FOUR</div>
         <h1 class="chapter-title">The Growth<br><em>Formula</em></h1>
-        <p class="chapter-desc">The exact posting cadence, hashtag system, and engagement loop that compounds your following week over week.</p>
+        <p class="chapter-desc">Growth is a system, not a mystery. Traffic × Conversion = Growth. Every tactic in this chapter serves one or both of these two levers.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -1695,48 +1779,405 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">The System</div>
-        <h2 class="section-title">How Faceless Pages Actually Grow</h2>
-        <p class="section-text">Growth on Instagram is not random. Consistent posting + strategic hashtags + active engagement in the first hour = algorithmic push. Here's the formula.</p>
+
+        <!-- PROGRESS -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 4 Progress</span><span id="ch4-progress-pct">0 / 6 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch4-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch4-milestone">CVR Measured</span>
+            <span class="ch4-milestone">Problem Found</span>
+            <span class="ch4-milestone">Phase Set</span>
+            <span class="ch4-milestone">HTN Built</span>
+            <span class="ch4-milestone">Collabs Planned</span>
+            <span class="ch4-milestone">30-Day Live ✦</span>
+          </div>
+        </div>
+
+        <!-- ══ THE GROWTH EQUATION ══ -->
+        <div class="section-label" style="margin-top:0;">The Core Equation</div>
+        <h2 class="section-title">Growth is a system, not a mystery</h2>
+        <p class="section-text">Instagram growth comes down to exactly two things. You need people to <strong>visit</strong> your profile — that is traffic. And when they arrive, you need your profile to <strong>convert</strong> them into followers — that is conversion. Without traffic, nobody sees you. Without conversion, the traffic means nothing.</p>
+
+        <div class="growth-equation-box">
+          <div class="growth-eq-label">THE INSTAGRAM GROWTH EQUATION</div>
+          <div class="growth-eq-formula">
+            <span class="growth-eq-term">Traffic</span>
+            <span class="growth-eq-op">×</span>
+            <span class="growth-eq-term">Conversion</span>
+            <span class="growth-eq-op">=</span>
+            <span class="growth-eq-term growth-eq-result">Growth</span>
+          </div>
+          <div class="growth-eq-sub">If you are not growing, the answer always lies in one of these two levers.</div>
+        </div>
+
+        <!-- TWO GROWTH PROBLEMS -->
+        <div class="two-problems-box">
+          <div class="two-problems-label">— THE TWO GROWTH PROBLEMS</div>
+          <div class="two-problems-title">Identify yours in under a minute.</div>
+          <div class="two-problems-grid">
+            <div class="problem-col">
+              <div class="problem-col-title">TRAFFIC PROBLEM</div>
+              <div class="problem-col-desc">Your CVR is good (25%+) but your account is barely growing. <strong>Solution:</strong> drive more profile visits — reels, hashtags, engagement, collaborations.</div>
+            </div>
+            <div class="problem-col">
+              <div class="problem-col-title">CONVERSION PROBLEM</div>
+              <div class="problem-col-desc">Your content gets views and likes but people are not following. <strong>Solution:</strong> your profile is not convincing visitors. Fix logo, bio, headline, or feed first.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CVR: YOUR FOLLOWER CONVERSION RATE ══ -->
+        <div class="section-label">Your CVR</div>
+        <h2 class="section-title">Your Follower Conversion Rate — how to measure it</h2>
+        <p class="section-text">Most creators have no idea how well their profile is actually converting visitors into followers. That changes right now. Open Instagram Insights and find these two numbers.</p>
+
+        <div class="cvr-formula-box">
+          <div class="growth-eq-label">THE FOLLOWER CVR FORMULA</div>
+          <div class="growth-eq-formula" style="font-size:clamp(18px,2.5vw,28px);">
+            <span class="growth-eq-term">(Net Follows</span>
+            <span class="growth-eq-op">÷</span>
+            <span class="growth-eq-term">Profile Visits)</span>
+            <span class="growth-eq-op">×</span>
+            <span class="growth-eq-term">100</span>
+            <span class="growth-eq-op">=</span>
+            <span class="growth-eq-term growth-eq-result">Your CVR %</span>
+          </div>
+          <div class="growth-eq-sub" style="font-style:italic;">Example: (5,683 follows ÷ 13,959 profile visits) × 100 = <strong>40.7% CVR</strong> — roughly 4 out of every 10 visitors followed.</div>
+        </div>
+
+        <!-- CVR BENCHMARKS -->
+        <div class="cvr-benchmarks">
+          <div class="cvr-bench cvr-bad">
+            <div class="cvr-bench-label">BAD</div>
+            <div class="cvr-bench-num">10–15%</div>
+            <div class="cvr-bench-desc">Profile is losing most visitors. Urgent fix needed — start with logo, bio, and feed.</div>
+          </div>
+          <div class="cvr-bench cvr-good">
+            <div class="cvr-bench-label">GOOD</div>
+            <div class="cvr-bench-num">15–25%</div>
+            <div class="cvr-bench-desc">Profile is working. Optimise to push higher — and generate more traffic.</div>
+          </div>
+          <div class="cvr-bench cvr-great">
+            <div class="cvr-bench-label">GREAT</div>
+            <div class="cvr-bench-num">25–35%+</div>
+            <div class="cvr-bench-desc">You convert strongly. Focus shifts entirely to traffic generation.</div>
+          </div>
+        </div>
+
+        <div class="big-stat-callout">
+          <div class="big-stat-num">9,600</div>
+          <div class="big-stat-text">extra followers in a year by improving your CVR from 10% to 30% — from the exact same traffic. Better profile, same effort, three times the result.</div>
+        </div>
+
+        <!-- ══ EXERCISE 1: CVR CALCULATOR ══ -->
+        <div class="section-label">Exercise 1 — Interactive Calculator</div>
+        <h2 class="section-title">Calculate your CVR right now</h2>
+
+        <div class="worksheet" id="ch4-ex1" onclick="unlockCh4Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Follower CVR Calculator</div></div></div>
+          <div class="worksheet-sub">Open Instagram Insights and fill in your numbers below. Your CVR calculates automatically.</div>
+          <div class="cvr-calculator">
+            <div class="cvr-calc-field">
+              <label class="audit-mini-label">A — MY PROFILE VISITS (LAST 30 DAYS)</label>
+              <input class="field-input cvr-input" type="number" id="cvr-visits" placeholder="e.g. 4500" oninput="calcCVR()">
+            </div>
+            <div class="cvr-calc-field">
+              <label class="audit-mini-label">B — NET FOLLOWERS GAINED (FOLLOWS MINUS UNFOLLOWS)</label>
+              <input class="field-input cvr-input" type="number" id="cvr-follows" placeholder="e.g. 680" oninput="calcCVR()">
+            </div>
+            <div class="cvr-calc-result" id="cvr-result">
+              <div class="cvr-result-label">C — MY CVR = (B ÷ A) × 100</div>
+              <div class="cvr-result-num" id="cvr-num">—</div>
+              <div class="cvr-result-verdict" id="cvr-verdict"></div>
+            </div>
+            <div class="field-row" style="margin-top:16px;">
+              <label class="audit-mini-label">MY CVR TELLS ME I HAVE A:</label>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <label class="choice-pill"><input type="radio" name="cvr-problem" style="display:none;"> Traffic Problem</label>
+                <label class="choice-pill"><input type="radio" name="cvr-problem" style="display:none;"> Conversion Problem</label>
+                <label class="choice-pill"><input type="radio" name="cvr-problem" style="display:none;"> Both</label>
+                <label class="choice-pill"><input type="radio" name="cvr-problem" style="display:none;"> Neither — I'm growing ✦</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ GROWTH GOAL CALCULATOR ══ -->
+        <div class="section-label">Exercise 2 — Goal Calculator</div>
+        <h2 class="section-title">Reverse-engineer your daily target</h2>
+        <p class="section-text">Most creators set goals like "I want 10,000 followers" without any idea how much work that requires. Here is how to calculate it precisely using your CVR.</p>
+
+        <div class="growth-equation-box" style="margin-bottom:20px;">
+          <div class="growth-eq-label">REVERSE-ENGINEER YOUR DAILY TARGET</div>
+          <div class="growth-eq-formula" style="font-size:clamp(14px,2vw,22px);gap:8px;">
+            <span class="growth-eq-term">(Target Followers</span>
+            <span class="growth-eq-op">÷</span>
+            <span class="growth-eq-term">CVR%)</span>
+            <span class="growth-eq-op">×</span>
+            <span class="growth-eq-term">100</span>
+            <span class="growth-eq-op">=</span>
+            <span class="growth-eq-term growth-eq-result">Profile Visits Needed</span>
+          </div>
+          <div class="growth-eq-sub" style="font-style:italic;">Goal: 10,000 followers at 10% CVR → 100,000 visits over 3 months → 33,333/month → 8,333/week → <strong>~1,190 visits per day</strong>.</div>
+        </div>
+        <p class="section-text" style="margin-bottom:32px;">This is why improving your CVR is so powerful. Double your CVR from 10% to 20% and you need only 50,000 visits instead of 100,000 to hit the same goal. <em>Better profile, same effort, twice the results.</em></p>
+
+        <div class="worksheet" id="ch4-ex2" onclick="unlockCh4Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Growth Goal Calculator</div></div></div>
+          <div class="worksheet-sub">Use the formula above to reverse-engineer your real daily targets.</div>
+          <div class="cvr-calculator">
+            <div class="cvr-calc-field"><label class="audit-mini-label">MY CURRENT CVR (%)</label><input class="field-input cvr-input" type="number" id="goal-cvr" placeholder="e.g. 15" oninput="calcGoal()"></div>
+            <div class="cvr-calc-field"><label class="audit-mini-label">MY FOLLOWER GOAL (3-MONTH TARGET)</label><input class="field-input cvr-input" type="number" id="goal-followers" placeholder="e.g. 10000" oninput="calcGoal()"></div>
+            <div class="cvr-calc-result" id="goal-result">
+              <div class="cvr-result-label">PROFILE VISITS NEEDED = (GOAL ÷ CVR%) × 100</div>
+              <div class="cvr-result-num" id="goal-visits">—</div>
+              <div class="cvr-result-verdict" id="goal-breakdown"></div>
+            </div>
+            <div class="cvr-calc-field" style="margin-top:8px;"><label class="audit-mini-label">MY PRIMARY TRAFFIC STRATEGY FOR THIS PHASE</label><input class="field-input" type="text" placeholder="e.g. Reels 4× per week + HTN engagement 30min daily"></div>
+          </div>
+        </div>
+
+        <!-- ══ DIAGNOSTIC QUIZ ══ -->
+        <div class="section-label">Self-Assessment</div>
+        <h2 class="section-title">What growth problem <em>do you have?</em></h2>
+        <p class="section-text">Answer honestly. Select the option that most matches your situation right now.</p>
+
+        <div class="worksheet" id="ch4-ex3" onclick="unlockCh4Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">Diagnostic Quiz · 4 Questions</div></div></div>
+          <div class="worksheet-sub">Your answers reveal exactly where to focus your energy.</div>
+          <div class="diag-quiz">
+            <div class="diag-q">
+              <div class="diag-q-num">01</div>
+              <div class="diag-q-text">My content reaches people but they rarely visit my profile.</div>
+              <div class="diag-options">
+                <label class="choice-pill"><input type="radio" name="dq1" style="display:none;"> A — Almost never</label>
+                <label class="choice-pill"><input type="radio" name="dq1" style="display:none;"> B — Sometimes</label>
+                <label class="choice-pill"><input type="radio" name="dq1" style="display:none;"> C — This is me regularly</label>
+              </div>
+            </div>
+            <div class="diag-q">
+              <div class="diag-q-num">02</div>
+              <div class="diag-q-text">When people visit my profile, my follower count barely moves.</div>
+              <div class="diag-options">
+                <label class="choice-pill"><input type="radio" name="dq2" style="display:none;"> A — No — most visitors follow</label>
+                <label class="choice-pill"><input type="radio" name="dq2" style="display:none;"> B — Sometimes</label>
+                <label class="choice-pill"><input type="radio" name="dq2" style="display:none;"> C — Yes — visitors rarely follow</label>
+              </div>
+            </div>
+            <div class="diag-q">
+              <div class="diag-q-num">03</div>
+              <div class="diag-q-text">My posts get likes but almost no saves or shares.</div>
+              <div class="diag-options">
+                <label class="choice-pill"><input type="radio" name="dq3" style="display:none;"> A — Not really</label>
+                <label class="choice-pill"><input type="radio" name="dq3" style="display:none;"> B — Sometimes</label>
+                <label class="choice-pill"><input type="radio" name="dq3" style="display:none;"> C — Yes — consistently</label>
+              </div>
+            </div>
+            <div class="diag-q">
+              <div class="diag-q-num">04</div>
+              <div class="diag-q-text">My account spikes after viral posts then immediately stagnates.</div>
+              <div class="diag-options">
+                <label class="choice-pill"><input type="radio" name="dq4" style="display:none;"> A — Never happened</label>
+                <label class="choice-pill"><input type="radio" name="dq4" style="display:none;"> B — Once or twice</label>
+                <label class="choice-pill"><input type="radio" name="dq4" style="display:none;"> C — Every single time</label>
+              </div>
+            </div>
+            <div class="diag-results">
+              <div class="diag-result-row"><span class="diag-arrow">→</span><span><strong>Mostly A</strong> · Growing well — focus on scaling and monetisation.</span></div>
+              <div class="diag-result-row"><span class="diag-arrow">→</span><span><strong>Mostly B</strong> · Mixed — review profile quality and traffic strategy.</span></div>
+              <div class="diag-result-row"><span class="diag-arrow">→</span><span><strong>Mostly C on Q1/Q3</strong> · <strong style="color:var(--burgundy);">CONTENT PROBLEM</strong> — posts aren't driving profile visits.</span></div>
+              <div class="diag-result-row"><span class="diag-arrow">→</span><span><strong>Mostly C on Q2/Q4</strong> · <strong style="color:var(--burgundy);">PROFILE PROBLEM</strong> — profile isn't converting visitors.</span></div>
+              <div class="diag-result-row"><span class="diag-arrow">→</span><span><strong>All C</strong> · Start with your CVR first, then address traffic generation.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CONTENT QUALITY BENCHMARKS ══ -->
+        <div class="section-label">Benchmarks</div>
+        <h2 class="section-title">Content Quality Ratios — what good actually looks like</h2>
+        <p class="section-text">Stop relying on personal taste. Use these targets instead. If a post hits the ratio, it's doing its job. If not, find out why.</p>
+
         <table class="data-table">
-          <thead><tr><th>Element</th><th>Recommended</th><th>Why It Matters</th></tr></thead>
+          <thead><tr><th>Content Type</th><th>Metric</th><th>Target Ratio</th></tr></thead>
           <tbody>
-            <tr><td><strong>Posting Frequency</strong></td><td>4–5x per week</td><td>Consistency trains the algorithm</td></tr>
-            <tr><td><strong>Best Times</strong></td><td>7–9am or 6–8pm your TZ</td><td>Higher immediate engagement = wider reach</td></tr>
-            <tr><td><strong>Reels vs Carousels</strong></td><td>3 reels : 2 carousels</td><td>Reels reach new people; carousels build saves</td></tr>
-            <tr><td><strong>Hashtags</strong></td><td>5–10 targeted tags</td><td>Quality over quantity since 2023 algorithm shift</td></tr>
-            <tr><td><strong>Engagement Window</strong></td><td>First 60 min after posting</td><td>Reply to every comment — algorithm rewards it</td></tr>
+            <tr><td>Educational Carousels</td><td>Likes : Saves</td><td><strong>1:1</strong> (100 likes = 100 saves)</td></tr>
+            <tr><td>Shareable Quotes</td><td>Likes : Shares</td><td><strong>5:1</strong> (100 likes = 20 shares)</td></tr>
+            <tr><td>Engaging Posts</td><td>Likes : Reach</td><td><strong>1:10</strong> (100 likes = 1,000 reach)</td></tr>
+            <tr><td>Sales / CTA Content</td><td>Likes : DMs</td><td><strong>3:1</strong> (300 likes = 100 DMs)</td></tr>
+            <tr><td>Viral Reels</td><td>Impressions vs. Average</td><td><strong>80%+ above average</strong> = viral</td></tr>
           </tbody>
         </table>
+
+        <!-- ══ DIAGNOSE YOUR GROWTH PROBLEM ══ -->
+        <div class="section-label">Sunday Review</div>
+        <h2 class="section-title">Diagnose your growth problem every Sunday</h2>
+        <p class="section-text">Review these weekly. If you spot the symptom, you now know the exact solution. Pin this table.</p>
+
+        <div class="diag-table">
+          <div class="diag-table-header"><span>If you see this…</span><span>Then you have this problem…</span></div>
+          <div class="diag-table-row"><span>High profile visits, low follower growth</span><span>Low CVR — fix your profile (logo, bio, feed)</span></div>
+          <div class="diag-table-row"><span>Low profile visits, okay follow rate</span><span>Traffic problem — focus on reels, engagement, hashtags</span></div>
+          <div class="diag-table-row"><span>High reach on posts, low profile visits</span><span>Content not directing people to profile — add username CTAs</span></div>
+          <div class="diag-table-row"><span>Good follower count, low engagement</span><span>Wrong audience — review content / niche alignment</span></div>
+          <div class="diag-table-row"><span>Lots of saves, few follows</span><span>Great content, weak profile — fix bio and logo</span></div>
+          <div class="diag-table-row"><span>Viral reel but no follower spike</span><span>Profile failed to convert — emergency profile audit</span></div>
+        </div>
+
+        <!-- ══ THREE STAGES OF GROWTH ══ -->
+        <div class="section-label">The Growth Timeline</div>
+        <h2 class="section-title">The Three Stages of Theme Page Growth</h2>
+        <p class="section-text">Most people quit Instagram because they do not understand what the natural growth curve actually looks like. Here is the reality — and what to expect at each stage.</p>
+
+        <div class="three-phases-grid">
+          <div class="phase-card">
+            <div class="phase-roman">I</div>
+            <div class="phase-label">STAGE 1 · TESTING</div>
+            <div class="phase-title">Find your sweet spot</div>
+            <div class="phase-desc">Weeks 1–8. Slow and unpredictable. Goal: get one post to go viral. This is normal — every account has lived it.</div>
+            <div class="phase-badge">ERRATIC</div>
+            <div class="phase-range">0 → 2,000 followers</div>
+          </div>
+          <div class="phase-card">
+            <div class="phase-roman" style="color:rgba(219,188,199,0.6);">II</div>
+            <div class="phase-label">STAGE 2 · ORGANIC</div>
+            <div class="phase-title">Algorithm-recognised</div>
+            <div class="phase-desc">A reel goes viral. Engagement spikes. Growth hits 100, 200, 500 followers per day. Monetisation begins.</div>
+            <div class="phase-badge">COMPOUNDING</div>
+            <div class="phase-range">2K → 8K followers</div>
+          </div>
+          <div class="phase-card">
+            <div class="phase-roman" style="color:rgba(219,188,199,0.4);">III</div>
+            <div class="phase-label">STAGE 3 · EXPONENTIAL</div>
+            <div class="phase-title">Reinvest &amp; scale</div>
+            <div class="phase-desc">200k–500k. 500–1,000 new followers per day on autopilot. Account manager hired. Page runs itself.</div>
+            <div class="phase-badge">AUTOPILOT</div>
+            <div class="phase-range">8K → 100K+</div>
+          </div>
+        </div>
+
+        <!-- ══ HTN STRATEGY ══ -->
+        <div class="section-label">Your Fastest Early Growth Tool</div>
+        <h2 class="section-title">The HTN Strategy</h2>
+        <p class="section-text"><strong>HTN = Highly Targeted Niche.</strong> Your ideal follower is already on Instagram, already following accounts in your niche, already engaging with content like yours. Your job is to find her and give her a reason to notice your profile.</p>
+
+        <div class="htn-box">
+          <div class="htn-box-label">— THE HTN SYSTEM</div>
+          <div class="htn-box-title">Borrow attention. Build conversion.</div>
+          <div class="htn-rules">
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Find 15–25 relevant accounts. Split into Big (25k+), Medium (5–25k), Small (1–5k).</span></div>
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Pick your 5 Dream Accounts — whose followers are exactly who you want.</span></div>
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Turn on post notifications. Comment within the first hour — thoughtful, valuable, specific.</span></div>
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Reply to pinned comments — they get disproportionate visibility.</span></div>
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Visit other commenters' profiles. Leave 1–3 pieces of genuine engagement.</span></div>
+            <div class="htn-rule"><span class="htn-dash">—</span><span>Repeat 4–8 times daily, 15 minutes each session.</span></div>
+          </div>
+          <div class="htn-stat">HTN traffic converts at <strong>3–5×</strong> the rate of cold traffic.</div>
+        </div>
+
+        <!-- ══ EXERCISE 4: HTN BUILD ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">Build your HTN target list</h2>
+
+        <div class="worksheet" id="ch4-ex4" onclick="unlockCh4Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My HTN Target Accounts</div></div></div>
+          <div class="worksheet-sub">Find 5 Dream Accounts whose followers are your ideal audience. Be specific.</div>
+          <div class="field-row"><label class="field-label">Dream Account 1</label><input class="field-input" type="text" placeholder="@handle — why their audience matches mine"></div>
+          <div class="field-row"><label class="field-label">Dream Account 2</label><input class="field-input" type="text" placeholder="@handle — why their audience matches mine"></div>
+          <div class="field-row"><label class="field-label">Dream Account 3</label><input class="field-input" type="text" placeholder="@handle — why their audience matches mine"></div>
+          <div class="field-row"><label class="field-label">Dream Account 4</label><input class="field-input" type="text" placeholder="@handle — why their audience matches mine"></div>
+          <div class="field-row"><label class="field-label">Dream Account 5</label><input class="field-input" type="text" placeholder="@handle — why their audience matches mine"></div>
+          <div class="field-row"><label class="field-label">My daily HTN session plan (time + frequency)</label><input class="field-input" type="text" placeholder="e.g. 7am and 6pm · 15 min each · 4× per week"></div>
+        </div>
+
+        <!-- ══ COLLABORATIONS ══ -->
+        <div class="section-label">Advanced Growth</div>
+        <h2 class="section-title">Collaborations — borrow someone else's audience</h2>
+        <p class="section-text">A single well-executed collab can deliver thousands of new followers without spending a penny on advertising. Two formats: <strong>One-Way</strong> (host tags you) and <strong>Two-Way</strong> (Instagram's native Collab feature — both feeds, shared engagement). Always push for Two-Way.</p>
+
+        <table class="data-table">
+          <thead><tr><th>Step</th><th>What to Do</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1 · Choose</strong></td><td>5–10 accounts whose audience matches yours. Similar size — wildly different sizes feel unnatural.</td></tr>
+            <tr><td><strong>2 · Study</strong></td><td>Spend a week reading their viral posts. Mine the comments for emotional response.</td></tr>
+            <tr><td><strong>3 · Connect</strong></td><td>1–2 weeks of genuine, visible presence: lives, story replies, newsletter, comments. No cold pitches.</td></tr>
+            <tr><td><strong>4 · Pitch</strong></td><td>Lead with the idea, not the ask. Specific concept. Win-frame for them. Short, warm, easy to reply to.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="she-boss-tip" style="margin-bottom:32px;">
+          <div class="she-boss-icon">♦</div>
+          <div>
+            <div class="she-boss-label">NEGOTIATION TACTIC</div>
+            <p>Ask their 24-hour shoutout price first. Then offer to purchase a <strong>12-hour shoutout for 60% of that price</strong>. Most sellers accept — and 12 hours from a quality account often delivers comparable results to 24.</p>
+          </div>
+        </div>
+
+        <!-- ══ REINVESTMENT TABLE ══ -->
+        <div class="section-label">Compound Growth</div>
+        <h2 class="section-title">The reinvestment strategy</h2>
+        <p class="section-text">Reinvest a portion of your early earnings into paid shoutouts and collaborations. This is how pages go from 5K to 100K in months instead of years.</p>
+
+        <table class="data-table">
+          <thead><tr><th>Month</th><th>Earnings</th><th>Reinvested</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Month 3</td><td>$500</td><td>$200</td><td>+400 new followers</td></tr>
+            <tr><td>Month 4</td><td>$800</td><td>$400</td><td>+900 new followers</td></tr>
+            <tr><td>Month 6</td><td>$2,000</td><td>$1,000</td><td>+2,000/month</td></tr>
+            <tr><td>Month 12</td><td>$8–12k/mo</td><td>—</td><td>Compound effect fully in motion</td></tr>
+          </tbody>
+        </table>
+
+        <!-- ══ EXERCISE 5: COLLAB TARGETS ══ -->
+        <div class="section-label">Exercise 5</div>
+        <h2 class="section-title">My 30-Day Growth Plan</h2>
+
+        <div class="worksheet" id="ch4-ex5" onclick="unlockCh4Step(5)">
+          <div class="exercise-counter"><div class="exercise-num">5</div><div class="exercise-title-wrap"><div class="worksheet-title">My Collaboration Targets</div></div></div>
+          <div class="worksheet-sub">Identify your first 3 collaboration partners using the 4-step system above.</div>
+          <div class="audit-field"><label class="audit-mini-label">ACCOUNT 1 — USERNAME + WHY OUR AUDIENCES OVERLAP</label><input class="field-input" style="margin-bottom:5px;" type="text" placeholder=""><input class="field-input" type="text" placeholder="Why our audiences match"></div>
+          <div class="audit-field"><label class="audit-mini-label">ACCOUNT 2 — USERNAME + WHY OUR AUDIENCES OVERLAP</label><input class="field-input" style="margin-bottom:5px;" type="text" placeholder=""><input class="field-input" type="text" placeholder="Why our audiences match"></div>
+          <div class="audit-field"><label class="audit-mini-label">ACCOUNT 3 — USERNAME + WHY OUR AUDIENCES OVERLAP</label><input class="field-input" style="margin-bottom:5px;" type="text" placeholder=""><input class="field-input" type="text" placeholder="Why our audiences match"></div>
+          <div class="audit-field"><label class="audit-mini-label">MY COLLABORATION CONCEPT TO PITCH</label><textarea class="field-input" rows="3" placeholder="What is the collab idea? What's in it for them? Keep it short and specific..."></textarea></div>
+        </div>
+
+        <div class="worksheet" id="ch4-ex6" onclick="unlockCh4Step(6)">
+          <div class="exercise-counter"><div class="exercise-num">6</div><div class="exercise-title-wrap"><div class="worksheet-title">Before I Buy Any Paid Shoutout — Checklist</div></div></div>
+          <div class="worksheet-sub">Never skip this. One bad shoutout wastes your money and brings the wrong audience.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Checked who liked recent posts — real profile pictures, recent posts of their own</span></li>
+            <li><input type="checkbox"><span>Checked the comments — specific to content, not generic spam</span></li>
+            <li><input type="checkbox"><span>Requested story view metrics and past promotion screenshots</span></li>
+            <li><input type="checkbox"><span>Engagement rate is 1–3% (business niche benchmark)</span></li>
+            <li><input type="checkbox"><span>Account was NOT built using follow-for-follow or hashtag spam</span></li>
+            <li><input type="checkbox"><span>Negotiated: 24-hour price, then offered 60% for the 12-hour slot</span></li>
+            <li><input type="checkbox"><span>My account is tagged in the FIRST LINE of their caption</span></li>
+            <li><input type="checkbox"><span>I have content ready to post immediately after the shoutout goes live</span></li>
+            <li><input type="checkbox"><span>I have a Story ready welcoming new followers with a free resource CTA</span></li>
+          </ul>
+        </div>
+
+        <!-- ══ PROMPTS ══ -->
         <div class="prompt-box">
           <div class="prompt-box-label"><span>✦ Growth Strategy Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I run a faceless Instagram page in the [niche] niche with [X] followers. My audience is [demographic]. Create a 4-week growth plan: posting schedule, content mix (reels vs carousels vs stories), hashtag strategy, and daily engagement tactics."</p>
+          <p class="prompt-box-text">"I run a faceless Instagram page in the [niche] niche with [X] followers and a CVR of [X%]. My current growth phase is [early/building/scaling]. Create a 4-week growth plan: HTN engagement schedule, collab outreach targets, posting cadence, and the 3 most important things to fix this month."</p>
         </div>
+
+        <!-- ══ ACTION STEPS ══ -->
+        <div class="section-label">Chapter 4 — Action Steps</div>
         <div class="worksheet">
-          <div class="worksheet-title">My Weekly Content Plan</div>
-          <table class="data-table">
-            <thead><tr><th>Day</th><th>Content Type</th><th>Topic / Hook Idea</th></tr></thead>
-            <tbody>
-              <tr><td>Monday</td><td><input class="field-input" type="text" placeholder="e.g. Carousel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
-              <tr><td>Tuesday</td><td><input class="field-input" type="text" placeholder="e.g. Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
-              <tr><td>Wednesday</td><td><input class="field-input" type="text" placeholder="Rest or Story"></td><td><input class="field-input" type="text" placeholder="Engagement day"></td></tr>
-              <tr><td>Thursday</td><td><input class="field-input" type="text" placeholder="e.g. Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
-              <tr><td>Friday</td><td><input class="field-input" type="text" placeholder="e.g. Carousel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
-              <tr><td>Weekend</td><td><input class="field-input" type="text" placeholder="Optional Reel"></td><td><input class="field-input" type="text" placeholder="Topic idea"></td></tr>
-            </tbody>
-          </table>
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 04 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 5.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Open Instagram Insights and calculate your CVR right now.</span></li>
+            <li><input type="checkbox"><span>Identify whether you have a Traffic Problem or Conversion Problem.</span></li>
+            <li><input type="checkbox"><span>Run the diagnostic quiz and note your primary growth problem.</span></li>
+            <li><input type="checkbox"><span>Build your HTN target list of 5 Dream Accounts and start the daily routine.</span></li>
+            <li><input type="checkbox"><span>Identify 3 collaboration partners and send your first pitch this week.</span></li>
+            <li><input type="checkbox"><span>Buy a shoutout only after completing the full vetting checklist above.</span></li>
+          </ul>
         </div>
-        <div class="worksheet">
-          <div class="worksheet-title">Monthly Growth Tracker</div>
-          <table class="data-table">
-            <thead><tr><th>Month</th><th>Followers</th><th>Avg. Reach</th><th>Best Post</th></tr></thead>
-            <tbody>
-              <tr><td>Month 1</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 2</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 3</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-            </tbody>
-          </table>
-        </div>
+
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(3)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Content Strategy</span></button>
@@ -1745,6 +2186,7 @@
     </div>
 
     <!-- CHAPTER 5 -->
+
     <div class="chapter-page" id="chapter-5">
       <div class="chapter-hero" data-num="5">
         <div class="chapter-tag-hero">STEP FIVE</div>
@@ -2493,6 +2935,74 @@
   }
 
 
+
+
+  // ── CH4 GAMIFICATION ──
+  const ch4Steps = new Set();
+  function unlockCh4Step(n) {
+    ch4Steps.add(n);
+    const count = ch4Steps.size;
+    const pct = Math.round((count / 6) * 100);
+    const bar = document.getElementById('ch4-bar');
+    const label = document.getElementById('ch4-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 6 unlocked';
+    document.querySelectorAll('.ch4-milestone').forEach((el, i) => {
+      if (ch4Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  document.addEventListener('input', e => {
+    const ws = e.target.closest('.worksheet');
+    if (!ws) return;
+    const id = ws.id;
+    if (id === 'ch4-ex1') unlockCh4Step(1);
+    if (id === 'ch4-ex2') unlockCh4Step(2);
+    if (id === 'ch4-ex3') unlockCh4Step(3);
+    if (id === 'ch4-ex4') unlockCh4Step(4);
+    if (id === 'ch4-ex5') unlockCh4Step(5);
+    if (id === 'ch4-ex6') unlockCh4Step(6);
+  });
+
+  // ── CVR LIVE CALCULATOR ──
+  function calcCVR() {
+    const visits = parseFloat(document.getElementById('cvr-visits')?.value) || 0;
+    const follows = parseFloat(document.getElementById('cvr-follows')?.value) || 0;
+    const numEl = document.getElementById('cvr-num');
+    const verdictEl = document.getElementById('cvr-verdict');
+    if (!numEl) return;
+    if (visits > 0 && follows >= 0) {
+      const cvr = ((follows / visits) * 100).toFixed(1);
+      numEl.textContent = cvr + '%';
+      if (cvr < 15) { verdictEl.textContent = '⚠️ Below benchmark — profile needs urgent fixing'; numEl.style.color = '#b07080'; }
+      else if (cvr < 25) { verdictEl.textContent = '✓ Good — keep optimising your profile'; numEl.style.color = 'var(--text-muted)'; }
+      else { verdictEl.textContent = '✦ Excellent — focus fully on traffic generation'; numEl.style.color = 'var(--burgundy)'; }
+      unlockCh4Step(1);
+    } else {
+      numEl.textContent = '—';
+      verdictEl.textContent = '';
+    }
+  }
+
+  // ── GOAL CALCULATOR ──
+  function calcGoal() {
+    const cvr = parseFloat(document.getElementById('goal-cvr')?.value) || 0;
+    const goal = parseFloat(document.getElementById('goal-followers')?.value) || 0;
+    const visitsEl = document.getElementById('goal-visits');
+    const breakdownEl = document.getElementById('goal-breakdown');
+    if (!visitsEl) return;
+    if (cvr > 0 && goal > 0) {
+      const totalVisits = Math.round((goal / cvr) * 100);
+      visitsEl.textContent = totalVisits.toLocaleString() + ' visits';
+      const perMonth = Math.round(totalVisits / 3);
+      const perWeek = Math.round(perMonth / 4);
+      const perDay = Math.round(perWeek / 7);
+      breakdownEl.textContent = perMonth.toLocaleString() + '/month → ' + perWeek.toLocaleString() + '/week → ' + perDay.toLocaleString() + '/day';
+      unlockCh4Step(2);
+    } else {
+      visitsEl.textContent = '—';
+      breakdownEl.textContent = '';
+    }
+  }
 
   // ── CH3 GAMIFICATION ──
   const ch3Steps = new Set();
