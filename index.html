@@ -728,6 +728,79 @@
   .joy-practice-title{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
   .joy-practice-desc{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.65;font-weight:300;}
 
+
+  /* ── CHAPTER 7: TOOLKIT ── */
+  .mvt-box{background:var(--burgundy);border-radius:14px;padding:32px;margin-bottom:48px;box-shadow:0 4px 20px rgba(92,36,52,0.2);}
+  .mvt-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:10px;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;}
+  .mvt-label::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .mvt-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:300;color:white;margin-bottom:20px;}
+  .mvt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;}
+  .mvt-item{display:flex;gap:12px;font-size:13px;color:rgba(255,255,255,0.8);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-weight:300;line-height:1.4;}
+  .mvt-item:last-child{border-bottom:none;}
+  .mvt-dash{color:rgba(255,255,255,0.4);flex-shrink:0;}
+  .mvt-item strong{color:white;font-weight:500;}
+
+  .toolkit-categories{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;}
+  .toolkit-cat{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+  .toolkit-cat-header{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--surface-2);border-bottom:1px solid var(--border);}
+  .toolkit-cat-icon{font-size:20px;}
+  .toolkit-cat-title{font-family:'Instrument Serif',serif;font-size:18px;font-weight:300;color:var(--text);}
+  .toolkit-tools{padding:4px 0;}
+  .toolkit-tool{display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:1px solid var(--border);transition:var(--transition);}
+  .toolkit-tool:last-child{border-bottom:none;}
+  .toolkit-tool:hover{background:var(--surface-2);}
+  .highlighted-tool{background:rgba(219,188,199,0.06);}
+  .tool-name{font-size:13.5px;font-weight:500;color:var(--text);min-width:180px;flex-shrink:0;}
+  .tool-desc{font-size:12.5px;color:var(--text-muted);line-height:1.5;font-weight:300;flex:1;}
+  .tool-cost{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+  .tool-cost.free{background:rgba(219,188,199,0.2);color:var(--burgundy);border:1px solid rgba(219,188,199,0.4);}
+  .tool-cost.paid{background:rgba(92,36,52,0.08);color:var(--burgundy);border:1px solid rgba(92,36,52,0.15);}
+
+  .ch7-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch7-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
+  /* ── CHAPTER 8: NEXT STEPS ── */
+  .achievement-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px;}
+  .achievement-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;box-shadow:var(--shadow);transition:var(--transition);}
+  .achievement-card:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+  .ach-icon{font-size:24px;margin-bottom:8px;}
+  .ach-label{font-size:10px;color:var(--text-dim);font-family:'DM Sans',sans-serif;letter-spacing:.05em;margin-bottom:6px;}
+  .ach-num{font-family:'Instrument Serif',serif;font-size:36px;font-weight:300;color:var(--burgundy);line-height:1;}
+
+  .conclusion-section{text-align:center;padding:40px 0 48px;}
+  .conclusion-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px;font-family:'DM Sans',sans-serif;}
+  .conclusion-label::before,.conclusion-label::after{content:'';display:inline-block;width:24px;height:1px;background:var(--border);}
+  .conclusion-title{font-family:'Instrument Serif',serif;font-size:52px;font-weight:300;color:var(--text);line-height:1;margin-bottom:20px;}
+  .conclusion-title em{font-style:italic;color:var(--burgundy);}
+  .conclusion-text{font-size:15px;color:var(--text-muted);line-height:1.8;font-weight:300;max-width:580px;margin:0 auto 32px;}
+  .conclusion-quote{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 40px;margin:0 auto 32px;max-width:600px;box-shadow:var(--shadow);}
+  .conclusion-quote-mark{font-family:'Instrument Serif',serif;font-size:36px;color:var(--accent);line-height:1;margin-bottom:12px;}
+  .conclusion-quote-text{font-family:'Instrument Serif',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--text);line-height:1.6;}
+  .conclusion-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:24px 0;color:var(--accent);}
+  .conclusion-divider::before,.conclusion-divider::after{content:'';display:inline-block;width:48px;height:1px;background:var(--accent);opacity:.4;}
+  .conclusion-diamond{font-size:18px;}
+  .conclusion-final-title{font-family:'Instrument Serif',serif;font-size:36px;font-weight:300;color:var(--text);margin-bottom:8px;}
+  .conclusion-final-title em{font-style:italic;color:var(--burgundy);}
+  .conclusion-final-sub{font-size:14px;color:var(--text-muted);font-style:italic;font-weight:300;}
+
+  .action-plan-steps{display:flex;flex-direction:column;gap:2px;}
+  .action-plan-step{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);transition:var(--transition);}
+  .action-plan-step:last-child{border-bottom:none;}
+  .action-plan-step:hover{padding-left:4px;}
+  .ap-num{font-family:'Instrument Serif',serif;font-size:24px;font-weight:300;color:var(--burgundy);flex-shrink:0;width:32px;}
+  .ap-content{flex:1;}
+  .ap-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
+  .ap-desc{font-size:12.5px;color:var(--text-muted);line-height:1.5;font-weight:300;}
+  .ap-check{width:20px;height:20px;accent-color:var(--burgundy);flex-shrink:0;cursor:pointer;}
+
+  .closing-card{background:var(--burgundy);border-radius:14px;padding:48px 40px;text-align:center;margin:40px 0;box-shadow:0 8px 32px rgba(92,36,52,0.25);}
+  .closing-brand{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px;font-family:'DM Sans',sans-serif;}
+  .closing-headline{font-family:'Instrument Serif',serif;font-size:40px;font-weight:300;color:white;line-height:1.3;margin-bottom:16px;}
+  .closing-headline em{font-style:italic;color:var(--accent);}
+  .closing-sub{font-size:14px;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;}
+
+  .ch1-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch1-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
   .hidden{display:none!important;}
 </style>
 </head>
@@ -922,6 +995,19 @@
 
         <div class="three-market-insight">
           The most powerful niches sit at the intersection of two markets. <strong>"Financial confidence for women"</strong> touches Wealth and Relationships. <strong>"Healthy habits for busy moms"</strong> touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.
+        </div>
+
+
+        <!-- CHAPTER 1 PROGRESS -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 1 Progress</span><span id="ch1-progress-pct">0 / 4 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch1-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch1-milestone">Market Chosen</span>
+            <span class="ch1-milestone">Niche Validated</span>
+            <span class="ch1-milestone">Research Done</span>
+            <span class="ch1-milestone">Action Taken ✦</span>
+          </div>
         </div>
 
         <!-- BEST NICHES TABLE -->
@@ -2716,7 +2802,7 @@
       <div class="chapter-hero" data-num="7">
         <div class="chapter-tag-hero">STEP SEVEN</div>
         <h1 class="chapter-title">The Instagram<br><em>Toolkit</em></h1>
-        <p class="chapter-desc">Every app, tool, and resource you need — curated, tested, and ready to use from day one.</p>
+        <p class="chapter-desc">The complete toolkit by function. Curated, tested, and ready to use. Start free. Upgrade only when income justifies it.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -2735,47 +2821,190 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">Tech Stack</div>
-        <h2 class="section-title">The Faceless Brand Tech Stack</h2>
-        <table class="data-table">
-          <thead><tr><th>Category</th><th>Tool</th><th>What It's For</th><th>Cost</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Design</strong></td><td>Canva Pro</td><td>Carousels, reel covers, brand kit</td><td>~$13/mo</td></tr>
-            <tr><td><strong>Video</strong></td><td>CapCut</td><td>Reel editing, captions, transitions</td><td>Free</td></tr>
-            <tr><td><strong>AI Content</strong></td><td>Claude / ChatGPT</td><td>Captions, hooks, ideas, strategy</td><td>Free/$20mo</td></tr>
-            <tr><td><strong>Scheduling</strong></td><td>Later or Buffer</td><td>Plan and auto-post content</td><td>Free tier</td></tr>
-            <tr><td><strong>Link in Bio</strong></td><td>Stan Store</td><td>Sell products + links in one place</td><td>Free/paid</td></tr>
-            <tr><td><strong>Analytics</strong></td><td>Instagram Insights</td><td>Track what's working (built-in)</td><td>Free</td></tr>
-            <tr><td><strong>Stock Photos</strong></td><td>Pexels / Unsplash</td><td>Free aesthetic imagery</td><td>Free</td></tr>
-            <tr><td><strong>Fonts</strong></td><td>Google Fonts / DaFont</td><td>Brand typography</td><td>Free</td></tr>
-          </tbody>
-        </table>
-        <div class="worksheet">
-          <div class="worksheet-title">My Tech Stack</div>
-          <div class="two-col">
-            <div class="field-row"><label class="field-label">Design Tool</label><input class="field-input" type="text" placeholder="e.g. Canva Pro"></div>
-            <div class="field-row"><label class="field-label">Video Editing</label><input class="field-input" type="text" placeholder="e.g. CapCut"></div>
-            <div class="field-row"><label class="field-label">AI Writing</label><input class="field-input" type="text" placeholder="e.g. Claude"></div>
-            <div class="field-row"><label class="field-label">Scheduling</label><input class="field-input" type="text" placeholder="e.g. Later"></div>
-            <div class="field-row"><label class="field-label">Link in Bio</label><input class="field-input" type="text" placeholder="e.g. Stan Store"></div>
-            <div class="field-row"><label class="field-label">Stock Images</label><input class="field-input" type="text" placeholder="e.g. Pexels"></div>
+
+        <!-- PROGRESS -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 7 Progress</span><span id="ch7-progress-pct">0 / 3 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch7-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch7-milestone">Toolkit Reviewed</span>
+            <span class="ch7-milestone">Stack Set Up</span>
+            <span class="ch7-milestone">48-Hr Launch ✦</span>
           </div>
         </div>
-        <div class="section-label">Launch Plan</div>
-        <h2 class="section-title">30-Day Launch Checklist</h2>
-        <div class="worksheet">
+
+        <!-- ══ MINIMUM VIABLE TOOLKIT ══ -->
+        <div class="section-label" style="margin-top:0;">Start Here</div>
+        <h2 class="section-title">Start today with these 9 tools — all free</h2>
+        <p class="section-text">You don't need paid tools on day one. This is your launch stack. Everything else comes later, when income justifies it.</p>
+
+        <div class="mvt-box">
+          <div class="mvt-label">— THE MINIMUM VIABLE TOOLKIT</div>
+          <div class="mvt-title">Start today with these 9 tools — all free.</div>
+          <div class="mvt-grid">
+            <div class="mvt-col">
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Canva</strong> — design content</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>CapCut</strong> — create reels</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Viralfindr</strong> — find proven content</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Socialblade</strong> — track competitors</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>FB Creator Studio</strong> — schedule posts</span></div>
+            </div>
+            <div class="mvt-col">
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Instagram Insights</strong> — track performance</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Gumroad</strong> — sell your first product</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Beehiiv</strong> — build your email list</span></div>
+              <div class="mvt-item"><span class="mvt-dash">—</span><span><strong>Claude / ChatGPT</strong> — generate content ideas</span></div>
+              <div class="mvt-item" style="margin-top:12px;font-style:italic;color:rgba(255,255,255,0.6);"><span class="mvt-dash"></span><span>Everything else comes later, when income justifies it.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ FULL TOOLKIT BY CATEGORY ══ -->
+        <div class="section-label">The Full Toolkit</div>
+        <h2 class="section-title">Complete toolkit by function</h2>
+        <p class="section-text">Every tool worth knowing — organised by what it does. Click the category to explore. Mark what you're using.</p>
+
+        <div class="toolkit-categories">
+
+          <div class="toolkit-cat">
+            <div class="toolkit-cat-header">
+              <div class="toolkit-cat-icon">🎨</div>
+              <div class="toolkit-cat-title">Design &amp; Content</div>
+            </div>
+            <div class="toolkit-tools">
+              <div class="toolkit-tool"><div class="tool-name">Canva</div><div class="tool-desc">Design posts, carousels, reel covers, stories. The non-negotiable starting tool.</div><div class="tool-cost free">Free / Pro</div></div>
+              <div class="toolkit-tool"><div class="tool-name">CapCut</div><div class="tool-desc">Reel editing with trending audio + AI tools. Most creators' primary reel editor.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Adobe Express</div><div class="tool-desc">Advanced design when Canva feels limiting. More flexibility, steeper curve.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Unfold</div><div class="tool-desc">Editorial story templates. Elevates your Stories aesthetic immediately.</div><div class="tool-cost free">Free / Pro</div></div>
+            </div>
+          </div>
+
+          <div class="toolkit-cat">
+            <div class="toolkit-cat-header">
+              <div class="toolkit-cat-icon">🔍</div>
+              <div class="toolkit-cat-title">Research &amp; Strategy</div>
+            </div>
+            <div class="toolkit-tools">
+              <div class="toolkit-tool highlighted-tool"><div class="tool-name">Viralfindr.com ✦</div><div class="tool-desc">Top performing posts by metric. Non-negotiable. Your competitive intelligence engine.</div><div class="tool-cost paid">Paid</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Socialblade.com</div><div class="tool-desc">Daily growth tracking for any public account. See who's growing and why.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Google Lens</div><div class="tool-desc">Find original stock photos used in viral posts. Reverse-image your competition.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Flick.tech</div><div class="tool-desc">Hashtag research with competition scores. Stop guessing hashtags.</div><div class="tool-cost paid">Paid</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Exploding Topics</div><div class="tool-desc">Spot emerging trends before they peak. Early = huge advantage.</div><div class="tool-cost free">Free</div></div>
+            </div>
+          </div>
+
+          <div class="toolkit-cat">
+            <div class="toolkit-cat-header">
+              <div class="toolkit-cat-icon">📅</div>
+              <div class="toolkit-cat-title">Scheduling &amp; Automation</div>
+            </div>
+            <div class="toolkit-tools">
+              <div class="toolkit-tool"><div class="tool-name">FB Creator Studio</div><div class="tool-desc">Pre-schedule posts and reels weeks ahead. Free, native to Meta. Start here.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Later.com</div><div class="tool-desc">Visual drag-and-drop calendar with grid preview. See your feed before you post it.</div><div class="tool-cost free">Free tier</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Buffer</div><div class="tool-desc">Simpler scheduling. Free up to 10 posts/month. Good for early stage.</div><div class="tool-cost free">Free</div></div>
+            </div>
+          </div>
+
+          <div class="toolkit-cat">
+            <div class="toolkit-cat-header">
+              <div class="toolkit-cat-icon">💰</div>
+              <div class="toolkit-cat-title">Monetization</div>
+            </div>
+            <div class="toolkit-tools">
+              <div class="toolkit-tool"><div class="tool-name">Gumroad</div><div class="tool-desc">Sell digital products with zero upfront cost. Instant setup, global payments.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Stan Store</div><div class="tool-desc">All-in-one creator storefront. Link in bio + products + bookings. $29/mo.</div><div class="tool-cost paid">$29/mo</div></div>
+              <div class="toolkit-tool highlighted-tool"><div class="tool-name">Beehiiv ✦</div><div class="tool-desc">Email newsletter, free up to 2,500 subscribers. Build your list from day one.</div><div class="tool-cost free">Free</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Hello Bonsai</div><div class="tool-desc">Invoicing + shoutout income tracking. Professional client management.</div><div class="tool-cost paid">Paid</div></div>
+            </div>
+          </div>
+
+          <div class="toolkit-cat">
+            <div class="toolkit-cat-header">
+              <div class="toolkit-cat-icon">🤖</div>
+              <div class="toolkit-cat-title">AI Productivity</div>
+            </div>
+            <div class="toolkit-tools">
+              <div class="toolkit-tool"><div class="tool-name">ChatGPT</div><div class="tool-desc">30 content ideas in a session, captions, hooks. Generate fast, always edit.</div><div class="tool-cost free">Free / $20mo</div></div>
+              <div class="toolkit-tool highlighted-tool"><div class="tool-name">Claude ✦</div><div class="tool-desc">Long-form research, strategy, ebook drafting, deep thinking. Pairs with this course.</div><div class="tool-cost free">Free / $20mo</div></div>
+              <div class="toolkit-tool"><div class="tool-name">Midjourney</div><div class="tool-desc">Original AI imagery for posts and carousels. Unique visuals that can't be reverse-searched.</div><div class="tool-cost paid">From $10/mo</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ══ EXERCISE 1: MY TECH STACK ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">My Tech Stack Setup</h2>
+
+        <div class="worksheet" id="ch7-ex1" onclick="unlockCh7Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Tech Stack — This Week</div></div></div>
+          <div class="worksheet-sub">Set up your minimum viable toolkit first. Add tools only when you need them.</div>
+          <div class="audit-field"><label class="audit-mini-label">TOOLS I HAVE ALREADY SET UP</label><textarea class="field-input" rows="2" placeholder="e.g. Canva, CapCut, Instagram Insights"></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">TOOLS I WILL SET UP IN THE NEXT 48 HOURS</label><textarea class="field-input" rows="2" placeholder="e.g. Viralfindr, Gumroad, Beehiiv"></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">TOOLS I WILL ADD ONCE I AM EARNING CONSISTENTLY</label><textarea class="field-input" rows="2" placeholder="e.g. Stan Store, Flick.tech, Later.com"></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">MY CONTENT CREATION DAY — WHICH DAY I BATCH EVERYTHING</label><input class="field-input" type="text" placeholder="e.g. Tuesday evening · 7–10pm"></div>
+          <div class="audit-field"><label class="audit-mini-label">MY SUNDAY REVIEW TIME — BLOCK EVERY WEEK FOR INSIGHTS</label><input class="field-input" type="text" placeholder="e.g. Sunday 8–8:30pm"></div>
+        </div>
+
+        <!-- ══ EXERCISE 2: 48-HOUR LAUNCH CHECKLIST ══ -->
+        <div class="section-label">Exercise 2 — Your Launch</div>
+        <h2 class="section-title">My 48-Hour Launch Checklist</h2>
+        <p class="section-text">Do this before anything else. Done beats perfect, always. Every item here has a chapter that taught you how.</p>
+
+        <div class="worksheet" id="ch7-ex2" onclick="unlockCh7Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My 48-Hour Launch Checklist</div></div></div>
+          <div class="worksheet-sub">Tick each item as complete. When this list is done, you have a live faceless brand.</div>
           <ul class="checklist">
-            <li><input type="checkbox"><span><strong>Week 1:</strong> Choose niche, validate it, decide on brand name</span></li>
-            <li><input type="checkbox"><span><strong>Week 1:</strong> Create Instagram account, set to Creator, write bio</span></li>
-            <li><input type="checkbox"><span><strong>Week 1:</strong> Design logo and brand colors in Canva</span></li>
-            <li><input type="checkbox"><span><strong>Week 2:</strong> Create first 9 posts (batch in one session)</span></li>
-            <li><input type="checkbox"><span><strong>Week 2:</strong> Set up link in bio with Stan Store or Linktree</span></li>
-            <li><input type="checkbox"><span><strong>Week 2:</strong> Sign up for first affiliate program in your niche</span></li>
-            <li><input type="checkbox"><span><strong>Week 3:</strong> Post first 5 pieces of content</span></li>
-            <li><input type="checkbox"><span><strong>Week 3:</strong> Engage 30 min/day with accounts in your niche</span></li>
-            <li><input type="checkbox"><span><strong>Week 4:</strong> Analyse your first posts — what got the most saves?</span></li>
-            <li><input type="checkbox"><span><strong>Week 4:</strong> Create your first digital product idea</span></li>
-            <li><input type="checkbox"><span><strong>Day 30:</strong> Review your growth and plan month 2</span></li>
+            <li><input type="checkbox"><span>Calculate my Follower CVR using the worksheet in Chapter 04</span></li>
+            <li><input type="checkbox"><span>Choose my niche and complete the Niche Validation Scorecard (Chapter 01)</span></li>
+            <li><input type="checkbox"><span>Create my Instagram account with a clean, keyword-rich username</span></li>
+            <li><input type="checkbox"><span>Fill in my name field with 3 SEO keywords</span></li>
+            <li><input type="checkbox"><span>Design my logo in Canva — or brief a Fiverr designer</span></li>
+            <li><input type="checkbox"><span>Write my bio using the Heroic Bio Formula — test 3 versions</span></li>
+            <li><input type="checkbox"><span>Sign up for Viralfindr.com and download top 10 posts from 3 niche accounts</span></li>
+            <li><input type="checkbox"><span>Set up Gumroad — even before I have a product ready</span></li>
+            <li><input type="checkbox"><span>Set up Beehiiv newsletter — connect my free lead magnet on day one</span></li>
+            <li><input type="checkbox"><span>Post my first piece of content — done beats perfect, always</span></li>
+          </ul>
+        </div>
+
+        <!-- ══ 30-DAY LAUNCH PLAN ══ -->
+        <div class="section-label">Exercise 3 — 30-Day Plan</div>
+        <h2 class="section-title">My 30-Day Brand Launch Plan</h2>
+
+        <div class="worksheet" id="ch7-ex3" onclick="unlockCh7Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">30-Day Launch Checklist</div></div></div>
+          <div class="worksheet-sub">Work through this in order. By day 30, your brand is live and your first income streams are active.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span><strong>Week 1:</strong> Choose niche, run Proof of Concept Check, decide on brand name and username</span></li>
+            <li><input type="checkbox"><span><strong>Week 1:</strong> Create Instagram account, switch to Creator, write 3 bio versions</span></li>
+            <li><input type="checkbox"><span><strong>Week 1:</strong> Design logo and brand palette in Canva — complete Chapter 02 exercises</span></li>
+            <li><input type="checkbox"><span><strong>Week 2:</strong> Research 10 competitor pages on Viralfindr and Socialblade</span></li>
+            <li><input type="checkbox"><span><strong>Week 2:</strong> Batch-create first 9 posts in one session using your content pillars</span></li>
+            <li><input type="checkbox"><span><strong>Week 2:</strong> Set up link in bio with Gumroad or Stan Store. Sign up for one affiliate programme</span></li>
+            <li><input type="checkbox"><span><strong>Week 3:</strong> Post first 5 pieces of content. Reply to every comment within 60 minutes</span></li>
+            <li><input type="checkbox"><span><strong>Week 3:</strong> Begin HTN engagement routine — 15 minutes, twice daily</span></li>
+            <li><input type="checkbox"><span><strong>Week 4:</strong> Open Instagram Insights. Calculate your CVR. Identify traffic vs conversion problem</span></li>
+            <li><input type="checkbox"><span><strong>Week 4:</strong> Brainstorm and outline your first digital product — even a $7 PDF</span></li>
+            <li><input type="checkbox"><span><strong>Day 30:</strong> Complete Sunday review. Plan month 2. Adjust TOFU/MOFU split based on data</span></li>
+          </ul>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label"><span>✦ Toolkit Setup Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I'm setting up my faceless Instagram brand in the [niche] niche. I'm at [stage — starting/building/scaling]. My budget for tools is [amount/month]. Recommend my exact tech stack — design, research, scheduling, monetisation, and AI tools — in order of priority. Tell me which to start with and which to add as I grow."</p>
+        </div>
+
+        <div class="section-label">Chapter 7 — Action Steps</div>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 07 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Your Next Steps.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Set up Canva, CapCut, and Viralfindr this week — your core creation stack.</span></li>
+            <li><input type="checkbox"><span>Create a Gumroad account even if your first product doesn't exist yet.</span></li>
+            <li><input type="checkbox"><span>Set up a Beehiiv newsletter and create a simple lead magnet to give away.</span></li>
+            <li><input type="checkbox"><span>Sign up for FB Creator Studio and schedule your first 5 posts.</span></li>
+            <li><input type="checkbox"><span>Complete the 48-Hour Launch Checklist. Tick every box.</span></li>
           </ul>
         </div>
       </div>
@@ -2790,56 +3019,126 @@
       <div class="chapter-hero" data-num="✦">
         <div class="chapter-tag-hero">YOUR NEXT STEP</div>
         <h1 class="chapter-title">Your<br><em>Next Steps</em></h1>
-        <p class="chapter-desc">You've done the work. Now it's time to ship it and never look back.</p>
+        <p class="chapter-desc">You now have everything you need. The only thing separating you from a running brand is the decision to start — today, before you close this tab.</p>
       </div>
       <div class="chapter-hero-divider"></div>
-      <div class="chapter-video-wrap">
-        <div class="chapter-video-label">CHAPTER VIDEO</div>
-        <div class="chapter-video-container" id="video-container-8" onclick="playVideo(8)">
-          <div class="chapter-video-placeholder" id="video-placeholder-8">
-            <div class="chapter-video-play">
-              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                <circle cx="28" cy="28" r="27" stroke="var(--accent)" stroke-width="1" opacity="0.3"/>
-                <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
-              </svg>
-            </div>
-            <div class="chapter-video-title">Your Next Steps</div>
-            <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
+      <div class="chapter-body">
+
+        <!-- ══ ACHIEVEMENT STATS ══ -->
+        <div class="achievement-row">
+          <div class="achievement-card"><div class="ach-icon">🎯</div><div class="ach-label">Chapters Completed</div><div class="ach-num">8</div></div>
+          <div class="achievement-card"><div class="ach-icon">💡</div><div class="ach-label">Frameworks Learned</div><div class="ach-num">12+</div></div>
+          <div class="achievement-card"><div class="ach-icon">🛠️</div><div class="ach-label">Tools in Your Stack</div><div class="ach-num">9+</div></div>
+          <div class="achievement-card"><div class="ach-icon">💸</div><div class="ach-label">Income Streams Mapped</div><div class="ach-num">7</div></div>
+        </div>
+
+        <!-- ══ CONCLUSION ══ -->
+        <div class="conclusion-section">
+          <div class="conclusion-label">— CONCLUSION —</div>
+          <h2 class="conclusion-title">Your <em>next step.</em></h2>
+          <p class="conclusion-text">You now have everything you need to build a profitable faceless Instagram brand. The niche selection. The market research. The CVR formula. The brand blueprint. The content quality ratios. The viral creation process. The growth roadmap. The HTN system. The seven income streams. The mindset. The toolkit.</p>
+
+          <div class="conclusion-quote">
+            <div class="conclusion-quote-mark">"</div>
+            <p class="conclusion-quote-text">The best time to start was a year ago. The second best time is right now — today, before you close this document.</p>
+          </div>
+
+          <div class="conclusion-divider"><div class="conclusion-diamond">♦</div></div>
+
+          <div class="conclusion-final">
+            <h3 class="conclusion-final-title">She who starts is <em>already ahead.</em></h3>
+            <p class="conclusion-final-sub">Now go build your empire.</p>
           </div>
         </div>
-      </div>
-      <div class="chapter-body">
-        <div class="intro-stats" style="padding:0;margin-bottom:28px;">
-          <div class="stat-card"><span class="stat-num">7</span><span class="stat-label">Chapters completed</span></div>
-          <div class="stat-card"><span class="stat-num">90</span><span class="stat-label">Days to your first milestone</span></div>
-          <div class="stat-card"><span class="stat-num">∞</span><span class="stat-label">Income potential</span></div>
-        </div>
-        <div class="section-label">You Made It</div>
-        <h2 class="section-title">From Workbook to Reality</h2>
-        <p class="section-text">You now have everything you need. A validated niche. A brand identity. A content strategy. A growth system. Seven income streams mapped. The mindset tools. And a full toolkit. The only thing left is to start — and keep going.</p>
-        <div class="prompt-box">
-          <div class="prompt-box-label"><span>✦ Your Launch Day Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"Today is day 1 of my faceless Instagram brand. My niche is [niche], my page is called [name], and my audience is [description]. Write: 1) My first post caption, 2) My first story sequence (3 frames), 3) My pinned post that introduces the page. Make it magnetic."</p>
-        </div>
+
+        <!-- ══ 48-HOUR ACTION PLAN ══ -->
+        <div class="section-label">Your 48-Hour Action Plan</div>
+        <h2 class="section-title">Five steps. <em>48 hours.</em> One brand.</h2>
+        <p class="section-text">Most readers feel inspired then do nothing. Don't be that reader. After this, you've gone from thinking about building a faceless brand to actually having one.</p>
+
         <div class="worksheet">
-          <div class="worksheet-title">My Final Commitment</div>
-          <div class="field-row"><label class="field-label">My page name is</label><input class="field-input" type="text" placeholder="@yourpagename"></div>
-          <div class="field-row"><label class="field-label">My niche is</label><input class="field-input" type="text" placeholder="Specific and clear"></div>
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">My 48-Hour Action Plan</div></div></div>
+          <div class="worksheet-sub">Complete these five steps in the next 48 hours. No excuses. No waiting until you're ready.</div>
+          <div class="action-plan-steps">
+            <div class="action-plan-step">
+              <div class="ap-num">1</div>
+              <div class="ap-content">
+                <div class="ap-title">Calculate your current Follower CVR</div>
+                <div class="ap-desc">(Or set a target if starting fresh). Open Instagram Insights. Do this now.</div>
+              </div>
+              <input type="checkbox" class="ap-check">
+            </div>
+            <div class="action-plan-step">
+              <div class="ap-num">2</div>
+              <div class="ap-content">
+                <div class="ap-title">Choose your niche</div>
+                <div class="ap-desc">Run the Proof of Concept Check from Chapter 01. Commit to one niche today.</div>
+              </div>
+              <input type="checkbox" class="ap-check">
+            </div>
+            <div class="action-plan-step">
+              <div class="ap-num">3</div>
+              <div class="ap-content">
+                <div class="ap-title">Create your Instagram account</div>
+                <div class="ap-desc">Clean, keyword-rich username and name field. Set to Creator. Write your bio.</div>
+              </div>
+              <input type="checkbox" class="ap-check">
+            </div>
+            <div class="action-plan-step">
+              <div class="ap-num">4</div>
+              <div class="ap-content">
+                <div class="ap-title">Design your logo</div>
+                <div class="ap-desc">Write your bio using the Heroic Bio Formula. Three versions. Test them.</div>
+              </div>
+              <input type="checkbox" class="ap-check">
+            </div>
+            <div class="action-plan-step">
+              <div class="ap-num">5</div>
+              <div class="ap-content">
+                <div class="ap-title">Sign up for Viralfindr</div>
+                <div class="ap-desc">Download top 10 posts from 3 niche accounts. Your first content database starts now.</div>
+              </div>
+              <input type="checkbox" class="ap-check">
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ FINAL COMMITMENT ══ -->
+        <div class="section-label">My Final Commitment</div>
+        <h2 class="section-title">Sign your brand into existence</h2>
+
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">My Brand Commitment</div></div></div>
+          <div class="worksheet-sub">Fill this in. This is the moment you go from reader to founder.</div>
+          <div class="field-row"><label class="field-label">My page name / username</label><input class="field-input" type="text" placeholder="@yourpagename"></div>
+          <div class="field-row"><label class="field-label">My niche (one specific topic)</label><input class="field-input" type="text" placeholder="e.g. Financial freedom for women in their 20s"></div>
           <div class="field-row"><label class="field-label">I will post my first piece of content on</label><input class="field-input" type="date"></div>
-          <div class="field-row"><label class="field-label">In 6 months, my page will have</label><textarea class="field-input" rows="2" placeholder="Followers, income, impact — be specific"></textarea></div>
-          <div class="field-row"><label class="field-label">The one reason I will not quit</label><textarea class="field-input" rows="3" placeholder="Your real why. The one that makes you get up and post even when you don't feel like it."></textarea></div>
+          <div class="field-row"><label class="field-label">My 6-month vision — followers, income, lifestyle</label><textarea class="field-input" rows="3" placeholder="Be specific. What does your life look like in 6 months if this works?"></textarea></div>
+          <div class="field-row"><label class="field-label">The one reason I will not quit</label><textarea class="field-input" rows="2" placeholder="The visceral, emotional reason. Not 'I want freedom' — the specific picture of what freedom looks like for you."></textarea></div>
         </div>
-        <div style="background:var(--burgundy);border-radius:var(--radius);padding:40px;text-align:center;margin-top:8px;box-shadow:0 8px 32px rgba(105,48,64,.2);">
-          <p style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(92,36,52,0.5);margin-bottom:14px;">The Female Hustlers®</p>
-          <p style="font-family:'Instrument Serif',serif;font-size:32px;font-weight:300;font-style:italic;color:var(--burgundy);line-height:1.3;margin-bottom:12px;">Open Claude.<br>Type START.<br>Ship before lunch.</p>
-          <p style="font-size:13px;color:var(--text-muted);letter-spacing:.04em;font-family:'DM Sans',sans-serif;">Now go build your brand. 🤍</p>
+
+        <!-- ══ CLOSING CARD ══ -->
+        <div class="closing-card">
+          <div class="closing-card-top">
+            <div class="closing-brand">The Female Hustlers®</div>
+            <div class="closing-headline">Open Claude.<br><em>Type START.</em><br>Ship before lunch.</div>
+            <div class="closing-sub">Now go build your brand. 🤍</div>
+          </div>
         </div>
+
+        <div class="prompt-box" style="margin-top:40px;">
+          <div class="prompt-box-label"><span>✦ Your Launch Day Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"Today is day 1 of my faceless Instagram brand. My niche is [niche], my page is called [name], and my audience is [description]. Write: 1) My first post caption using a proven hook formula, 2) My first story sequence (3 frames), 3) My pinned post that introduces the page to new visitors. Make everything magnetic and on-brand."</p>
+        </div>
+
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(7)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Instagram Toolkit</span></button>
         <button class="nav-btn next" onclick="showChapter(0)"><span class="nav-btn-label">↺ COMPLETE</span><span class="nav-btn-title">Back to Introduction</span></button>
       </div>
     </div>
+
+
 
 
   <!-- PROFILE PAGE -->
@@ -3338,6 +3637,66 @@
 
 
 
+
+
+
+  // ── CH1 GAMIFICATION ──
+  const ch1Steps = new Set();
+  function unlockCh1Step(n) {
+    ch1Steps.add(n);
+    const count = ch1Steps.size;
+    const pct = Math.round((count / 4) * 100);
+    const bar = document.getElementById('ch1-bar');
+    const label = document.getElementById('ch1-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 4 unlocked';
+    document.querySelectorAll('.ch1-milestone').forEach((el, i) => {
+      if (ch1Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  // Auto-fire on any input inside chapter 1
+  document.addEventListener('input', e => {
+    const ch = e.target.closest('#chapter-1');
+    if (!ch) return;
+    // Guess which step based on field position
+    const allInputs = ch.querySelectorAll('.field-input,.checklist input,.choice-pill input,.voice-radios input,.audit-input');
+    const idx = Array.from(allInputs).indexOf(e.target);
+    if (idx < 5) unlockCh1Step(1);
+    else if (idx < 15) unlockCh1Step(2);
+    else if (idx < 30) unlockCh1Step(3);
+    else unlockCh1Step(4);
+  });
+  document.querySelectorAll('.ch1-milestone').forEach(el => {
+    el.style.cursor = 'default';
+  });
+
+  // ── CH7 GAMIFICATION ──
+  const ch7Steps = new Set();
+  function unlockCh7Step(n) {
+    ch7Steps.add(n);
+    const count = ch7Steps.size;
+    const pct = Math.round((count / 3) * 100);
+    const bar = document.getElementById('ch7-bar');
+    const label = document.getElementById('ch7-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 3 unlocked';
+    document.querySelectorAll('.ch7-milestone').forEach((el, i) => {
+      if (ch7Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  document.addEventListener('input', e => {
+    const ws = e.target.closest('.worksheet');
+    if (!ws) return;
+    if (ws.id === 'ch7-ex1') unlockCh7Step(1);
+    if (ws.id === 'ch7-ex2') unlockCh7Step(2);
+    if (ws.id === 'ch7-ex3') unlockCh7Step(3);
+  });
+
+  // Unlock toolkit category on click
+  document.addEventListener('click', e => {
+    const cat = e.target.closest('.toolkit-cat-header');
+    if (cat) unlockCh7Step(1);
+  });
 
   // ── CH5 GAMIFICATION ──
   const ch5Steps = new Set();
