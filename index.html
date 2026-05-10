@@ -673,6 +673,61 @@
   .ch4-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
   .ch4-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
 
+
+  /* ── CHAPTER 5: MONETIZATION ── */
+  .mon-hero-stat{background:rgba(219,188,199,0.2);border:1px solid rgba(219,188,199,0.4);border-radius:14px;padding:28px 32px;display:flex;align-items:center;gap:28px;margin-bottom:48px;}
+  .mon-hero-num{font-family:'Instrument Serif',serif;font-size:56px;font-weight:300;color:var(--burgundy);line-height:1;flex-shrink:0;}
+  .mon-hero-text{font-size:14px;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+  .income-streams-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px;}
+  .income-stream-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;align-items:flex-start;gap:14px;transition:var(--transition);box-shadow:var(--shadow);}
+  .income-stream-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-hover);transform:translateY(-1px);}
+  .is-num{width:28px;height:28px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'DM Sans',sans-serif;}
+  .is-content{flex:1;}
+  .is-name{font-family:'Instrument Serif',serif;font-size:16px;color:var(--text);margin-bottom:6px;}
+  .is-desc{font-size:12.5px;color:var(--text-muted);line-height:1.6;font-weight:300;margin-bottom:8px;}
+  .is-when{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);font-family:'DM Sans',sans-serif;}
+  .is-earn{font-family:'Instrument Serif',serif;font-size:14px;color:var(--burgundy);white-space:nowrap;margin-left:4px;flex-shrink:0;}
+
+  .income-timeline-box{background:var(--burgundy);border-radius:14px;padding:32px;margin:40px 0;box-shadow:0 4px 20px rgba(92,36,52,0.2);}
+  .income-tl-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;}
+  .income-tl-label::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .income-tl-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:300;color:white;margin-bottom:24px;}
+  .income-tl-rows{display:flex;flex-direction:column;gap:0;}
+  .income-tl-row{display:flex;gap:20px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1);align-items:flex-start;}
+  .income-tl-row:last-child{border-bottom:none;}
+  .income-tl-month{font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);flex-shrink:0;width:100px;padding-top:1px;font-family:'DM Sans',sans-serif;}
+  .income-tl-action{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;font-weight:300;}
+
+  .income-tracker-table{border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+  .it-header{display:grid;grid-template-columns:100px 1fr 140px 110px;gap:12px;background:var(--burgundy);color:white;padding:11px 16px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+  .it-row{display:grid;grid-template-columns:100px 1fr 140px 110px;gap:12px;background:var(--surface);padding:14px 16px;border-top:1px solid var(--border);align-items:center;transition:var(--transition);font-size:13px;}
+  .it-row:hover{background:var(--surface-2);}
+  .it-followers{font-family:'Instrument Serif',serif;font-size:14px;color:var(--burgundy);font-weight:300;}
+  .it-strategy{font-size:12px;color:var(--text-muted);font-weight:300;line-height:1.5;}
+  .it-income{font-size:12px;color:var(--text);font-weight:500;}
+  .it-date input{width:100%;}
+
+  .ch5-milestone,.ch6-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
+  .ch5-milestone.done,.ch6-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
+  /* ── CHAPTER 6: MINDSET ── */
+  .mindset-traps{display:flex;flex-direction:column;gap:2px;border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:48px;box-shadow:var(--shadow);}
+  .trap-card{display:flex;align-items:flex-start;gap:20px;padding:20px 22px;background:var(--surface);border-bottom:1px solid var(--border);transition:var(--transition);}
+  .trap-card:last-child{border-bottom:none;}
+  .trap-card:hover{background:var(--surface-2);}
+  .trap-num{font-family:'Instrument Serif',serif;font-size:32px;font-weight:300;color:rgba(219,188,199,0.5);flex-shrink:0;width:52px;line-height:1;}
+  .trap-name{font-family:'Instrument Serif',serif;font-size:18px;color:var(--text);margin-bottom:6px;}
+  .trap-desc{font-size:13px;color:var(--text-muted);line-height:1.7;font-weight:300;}
+
+  .joy-practices-box{background:var(--burgundy);border-radius:14px;padding:32px;margin-bottom:40px;box-shadow:0 4px 20px rgba(92,36,52,0.2);}
+  .joy-practices-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;}
+  .joy-practices-label::before{content:'';display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3);}
+  .joy-practices-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:300;color:white;margin-bottom:24px;}
+  .joy-practices-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;}
+  .joy-practice-title{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;font-family:'DM Sans',sans-serif;}
+  .joy-practice-desc{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.65;font-weight:300;}
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -2191,7 +2246,7 @@
       <div class="chapter-hero" data-num="5">
         <div class="chapter-tag-hero">STEP FIVE</div>
         <h1 class="chapter-title">The 7 Monetization<br><em>Strategies</em></h1>
-        <p class="chapter-desc">Seven proven ways to turn your faceless page into real income — from day one to $20,000+.</p>
+        <p class="chapter-desc">Seven income streams to activate. Layer them on top of growth and watch your income compound month by month.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -2210,43 +2265,209 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">Income Streams</div>
-        <h2 class="section-title">The 7 Ways Faceless Pages Earn</h2>
+
+        <!-- PROGRESS -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 5 Progress</span><span id="ch5-progress-pct">0 / 4 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch5-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch5-milestone">Strategy Chosen</span>
+            <span class="ch5-milestone">Goal Mapped</span>
+            <span class="ch5-milestone">Plan Written</span>
+            <span class="ch5-milestone">Tracker Live ✦</span>
+          </div>
+        </div>
+
+        <!-- ══ BIG STAT ══ -->
+        <div class="section-label" style="margin-top:0;">The Potential</div>
+        <h2 class="section-title">Seven income streams to activate</h2>
+
+        <div class="mon-hero-stat">
+          <div class="mon-hero-num">$20,000<span style="font-size:0.5em;">+</span></div>
+          <div class="mon-hero-text">per month from shoutouts alone — what a fully automated 500k-follower business niche theme page generates. This is the ceiling. Your floor starts now.</div>
+        </div>
+
+        <!-- ══ INCOME STREAM 1: SHOUTOUTS ══ -->
+        <div class="section-label">Income Stream 1</div>
+        <h2 class="section-title">Selling Shoutouts — the passive engine</h2>
+        <p class="section-text">Don't wait until you're "big enough." Start outreach at 10k organically. Build monthly retainers — 4–5 retainer clients at scale = $5,000–$20,000/month in passive income.</p>
+
         <table class="data-table">
-          <thead><tr><th>#</th><th>Strategy</th><th>When to Start</th><th>Potential</th></tr></thead>
+          <thead><tr><th>Follower Count</th><th>Shoutout Price Range</th></tr></thead>
           <tbody>
-            <tr><td>01</td><td><strong>Affiliate Marketing</strong> — promote others' products for commission</td><td>Day 1</td><td>$500–$5K/mo</td></tr>
-            <tr><td>02</td><td><strong>Digital Products</strong> — guides, templates, presets, ebooks</td><td>500+ followers</td><td>$1K–$10K/mo</td></tr>
-            <tr><td>03</td><td><strong>UGC Creation</strong> — make content for brands (no face needed)</td><td>Day 1</td><td>$200–$2K/post</td></tr>
-            <tr><td>04</td><td><strong>Paid Shoutouts</strong> — promote other pages to your audience</td><td>5K+ followers</td><td>$50–$500/post</td></tr>
-            <tr><td>05</td><td><strong>Coaching / Consulting</strong> — teach what you know</td><td>1K+ followers</td><td>$500–$5K/client</td></tr>
-            <tr><td>06</td><td><strong>Brand Deals</strong> — sponsored posts with companies</td><td>10K+ followers</td><td>$500–$10K/deal</td></tr>
-            <tr><td>07</td><td><strong>Sell the Page</strong> — build and flip profitable pages</td><td>Anytime</td><td>$5K–$50K+</td></tr>
+            <tr><td>10,000 – 30,000</td><td>$20 – $60 per post</td></tr>
+            <tr><td>30,000 – 100,000</td><td>$60 – $150 per post</td></tr>
+            <tr><td>100,000 – 300,000</td><td>$150 – $300 per post</td></tr>
+            <tr><td>300,000 – 500,000</td><td>$300 – $500+ per post</td></tr>
+            <tr><td>500,000+</td><td>$500+ per post · plus retainer deals</td></tr>
           </tbody>
         </table>
-        <div class="prompt-box">
-          <div class="prompt-box-label"><span>✦ Monetization Plan Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I have a faceless Instagram page in the [niche] niche with [X] followers. My audience is [description]. I want to make my first $1,000. Which monetization strategy should I start with and give me a step-by-step plan to implement it this week?"</p>
+
+        <!-- ══ STREAMS 2-7 ══ -->
+        <div class="section-label">Income Streams 2–7</div>
+        <h2 class="section-title">Your full income menu</h2>
+        <p class="section-text">Layer these on top of shoutout income as your page grows. Each one adds a new revenue floor that doesn't disappear when you stop posting.</p>
+
+        <div class="income-streams-grid">
+          <div class="income-stream-card">
+            <div class="is-num">2</div>
+            <div class="is-content">
+              <div class="is-name">Affiliate Marketing</div>
+              <div class="is-desc">Promote other people's products on Digistore24 / Clickbank. Target 30%+ commission on digital products. Zero product creation needed.</div>
+              <div class="is-when">Start: Day 1</div>
+            </div>
+            <div class="is-earn">$500–$5K/mo</div>
+          </div>
+          <div class="income-stream-card">
+            <div class="is-num">3</div>
+            <div class="is-content">
+              <div class="is-name">Your Own Digital Products</div>
+              <div class="is-desc">Ebooks ($7–$47), templates ($17–$97), mini-courses ($97–$297), journals, memberships ($19–$99/mo). You own the asset forever.</div>
+              <div class="is-when">Start: 500+ followers</div>
+            </div>
+            <div class="is-earn">$1K–$10K/mo</div>
+          </div>
+          <div class="income-stream-card">
+            <div class="is-num">4</div>
+            <div class="is-content">
+              <div class="is-name">Paid Subscriptions</div>
+              <div class="is-desc">Instagram Subscriptions at $4.99/mo. Just 200 subscribers = $998/mo recurring. This is money that arrives whether you post or not.</div>
+              <div class="is-when">Start: Any time</div>
+            </div>
+            <div class="is-earn">$200–$2K/mo</div>
+          </div>
+          <div class="income-stream-card">
+            <div class="is-num">5</div>
+            <div class="is-content">
+              <div class="is-name">Coaching &amp; Consulting</div>
+              <div class="is-desc">Start at $97–$297/session. Scale to group programmes at $497–$2,997. Your niche knowledge is worth more than you think.</div>
+              <div class="is-when">Start: 1K+ followers</div>
+            </div>
+            <div class="is-earn">$500–$5K/client</div>
+          </div>
+          <div class="income-stream-card">
+            <div class="is-num">6</div>
+            <div class="is-content">
+              <div class="is-name">Brand Deals</div>
+              <div class="is-desc">Already a micro-influencer at 5–10k. $50–$300/post. Build a one-page media kit. Brands pay for access to your engaged audience.</div>
+              <div class="is-when">Start: 5K+ followers</div>
+            </div>
+            <div class="is-earn">$500–$10K/deal</div>
+          </div>
+          <div class="income-stream-card">
+            <div class="is-num">7</div>
+            <div class="is-content">
+              <div class="is-name">Email List</div>
+              <div class="is-desc">Your following lives on Meta — your list is yours forever. Email converts 5–10× cold IG traffic. Start building from day one with a free lead magnet.</div>
+              <div class="is-when">Start: Day 1</div>
+            </div>
+            <div class="is-earn">Long-term asset</div>
+          </div>
         </div>
-        <div class="worksheet">
-          <div class="worksheet-title">My Revenue Plan</div>
-          <div class="field-row"><label class="field-label">Phase 1 (0–1K followers) — First Income Source</label><textarea class="field-input" rows="2" placeholder="e.g. Affiliate marketing for [specific program]"></textarea></div>
-          <div class="field-row"><label class="field-label">Phase 2 (1K–10K) — Added Income Layer</label><textarea class="field-input" rows="2" placeholder="e.g. Launch a $27 digital guide about [topic]"></textarea></div>
-          <div class="field-row"><label class="field-label">Phase 3 (10K+) — Scale</label><textarea class="field-input" rows="2" placeholder="e.g. Brand deals + coaching + evergreen digital products"></textarea></div>
+
+        <!-- ══ INCOME ACTIVATION TIMELINE ══ -->
+        <div class="income-timeline-box">
+          <div class="income-tl-label">— THE INCOME ACTIVATION TIMELINE</div>
+          <div class="income-tl-title">Layer income streams on top of growth.</div>
+          <div class="income-tl-rows">
+            <div class="income-tl-row"><span class="income-tl-month">Months 1–2</span><span class="income-tl-action">Focus entirely on growth. No monetisation pressure. Build your audience health.</span></div>
+            <div class="income-tl-row"><span class="income-tl-month">Month 3</span><span class="income-tl-action">Begin shoutout sales. Launch lead magnet. Start your email list.</span></div>
+            <div class="income-tl-row"><span class="income-tl-month">Months 4–5</span><span class="income-tl-action">Launch first digital product ($7–$27). Add 1–2 affiliate programmes.</span></div>
+            <div class="income-tl-row"><span class="income-tl-month">Month 6+</span><span class="income-tl-action">Add coaching, subscriptions, brand-deal outreach. Reinvest into growth.</span></div>
+            <div class="income-tl-row"><span class="income-tl-month">Month 12+</span><span class="income-tl-action">Multiple streams active. Hire a VA. Automate. Compound.</span></div>
+          </div>
         </div>
-        <div class="worksheet">
-          <div class="worksheet-title">$20,000 Revenue Tracker</div>
+
+        <!-- ══ INCOME GOAL TRACKER ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">My Income Goal Tracker</h2>
+        <p class="section-text">Map follower milestones to income targets. Review monthly and adjust your timeline.</p>
+
+        <div class="worksheet" id="ch5-ex1" onclick="unlockCh5Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Income Goal Tracker</div></div></div>
+          <div class="worksheet-sub">Fill in your goal dates. Review every month and check off milestones as you hit them.</div>
+          <div class="income-tracker-table">
+            <div class="it-header"><span>Followers</span><span>Strategy</span><span>Income Target</span><span>My Goal Date</span></div>
+            <div class="it-row"><div class="it-followers">0 – 10k</div><div class="it-strategy">Building — focus on content quality and profile CVR.</div><div class="it-income">$0 – $200/mo</div><div class="it-date"><input class="field-input" type="date" style="padding:5px 8px;font-size:11px;"></div></div>
+            <div class="it-row"><div class="it-followers">10k – 30k</div><div class="it-strategy">Begin shoutouts. Launch first lead magnet.</div><div class="it-income">$200 – $800/mo</div><div class="it-date"><input class="field-input" type="date" style="padding:5px 8px;font-size:11px;"></div></div>
+            <div class="it-row"><div class="it-followers">30k – 100k</div><div class="it-strategy">Add affiliates. Launch first digital product.</div><div class="it-income">$800 – $3,000/mo</div><div class="it-date"><input class="field-input" type="date" style="padding:5px 8px;font-size:11px;"></div></div>
+            <div class="it-row"><div class="it-followers">100k – 300k</div><div class="it-strategy">Hire account manager. Monthly retainer deals.</div><div class="it-income">$3,000 – $10,000/mo</div><div class="it-date"><input class="field-input" type="date" style="padding:5px 8px;font-size:11px;"></div></div>
+            <div class="it-row"><div class="it-followers">300k – 500k+</div><div class="it-strategy">Fully automated. Multiple income streams.</div><div class="it-income">$10,000 – $20,000+/mo</div><div class="it-date"><input class="field-input" type="date" style="padding:5px 8px;font-size:11px;"></div></div>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 2: WHICH STREAM FIRST ══ -->
+        <div class="section-label">Exercise 2</div>
+        <h2 class="section-title">Choose your first income stream</h2>
+
+        <div class="worksheet" id="ch5-ex2" onclick="unlockCh5Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My First Income Stream</div></div></div>
+          <div class="worksheet-sub">Pick the one you're activating first. Be specific — vague goals earn vague results.</div>
+          <div class="field-row"><label class="field-label">My first income stream (circle one)</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <label class="choice-pill"><input type="radio" name="stream1" style="display:none;"> 📣 Shoutouts</label>
+              <label class="choice-pill"><input type="radio" name="stream1" style="display:none;"> 🔗 Affiliate</label>
+              <label class="choice-pill"><input type="radio" name="stream1" style="display:none;"> 📦 Digital Product</label>
+              <label class="choice-pill"><input type="radio" name="stream1" style="display:none;"> 💌 Email List</label>
+              <label class="choice-pill"><input type="radio" name="stream1" style="display:none;"> 🎙️ Coaching</label>
+            </div>
+          </div>
+          <div class="field-row"><label class="field-label">The exact date I will activate it</label><input class="field-input" type="date"></div>
+          <div class="field-row"><label class="field-label">The follower count I need to hit first (if applicable)</label><input class="field-input" type="text" placeholder="e.g. 10,000 followers"></div>
+          <div class="field-row"><label class="field-label">My 3-month income target from this stream</label><input class="field-input" type="text" placeholder="e.g. $500/mo from affiliate sales"></div>
+        </div>
+
+        <!-- ══ EXERCISE 3: MONETISATION PLAN ══ -->
+        <div class="section-label">Exercise 3</div>
+        <h2 class="section-title">My Monetisation Plan</h2>
+
+        <div class="worksheet" id="ch5-ex3" onclick="unlockCh5Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Monetisation Plan</div></div></div>
+          <div class="worksheet-sub">Define your income strategy with specifics — not just goals.</div>
+          <div class="audit-field"><label class="audit-mini-label">MY FIRST INCOME STREAM AND THE EXACT DATE I WILL ACTIVATE IT</label><input class="field-input" style="margin-bottom:5px;" type="text" placeholder=""><input class="field-input" type="date"></div>
+          <div class="audit-field"><label class="audit-mini-label">MY FIRST DIGITAL PRODUCT — IDEA, PRICE, PLATFORM (GUMROAD / STAN STORE)</label><textarea class="field-input" rows="2" placeholder="e.g. A $27 'Instagram Starter Pack' guide on Gumroad"></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">THE AFFILIATE PROGRAMME I WILL JOIN FIRST — AND WHY IT FITS MY NICHE</label><textarea class="field-input" rows="2" placeholder="e.g. Digistore24 — wellness supplements — fits my health niche exactly"></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">MY 3-MONTH INCOME GOAL ($) AND FOLLOWER COUNT NEEDED TO REACH IT</label><input class="field-input" type="text" placeholder="e.g. $500/mo · need 15,000 followers"></div>
+          <div class="audit-field"><label class="audit-mini-label">MY 12-MONTH INCOME GOAL ($) AND FOLLOWER COUNT NEEDED TO REACH IT</label><input class="field-input" type="text" placeholder="e.g. $3,000/mo · need 80,000 followers"></div>
+        </div>
+
+        <!-- ══ EXERCISE 4: REVENUE TRACKER ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">My $20,000 Revenue Tracker</h2>
+
+        <div class="worksheet" id="ch5-ex4" onclick="unlockCh5Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">Monthly Revenue Tracker</div></div></div>
+          <div class="worksheet-sub">Log every income source every month. Watch the compound effect happen in real time.</div>
           <table class="data-table">
-            <thead><tr><th>Month</th><th>Source</th><th>Revenue</th><th>Running Total</th></tr></thead>
+            <thead><tr><th>Month</th><th>Primary Source</th><th>Revenue</th><th>Running Total</th><th>% of Goal</th></tr></thead>
             <tbody>
-              <tr><td>Month 1</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text" placeholder="$0"></td><td><input class="field-input" type="text" placeholder="$0"></td></tr>
-              <tr><td>Month 2</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 3</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 4</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 5</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
-              <tr><td>Month 6</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 1</td><td><input class="field-input" type="text" placeholder="e.g. Affiliate"></td><td><input class="field-input" type="text" placeholder="$0"></td><td><input class="field-input" type="text" placeholder="$0"></td><td><input class="field-input" type="text" placeholder="0%"></td></tr>
+              <tr><td>Month 2</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 3</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 4</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 5</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
+              <tr><td>Month 6</td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td><td><input class="field-input" type="text"></td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label"><span>✦ Monetisation Strategy Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I have a faceless Instagram page in the [niche] niche with [X] followers. My audience is [description]. I want to make my first $1,000. Give me: 1) the best first income stream for my stage, 2) a step-by-step activation plan for this week, 3) the exact copy I should use to promote it in my bio and Stories."</p>
+        </div>
+
+        <div class="section-label">Chapter 5 — Action Steps</div>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 05 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 6.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Choose your first income stream and set an activation date.</span></li>
+            <li><input type="checkbox"><span>Sign up for at least one affiliate programme in your niche today.</span></li>
+            <li><input type="checkbox"><span>Brainstorm your first digital product — even a $7 PDF counts.</span></li>
+            <li><input type="checkbox"><span>Set up your email list with a free lead magnet (Mailchimp or Kit is free).</span></li>
+            <li><input type="checkbox"><span>Create a simple media kit PDF for brand deals (Canva template works).</span></li>
+            <li><input type="checkbox"><span>Fill in your Income Goal Tracker with realistic milestone dates.</span></li>
+          </ul>
         </div>
       </div>
       <div class="chapter-nav">
@@ -2260,7 +2481,7 @@
       <div class="chapter-hero" data-num="6">
         <div class="chapter-tag-hero">STEP SIX</div>
         <h1 class="chapter-title">The Success<br><em>Mindset</em></h1>
-        <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K.</p>
+        <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K. The strategy is learnable. The mindset is the edge.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -2279,29 +2500,209 @@
         </div>
       </div>
       <div class="chapter-body">
-        <div class="section-label">The Inner Game</div>
-        <h2 class="section-title">Why Most Pages Quit (And How Not To)</h2>
-        <p class="section-text">Building a faceless brand is simple — not easy. The content is learnable. The growth is predictable. What stops most women is the invisible stuff: self-doubt, comparison, inconsistency when results are slow. This chapter arms you for those moments.</p>
-        <ul class="step-list">
-          <li><div class="step-content"><strong>The 90-Day Rule</strong><p>No page looks impressive in the first 30 days. Commit to 90 days of consistency before drawing any conclusions about whether it's working.</p></div></li>
-          <li><div class="step-content"><strong>Detach From Vanity Metrics</strong><p>Likes feel good. Saves and shares build brands. Follower count doesn't equal income. Track what actually matters.</p></div></li>
-          <li><div class="step-content"><strong>Comparison Is Content Theft</strong><p>Every minute comparing your month 2 to someone's year 3 is a minute you could spend creating. Block. Mute. Focus.</p></div></li>
-          <li><div class="step-content"><strong>Imperfect Posts Beat Perfect Drafts</strong><p>Posting something 80% good today beats something perfect never. The algorithm rewards volume and consistency.</p></div></li>
-          <li><div class="step-content"><strong>Your Page Is a Business</strong><p>Treat it like one. Set working hours, track metrics, reinvest earnings. The women who succeed do this from day one.</p></div></li>
-        </ul>
-        <div class="prompt-box">
-          <div class="prompt-box-label"><span>✦ Mindset Reset Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I've been building my faceless Instagram page for [X weeks/months]. I'm feeling [describe what's blocking you]. Give me a realistic perspective check, a mindset reframe, and 3 concrete actions to take this week to get back on track."</p>
+
+        <!-- PROGRESS -->
+        <div class="ch2-progress-bar-wrap" style="margin-top:0;">
+          <div class="ch2-progress-label"><span>Chapter 6 Progress</span><span id="ch6-progress-pct">0 / 4 unlocked</span></div>
+          <div class="ch2-bar"><div class="ch2-bar-fill" id="ch6-bar" style="width:0%"></div></div>
+          <div class="ch2-milestones">
+            <span class="ch6-milestone">Traps Identified</span>
+            <span class="ch6-milestone">Score Taken</span>
+            <span class="ch6-milestone">Why Written</span>
+            <span class="ch6-milestone">Contract Signed ✦</span>
+          </div>
         </div>
-        <div class="worksheet">
-          <div class="worksheet-title">My Commitment Contract</div>
-          <div class="field-row"><label class="field-label">I commit to posting __ times per week for 90 days</label><input class="field-input" type="text" placeholder="e.g. 4 times per week"></div>
-          <div class="field-row"><label class="field-label">My non-negotiable posting days</label><input class="field-input" type="text" placeholder="e.g. Mon, Wed, Thu, Sat"></div>
-          <div class="field-row"><label class="field-label">When I feel like quitting, I will remind myself</label><textarea class="field-input" rows="3" placeholder="Write your personal reason. Make it emotional."></textarea></div>
+
+        <!-- ══ 4 MINDSET TRAPS ══ -->
+        <div class="section-label" style="margin-top:0;">The 4 Killers</div>
+        <h2 class="section-title">The 4 mindset traps that kill Instagram accounts</h2>
+        <p class="section-text">Every account that fails falls into one or more of these traps. Name them, and they lose their power over you.</p>
+
+        <div class="mindset-traps">
+          <div class="trap-card">
+            <div class="trap-num">01</div>
+            <div class="trap-body">
+              <div class="trap-name">Perfectionism Paralysis</div>
+              <div class="trap-desc">The enemy dressed as a virtue. While you are perfecting, you are not posting. While you are not posting, you are not growing. Good enough and posted beats perfect and draft.</div>
+            </div>
+          </div>
+          <div class="trap-card">
+            <div class="trap-num">02</div>
+            <div class="trap-body">
+              <div class="trap-name">The Comparison Spiral</div>
+              <div class="trap-desc">Instagram is designed to show you aspirational content all day. The only useful comparison is to who you were last week. Block. Mute. Focus on your own data.</div>
+            </div>
+          </div>
+          <div class="trap-card">
+            <div class="trap-num">03</div>
+            <div class="trap-body">
+              <div class="trap-name">The Inconsistency Cycle</div>
+              <div class="trap-desc">Five posts a week for three months beats 20 in week one and silence after. The algorithm rewards reliability over bursts. Show up even when results are slow.</div>
+            </div>
+          </div>
+          <div class="trap-card">
+            <div class="trap-num">04</div>
+            <div class="trap-body">
+              <div class="trap-name">Outcome Dependency</div>
+              <div class="trap-desc">The first 60–90 days are universally slow. Every major account lived this phase. Trust the process — results arrive on a delay, not in real time.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ THE HEDONIC TREADMILL ══ -->
+        <div class="section-label">Protecting Your Joy</div>
+        <h2 class="section-title">Working with the treadmill — four practices that protect your joy</h2>
+        <p class="section-text">The hedonic treadmill describes our mind's tendency to return to a baseline of happiness regardless of what happens. You hit 10,000 followers, joy lasts 48 hours, then 20,000 becomes the new goal. <em>Not a character flaw — neurological wiring.</em></p>
+
+        <div class="joy-practices-box">
+          <div class="joy-practices-label">WORKING WITH THE TREADMILL</div>
+          <div class="joy-practices-title">Four practices that protect your joy.</div>
+          <div class="joy-practices-grid">
+            <div class="joy-practice">
+              <div class="joy-practice-title">CELEBRATE DELIBERATELY</div>
+              <div class="joy-practice-desc">Build a ritual for every milestone. Tell someone. Write it down. Feel it before moving on.</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">CHASE BALANCE, NOT METRICS</div>
+              <div class="joy-practice-desc">Set lifestyle goals alongside follower goals. What does a successful week feel like — not just perform like?</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">PROCESS OVER OUTCOME</div>
+              <div class="joy-practice-desc">Design your life so the daily process itself is rewarding. If the work is enjoyable, you win every day regardless of what the counter says.</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">DEFINE ENOUGH</div>
+              <div class="joy-practice-desc">Decide what enough looks like before you start. $5k/mo? 3 hours of work daily? Honour it when you reach it.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ch3-quote">
+          <div class="ch3-quote-mark">"</div>
+          <p class="ch3-quote-text">The creators who grow the fastest are not the ones who chase followers the hardest. They are the ones who serve their audience most genuinely. Growth is a byproduct of value.</p>
+        </div>
+
+        <!-- ══ EXERCISE 1: MINDSET SCORE ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">My Mindset Score</h2>
+        <p class="section-text">Mark where you are now and where you want to be across six mindset dimensions. Awareness is the first step to change.</p>
+
+        <div class="worksheet" id="ch6-ex1" onclick="unlockCh6Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">Mindset Scale Assessment</div></div></div>
+          <div class="worksheet-sub">For each row, select where you currently operate — and where you want to be.</div>
+          <div class="voice-scale">
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait for motivation to act</span><div class="voice-radios"><input type="radio" name="ms1" value="1"><input type="radio" name="ms1" value="2"><input type="radio" name="ms1" value="3"><input type="radio" name="ms1" value="4"><input type="radio" name="ms1" value="5"></div><span class="voice-right" style="font-size:12px;">I act regardless of how I feel</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I compare my page to others constantly</span><div class="voice-radios"><input type="radio" name="ms2" value="1"><input type="radio" name="ms2" value="2"><input type="radio" name="ms2" value="3"><input type="radio" name="ms2" value="4"><input type="radio" name="ms2" value="5"></div><span class="voice-right" style="font-size:12px;">I only compare to my past self</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait until content is perfect</span><div class="voice-radios"><input type="radio" name="ms3" value="1"><input type="radio" name="ms3" value="2"><input type="radio" name="ms3" value="3"><input type="radio" name="ms3" value="4"><input type="radio" name="ms3" value="5"></div><span class="voice-right" style="font-size:12px;">I post and learn from the data</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I expect quick results</span><div class="voice-radios"><input type="radio" name="ms4" value="1"><input type="radio" name="ms4" value="2"><input type="radio" name="ms4" value="3"><input type="radio" name="ms4" value="4"><input type="radio" name="ms4" value="5"></div><span class="voice-right" style="font-size:12px;">I trust the long-game process</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I work for external validation</span><div class="voice-radios"><input type="radio" name="ms5" value="1"><input type="radio" name="ms5" value="2"><input type="radio" name="ms5" value="3"><input type="radio" name="ms5" value="4"><input type="radio" name="ms5" value="5"></div><span class="voice-right" style="font-size:12px;">I work for my own defined goals</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">Setbacks feel like failures</span><div class="voice-radios"><input type="radio" name="ms6" value="1"><input type="radio" name="ms6" value="2"><input type="radio" name="ms6" value="3"><input type="radio" name="ms6" value="4"><input type="radio" name="ms6" value="5"></div><span class="voice-right" style="font-size:12px;">Setbacks are information</span></div>
+          </div>
+          <div class="field-row" style="margin-top:16px;"><label class="field-label">My biggest mindset gap (the row I scored lowest on)</label><textarea class="field-input" rows="2" placeholder="e.g. I wait for motivation — I need to build an action-first system"></textarea></div>
+        </div>
+
+        <!-- ══ WEEKLY SCHEDULE ══ -->
+        <div class="section-label">The Sustainable System</div>
+        <h2 class="section-title">The Side-Hustling Woman's Weekly Schedule</h2>
+        <p class="section-text">Five to seven hours a week. That is what it takes to run a faceless Instagram brand once your system is in place. Here is the breakdown that makes it sustainable.</p>
+
+        <table class="data-table">
+          <thead><tr><th>Day</th><th>Time</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:var(--burgundy);">Sunday</strong></td><td>30–45 min</td><td>Weekly review — Insights, note what worked, plan next week's topics.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Monday</strong></td><td>20 min</td><td>Post content + 15 min HTN engagement.</td></tr>
+            <tr><td>Tuesday</td><td>2–3 hrs</td><td>Batch creation — design and write 5–7 posts. Schedule via Creator Studio or Later.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Wednesday</strong></td><td>20 min</td><td>Post + engage + reply to all comments from last 48 hours.</td></tr>
+            <tr><td>Thursday</td><td>20 min</td><td>Post + add Stories — a poll, tip, or question box.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Friday</strong></td><td>20 min</td><td>Post your strongest content of the week + engage.</td></tr>
+            <tr><td>Saturday</td><td>15 min</td><td>Check Stories, reply to DMs, capture content ideas for next week.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="she-boss-tip">
+          <div class="she-boss-icon">♦</div>
+          <div>
+            <div class="she-boss-label">WRITE YOUR WHY</div>
+            <p>Not <em>"I want freedom."</em> Write: <em>"I want to pick my daughter up from school every single day without asking permission."</em> The specific, visceral version is the one that pulls you through slow weeks.</p>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 2: MY WHY ══ -->
+        <div class="section-label">Exercise 2 — The Most Important Exercise</div>
+        <h2 class="section-title">My Why &amp; My Enough</h2>
+        <p class="section-text">The most important exercise in this entire workbook. Be specific — not abstract. Vague goals create vague motivation.</p>
+
+        <div class="worksheet" id="ch6-ex2" onclick="unlockCh6Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Why &amp; My Enough</div></div></div>
+          <div class="worksheet-sub">Write this in one sitting. Return to it when motivation drops. This is your anchor.</div>
+          <div class="audit-field"><label class="audit-mini-label">MY VISCERAL WHY FOR BUILDING THIS BRAND (PAINT THE EXACT PICTURE)</label><textarea class="field-input" rows="4" placeholder="e.g. I want to pick my daughter up from school every single day without asking permission. I want to work from our kitchen table, in my own time, building something that is ours..."></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">WHAT "ENOUGH" LOOKS LIKE — SPECIFIC INCOME, SPECIFIC LIFESTYLE, SPECIFIC FREEDOM</label><textarea class="field-input" rows="3" placeholder="e.g. $5,000/mo. 3 hours of focused work daily. Friday afternoons off. Family holidays twice a year without checking approval..."></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">3 PROCESS WINS I WILL CELEBRATE EVERY WEEK REGARDLESS OF FOLLOWER COUNT</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 1 (e.g. I posted consistently all 5 days)">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 2 (e.g. I created my content batch in one sitting)">
+            <input class="field-input" type="text" placeholder="Process win 3 (e.g. I replied to every comment within the hour)">
+          </div>
+          <div class="audit-field"><label class="audit-mini-label">MY ACCOUNTABILITY PARTNER — NAME + WHAT I SHARE WITH THEM WEEKLY</label><input class="field-input" type="text" placeholder="e.g. My friend Sarah — I share my weekly stats and one win every Sunday"></div>
+        </div>
+
+        <!-- ══ EXERCISE 3: COMMITMENT CONTRACT ══ -->
+        <div class="section-label">Exercise 3</div>
+        <h2 class="section-title">My 90-Day Commitment Contract</h2>
+
+        <div class="worksheet" id="ch6-ex3" onclick="unlockCh6Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Commitment Contract</div></div></div>
+          <div class="worksheet-sub">90 days of consistency. No conclusions drawn before then. Sign and return to this when it gets hard.</div>
+          <div class="field-row"><label class="field-label">I commit to posting __ times per week for 90 days</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 3× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 4× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 5× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> Daily</label>
+            </div>
+          </div>
+          <div class="field-row"><label class="field-label">My non-negotiable posting days</label><input class="field-input" type="text" placeholder="e.g. Mon, Tue, Thu, Fri, Sat"></div>
+          <div class="field-row"><label class="field-label">When I feel like quitting, I will read this</label><textarea class="field-input" rows="3" placeholder="Write a message to your future self who wants to quit. Make it real. Make it pull you back."></textarea></div>
           <div class="two-col">
             <div class="field-row"><label class="field-label">My 90-day start date</label><input class="field-input" type="date"></div>
-            <div class="field-row"><label class="field-label">My review date</label><input class="field-input" type="date"></div>
+            <div class="field-row"><label class="field-label">My review date (day 90)</label><input class="field-input" type="date"></div>
           </div>
+        </div>
+
+        <!-- ══ EXERCISE 4: WEEKLY ROUTINE ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">Design my creator routine</h2>
+
+        <div class="worksheet" id="ch6-ex4" onclick="unlockCh6Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My Creator Weekly Routine</div></div></div>
+          <div class="worksheet-sub">Adapt the schedule above to your life. Block these hours in your calendar now.</div>
+          <div class="weekly-planner" style="grid-template-columns:repeat(7,1fr);">
+            <div class="day-card"><div class="day-label">SUN</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Weekly review"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 8pm"></div></div>
+            <div class="day-card"><div class="day-label">MON</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + HTN"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">TUE</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Batch create"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7pm"></div></div>
+            <div class="day-card"><div class="day-label">WED</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">THU</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + Stories"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">FRI</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Best post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">SAT</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="DMs + ideas"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 10am"></div></div>
+          </div>
+        </div>
+
+        <div class="prompt-box">
+          <div class="prompt-box-label"><span>✦ Mindset Reset Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I've been building my faceless Instagram page for [X weeks/months]. I'm feeling [describe what's blocking you]. Give me a realistic perspective check, a mindset reframe, and 3 concrete actions I should take this week to get back on track. Be direct and warm — not toxic positivity."</p>
+        </div>
+
+        <div class="section-label">Chapter 6 — Action Steps</div>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 06 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 7.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Complete the Mindset Scale — identify your biggest gap and name it.</span></li>
+            <li><input type="checkbox"><span>Write your visceral Why — specific, emotional, present-tense.</span></li>
+            <li><input type="checkbox"><span>Define your "Enough" — income, time, freedom. Write it down and put it somewhere visible.</span></li>
+            <li><input type="checkbox"><span>Sign your 90-day commitment contract and block the posting days in your calendar.</span></li>
+            <li><input type="checkbox"><span>Design your creator weekly routine and set recurring calendar blocks.</span></li>
+            <li><input type="checkbox"><span>Tell one person about your brand. Accountability is the most underrated growth tool.</span></li>
+          </ul>
         </div>
       </div>
       <div class="chapter-nav">
@@ -2936,6 +3337,53 @@
 
 
 
+
+
+  // ── CH5 GAMIFICATION ──
+  const ch5Steps = new Set();
+  function unlockCh5Step(n) {
+    ch5Steps.add(n);
+    const count = ch5Steps.size;
+    const pct = Math.round((count / 4) * 100);
+    const bar = document.getElementById('ch5-bar');
+    const label = document.getElementById('ch5-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 4 unlocked';
+    document.querySelectorAll('.ch5-milestone').forEach((el, i) => {
+      if (ch5Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  document.addEventListener('input', e => {
+    const ws = e.target.closest('.worksheet');
+    if (!ws) return;
+    if (ws.id === 'ch5-ex1') unlockCh5Step(1);
+    if (ws.id === 'ch5-ex2') unlockCh5Step(2);
+    if (ws.id === 'ch5-ex3') unlockCh5Step(3);
+    if (ws.id === 'ch5-ex4') unlockCh5Step(4);
+  });
+
+  // ── CH6 GAMIFICATION ──
+  const ch6Steps = new Set();
+  function unlockCh6Step(n) {
+    ch6Steps.add(n);
+    const count = ch6Steps.size;
+    const pct = Math.round((count / 4) * 100);
+    const bar = document.getElementById('ch6-bar');
+    const label = document.getElementById('ch6-progress-pct');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = count + ' / 4 unlocked';
+    document.querySelectorAll('.ch6-milestone').forEach((el, i) => {
+      if (ch6Steps.has(i + 1)) el.classList.add('done');
+    });
+  }
+  document.addEventListener('input', e => {
+    const ws = e.target.closest('.worksheet');
+    if (!ws) return;
+    if (ws.id === 'ch6-ex1') unlockCh6Step(1);
+    if (ws.id === 'ch6-ex2') unlockCh6Step(2);
+    if (ws.id === 'ch6-ex3') unlockCh6Step(3);
+    if (ws.id === 'ch6-ex4') unlockCh6Step(4);
+  });
 
   // ── CH4 GAMIFICATION ──
   const ch4Steps = new Set();
