@@ -801,6 +801,457 @@
 
   .ch1-milestone{font-size:9px;font-weight:500;color:var(--text-dim);text-align:center;font-family:'DM Sans',sans-serif;padding:3px 6px;border-radius:20px;border:1px solid var(--border);transition:var(--transition);}
   .ch1-milestone.done{background:rgba(219,188,199,0.25);border-color:rgba(219,188,199,0.5);color:var(--burgundy);}
+
+  /* ══════════════════════════════════════════
+     DASHBOARD WELCOME PAGE (Chapter 0)
+  ══════════════════════════════════════════ */
+
+  /* Header */
+  .db-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 48px 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .db-welcome-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .db-welcome-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.05;
+  }
+  .db-welcome-title em { color: var(--burgundy); font-style: italic; }
+  .db-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .db-date {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  /* ── TOP STATS ROW ── */
+  .db-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 48px 20px;
+  }
+
+  .db-stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    position: relative;
+    transition: all .25s cubic-bezier(.4,0,.2,1);
+    cursor: default;
+    overflow: hidden;
+  }
+  .db-stat-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .db-sc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .db-sc-icon { font-size: 22px; }
+
+  .db-sc-edit {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all .2s;
+    flex-shrink: 0;
+  }
+  .db-sc-edit:hover {
+    background: rgba(219,188,199,0.15);
+    border-color: var(--border-hover);
+    color: var(--burgundy);
+  }
+
+  .db-sc-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-sc-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 8px;
+    transition: all .3s;
+  }
+  .db-sc-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .db-sc-prev {
+    font-size: 10px;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+  .db-sc-badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .db-sc-badge.up {
+    background: rgba(46,125,50,0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(46,125,50,0.2);
+  }
+  .db-sc-badge.down {
+    background: rgba(192,57,43,0.1);
+    color: #c0392b;
+    border: 1px solid rgba(192,57,43,0.2);
+  }
+  .db-sc-badge.neutral {
+    background: rgba(219,188,199,0.2);
+    color: var(--burgundy);
+    border: 1px solid rgba(219,188,199,0.4);
+  }
+
+  .db-sc-edit-wrap {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .db-sc-input {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--text);
+    outline: none;
+    transition: border-color .2s;
+  }
+  .db-sc-input:focus { border-color: var(--burgundy); }
+  .db-sc-save {
+    padding: 7px 14px;
+    background: var(--burgundy);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+    align-self: flex-start;
+  }
+  .db-sc-save:hover { background: var(--burgundy-light); }
+
+  /* ── MID ROW ── */
+  .db-mid-row {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 12px;
+    padding: 0 48px 12px;
+  }
+
+  .db-chart-card, .db-donut-card, .db-chapters-card, .db-goals-card, .db-actions-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+  .db-chart-card { display: flex; flex-direction: column; gap: 0; }
+  .db-donut-card { display: flex; flex-direction: column; }
+
+  .db-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .db-chart-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-chart-sub {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .db-chart-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 3px;
+    border: 1px solid var(--border);
+  }
+  .db-toggle-btn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-dim);
+    transition: all .2s;
+  }
+  .db-toggle-btn.active {
+    background: var(--burgundy);
+    color: white;
+  }
+
+  /* SVG Chart */
+  .db-chart-wrap {
+    position: relative;
+    flex: 1;
+    margin-bottom: 8px;
+  }
+  .db-chart-svg {
+    width: 100%;
+    height: 140px;
+    display: block;
+  }
+  .db-chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: var(--text-dim);
+    padding: 4px 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .db-chart-inputs {
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .db-ci-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .db-ci-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Donut */
+  .db-donut-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+  .db-donut-svg { width: 120px; height: 120px; flex-shrink: 0; }
+  .db-donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .db-dl-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-dl-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+  .db-dl-val {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* ── BOTTOM ROW ── */
+  .db-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 12px;
+    padding: 0 48px 48px;
+  }
+
+  /* Chapter progress table */
+  .db-ch-table { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+  .db-ch-header {
+    display: grid;
+    grid-template-columns: 1fr 60px 100px;
+    gap: 12px;
+    padding: 7px 12px;
+    background: var(--burgundy);
+    border-radius: 8px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: white;
+  }
+  .db-ch-row {
+    display: grid;
+    grid-template-columns: 1fr 60px 100px;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: background .2s;
+    border: 1px solid transparent;
+  }
+  .db-ch-row:hover {
+    background: rgba(219,188,199,0.1);
+    border-color: rgba(219,188,199,0.3);
+  }
+  .db-ch-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-ch-num {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(219,188,199,0.2);
+    border: 1px solid rgba(219,188,199,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: var(--burgundy);
+    flex-shrink: 0;
+  }
+  .db-ch-status {
+    font-size: 9px; font-weight: 700; letter-spacing: .06em;
+    padding: 3px 8px; border-radius: 20px; text-align: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-ch-status.todo {
+    background: rgba(219,188,199,0.15);
+    color: var(--burgundy);
+    border: 1px solid rgba(219,188,199,0.3);
+  }
+  .db-ch-status.done {
+    background: rgba(46,125,50,0.08);
+    color: #2e7d32;
+    border: 1px solid rgba(46,125,50,0.15);
+  }
+  .db-ch-status.active {
+    background: var(--burgundy);
+    color: white;
+  }
+  .db-ch-bar {
+    height: 5px; background: #fff8fa;
+    border-radius: 3px; overflow: hidden;
+  }
+  .db-ch-fill {
+    height: 100%; background: #dbbcc7; border-radius: 3px;
+    transition: width .8s ease;
+  }
+
+  /* Right col */
+  .db-right-col { display: flex; flex-direction: column; gap: 12px; }
+
+  /* Goals */
+  .db-goal-item { margin-bottom: 14px; }
+  .db-goal-item:last-child { margin-bottom: 0; }
+  .db-goal-top {
+    display: flex; justify-content: space-between;
+    font-size: 11px; margin-bottom: 5px;
+  }
+  .db-goal-label { color: var(--text-muted); font-weight: 400; }
+  .db-goal-pct { color: var(--burgundy); font-weight: 600; }
+  .db-goal-bar {
+    height: 6px; background: #fff8fa; border-radius: 3px;
+    overflow: hidden; margin-bottom: 6px;
+  }
+  .db-goal-fill {
+    height: 100%; background: #dbbcc7; border-radius: 3px;
+    transition: width .8s ease;
+  }
+  .db-goal-fill.burgundy-fill { background: var(--burgundy); }
+  .db-goal-vals {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; color: var(--text-dim);
+  }
+  .db-goal-input {
+    width: 140px;
+    padding: 5px 8px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: var(--text); outline: none;
+    text-align: right;
+  }
+  .db-goal-input:focus { border-color: var(--burgundy); }
+
+  /* Quick actions */
+  .db-actions-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .db-action-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 14px 10px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; cursor: pointer; transition: all .2s;
+    font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+    color: var(--text-muted);
+  }
+  .db-action-btn:hover {
+    background: rgba(219,188,199,0.15);
+    border-color: rgba(219,188,199,0.5);
+    color: var(--burgundy);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
+  .db-action-icon { font-size: 20px; }
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -878,55 +1329,302 @@
 
   <main class="main">
 
-    <!-- CHAPTER 0 -->
-    <div class="chapter-page active" id="chapter-0" >
-      <div class="intro-welcome">
-        <h1>Welcome</h1>
-        <p class="intro-tagline">Your complete system to build a profitable faceless Instagram brand.<br><em>Seven chapters. One clear path. Real results.</em></p>
-      </div>
-      <div class="status-bar">
-        <div class="status-pill"><div class="status-dot"></div>9 Chapters ready</div>
-        <div class="status-pill">✦ Seven chapters · One system</div>
-        <div class="status-pill">🔒 Your answers auto-save</div>
-      </div>
-      <div class="intro-stats">
-        <div class="stat-card"><span class="stat-num">7</span><span class="stat-label">Core chapters covering every step of your brand build</span></div>
-        <div class="stat-card"><span class="stat-num">$18K</span><span class="stat-label">Realistic first-year revenue from a faceless brand</span></div>
-        <div class="stat-card"><span class="stat-num">90</span><span class="stat-label">Days to your first meaningful results if you follow the system</span></div>
-      </div>
-      <div class="intro-section">
-        <div class="intro-section-label">How to use this</div>
-        <div class="intro-section-title">Open. Work. Ship.</div>
-        <p class="intro-section-text">Each chapter builds on the last. Work through them in order, fill in the exercises, copy the Claude prompts into your AI tool, and tick the checklists. By the end you have a fully built, monetized faceless Instagram brand.</p>
-        <div class="steps-grid">
-          <div class="step-card" onclick="showChapter(1)"><div class="step-card-num">1</div><div class="step-card-title">Pick a Chapter</div><p class="step-card-text">Use the sidebar. Start from 0 and work in order for best results.</p></div>
-          <div class="step-card"><div class="step-card-num">2</div><div class="step-card-title">Fill the Exercises</div><p class="step-card-text">Every worksheet field saves automatically. Your answers are always there when you return.</p></div>
-          <div class="step-card"><div class="step-card-num">3</div><div class="step-card-title">Copy the Prompts</div><p class="step-card-text">Each chapter has ready-to-use Claude prompts. Hit Copy, paste into Claude, get your output instantly.</p></div>
-          <div class="step-card"><div class="step-card-num">4</div><div class="step-card-title">Take Action</div><p class="step-card-text">Knowledge without action is just theory. Each chapter ends with a clear next step. Do it today.</p></div>
+    <!-- CHAPTER 0 — DASHBOARD WELCOME -->
+    <div class="chapter-page active" id="chapter-0">
+
+      <!-- ══ TOP HEADER ══ -->
+      <div class="db-header">
+        <div>
+          <div class="db-welcome-label">Welcome back ✦</div>
+          <h1 class="db-welcome-title serif">Your Brand <em>Dashboard</em></h1>
+        </div>
+        <div class="db-header-right">
+          <div class="db-date" id="db-date"></div>
+          <button class="btn-start" onclick="showChapter(1)" style="margin:0;">Start Chapter 1 →</button>
         </div>
       </div>
-      <div class="intro-section">
-        <div class="pro-tip">
-          <div class="pro-tip-icon" style="background:var(--burgundy);color:white;">✦</div>
-          <p class="pro-tip-text"><strong>Pro tip:</strong> Open a Claude Project specifically for your brand. Paste each chapter's system prompt as the project instructions. Your AI becomes a specialist for your exact niche — not a generic assistant. One Claude Project per chapter works best.</p>
+
+      <!-- ══ TOP STATS ROW (4 cards like OneWay) ══ -->
+      <div class="db-stats-row">
+
+        <div class="db-stat-card" id="dbc-followers">
+          <div class="db-sc-top">
+            <div class="db-sc-icon">📱</div>
+            <button class="db-sc-edit" onclick="editStat('followers')" title="Update">✎</button>
+          </div>
+          <div class="db-sc-label">Instagram Followers</div>
+          <div class="db-sc-num serif" id="dbs-followers">—</div>
+          <div class="db-sc-meta">
+            <span id="dbs-followers-prev" class="db-sc-prev">Add your count</span>
+            <span class="db-sc-badge up" id="dbs-followers-badge" style="display:none;"></span>
+          </div>
+          <div class="db-sc-edit-wrap" id="edit-followers" style="display:none;">
+            <input class="db-sc-input" type="number" placeholder="e.g. 4200" id="in-followers">
+            <input class="db-sc-input" type="number" placeholder="Last month" id="in-followers-prev">
+            <button class="db-sc-save" onclick="saveStat('followers')">Save</button>
+          </div>
+        </div>
+
+        <div class="db-stat-card" id="dbc-growth">
+          <div class="db-sc-top">
+            <div class="db-sc-icon">📈</div>
+            <button class="db-sc-edit" onclick="editStat('growth')" title="Update">✎</button>
+          </div>
+          <div class="db-sc-label">Growth This Month</div>
+          <div class="db-sc-num serif" id="dbs-growth">—</div>
+          <div class="db-sc-meta">
+            <span id="dbs-growth-prev" class="db-sc-prev">New followers gained</span>
+            <span class="db-sc-badge up" id="dbs-growth-badge" style="display:none;"></span>
+          </div>
+          <div class="db-sc-edit-wrap" id="edit-growth" style="display:none;">
+            <input class="db-sc-input" type="number" placeholder="e.g. 340" id="in-growth">
+            <input class="db-sc-input" type="number" placeholder="Last month's growth" id="in-growth-prev">
+            <button class="db-sc-save" onclick="saveStat('growth')">Save</button>
+          </div>
+        </div>
+
+        <div class="db-stat-card" id="dbc-income">
+          <div class="db-sc-top">
+            <div class="db-sc-icon">💸</div>
+            <button class="db-sc-edit" onclick="editStat('income')" title="Update">✎</button>
+          </div>
+          <div class="db-sc-label">Income This Month</div>
+          <div class="db-sc-num serif" id="dbs-income">—</div>
+          <div class="db-sc-meta">
+            <span id="dbs-income-prev" class="db-sc-prev">From all IG streams</span>
+            <span class="db-sc-badge up" id="dbs-income-badge" style="display:none;"></span>
+          </div>
+          <div class="db-sc-edit-wrap" id="edit-income" style="display:none;">
+            <input class="db-sc-input" type="number" placeholder="e.g. 480" id="in-income">
+            <input class="db-sc-input" type="number" placeholder="Last month income" id="in-income-prev">
+            <button class="db-sc-save" onclick="saveStat('income')">Save</button>
+          </div>
+        </div>
+
+        <div class="db-stat-card" id="dbc-cvr">
+          <div class="db-sc-top">
+            <div class="db-sc-icon">🎯</div>
+            <button class="db-sc-edit" onclick="editStat('cvr')" title="Update">✎</button>
+          </div>
+          <div class="db-sc-label">Follower CVR</div>
+          <div class="db-sc-num serif" id="dbs-cvr">—</div>
+          <div class="db-sc-meta">
+            <span id="dbs-cvr-prev" class="db-sc-prev">Profile visit → follow rate</span>
+            <span class="db-sc-badge" id="dbs-cvr-badge" style="display:none;"></span>
+          </div>
+          <div class="db-sc-edit-wrap" id="edit-cvr" style="display:none;">
+            <input class="db-sc-input" type="number" placeholder="Profile visits" id="in-cvr-visits">
+            <input class="db-sc-input" type="number" placeholder="Net follows" id="in-cvr-follows">
+            <button class="db-sc-save" onclick="saveStat('cvr')">Save (auto-calculates)</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ MIDDLE ROW: growth chart + spending overview ══ -->
+      <div class="db-mid-row">
+
+        <!-- Follower Growth Chart -->
+        <div class="db-chart-card">
+          <div class="db-chart-header">
+            <div>
+              <div class="db-chart-title">Follower Growth Overview</div>
+              <div class="db-chart-sub" id="db-chart-total">Track your monthly follower gains</div>
+            </div>
+            <div class="db-chart-toggle">
+              <button class="db-toggle-btn active" onclick="setChartView('monthly',this)">Monthly</button>
+              <button class="db-toggle-btn" onclick="setChartView('weekly',this)">Weekly</button>
+            </div>
+          </div>
+          <!-- SVG Chart -->
+          <div class="db-chart-wrap">
+            <svg class="db-chart-svg" viewBox="0 0 520 140" preserveAspectRatio="none">
+              <!-- Grid lines -->
+              <line x1="0" y1="35" x2="520" y2="35" stroke="rgba(219,188,199,0.2)" stroke-width="1"/>
+              <line x1="0" y1="70" x2="520" y2="70" stroke="rgba(219,188,199,0.2)" stroke-width="1"/>
+              <line x1="0" y1="105" x2="520" y2="105" stroke="rgba(219,188,199,0.2)" stroke-width="1"/>
+              <!-- Area fill -->
+              <path id="chart-area" d="M0,110 C40,100 80,80 120,70 C160,60 200,65 240,50 C280,35 320,45 360,30 C400,15 440,25 480,20 L520,18 L520,140 L0,140 Z"
+                fill="url(#chartGrad)" opacity="0.6"/>
+              <!-- Line -->
+              <path id="chart-line" d="M0,110 C40,100 80,80 120,70 C160,60 200,65 240,50 C280,35 320,45 360,30 C400,15 440,25 480,20 L520,18"
+                fill="none" stroke="var(--burgundy)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Dots -->
+              <circle cx="0" cy="110" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="80" cy="80" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="160" cy="60" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="240" cy="50" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="320" cy="45" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="400" cy="15" r="5" fill="var(--burgundy)" stroke="white" stroke-width="2"/>
+              <circle cx="480" cy="20" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <circle cx="520" cy="18" r="4" fill="var(--burgundy)" stroke="white" stroke-width="1.5"/>
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="db-chart-labels">
+              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+            </div>
+          </div>
+          <!-- Mini input row for monthly data -->
+          <div class="db-chart-inputs">
+            <div class="db-ci-label">Update this month's follower gain:</div>
+            <div class="db-ci-row">
+              <input class="db-sc-input" style="max-width:120px;" type="number" placeholder="e.g. +340" id="in-chart-val">
+              <select class="db-sc-input" style="max-width:100px;cursor:pointer;" id="in-chart-month">
+                <option>January</option><option>February</option><option>March</option><option>April</option>
+                <option>May</option><option>June</option><option>July</option><option selected>August</option>
+              </select>
+              <button class="db-sc-save" onclick="updateChartBar()">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Income breakdown donut -->
+        <div class="db-donut-card">
+          <div class="db-chart-title" style="margin-bottom:6px;">Income Breakdown</div>
+          <div class="db-chart-sub" style="margin-bottom:16px;">Your active income streams</div>
+          <div class="db-donut-wrap">
+            <svg viewBox="0 0 120 120" class="db-donut-svg">
+              <!-- Donut segments -->
+              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--blush)" stroke-width="16"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--burgundy)" stroke-width="16"
+                stroke-dasharray="144 145" stroke-dashoffset="0" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--accent)" stroke-width="16"
+                stroke-dasharray="72 217" stroke-dashoffset="-144" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--blush-mid)" stroke-width="16"
+                stroke-dasharray="43 246" stroke-dashoffset="-216" stroke-linecap="round"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(219,188,199,0.4)" stroke-width="16"
+                stroke-dasharray="30 259" stroke-dashoffset="-259" stroke-linecap="round"/>
+              <text x="60" y="56" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="12" fill="var(--burgundy)" font-weight="400">Total</text>
+              <text x="60" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="var(--text-muted)" id="donut-total">$0</text>
+            </svg>
+            <div class="db-donut-legend">
+              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--burgundy)"></div><span>Shoutouts</span><span class="db-dl-val" id="dl-shout">48%</span></div>
+              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--accent)"></div><span>Affiliate</span><span class="db-dl-val" id="dl-aff">24%</span></div>
+              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--blush-mid)"></div><span>Digital Products</span><span class="db-dl-val" id="dl-dig">15%</span></div>
+              <div class="db-dl-row"><div class="db-dl-dot" style="background:rgba(219,188,199,0.4)"></div><span>Other</span><span class="db-dl-val" id="dl-other">13%</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ BOTTOM ROW: chapters + quick actions ══ -->
+      <div class="db-bottom-row">
+
+        <!-- Chapter progress table -->
+        <div class="db-chapters-card">
+          <div class="db-chart-header">
+            <div class="db-chart-title">Chapter Progress</div>
+            <button class="btn-start" style="margin:0;font-size:9px;padding:7px 16px;" onclick="showChapter(1)">Continue →</button>
+          </div>
+          <div class="db-ch-table">
+            <div class="db-ch-header">
+              <span>Chapter</span><span>Status</span><span>Progress</span>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(1)">
+              <div class="db-ch-name"><div class="db-ch-num">01</div>The Niche Mastery</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(2)">
+              <div class="db-ch-name"><div class="db-ch-num">02</div>Branding & Page Design</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(3)">
+              <div class="db-ch-name"><div class="db-ch-num">03</div>Content Strategy</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(4)">
+              <div class="db-ch-name"><div class="db-ch-num">04</div>The Growth Formula</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(5)">
+              <div class="db-ch-name"><div class="db-ch-num">05</div>7 Monetization Strategies</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(6)">
+              <div class="db-ch-name"><div class="db-ch-num">06</div>The Success Mindset</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(7)">
+              <div class="db-ch-name"><div class="db-ch-num">07</div>The Instagram Toolkit</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+            <div class="db-ch-row" onclick="showChapter(8)">
+              <div class="db-ch-name"><div class="db-ch-num">✦</div>Your Next Steps</div>
+              <div class="db-ch-status todo">Start</div>
+              <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: quick actions + goals -->
+        <div class="db-right-col">
+
+          <!-- My Goals card -->
+          <div class="db-goals-card">
+            <div class="db-chart-title" style="margin-bottom:14px;">My Instagram Goals</div>
+            <div class="db-goal-item">
+              <div class="db-goal-top">
+                <span class="db-goal-label">Follower Goal</span>
+                <span class="db-goal-pct" id="gp-followers">—</span>
+              </div>
+              <div class="db-goal-bar"><div class="db-goal-fill" id="gf-followers" style="width:0%"></div></div>
+              <div class="db-goal-vals">
+                <span id="gv-current-f">0</span>
+                <input class="db-goal-input" type="number" id="in-goal-followers" placeholder="Target (e.g. 10000)" oninput="updateGoals()">
+              </div>
+            </div>
+            <div class="db-goal-item">
+              <div class="db-goal-top">
+                <span class="db-goal-label">Income Goal (monthly)</span>
+                <span class="db-goal-pct" id="gp-income">—</span>
+              </div>
+              <div class="db-goal-bar"><div class="db-goal-fill burgundy-fill" id="gf-income" style="width:0%"></div></div>
+              <div class="db-goal-vals">
+                <span id="gv-current-i">$0</span>
+                <input class="db-goal-input" type="number" id="in-goal-income" placeholder="Target (e.g. 2000)" oninput="updateGoals()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="db-actions-card">
+            <div class="db-chart-title" style="margin-bottom:12px;">Quick Actions</div>
+            <div class="db-actions-grid">
+              <button class="db-action-btn" onclick="showChapter(4)">
+                <div class="db-action-icon">📊</div>
+                <span>Calculate CVR</span>
+              </button>
+              <button class="db-action-btn" onclick="showChapter(3)">
+                <div class="db-action-icon">✍️</div>
+                <span>Plan Content</span>
+              </button>
+              <button class="db-action-btn" onclick="showChapter(5)">
+                <div class="db-action-icon">💰</div>
+                <span>Track Income</span>
+              </button>
+              <button class="db-action-btn" onclick="showChapter(6)">
+                <div class="db-action-icon">🧠</div>
+                <span>Mindset Check</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="intro-section">
-        <div class="intro-section-label">Inside the system</div>
-        <div class="intro-section-title">Seven Chapters. Browse Them.</div>
-        <p class="intro-section-text">Click any chapter to jump straight in — or start from the top and work through in order.</p>
-        <div class="chapters-grid">
-          <div class="chapter-card" onclick="showChapter(1)"><div class="chapter-card-num">1</div><div class="chapter-card-content"><div class="chapter-card-title">The Niche Mastery</div><div class="chapter-card-sub">Find a high-profit niche and validate it has money before you invest time.</div></div><span class="chapter-card-tag">Foundation</span></div>
-          <div class="chapter-card" onclick="showChapter(2)"><div class="chapter-card-num">2</div><div class="chapter-card-content"><div class="chapter-card-title">Logo, Branding & Page Design</div><div class="chapter-card-sub">Create a scroll-stopping aesthetic that makes people instantly follow.</div></div><span class="chapter-card-tag">Brand</span></div>
-          <div class="chapter-card" onclick="showChapter(3)"><div class="chapter-card-num">3</div><div class="chapter-card-content"><div class="chapter-card-title">The Content Strategy</div><div class="chapter-card-sub">Content pillars, hooks, and formats that reliably go viral.</div></div><span class="chapter-card-tag">Strategy</span></div>
-          <div class="chapter-card" onclick="showChapter(4)"><div class="chapter-card-num">4</div><div class="chapter-card-content"><div class="chapter-card-title">The Growth Formula</div><div class="chapter-card-sub">The posting cadence and engagement loop that compounds followers.</div></div><span class="chapter-card-tag">Strategy</span></div>
-          <div class="chapter-card" onclick="showChapter(5)"><div class="chapter-card-num">5</div><div class="chapter-card-content"><div class="chapter-card-title">7 Monetization Strategies</div><div class="chapter-card-sub">Seven proven ways to turn followers into real income.</div></div><span class="chapter-card-tag">Revenue</span></div>
-          <div class="chapter-card" onclick="showChapter(6)"><div class="chapter-card-num">6</div><div class="chapter-card-content"><div class="chapter-card-title">The Success Mindset</div><div class="chapter-card-sub">Mental frameworks that separate pages that quit vs. those that reach 100K.</div></div><span class="chapter-card-tag">Mindset</span></div>
-          <div class="chapter-card" onclick="showChapter(7)"><div class="chapter-card-num">7</div><div class="chapter-card-content"><div class="chapter-card-title">The Instagram Toolkit</div><div class="chapter-card-sub">Every app, tool and resource — curated and ready to use.</div></div><span class="chapter-card-tag">Scale</span></div>
-          <div class="chapter-card" onclick="showChapter(8)"><div class="chapter-card-num">✦</div><div class="chapter-card-content"><div class="chapter-card-title">Your Next Steps</div><div class="chapter-card-sub">You've done the work. Here's exactly what to do next.</div></div><span class="chapter-card-tag">Act</span></div>
-        </div>
-      </div>
-      <div class="intro-bottom"><button class="btn-start" onclick="showChapter(1)">START CHAPTER 1 →</button></div>
+
     </div>
 
     <!-- CHAPTER 1 -->
@@ -4044,6 +4742,174 @@
       if(loginVisible)handleLogin();else handleSignup();
     }
   });
+
+  // ══ DASHBOARD ══
+  // Set date
+  (function() {
+    const el = document.getElementById('db-date');
+    if (el) {
+      const d = new Date();
+      el.textContent = d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+    }
+  })();
+
+  // Stat storage
+  const DB_KEY = 'fhb_dashboard';
+  function loadDashboard() {
+    try { return JSON.parse(localStorage.getItem(DB_KEY) || '{}'); } catch(e) { return {}; }
+  }
+  function saveDashboard(data) {
+    try { localStorage.setItem(DB_KEY, JSON.stringify(data)); } catch(e) {}
+  }
+
+  function editStat(key) {
+    const wrap = document.getElementById('edit-' + key);
+    if (!wrap) return;
+    const isOpen = wrap.style.display !== 'none';
+    document.querySelectorAll('.db-sc-edit-wrap').forEach(w => w.style.display = 'none');
+    if (!isOpen) wrap.style.display = 'flex';
+  }
+
+  function saveStat(key) {
+    const data = loadDashboard();
+    if (key === 'cvr') {
+      const visits = parseFloat(document.getElementById('in-cvr-visits').value) || 0;
+      const follows = parseFloat(document.getElementById('in-cvr-follows').value) || 0;
+      if (visits > 0 && follows >= 0) {
+        const cvr = ((follows / visits) * 100).toFixed(1);
+        data.cvr = cvr + '%';
+        data.cvr_raw = cvr;
+        document.getElementById('dbs-cvr').textContent = cvr + '%';
+        const badge = document.getElementById('dbs-cvr-badge');
+        badge.style.display = 'inline-block';
+        badge.textContent = cvr >= 25 ? '✦ Excellent' : cvr >= 15 ? '✓ Good' : '⚠ Fix profile';
+        badge.className = 'db-sc-badge ' + (cvr >= 15 ? 'up' : 'down');
+        document.getElementById('dbs-cvr-prev').textContent = visits.toLocaleString() + ' profile visits';
+      }
+    } else {
+      const val = parseFloat(document.getElementById('in-' + key).value) || 0;
+      const prev = parseFloat(document.getElementById('in-' + key + '-prev')?.value) || 0;
+      data[key] = val;
+      data[key + '_prev'] = prev;
+
+      const numEl = document.getElementById('dbs-' + key);
+      const prevEl = document.getElementById('dbs-' + key + '-prev');
+      const badgeEl = document.getElementById('dbs-' + key + '-badge');
+
+      if (key === 'followers') {
+        numEl.textContent = val >= 1000 ? (val/1000).toFixed(1) + 'K' : val.toLocaleString();
+        prevEl.textContent = prev > 0 ? 'Last month: ' + (prev >= 1000 ? (prev/1000).toFixed(1) + 'K' : prev.toLocaleString()) : 'Add your count';
+        if (prev > 0) {
+          const diff = Math.round(((val - prev) / prev) * 100);
+          badgeEl.style.display = 'inline-block';
+          badgeEl.textContent = (diff >= 0 ? '↑' : '↓') + Math.abs(diff) + '%';
+          badgeEl.className = 'db-sc-badge ' + (diff >= 0 ? 'up' : 'down');
+        }
+        // Update goal bar
+        document.getElementById('gv-current-f').textContent = val >= 1000 ? (val/1000).toFixed(1) + 'K' : val;
+        updateGoals();
+      } else if (key === 'growth') {
+        numEl.textContent = '+' + val.toLocaleString();
+        prevEl.textContent = prev > 0 ? 'Last month: +' + prev.toLocaleString() : 'New followers gained';
+        if (prev > 0) {
+          const diff = Math.round(((val - prev) / prev) * 100);
+          badgeEl.style.display = 'inline-block';
+          badgeEl.textContent = (diff >= 0 ? '↑' : '↓') + Math.abs(diff) + '%';
+          badgeEl.className = 'db-sc-badge ' + (diff >= 0 ? 'up' : 'down');
+        }
+      } else if (key === 'income') {
+        numEl.textContent = '$' + val.toLocaleString();
+        prevEl.textContent = prev > 0 ? 'Last month: $' + prev.toLocaleString() : 'From all IG streams';
+        if (prev > 0) {
+          const diff = Math.round(((val - prev) / prev) * 100);
+          badgeEl.style.display = 'inline-block';
+          badgeEl.textContent = (diff >= 0 ? '↑' : '↓') + Math.abs(diff) + '%';
+          badgeEl.className = 'db-sc-badge ' + (diff >= 0 ? 'up' : 'down');
+        }
+        document.getElementById('gv-current-i').textContent = '$' + val.toLocaleString();
+        // Update donut center
+        const donutTotal = document.getElementById('donut-total');
+        if (donutTotal) donutTotal.textContent = '$' + val.toLocaleString();
+        updateGoals();
+      }
+    }
+    saveDashboard(data);
+    document.getElementById('edit-' + key).style.display = 'none';
+  }
+
+  function updateGoals() {
+    const data = loadDashboard();
+    const goalF = parseFloat(document.getElementById('in-goal-followers')?.value) || 0;
+    const goalI = parseFloat(document.getElementById('in-goal-income')?.value) || 0;
+    const currF = data.followers || 0;
+    const currI = data.income || 0;
+
+    if (goalF > 0) {
+      const pct = Math.min(100, Math.round((currF / goalF) * 100));
+      document.getElementById('gf-followers').style.width = pct + '%';
+      document.getElementById('gp-followers').textContent = pct + '%';
+    }
+    if (goalI > 0) {
+      const pct = Math.min(100, Math.round((currI / goalI) * 100));
+      document.getElementById('gf-income').style.width = pct + '%';
+      document.getElementById('gp-income').textContent = pct + '%';
+    }
+  }
+
+  // Chart view toggle
+  function setChartView(view, btn) {
+    document.querySelectorAll('.db-toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Add monthly data point to chart (visual only — wiggles the chart)
+  function updateChartBar() {
+    const val = parseFloat(document.getElementById('in-chart-val').value) || 0;
+    const month = document.getElementById('in-chart-month').value;
+    // Animate path slightly as visual feedback
+    const line = document.getElementById('chart-line');
+    if (line) {
+      line.style.transition = 'stroke 0.3s';
+      line.style.stroke = 'var(--burgundy-light)';
+      setTimeout(() => { line.style.stroke = 'var(--burgundy)'; }, 600);
+    }
+    // Update subtitle
+    const sub = document.getElementById('db-chart-total');
+    if (sub && val > 0) sub.textContent = '+' + val.toLocaleString() + ' followers added in ' + month;
+    document.getElementById('in-chart-val').value = '';
+  }
+
+  // Restore saved data on load
+  (function restoreDashboard() {
+    const data = loadDashboard();
+    if (data.followers) {
+      const el = document.getElementById('dbs-followers');
+      if (el) el.textContent = data.followers >= 1000 ? (data.followers/1000).toFixed(1) + 'K' : data.followers.toLocaleString();
+      document.getElementById('gv-current-f').textContent = data.followers >= 1000 ? (data.followers/1000).toFixed(1) + 'K' : data.followers;
+    }
+    if (data.growth) {
+      const el = document.getElementById('dbs-growth');
+      if (el) el.textContent = '+' + data.growth.toLocaleString();
+    }
+    if (data.income) {
+      const el = document.getElementById('dbs-income');
+      if (el) el.textContent = '$' + data.income.toLocaleString();
+      const dt = document.getElementById('donut-total');
+      if (dt) dt.textContent = '$' + data.income.toLocaleString();
+      document.getElementById('gv-current-i').textContent = '$' + data.income.toLocaleString();
+    }
+    if (data.cvr) {
+      const el = document.getElementById('dbs-cvr');
+      if (el) el.textContent = data.cvr;
+      const badge = document.getElementById('dbs-cvr-badge');
+      if (badge) {
+        badge.style.display = 'inline-block';
+        badge.textContent = parseFloat(data.cvr_raw) >= 25 ? '✦ Excellent' : parseFloat(data.cvr_raw) >= 15 ? '✓ Good' : '⚠ Fix profile';
+        badge.className = 'db-sc-badge ' + (parseFloat(data.cvr_raw) >= 15 ? 'up' : 'down');
+      }
+    }
+  })();
+
 </script>
 </body>
 </html>
