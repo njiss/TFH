@@ -4,7 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Faceless Brand Business Model · The Female Hustlers®</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  // ── Sync payment card with income data ──
+  function syncPaymentCard() {
+    const data = loadDashboard();
+    const income = data.income || 0;
+    const goalI = parseFloat(document.getElementById('in-goal-income')?.value) || 0;
+
+    const amtEl = document.getElementById('db-pc-amount');
+    if (amtEl) amtEl.textContent = '$' + income.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+    if (goalI > 0) {
+      const pct = Math.min(100, Math.round((income / goalI) * 100));
+      const bar = document.getElementById('db-pc-bar');
+      const pctEl = document.getElementById('db-pc-pct');
+      const targetEl = document.getElementById('db-pc-target');
+      if (bar) bar.style.width = pct + '%';
+      if (pctEl) pctEl.textContent = pct + '% of goal';
+      if (targetEl) targetEl.textContent = '$' + goalI.toLocaleString();
+    }
+  }
+  syncPaymentCard();
+
+  // Also patch saveStat to call syncPaymentCard after saving income
+  const _origSaveStat = saveStat;
+  saveStat = function(key) {
+    _origSaveStat(key);
+    syncPaymentCard();
+  };
+
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   /* ══════════════════════════════════════
@@ -982,7 +1011,7 @@
   /* ── MID ROW ── */
   .db-mid-row {
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 1fr 320px;
     gap: 12px;
     padding: 0 48px 12px;
   }
@@ -1252,6 +1281,268 @@
   }
   .db-action-icon { font-size: 20px; }
 
+
+  /* ══ BURGUNDY HERO BAND ══ */
+  .db-hero-band {
+    background: var(--burgundy);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+  }
+  .db-hero-band::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(219,188,199,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .db-hero-band::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Override header colours when inside hero band */
+  .db-hero-band .db-header { padding-bottom: 20px; position: relative; z-index: 1; }
+  .db-hero-band .db-welcome-label { color: rgba(255,255,255,0.5); }
+  .db-hero-band .db-welcome-title { color: white; }
+  .db-hero-band .db-welcome-title em { color: var(--accent); }
+  .db-hero-band .db-date { color: rgba(255,255,255,0.4); }
+
+  .db-btn-hero {
+    background: white !important;
+    color: var(--burgundy) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+  }
+  .db-btn-hero:hover {
+    background: var(--cream) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+  }
+
+  /* Stat cards inside band get dark treatment */
+  .db-hero-band .db-stats-row { position: relative; z-index: 1; }
+  .db-hero-band .db-stat-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: none;
+    backdrop-filter: blur(8px);
+  }
+  .db-hero-band .db-stat-card:hover {
+    background: rgba(255,255,255,0.13);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .db-hero-band .db-sc-label { color: rgba(255,255,255,0.5); }
+  .db-hero-band .db-sc-num { color: white; }
+  .db-hero-band .db-sc-prev { color: rgba(255,255,255,0.4); }
+  .db-hero-band .db-sc-edit {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+  }
+  .db-hero-band .db-sc-edit:hover {
+    background: rgba(255,255,255,0.18);
+    color: white;
+  }
+  .db-hero-band .db-sc-edit-wrap {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  .db-hero-band .db-sc-input {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.15);
+    color: white;
+  }
+  .db-hero-band .db-sc-input::placeholder { color: rgba(255,255,255,0.3); }
+  .db-hero-band .db-sc-input:focus { border-color: var(--accent); }
+  .db-hero-band .db-sc-badge.up {
+    background: rgba(219,188,199,0.15);
+    color: var(--accent);
+    border-color: rgba(219,188,199,0.3);
+  }
+  .db-hero-band .db-sc-badge.down {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.6);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  /* ══ PAYMENT CARD ══ */
+  .db-money-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .db-payment-card {
+    background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy) 60%, var(--burgundy-light) 100%);
+    border-radius: 20px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(92,36,52,0.35);
+    border: 1px solid rgba(219,188,199,0.15);
+  }
+  .db-payment-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(219,188,199,0.07);
+    pointer-events: none;
+  }
+  .db-payment-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), rgba(219,188,199,0));
+    border-radius: 0 0 20px 20px;
+  }
+
+  .db-pc-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .db-pc-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-pc-logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    letter-spacing: .04em;
+  }
+
+  .db-pc-amount {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: white;
+    line-height: 1;
+    margin-bottom: 14px;
+    transition: all .4s;
+  }
+
+  .db-pc-streams-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .db-pc-stream-pill {
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: .04em;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .db-pc-footer {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .db-pc-foot-label {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 3px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .db-pc-foot-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Chip like a bank card */
+  .db-pc-chip {
+    margin-left: auto;
+    width: 28px; height: 22px;
+    background: linear-gradient(135deg, rgba(219,188,199,0.6), rgba(219,188,199,0.3));
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
+  }
+  .db-pc-chip-inner {
+    width: 18px; height: 13px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  }
+
+  .db-pc-progress-track {
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .db-pc-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), rgba(219,188,199,0.7));
+    border-radius: 2px;
+    transition: width .8s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* Money action buttons (like OneWay Deposit/Withdraw) */
+  .db-money-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .db-ma-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .db-ma-btn:hover {
+    background: rgba(219,188,199,0.12);
+    border-color: rgba(219,188,199,0.45);
+    color: var(--burgundy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(92,36,52,0.1);
+  }
+  .db-ma-icon { font-size: 18px; }
+
   .hidden{display:none!important;}
 </style>
 </head>
@@ -1332,20 +1623,23 @@
     <!-- CHAPTER 0 — DASHBOARD WELCOME -->
     <div class="chapter-page active" id="chapter-0">
 
-      <!-- ══ TOP HEADER ══ -->
-      <div class="db-header">
-        <div>
-          <div class="db-welcome-label">Welcome back ✦</div>
-          <h1 class="db-welcome-title serif">Your Brand <em>Dashboard</em></h1>
-        </div>
-        <div class="db-header-right">
-          <div class="db-date" id="db-date"></div>
-          <button class="btn-start" onclick="showChapter(1)" style="margin:0;">Start Chapter 1 →</button>
-        </div>
-      </div>
+      <!-- ══ BURGUNDY HERO BAND ══ -->
+      <div class="db-hero-band">
 
-      <!-- ══ TOP STATS ROW (4 cards like OneWay) ══ -->
-      <div class="db-stats-row">
+        <!-- Header inside band -->
+        <div class="db-header">
+          <div>
+            <div class="db-welcome-label">Welcome back ✦</div>
+            <h1 class="db-welcome-title serif">Your Brand <em>Dashboard</em></h1>
+          </div>
+          <div class="db-header-right">
+            <div class="db-date" id="db-date"></div>
+            <button class="btn-start db-btn-hero" onclick="showChapter(1)" style="margin:0;">Start Chapter 1 →</button>
+          </div>
+        </div>
+
+        <!-- ══ TOP STATS ROW inside band ══ -->
+        <div class="db-stats-row">
 
         <div class="db-stat-card" id="dbc-followers">
           <div class="db-sc-top">
@@ -1419,7 +1713,9 @@
           </div>
         </div>
 
-      </div>
+        </div><!-- end db-stats-row -->
+
+      </div><!-- end db-hero-band -->
 
       <!-- ══ MIDDLE ROW: growth chart + spending overview ══ -->
       <div class="db-mid-row">
@@ -1483,32 +1779,84 @@
           </div>
         </div>
 
-        <!-- Income breakdown donut -->
-        <div class="db-donut-card">
-          <div class="db-chart-title" style="margin-bottom:6px;">Income Breakdown</div>
-          <div class="db-chart-sub" style="margin-bottom:16px;">Your active income streams</div>
-          <div class="db-donut-wrap">
-            <svg viewBox="0 0 120 120" class="db-donut-svg">
-              <!-- Donut segments -->
-              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--blush)" stroke-width="16"/>
-              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--burgundy)" stroke-width="16"
-                stroke-dasharray="144 145" stroke-dashoffset="0" stroke-linecap="round"/>
-              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--accent)" stroke-width="16"
-                stroke-dasharray="72 217" stroke-dashoffset="-144" stroke-linecap="round"/>
-              <circle cx="60" cy="60" r="46" fill="none" stroke="var(--blush-mid)" stroke-width="16"
-                stroke-dasharray="43 246" stroke-dashoffset="-216" stroke-linecap="round"/>
-              <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(219,188,199,0.4)" stroke-width="16"
-                stroke-dasharray="30 259" stroke-dashoffset="-259" stroke-linecap="round"/>
-              <text x="60" y="56" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="12" fill="var(--burgundy)" font-weight="400">Total</text>
-              <text x="60" y="70" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="var(--text-muted)" id="donut-total">$0</text>
-            </svg>
-            <div class="db-donut-legend">
-              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--burgundy)"></div><span>Shoutouts</span><span class="db-dl-val" id="dl-shout">48%</span></div>
-              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--accent)"></div><span>Affiliate</span><span class="db-dl-val" id="dl-aff">24%</span></div>
-              <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--blush-mid)"></div><span>Digital Products</span><span class="db-dl-val" id="dl-dig">15%</span></div>
-              <div class="db-dl-row"><div class="db-dl-dot" style="background:rgba(219,188,199,0.4)"></div><span>Other</span><span class="db-dl-val" id="dl-other">13%</span></div>
+        <!-- Monetization Panel: payment card + income streams -->
+        <div class="db-money-panel">
+
+          <!-- Credit-card style income card -->
+          <div class="db-payment-card">
+            <div class="db-pc-top">
+              <div class="db-pc-label">Total Income · This Month</div>
+              <div class="db-pc-logo serif">FBM</div>
+            </div>
+            <div class="db-pc-amount serif" id="db-pc-amount">$0.00</div>
+            <div class="db-pc-streams-row">
+              <div class="db-pc-stream-pill">📣 Shoutouts</div>
+              <div class="db-pc-stream-pill">🔗 Affiliate</div>
+              <div class="db-pc-stream-pill">📦 Products</div>
+            </div>
+            <div class="db-pc-footer">
+              <div>
+                <div class="db-pc-foot-label">Monthly Target</div>
+                <div class="db-pc-foot-val" id="db-pc-target">Set a goal ↗</div>
+              </div>
+              <div>
+                <div class="db-pc-foot-label">Progress</div>
+                <div class="db-pc-foot-val" id="db-pc-pct">—</div>
+              </div>
+              <div class="db-pc-chip">
+                <div class="db-pc-chip-inner"></div>
+              </div>
+            </div>
+            <!-- Progress bar at bottom of card -->
+            <div class="db-pc-progress-track">
+              <div class="db-pc-progress-fill" id="db-pc-bar" style="width:0%"></div>
             </div>
           </div>
+
+          <!-- Quick action buttons (Deposit / Withdraw style) -->
+          <div class="db-money-actions">
+            <button class="db-ma-btn" onclick="showChapter(5)">
+              <div class="db-ma-icon">💸</div>
+              <span>Add Income</span>
+            </button>
+            <button class="db-ma-btn" onclick="showChapter(4)">
+              <div class="db-ma-icon">📊</div>
+              <span>Check CVR</span>
+            </button>
+            <button class="db-ma-btn" onclick="showChapter(3)">
+              <div class="db-ma-icon">✍️</div>
+              <span>Plan Content</span>
+            </button>
+            <button class="db-ma-btn" onclick="showChapter(7)">
+              <div class="db-ma-icon">🛠️</div>
+              <span>My Toolkit</span>
+            </button>
+          </div>
+
+          <!-- Income breakdown donut (compact) -->
+          <div class="db-donut-card" style="padding:16px;">
+            <div class="db-chart-title" style="margin-bottom:10px;font-size:12px;">Income Breakdown</div>
+            <div class="db-donut-wrap" style="gap:14px;">
+              <svg viewBox="0 0 100 100" class="db-donut-svg" style="width:88px;height:88px;">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--blush)" stroke-width="13"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--burgundy)" stroke-width="13"
+                  stroke-dasharray="120 119" stroke-dashoffset="0" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent)" stroke-width="13"
+                  stroke-dasharray="60 179" stroke-dashoffset="-120" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--blush-mid)" stroke-width="13"
+                  stroke-dasharray="36 203" stroke-dashoffset="-180" stroke-linecap="round"/>
+                <text x="50" y="47" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="var(--burgundy)">Total</text>
+                <text x="50" y="59" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="var(--text-muted)" id="donut-total">$0</text>
+              </svg>
+              <div class="db-donut-legend">
+                <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--burgundy)"></div><span>Shoutouts</span><span class="db-dl-val">48%</span></div>
+                <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--accent)"></div><span>Affiliate</span><span class="db-dl-val">24%</span></div>
+                <div class="db-dl-row"><div class="db-dl-dot" style="background:var(--blush-mid)"></div><span>Products</span><span class="db-dl-val">15%</span></div>
+                <div class="db-dl-row"><div class="db-dl-dot" style="background:rgba(219,188,199,0.4)"></div><span>Other</span><span class="db-dl-val">13%</span></div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
