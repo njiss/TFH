@@ -840,7 +840,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 48px 24px;
+    padding: 32px 48px 20px;
     flex-wrap: wrap;
     gap: 16px;
   }
@@ -854,7 +854,7 @@
   }
   .db-welcome-title {
     font-family: 'Instrument Serif', serif;
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 300;
     color: var(--text);
     line-height: 1.05;
@@ -876,7 +876,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    padding: 0 48px 20px;
+    padding: 4px 48px 28px;
   }
 
   .db-stat-card {
@@ -1013,7 +1013,7 @@
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 12px;
-    padding: 0 48px 12px;
+    padding: 20px 48px 12px;
   }
 
   .db-chart-card, .db-donut-card, .db-chapters-card, .db-goals-card, .db-actions-card {
@@ -1284,85 +1284,102 @@
 
   /* ══ BURGUNDY HERO BAND ══ */
   .db-hero-band {
-    background: var(--burgundy);
+    background: linear-gradient(160deg, var(--burgundy-deep) 0%, var(--burgundy) 100%);
     position: relative;
     overflow: hidden;
-    padding-bottom: 32px;
+    padding-bottom: 0;
     margin-bottom: 0;
   }
   .db-hero-band::before {
     content: '';
     position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(219,188,199,0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(219,188,199,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
   .db-hero-band::after {
     content: '';
     position: absolute;
-    bottom: -60px; left: -60px;
-    width: 300px; height: 300px;
+    bottom: 0; left: -40px;
+    width: 240px; height: 240px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%);
     pointer-events: none;
   }
 
-  /* Override header colours when inside hero band */
-  .db-hero-band .db-header { padding-bottom: 20px; position: relative; z-index: 1; }
-  .db-hero-band .db-welcome-label { color: rgba(255,255,255,0.5); }
+  /* Header in band */
+  .db-hero-band .db-header {
+    padding-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .db-hero-band .db-welcome-label { color: rgba(255,255,255,0.45); }
   .db-hero-band .db-welcome-title { color: white; }
   .db-hero-band .db-welcome-title em { color: var(--accent); }
-  .db-hero-band .db-date { color: rgba(255,255,255,0.4); }
+  .db-hero-band .db-date { color: rgba(255,255,255,0.35); }
 
   .db-btn-hero {
-    background: white !important;
-    color: var(--burgundy) !important;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
-  }
-  .db-btn-hero:hover {
-    background: var(--cream) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
-  }
-
-  /* Stat cards inside band get dark treatment */
-  .db-hero-band .db-stats-row { position: relative; z-index: 1; }
-  .db-hero-band .db-stat-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: none;
+    background: rgba(255,255,255,0.15) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
     backdrop-filter: blur(8px);
   }
-  .db-hero-band .db-stat-card:hover {
-    background: rgba(255,255,255,0.13);
-    border-color: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  .db-btn-hero:hover {
+    background: rgba(255,255,255,0.22) !important;
+    transform: translateY(-1px);
   }
-  .db-hero-band .db-sc-label { color: rgba(255,255,255,0.5); }
-  .db-hero-band .db-sc-num { color: white; }
-  .db-hero-band .db-sc-prev { color: rgba(255,255,255,0.4); }
-  .db-hero-band .db-sc-edit {
+
+  /* ── Stat cards inside the dark band ── */
+  .db-hero-band .db-stats-row {
+    position: relative;
+    z-index: 1;
+    /* extend below the band into cream with a white strip */
+  }
+  .db-hero-band .db-stat-card {
     background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+  }
+  .db-hero-band .db-stat-card:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  }
+  .db-hero-band .db-sc-icon { filter: grayscale(1) brightness(2); }
+  .db-hero-band .db-sc-label { color: rgba(255,255,255,0.45); }
+  .db-hero-band .db-sc-num {
+    color: white;
+    font-size: 34px;
+  }
+  .db-hero-band .db-sc-prev { color: rgba(255,255,255,0.35); }
+  .db-hero-band .db-sc-edit {
+    background: rgba(255,255,255,0.08);
     border-color: rgba(255,255,255,0.15);
     color: rgba(255,255,255,0.5);
   }
   .db-hero-band .db-sc-edit:hover {
     background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.3);
     color: white;
   }
-  .db-hero-band .db-sc-edit-wrap {
-    border-top-color: rgba(255,255,255,0.1);
-  }
+  .db-hero-band .db-sc-edit-wrap { border-top-color: rgba(255,255,255,0.12); }
   .db-hero-band .db-sc-input {
     background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.2);
     color: white;
   }
   .db-hero-band .db-sc-input::placeholder { color: rgba(255,255,255,0.3); }
   .db-hero-band .db-sc-input:focus { border-color: var(--accent); }
+  .db-hero-band .db-sc-save {
+    background: rgba(219,188,199,0.8);
+    color: var(--burgundy-deep);
+  }
+  .db-hero-band .db-sc-save:hover { background: var(--accent); }
   .db-hero-band .db-sc-badge.up {
     background: rgba(219,188,199,0.15);
     color: var(--accent);
@@ -1372,6 +1389,13 @@
     background: rgba(255,255,255,0.08);
     color: rgba(255,255,255,0.6);
     border-color: rgba(255,255,255,0.15);
+  }
+
+  /* White card strip under the band stat cards */
+  .db-band-bottom-strip {
+    height: 20px;
+    background: var(--bg);
+    margin-top: -1px;
   }
 
   /* ══ PAYMENT CARD ══ */
@@ -1585,14 +1609,14 @@
     <div class="sidebar-divider"></div>
     <nav class="sidebar-nav">
       <div class="nav-item active" onclick="showChapter(0)" id="nav-0"><div class="nav-num">0</div><span class="nav-label">The Introduction</span><span class="nav-tag">Open</span></div>
-      <div class="nav-item" onclick="showChapter(1)" id="nav-1"><div class="nav-num">1</div><span class="nav-label">The Niche Mastery</span><span class="nav-tag">Foundation</span></div>
-      <div class="nav-item" onclick="showChapter(2)" id="nav-2"><div class="nav-num">2</div><span class="nav-label">Logo, Branding & Page Design</span><span class="nav-tag">Brand</span></div>
-      <div class="nav-item" onclick="showChapter(3)" id="nav-3"><div class="nav-num">3</div><span class="nav-label">The Content Strategy</span><span class="nav-tag">Strategy</span></div>
+      <div class="nav-item" onclick="showChapter(1)" id="nav-1"><div class="nav-num">1</div><span class="nav-label">Niche Selection Mastery</span><span class="nav-tag">Foundation</span></div>
+      <div class="nav-item" onclick="showChapter(2)" id="nav-2"><div class="nav-num">2</div><span class="nav-label">Brand Identity & Page Setup</span><span class="nav-tag">Brand</span></div>
+      <div class="nav-item" onclick="showChapter(3)" id="nav-3"><div class="nav-num">3</div><span class="nav-label">The Content System</span><span class="nav-tag">Strategy</span></div>
       <div class="nav-item" onclick="showChapter(4)" id="nav-4"><div class="nav-num">4</div><span class="nav-label">The Growth Formula</span><span class="nav-tag">Strategy</span></div>
-      <div class="nav-item" onclick="showChapter(5)" id="nav-5"><div class="nav-num">5</div><span class="nav-label">The 7 Monetization Strategies</span><span class="nav-tag">Revenue</span></div>
+      <div class="nav-item" onclick="showChapter(5)" id="nav-5"><div class="nav-num">5</div><span class="nav-label">The The 7 Revenue Streams</span><span class="nav-tag">Revenue</span></div>
       <div class="nav-item" onclick="showChapter(6)" id="nav-6"><div class="nav-num">6</div><span class="nav-label">The Success Mindset</span><span class="nav-tag">Mindset</span></div>
-      <div class="nav-item" onclick="showChapter(7)" id="nav-7"><div class="nav-num">7</div><span class="nav-label">The Instagram Toolkit</span><span class="nav-tag">Scale</span></div>
-      <div class="nav-item" onclick="showChapter(8)" id="nav-8"><div class="nav-num">8</div><span class="nav-label">Your Next Steps</span><span class="nav-tag">Act</span></div>
+      <div class="nav-item" onclick="showChapter(7)" id="nav-7"><div class="nav-num">7</div><span class="nav-label">The Scale Toolkit</span><span class="nav-tag">Scale</span></div>
+      <div class="nav-item" onclick="showChapter(8)" id="nav-8"><div class="nav-num">8</div><span class="nav-label">Launch &amp; Keep Going</span><span class="nav-tag">Act</span></div>
     </nav>
     <div class="sidebar-footer-divider"></div>
     <div class="sidebar-footer">
@@ -1714,8 +1738,8 @@
         </div>
 
         </div><!-- end db-stats-row -->
-
       </div><!-- end db-hero-band -->
+      <div class="db-band-bottom-strip"></div>
 
       <!-- ══ MIDDLE ROW: growth chart + spending overview ══ -->
       <div class="db-mid-row">
@@ -1875,7 +1899,7 @@
               <span>Chapter</span><span>Status</span><span>Progress</span>
             </div>
             <div class="db-ch-row" onclick="showChapter(1)">
-              <div class="db-ch-name"><div class="db-ch-num">01</div>The Niche Mastery</div>
+              <div class="db-ch-name"><div class="db-ch-num">01</div>The Niche Selection Mastery</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
@@ -1885,7 +1909,7 @@
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
             <div class="db-ch-row" onclick="showChapter(3)">
-              <div class="db-ch-name"><div class="db-ch-num">03</div>Content Strategy</div>
+              <div class="db-ch-name"><div class="db-ch-num">03</div>Content System</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
@@ -1895,7 +1919,7 @@
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
             <div class="db-ch-row" onclick="showChapter(5)">
-              <div class="db-ch-name"><div class="db-ch-num">05</div>7 Monetization Strategies</div>
+              <div class="db-ch-name"><div class="db-ch-num">05</div>The 7 Revenue Streams</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
@@ -1905,12 +1929,12 @@
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
             <div class="db-ch-row" onclick="showChapter(7)">
-              <div class="db-ch-name"><div class="db-ch-num">07</div>The Instagram Toolkit</div>
+              <div class="db-ch-name"><div class="db-ch-num">07</div>The Scale Toolkit</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
             <div class="db-ch-row" onclick="showChapter(8)">
-              <div class="db-ch-name"><div class="db-ch-num">✦</div>Your Next Steps</div>
+              <div class="db-ch-name"><div class="db-ch-num">✦</div>Launch &amp; Keep Going</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
@@ -1979,7 +2003,7 @@
     <div class="chapter-page" id="chapter-1">
       <div class="chapter-hero" data-num="1">
         <div class="chapter-tag-hero">STEP ONE</div>
-        <h1 class="chapter-title">The Niche <em>Mastery</em></h1>
+        <h1 class="chapter-title">Niche Selection <em>Mastery</em></h1>
         <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
       <div class="chapter-hero-divider"></div>
@@ -1993,7 +2017,7 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">The Niche Mastery</div>
+            <div class="chapter-video-title">The Niche Selection Mastery</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
@@ -2220,7 +2244,7 @@
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(0)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Introduction</span></button>
-        <button class="nav-btn next" onclick="showChapter(2)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Logo, Branding & Page Design</span></button>
+        <button class="nav-btn next" onclick="showChapter(2)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Brand Identity & Page Setup</span></button>
       </div>
     </div>
 
@@ -2242,7 +2266,7 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">Logo, Branding & Page Design</div>
+            <div class="chapter-video-title">Brand Identity & Page Setup</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
@@ -2574,8 +2598,8 @@
 
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(1)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Niche Mastery</span></button>
-        <button class="nav-btn next" onclick="showChapter(3)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Content Strategy</span></button>
+        <button class="nav-btn" onclick="showChapter(1)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">Niche Selection Mastery</span></button>
+        <button class="nav-btn next" onclick="showChapter(3)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Content System</span></button>
       </div>
     </div>
 
@@ -2583,7 +2607,7 @@
     <div class="chapter-page" id="chapter-3">
       <div class="chapter-hero" data-num="3">
         <div class="chapter-tag-hero">STEP THREE</div>
-        <h1 class="chapter-title">The Content<br><em>Strategy</em></h1>
+        <h1 class="chapter-title">The Content<br><em>System</em></h1>
         <p class="chapter-desc">The fastest-growing faceless accounts don't create original content from scratch. They find what already works — and remix it. This chapter shows you the entire system.</p>
       </div>
       <div class="chapter-hero-divider"></div>
@@ -2597,7 +2621,7 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">The Content Strategy</div>
+            <div class="chapter-video-title">The Content System</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
@@ -2731,7 +2755,7 @@
         <h2 class="section-title">Define your content strategy</h2>
 
         <div class="worksheet" id="ch3-ex1" onclick="unlockCh3Step(1)">
-          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Content Strategy</div></div></div>
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Content System</div></div></div>
           <div class="worksheet-sub">Your north star for every post you create. Fill this in once — then use it to make all content decisions.</div>
           <div class="field-row"><label class="field-label">My current goal (growing / launching / balanced)</label>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
@@ -2937,7 +2961,7 @@
 
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(2)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">Logo, Branding & Page Design</span></button>
+        <button class="nav-btn" onclick="showChapter(2)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">Brand Identity & Page Setup</span></button>
         <button class="nav-btn next" onclick="showChapter(4)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Growth Formula</span></button>
       </div>
     </div>
@@ -3367,8 +3391,8 @@
 
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(3)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Content Strategy</span></button>
-        <button class="nav-btn next" onclick="showChapter(5)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">7 Monetization Strategies</span></button>
+        <button class="nav-btn" onclick="showChapter(3)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Content System</span></button>
+        <button class="nav-btn next" onclick="showChapter(5)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The 7 Revenue Streams</span></button>
       </div>
     </div>
 
@@ -3391,7 +3415,7 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">7 Monetization Strategies</div>
+            <div class="chapter-video-title">The 7 Revenue Streams</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
@@ -3838,8 +3862,8 @@
         </div>
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(5)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">7 Monetization Strategies</span></button>
-        <button class="nav-btn next" onclick="showChapter(7)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Instagram Toolkit</span></button>
+        <button class="nav-btn" onclick="showChapter(5)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The 7 Revenue Streams</span></button>
+        <button class="nav-btn next" onclick="showChapter(7)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Scale Toolkit</span></button>
       </div>
     </div>
 
@@ -3847,7 +3871,7 @@
     <div class="chapter-page" id="chapter-7">
       <div class="chapter-hero" data-num="7">
         <div class="chapter-tag-hero">STEP SEVEN</div>
-        <h1 class="chapter-title">The Instagram<br><em>Toolkit</em></h1>
+        <h1 class="chapter-title">The Scale<br><em>Toolkit</em></h1>
         <p class="chapter-desc">The complete toolkit by function. Curated, tested, and ready to use. Start free. Upgrade only when income justifies it.</p>
       </div>
       <div class="chapter-hero-divider"></div>
@@ -3861,7 +3885,7 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">The Instagram Toolkit</div>
+            <div class="chapter-video-title">The Scale Toolkit</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
@@ -4044,7 +4068,7 @@
         <div class="section-label">Chapter 7 — Action Steps</div>
         <div class="worksheet">
           <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 07 — Action Steps</div></div></div>
-          <div class="worksheet-sub">Complete these before moving to Your Next Steps.</div>
+          <div class="worksheet-sub">Complete these before moving to Launch & Keep Going.</div>
           <ul class="checklist">
             <li><input type="checkbox"><span>Set up Canva, CapCut, and Viralfindr this week — your core creation stack.</span></li>
             <li><input type="checkbox"><span>Create a Gumroad account even if your first product doesn't exist yet.</span></li>
@@ -4056,7 +4080,7 @@
       </div>
       <div class="chapter-nav">
         <button class="nav-btn" onclick="showChapter(6)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Success Mindset</span></button>
-        <button class="nav-btn next" onclick="showChapter(8)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Your Next Steps</span></button>
+        <button class="nav-btn next" onclick="showChapter(8)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Launch &amp; Keep Going</span></button>
       </div>
     </div>
 
@@ -4064,7 +4088,7 @@
     <div class="chapter-page" id="chapter-8">
       <div class="chapter-hero" data-num="✦">
         <div class="chapter-tag-hero">YOUR NEXT STEP</div>
-        <h1 class="chapter-title">Your<br><em>Next Steps</em></h1>
+        <h1 class="chapter-title">Launch &amp;<br><em>Keep Going</em></h1>
         <p class="chapter-desc">You now have everything you need. The only thing separating you from a running brand is the decision to start — today, before you close this tab.</p>
       </div>
       <div class="chapter-hero-divider"></div>
@@ -4179,7 +4203,7 @@
 
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(7)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Instagram Toolkit</span></button>
+        <button class="nav-btn" onclick="showChapter(7)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Scale Toolkit</span></button>
         <button class="nav-btn next" onclick="showChapter(0)"><span class="nav-btn-label">↺ COMPLETE</span><span class="nav-btn-title">Back to Introduction</span></button>
       </div>
     </div>
@@ -4445,9 +4469,9 @@
   function buildSearchIndex() {
     searchIndex.length = 0;
     const chapterNames = [
-      'The Introduction', 'The Niche Mastery', 'Logo Branding & Page Design',
-      'The Content Strategy', 'The Growth Formula', '7 Monetization Strategies',
-      'The Success Mindset', 'The Instagram Toolkit', 'Your Next Steps'
+      'The Introduction', 'Niche Selection Mastery', 'Logo Branding & Page Design',
+      'The Content System', 'The Growth Formula', 'The 7 Revenue Streams',
+      'The Success Mindset', 'The Scale Toolkit', 'Launch & Keep Going'
     ];
     for (let i = 0; i <= 8; i++) {
       const page = document.getElementById('chapter-' + i);
