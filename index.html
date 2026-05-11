@@ -840,7 +840,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 32px 48px 20px;
+    padding: 40px 48px 24px;
     flex-wrap: wrap;
     gap: 16px;
   }
@@ -876,7 +876,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    padding: 4px 48px 28px;
+    padding: 0 48px 20px;
   }
 
   .db-stat-card {
@@ -1013,7 +1013,7 @@
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 12px;
-    padding: 20px 48px 12px;
+    padding: 0 48px 12px;
   }
 
   .db-chart-card, .db-donut-card, .db-chapters-card, .db-goals-card, .db-actions-card {
@@ -1282,121 +1282,6 @@
   .db-action-icon { font-size: 20px; }
 
 
-  /* ══ BURGUNDY HERO BAND ══ */
-  .db-hero-band {
-    background: linear-gradient(160deg, var(--burgundy-deep) 0%, var(--burgundy) 100%);
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-  .db-hero-band::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 360px; height: 360px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(219,188,199,0.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .db-hero-band::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: -40px;
-    width: 240px; height: 240px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  /* Header in band */
-  .db-hero-band .db-header {
-    padding-bottom: 24px;
-    position: relative;
-    z-index: 1;
-  }
-  .db-hero-band .db-welcome-label { color: rgba(255,255,255,0.45); }
-  .db-hero-band .db-welcome-title { color: white; }
-  .db-hero-band .db-welcome-title em { color: var(--accent); }
-  .db-hero-band .db-date { color: rgba(255,255,255,0.35); }
-
-  .db-btn-hero {
-    background: rgba(255,255,255,0.15) !important;
-    color: white !important;
-    border: 1px solid rgba(255,255,255,0.25) !important;
-    backdrop-filter: blur(8px);
-  }
-  .db-btn-hero:hover {
-    background: rgba(255,255,255,0.22) !important;
-    transform: translateY(-1px);
-  }
-
-  /* ── Stat cards inside the dark band ── */
-  .db-hero-band .db-stats-row {
-    position: relative;
-    z-index: 1;
-    /* extend below the band into cream with a white strip */
-  }
-  .db-hero-band .db-stat-card {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-  }
-  .db-hero-band .db-stat-card:hover {
-    background: rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.25);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
-  }
-  .db-hero-band .db-sc-icon { filter: grayscale(1) brightness(2); }
-  .db-hero-band .db-sc-label { color: rgba(255,255,255,0.45); }
-  .db-hero-band .db-sc-num {
-    color: white;
-    font-size: 34px;
-  }
-  .db-hero-band .db-sc-prev { color: rgba(255,255,255,0.35); }
-  .db-hero-band .db-sc-edit {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.5);
-  }
-  .db-hero-band .db-sc-edit:hover {
-    background: rgba(255,255,255,0.18);
-    border-color: rgba(255,255,255,0.3);
-    color: white;
-  }
-  .db-hero-band .db-sc-edit-wrap { border-top-color: rgba(255,255,255,0.12); }
-  .db-hero-band .db-sc-input {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.2);
-    color: white;
-  }
-  .db-hero-band .db-sc-input::placeholder { color: rgba(255,255,255,0.3); }
-  .db-hero-band .db-sc-input:focus { border-color: var(--accent); }
-  .db-hero-band .db-sc-save {
-    background: rgba(219,188,199,0.8);
-    color: var(--burgundy-deep);
-  }
-  .db-hero-band .db-sc-save:hover { background: var(--accent); }
-  .db-hero-band .db-sc-badge.up {
-    background: rgba(219,188,199,0.15);
-    color: var(--accent);
-    border-color: rgba(219,188,199,0.3);
-  }
-  .db-hero-band .db-sc-badge.down {
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.6);
-    border-color: rgba(255,255,255,0.15);
-  }
-
-  /* White card strip under the band stat cards */
-  .db-band-bottom-strip {
-    height: 20px;
-    background: var(--bg);
-    margin-top: -1px;
-  }
 
   /* ══ PAYMENT CARD ══ */
   .db-money-panel {
@@ -1647,18 +1532,14 @@
     <!-- CHAPTER 0 — DASHBOARD WELCOME -->
     <div class="chapter-page active" id="chapter-0">
 
-      <!-- ══ BURGUNDY HERO BAND ══ -->
-      <div class="db-hero-band">
-
-        <!-- Header inside band -->
-        <div class="db-header">
+      <div class="db-header">
           <div>
             <div class="db-welcome-label">Welcome back ✦</div>
             <h1 class="db-welcome-title serif">Your Brand <em>Dashboard</em></h1>
           </div>
           <div class="db-header-right">
             <div class="db-date" id="db-date"></div>
-            <button class="btn-start db-btn-hero" onclick="showChapter(1)" style="margin:0;">Start Chapter 1 →</button>
+            <button class="btn-start" onclick="showChapter(1)" style="margin:0;">Start Chapter 1 →</button>
           </div>
         </div>
 
@@ -1737,9 +1618,7 @@
           </div>
         </div>
 
-        </div><!-- end db-stats-row -->
-      </div><!-- end db-hero-band -->
-      <div class="db-band-bottom-strip"></div>
+      </div><!-- end db-stats-row -->
 
       <!-- ══ MIDDLE ROW: growth chart + spending overview ══ -->
       <div class="db-mid-row">
@@ -1924,7 +1803,7 @@
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
             <div class="db-ch-row" onclick="showChapter(6)">
-              <div class="db-ch-name"><div class="db-ch-num">06</div>The Success Mindset</div>
+              <div class="db-ch-name"><div class="db-ch-num">06</div>Niche Selection Mastery</div>
               <div class="db-ch-status todo">Start</div>
               <div class="db-ch-bar"><div class="db-ch-fill" style="width:0%"></div></div>
             </div>
@@ -2003,8 +1882,8 @@
     <div class="chapter-page" id="chapter-1">
       <div class="chapter-hero" data-num="1">
         <div class="chapter-tag-hero">STEP ONE</div>
-        <h1 class="chapter-title">Niche Selection <em>Mastery</em></h1>
-        <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
+        <h1 class="chapter-title">The Success<br><em>Mindset</em></h1>
+        <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K. The strategy is learnable. The mindset is the edge.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -2017,234 +1896,220 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">The Niche Selection Mastery</div>
+            <div class="chapter-video-title">The Success Mindset</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
       </div>
       <div class="chapter-body">
 
-
-        <!-- 3 CORE MARKETS INFO -->
-        <div class="section-label">The Foundation</div>
-        <h2 class="section-title">Every profitable niche sits inside one of three markets</h2>
-        <p class="section-text">Every profitable Instagram niche sits inside one of three fundamental human desires. Understanding this gives you a framework for evaluating any niche quickly.</p>
-
-        <div class="three-markets-grid">
-          <div class="three-market-card" onclick="selectMarket(this,'health')">
-            <div class="three-market-top">
-              <div class="three-market-num">01</div>
-              <div class="three-market-icon">🏃‍♀️</div>
-            </div>
-            <div class="three-market-label">HEALTH</div>
-            <div class="three-market-title">Feel &amp; live better</div>
-            <p class="three-market-text">People want to feel better, look better, live longer, have more energy. Fitness, wellness, nutrition and mental health niches live here.</p>
-            <div class="three-market-check">✓ My market</div>
-          </div>
-          <div class="three-market-card" onclick="selectMarket(this,'wealth')">
-            <div class="three-market-top">
-              <div class="three-market-num">02</div>
-              <div class="three-market-icon">💸</div>
-            </div>
-            <div class="three-market-label">WEALTH</div>
-            <div class="three-market-title">Build security &amp; freedom</div>
-            <p class="three-market-text">People want to make more money, build security, and create freedom. Business, finance, side hustles, and investing niches live here.</p>
-            <div class="three-market-check">✓ My market</div>
-          </div>
-          <div class="three-market-card" onclick="selectMarket(this,'relationship')">
-            <div class="three-market-top">
-              <div class="three-market-num">03</div>
-              <div class="three-market-icon">💞</div>
-            </div>
-            <div class="three-market-label">RELATIONSHIP</div>
-            <div class="three-market-title">Love &amp; belonging</div>
-            <p class="three-market-text">People want love, connection, and belonging. Dating, confidence, self-improvement, and family niches live here.</p>
-            <div class="three-market-check">✓ My market</div>
-          </div>
-        </div>
-
-        <div class="three-market-insight">
-          The most powerful niches sit at the intersection of two markets. <strong>"Financial confidence for women"</strong> touches Wealth and Relationships. <strong>"Healthy habits for busy moms"</strong> touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.
-        </div>
-
-
-        <!-- CHAPTER 1 PROGRESS -->
+        <!-- PROGRESS -->
         <div class="ch2-progress-bar-wrap" style="margin-top:0;">
-          <div class="ch2-progress-label"><span>Chapter 1 Progress</span><span id="ch1-progress-pct">0 / 4 unlocked</span></div>
+          <div class="ch2-progress-label"><span>Chapter 6 Progress</span><span id="ch1-progress-pct">0 / 4 unlocked</span></div>
           <div class="ch2-bar"><div class="ch2-bar-fill" id="ch1-bar" style="width:0%"></div></div>
           <div class="ch2-milestones">
-            <span class="ch1-milestone">Market Chosen</span>
-            <span class="ch1-milestone">Niche Validated</span>
-            <span class="ch1-milestone">Research Done</span>
-            <span class="ch1-milestone">Action Taken ✦</span>
+            <span class="ch1-milestone">Traps Identified</span>
+            <span class="ch1-milestone">Score Taken</span>
+            <span class="ch1-milestone">Why Written</span>
+            <span class="ch1-milestone">Contract Signed ✦</span>
           </div>
         </div>
 
-        <!-- BEST NICHES TABLE -->
-        <div class="section-label">Top Niches Right Now</div>
-        <h2 class="section-title">Best <em style="font-style:italic;color:var(--accent);">niches</em> for faceless theme pages right now</h2>
-        <p class="section-text">These niches have proven money, passionate audiences, and work without a face.</p>
+        <!-- ══ 4 MINDSET TRAPS ══ -->
+        <div class="section-label" style="margin-top:0;">The 4 Killers</div>
+        <h2 class="section-title">The 4 mindset traps that kill Instagram accounts</h2>
+        <p class="section-text">Every account that fails falls into one or more of these traps. Name them, and they lose their power over you.</p>
 
-        <div class="niche-table-wrap">
-          <div class="niche-table-header">
-            <div>NICHE</div><div>WHY IT WORKS</div>
+        <div class="mindset-traps">
+          <div class="trap-card">
+            <div class="trap-num">01</div>
+            <div class="trap-body">
+              <div class="trap-name">Perfectionism Paralysis</div>
+              <div class="trap-desc">The enemy dressed as a virtue. While you are perfecting, you are not posting. While you are not posting, you are not growing. Good enough and posted beats perfect and draft.</div>
+            </div>
           </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Business &amp; Wealth</span></div>
-            <div class="niche-row-text">The gold standard. Aspirational audience, willing to spend. A 200k page can charge $150–$300/shoutout, two to three times daily.</div>
+          <div class="trap-card">
+            <div class="trap-num">02</div>
+            <div class="trap-body">
+              <div class="trap-name">The Comparison Spiral</div>
+              <div class="trap-desc">Instagram is designed to show you aspirational content all day. The only useful comparison is to who you were last week. Block. Mute. Focus on your own data.</div>
+            </div>
           </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Female Empowerment</span></div>
-            <div class="niche-row-text">Self-worth, confidence, ambition. Passionate, loyal, highly shareable. Strong monetisation through coaching, journals, courses.</div>
+          <div class="trap-card">
+            <div class="trap-num">03</div>
+            <div class="trap-body">
+              <div class="trap-name">The Inconsistency Cycle</div>
+              <div class="trap-desc">Five posts a week for three months beats 20 in week one and silence after. The algorithm rewards reliability over bursts. Show up even when results are slow.</div>
+            </div>
           </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Health &amp; Wellness</span></div>
-            <div class="niche-row-text">Inherently visual and shareable. Reels regularly hit millions of views. Strong supplement, app, and digital programme affiliates.</div>
-          </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Mindset &amp; Personal Dev</span></div>
-            <div class="niche-row-text">Evergreen and relentlessly shareable. Quote posts, carousel infographics, short clips all work. Multiple monetisation paths.</div>
-          </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Luxury Lifestyle</span></div>
-            <div class="niche-row-text">Aspiration-driven. High engagement on aesthetic content. Fashion, travel, and home décor affiliates convert well.</div>
-          </div>
-          <div class="niche-table-row">
-            <div><span class="niche-pill">Parenting &amp; Family</span></div>
-            <div class="niche-row-text">Deeply emotional audience. Massive reach potential. Products, courses, and community monetise strongly.</div>
-          </div>
-        </div>
-
-        <!-- NICHE BRAINSTORM -->
-        <div class="section-label">Your Niche</div>
-        <h2 class="section-title">Niche Brainstorm</h2>
-        <p class="section-text">List your top niche ideas. Then run each through the 3 filters below.</p>
-
-        <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Niche Ideas</div></div></div><div class="worksheet-sub">List up to 5 niches you're drawn to. You'll validate them in the next section.</div>
-          <div class="field-row"><label class="field-label">Niche Idea #1</label><input class="field-input" type="text" placeholder="e.g. Female financial freedom"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #2</label><input class="field-input" type="text" placeholder="e.g. Minimalist aesthetic lifestyle"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #3</label><input class="field-input" type="text" placeholder="e.g. Mindset for ambitious women"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #4</label><input class="field-input" type="text" placeholder="e.g. Healthy habits for busy moms"></div>
-          <div class="field-row"><label class="field-label">Niche Idea #5</label><input class="field-input" type="text" placeholder="e.g. Luxury travel on a budget"></div>
-        </div>
-
-        <!-- PROOF OF CONCEPT CHECK -->
-        <div class="section-label">Validation</div>
-        <h2 class="section-title">The Proof of Concept Check</h2>
-        <p class="section-text">Before committing to any niche, run this 4-part validation. It takes 30–60 minutes and saves months of wasted effort.</p>
-
-        <div class="poc-grid">
-          <div class="poc-card">
-            <div class="poc-num">1</div>
-            <div class="poc-title">The Instagram Search Test</div>
-            <p class="poc-text">Search niche keywords on Instagram (Accounts tab). 5–10 accounts with 50k+ followers posting consistently = <strong>healthy market</strong>. <strong>Ghost town</strong> = too small or too new.</p>
-          </div>
-          <div class="poc-card">
-            <div class="poc-num">2</div>
-            <div class="poc-title">The Growth Rate Check</div>
-            <p class="poc-text">Take your top 10 accounts to Socialblade.com. You want <strong>consistent steady growth</strong> over 30–90 days. 200–500 followers/day means they cracked the algorithm — replicate it.</p>
-          </div>
-          <div class="poc-card">
-            <div class="poc-num">3</div>
-            <div class="poc-title">The Money Test</div>
-            <p class="poc-text">Browse top accounts for 48 hours. Are they promoting in Stories? Shoutout posts for coaches? Affiliate links? <strong>Visible monetisation</strong> = proof money flows.</p>
-          </div>
-          <div class="poc-card">
-            <div class="poc-num">4</div>
-            <div class="poc-title">The Engagement Check</div>
-            <p class="poc-text">Measure save and share ratios on recent posts. <strong>High saves</strong> = audience finds it useful. <strong>High shares</strong> = it moves them emotionally. Both indicate buyers.</p>
+          <div class="trap-card">
+            <div class="trap-num">04</div>
+            <div class="trap-body">
+              <div class="trap-name">Outcome Dependency</div>
+              <div class="trap-desc">The first 60–90 days are universally slow. Every major account lived this phase. Trust the process — results arrive on a delay, not in real time.</div>
+            </div>
           </div>
         </div>
 
-        <div class="info-box" style="margin:8px 0 32px;">
-          <div style="display:inline-block;background:var(--burgundy);color:white;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:20px;margin-bottom:10px;">IMPORTANT ADVICE</div>
-          <p>Do not choose your niche based on what you think will be popular. <strong>Choose a niche you can create content about for at least 12 months without burning out.</strong> Consistency is your most powerful competitive advantage — and passion is what sustains consistency.</p>
-        </div>
+        <!-- ══ THE HEDONIC TREADMILL ══ -->
+        <div class="section-label">Protecting Your Joy</div>
+        <h2 class="section-title">Working with the treadmill — four practices that protect your joy</h2>
+        <p class="section-text">The hedonic treadmill describes our mind's tendency to return to a baseline of happiness regardless of what happens. You hit 10,000 followers, joy lasts 48 hours, then 20,000 becomes the new goal. <em>Not a character flaw — neurological wiring.</em></p>
 
-        <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Niche Validation Scorecard</div></div></div><div class="worksheet-sub">Run your top niche through this checklist. <strong>4 of 6</strong> = go for it. <strong>All 6</strong> = all in.</div>
-          <ul class="checklist">
-            <li><input type="checkbox"><span>5+ accounts found with 50k+ followers in this niche</span></li>
-            <li><input type="checkbox"><span>At least 3 are growing consistently (Socialblade.com)</span></li>
-            <li><input type="checkbox"><span>Active shoutout selling or product promotion visible on top pages</span></li>
-            <li><input type="checkbox"><span>Products available on affiliate marketplaces (Digistore24, Clickbank)</span></li>
-            <li><input type="checkbox"><span>Strong engagement — saves, shares, and comments on top posts</span></li>
-            <li><input type="checkbox"><span>I am genuinely passionate and could create content for 12+ months</span></li>
-          </ul>
-          <div class="field-row" style="margin-top:16px;"><label class="field-label">My Chosen Niche</label><input class="field-input" type="text" placeholder="Write your final niche here"></div>
-        </div>
-
-        <!-- MARKET RESEARCH -->
-        <div class="section-label">Market Research</div>
-        <h2 class="section-title">My Market Research Findings</h2>
-        <p class="section-text">Research up to 10 competitor pages using Socialblade and Viralfindr. The more data you collect, the sharper your strategy. After entering all pages, your <strong>Top 10 Ranking</strong> auto-calculates below.</p>
-
-        <div id="research-pages"></div>
-
-        <button class="add-page-btn" onclick="addResearchPage()">+ Add a Page</button>
-
-        <!-- AUTO RANKING -->
-        <div class="section-label" >Auto Ranking</div>
-        <h2 class="section-title">Your Top 10 Pages — Ranked Automatically</h2>
-        <p class="section-text">Based on avg followers growth/month and avg likes/post. Updates live as you fill in data.</p>
-        <div id="auto-ranking" class="ranking-table">
-          <div class="ranking-header"><span>#</span><span>Handle</span><span>Followers</span><span>Avg Likes</span><span>Growth/mo</span><span>Score</span></div>
-          <div id="ranking-rows"><div style="color:#8A7070;font-size:13px;padding:16px 0;">Add pages above to see your ranking.</div></div>
-        </div>
-
-        <!-- MARKET RESEARCH EXERCISES (screenshots 6&7) -->
-        <div class="section-label" >Research Findings</div>
-
-        <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Market Research Findings</div></div></div><div class="worksheet-sub">After your research on Socialblade and Viralfindr, record your top discoveries.</div>
-          <div class="field-row"><label class="field-label">My top 3 big accounts (100k+) and why they work</label>
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 1">
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 2">
-            <input class="field-input" type="text" placeholder="Account 3">
-          </div>
-          <div class="field-row"><label class="field-label">Content types that perform best in my niche (from Viralfindr)</label>
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 1">
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 2">
-            <input class="field-input" type="text" placeholder="Content type 3">
-          </div>
-          <div class="field-row"><label class="field-label">Monetisation methods I observed on top pages</label>
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 1">
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 2">
-            <input class="field-input" type="text" placeholder="Method 3">
-          </div>
-          <div class="field-row"><label class="field-label">The emerging trend or sub-niche I spotted</label>
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Trend 1">
-            <input class="field-input" type="text" placeholder="Trend 2">
+        <div class="joy-practices-box">
+          <div class="joy-practices-label">WORKING WITH THE TREADMILL</div>
+          <div class="joy-practices-title">Four practices that protect your joy.</div>
+          <div class="joy-practices-grid">
+            <div class="joy-practice">
+              <div class="joy-practice-title">CELEBRATE DELIBERATELY</div>
+              <div class="joy-practice-desc">Build a ritual for every milestone. Tell someone. Write it down. Feel it before moving on.</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">CHASE BALANCE, NOT METRICS</div>
+              <div class="joy-practice-desc">Set lifestyle goals alongside follower goals. What does a successful week feel like — not just perform like?</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">PROCESS OVER OUTCOME</div>
+              <div class="joy-practice-desc">Design your life so the daily process itself is rewarding. If the work is enjoyable, you win every day regardless of what the counter says.</div>
+            </div>
+            <div class="joy-practice">
+              <div class="joy-practice-title">DEFINE ENOUGH</div>
+              <div class="joy-practice-desc">Decide what enough looks like before you start. $5k/mo? 3 hours of work daily? Honour it when you reach it.</div>
+            </div>
           </div>
         </div>
 
-        <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 01 — Action Steps</div></div></div><div class="worksheet-sub">Complete these before moving to Chapter 2.</div>
-          <ul class="checklist">
-            <li><input type="checkbox"><span>List 3 potential niches you are genuinely passionate about.</span></li>
-            <li><input type="checkbox"><span>Run the 4-part Proof of Concept Check on each one.</span></li>
-            <li><input type="checkbox"><span>Choose your winner niche.</span></li>
-            <li><input type="checkbox"><span>Create two Google Sheets — Big Accounts and Small Accounts — and begin research.</span></li>
-            <li><input type="checkbox"><span>Sign up for Socialblade.com (free) and Viralfindr.com.</span></li>
-            <li><input type="checkbox"><span>Build your viral content database: top 10 posts from 5 big and 5 small accounts in your niche.</span></li>
-          </ul>
+        <div class="ch3-quote">
+          <div class="ch3-quote-mark">"</div>
+          <p class="ch3-quote-text">The creators who grow the fastest are not the ones who chase followers the hardest. They are the ones who serve their audience most genuinely. Growth is a byproduct of value.</p>
         </div>
 
-        <div class="quote-block">
-          <div class="quote-mark">"</div>
-          <p>Choose a niche you can create content about for 12 months without burning out. Consistency is your edge and passion sustains consistency.</p>
+        <!-- ══ EXERCISE 1: MINDSET SCORE ══ -->
+        <div class="section-label">Exercise 1</div>
+        <h2 class="section-title">My Mindset Score</h2>
+        <p class="section-text">Mark where you are now and where you want to be across six mindset dimensions. Awareness is the first step to change.</p>
+
+        <div class="worksheet" id="ch6-ex1" onclick="unlockCh6Step(1)">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">Mindset Scale Assessment</div></div></div>
+          <div class="worksheet-sub">For each row, select where you currently operate — and where you want to be.</div>
+          <div class="voice-scale">
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait for motivation to act</span><div class="voice-radios"><input type="radio" name="ms1" value="1"><input type="radio" name="ms1" value="2"><input type="radio" name="ms1" value="3"><input type="radio" name="ms1" value="4"><input type="radio" name="ms1" value="5"></div><span class="voice-right" style="font-size:12px;">I act regardless of how I feel</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I compare my page to others constantly</span><div class="voice-radios"><input type="radio" name="ms2" value="1"><input type="radio" name="ms2" value="2"><input type="radio" name="ms2" value="3"><input type="radio" name="ms2" value="4"><input type="radio" name="ms2" value="5"></div><span class="voice-right" style="font-size:12px;">I only compare to my past self</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait until content is perfect</span><div class="voice-radios"><input type="radio" name="ms3" value="1"><input type="radio" name="ms3" value="2"><input type="radio" name="ms3" value="3"><input type="radio" name="ms3" value="4"><input type="radio" name="ms3" value="5"></div><span class="voice-right" style="font-size:12px;">I post and learn from the data</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I expect quick results</span><div class="voice-radios"><input type="radio" name="ms4" value="1"><input type="radio" name="ms4" value="2"><input type="radio" name="ms4" value="3"><input type="radio" name="ms4" value="4"><input type="radio" name="ms4" value="5"></div><span class="voice-right" style="font-size:12px;">I trust the long-game process</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I work for external validation</span><div class="voice-radios"><input type="radio" name="ms5" value="1"><input type="radio" name="ms5" value="2"><input type="radio" name="ms5" value="3"><input type="radio" name="ms5" value="4"><input type="radio" name="ms5" value="5"></div><span class="voice-right" style="font-size:12px;">I work for my own defined goals</span></div>
+            <div class="voice-row"><span class="voice-left" style="font-size:12px;">Setbacks feel like failures</span><div class="voice-radios"><input type="radio" name="ms6" value="1"><input type="radio" name="ms6" value="2"><input type="radio" name="ms6" value="3"><input type="radio" name="ms6" value="4"><input type="radio" name="ms6" value="5"></div><span class="voice-right" style="font-size:12px;">Setbacks are information</span></div>
+          </div>
+          <div class="field-row" style="margin-top:16px;"><label class="field-label">My biggest mindset gap (the row I scored lowest on)</label><textarea class="field-input" rows="2" placeholder="e.g. I wait for motivation — I need to build an action-first system"></textarea></div>
+        </div>
+
+        <!-- ══ WEEKLY SCHEDULE ══ -->
+        <div class="section-label">The Sustainable System</div>
+        <h2 class="section-title">The Side-Hustling Woman's Weekly Schedule</h2>
+        <p class="section-text">Five to seven hours a week. That is what it takes to run a faceless Instagram brand once your system is in place. Here is the breakdown that makes it sustainable.</p>
+
+        <table class="data-table">
+          <thead><tr><th>Day</th><th>Time</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:var(--burgundy);">Sunday</strong></td><td>30–45 min</td><td>Weekly review — Insights, note what worked, plan next week's topics.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Monday</strong></td><td>20 min</td><td>Post content + 15 min HTN engagement.</td></tr>
+            <tr><td>Tuesday</td><td>2–3 hrs</td><td>Batch creation — design and write 5–7 posts. Schedule via Creator Studio or Later.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Wednesday</strong></td><td>20 min</td><td>Post + engage + reply to all comments from last 48 hours.</td></tr>
+            <tr><td>Thursday</td><td>20 min</td><td>Post + add Stories — a poll, tip, or question box.</td></tr>
+            <tr><td><strong style="color:var(--burgundy);">Friday</strong></td><td>20 min</td><td>Post your strongest content of the week + engage.</td></tr>
+            <tr><td>Saturday</td><td>15 min</td><td>Check Stories, reply to DMs, capture content ideas for next week.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="she-boss-tip">
+          <div class="she-boss-icon">♦</div>
+          <div>
+            <div class="she-boss-label">WRITE YOUR WHY</div>
+            <p>Not <em>"I want freedom."</em> Write: <em>"I want to pick my daughter up from school every single day without asking permission."</em> The specific, visceral version is the one that pulls you through slow weeks.</p>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 2: MY WHY ══ -->
+        <div class="section-label">Exercise 2 — The Most Important Exercise</div>
+        <h2 class="section-title">My Why &amp; My Enough</h2>
+        <p class="section-text">The most important exercise in this entire workbook. Be specific — not abstract. Vague goals create vague motivation.</p>
+
+        <div class="worksheet" id="ch6-ex2" onclick="unlockCh6Step(2)">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Why &amp; My Enough</div></div></div>
+          <div class="worksheet-sub">Write this in one sitting. Return to it when motivation drops. This is your anchor.</div>
+          <div class="audit-field"><label class="audit-mini-label">MY VISCERAL WHY FOR BUILDING THIS BRAND (PAINT THE EXACT PICTURE)</label><textarea class="field-input" rows="4" placeholder="e.g. I want to pick my daughter up from school every single day without asking permission. I want to work from our kitchen table, in my own time, building something that is ours..."></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">WHAT "ENOUGH" LOOKS LIKE — SPECIFIC INCOME, SPECIFIC LIFESTYLE, SPECIFIC FREEDOM</label><textarea class="field-input" rows="3" placeholder="e.g. $5,000/mo. 3 hours of focused work daily. Friday afternoons off. Family holidays twice a year without checking approval..."></textarea></div>
+          <div class="audit-field"><label class="audit-mini-label">3 PROCESS WINS I WILL CELEBRATE EVERY WEEK REGARDLESS OF FOLLOWER COUNT</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 1 (e.g. I posted consistently all 5 days)">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 2 (e.g. I created my content batch in one sitting)">
+            <input class="field-input" type="text" placeholder="Process win 3 (e.g. I replied to every comment within the hour)">
+          </div>
+          <div class="audit-field"><label class="audit-mini-label">MY ACCOUNTABILITY PARTNER — NAME + WHAT I SHARE WITH THEM WEEKLY</label><input class="field-input" type="text" placeholder="e.g. My friend Sarah — I share my weekly stats and one win every Sunday"></div>
+        </div>
+
+        <!-- ══ EXERCISE 3: COMMITMENT CONTRACT ══ -->
+        <div class="section-label">Exercise 3</div>
+        <h2 class="section-title">My 90-Day Commitment Contract</h2>
+
+        <div class="worksheet" id="ch6-ex3" onclick="unlockCh6Step(3)">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Commitment Contract</div></div></div>
+          <div class="worksheet-sub">90 days of consistency. No conclusions drawn before then. Sign and return to this when it gets hard.</div>
+          <div class="field-row"><label class="field-label">I commit to posting __ times per week for 90 days</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 3× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 4× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 5× per week</label>
+              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> Daily</label>
+            </div>
+          </div>
+          <div class="field-row"><label class="field-label">My non-negotiable posting days</label><input class="field-input" type="text" placeholder="e.g. Mon, Tue, Thu, Fri, Sat"></div>
+          <div class="field-row"><label class="field-label">When I feel like quitting, I will read this</label><textarea class="field-input" rows="3" placeholder="Write a message to your future self who wants to quit. Make it real. Make it pull you back."></textarea></div>
+          <div class="two-col">
+            <div class="field-row"><label class="field-label">My 90-day start date</label><input class="field-input" type="date"></div>
+            <div class="field-row"><label class="field-label">My review date (day 90)</label><input class="field-input" type="date"></div>
+          </div>
+        </div>
+
+        <!-- ══ EXERCISE 4: WEEKLY ROUTINE ══ -->
+        <div class="section-label">Exercise 4</div>
+        <h2 class="section-title">Design my creator routine</h2>
+
+        <div class="worksheet" id="ch6-ex4" onclick="unlockCh6Step(4)">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My Creator Weekly Routine</div></div></div>
+          <div class="worksheet-sub">Adapt the schedule above to your life. Block these hours in your calendar now.</div>
+          <div class="weekly-planner" style="grid-template-columns:repeat(7,1fr);">
+            <div class="day-card"><div class="day-label">SUN</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Weekly review"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 8pm"></div></div>
+            <div class="day-card"><div class="day-label">MON</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + HTN"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">TUE</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Batch create"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7pm"></div></div>
+            <div class="day-card"><div class="day-label">WED</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">THU</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + Stories"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">FRI</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Best post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
+            <div class="day-card"><div class="day-label">SAT</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="DMs + ideas"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 10am"></div></div>
+          </div>
         </div>
 
         <div class="prompt-box">
-          <div class="prompt-box-label"><span>✦ Niche Validation Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I'm considering building a faceless Instagram page in the [niche] space. Validate this niche: 1) How passionate is this audience, 2) What products/services people spend money on, 3) Examples of successful faceless pages in this space, 4) The biggest content opportunities I'm missing."</p>
+          <div class="prompt-box-label"><span>✦ Mindset Reset Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I've been building my faceless Instagram page for [X weeks/months]. I'm feeling [describe what's blocking you]. Give me a realistic perspective check, a mindset reframe, and 3 concrete actions I should take this week to get back on track. Be direct and warm — not toxic positivity."</p>
         </div>
 
+        <div class="section-label">Chapter 6 — Action Steps</div>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 06 — Action Steps</div></div></div>
+          <div class="worksheet-sub">Complete these before moving to Chapter 7.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>Complete the Mindset Scale — identify your biggest gap and name it.</span></li>
+            <li><input type="checkbox"><span>Write your visceral Why — specific, emotional, present-tense.</span></li>
+            <li><input type="checkbox"><span>Define your "Enough" — income, time, freedom. Write it down and put it somewhere visible.</span></li>
+            <li><input type="checkbox"><span>Sign your 90-day commitment contract and block the posting days in your calendar.</span></li>
+            <li><input type="checkbox"><span>Design your creator weekly routine and set recurring calendar blocks.</span></li>
+            <li><input type="checkbox"><span>Tell one person about your brand. Accountability is the most underrated growth tool.</span></li>
+          </ul>
+        </div>
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(0)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Introduction</span></button>
-        <button class="nav-btn next" onclick="showChapter(2)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Brand Identity & Page Setup</span></button>
+        <button class="nav-btn" onclick="showChapter(5)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The 7 Revenue Streams</span></button>
+        <button class="nav-btn next" onclick="showChapter(2)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Niche Selection Mastery</span></button>
       </div>
     </div>
 
@@ -2598,7 +2463,7 @@
 
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(1)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">Niche Selection Mastery</span></button>
+        <button class="nav-btn" onclick="showChapter(1)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Success Mindset</span></button>
         <button class="nav-btn next" onclick="showChapter(3)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Content System</span></button>
       </div>
     </div>
@@ -3636,8 +3501,8 @@
     <div class="chapter-page" id="chapter-6">
       <div class="chapter-hero" data-num="6">
         <div class="chapter-tag-hero">STEP SIX</div>
-        <h1 class="chapter-title">The Success<br><em>Mindset</em></h1>
-        <p class="chapter-desc">The mental frameworks that separate pages that quit at 500 followers from those that reach 100K. The strategy is learnable. The mindset is the edge.</p>
+        <h1 class="chapter-title">Niche Selection <em>Mastery</em></h1>
+        <p class="chapter-desc">Find a high-profit niche and validate it has money before you invest a single hour of your time.</p>
       </div>
       <div class="chapter-hero-divider"></div>
       <div class="chapter-video-wrap">
@@ -3650,220 +3515,234 @@
                 <polygon points="22,18 22,38 40,28" fill="var(--burgundy)"/>
               </svg>
             </div>
-            <div class="chapter-video-title">The Success Mindset</div>
+            <div class="chapter-video-title">The Niche Selection Mastery</div>
             <div class="chapter-video-sub">Paste your Loom or video URL to add the lesson video</div>
           </div>
         </div>
       </div>
       <div class="chapter-body">
 
-        <!-- PROGRESS -->
+
+        <!-- 3 CORE MARKETS INFO -->
+        <div class="section-label">The Foundation</div>
+        <h2 class="section-title">Every profitable niche sits inside one of three markets</h2>
+        <p class="section-text">Every profitable Instagram niche sits inside one of three fundamental human desires. Understanding this gives you a framework for evaluating any niche quickly.</p>
+
+        <div class="three-markets-grid">
+          <div class="three-market-card" onclick="selectMarket(this,'health')">
+            <div class="three-market-top">
+              <div class="three-market-num">01</div>
+              <div class="three-market-icon">🏃‍♀️</div>
+            </div>
+            <div class="three-market-label">HEALTH</div>
+            <div class="three-market-title">Feel &amp; live better</div>
+            <p class="three-market-text">People want to feel better, look better, live longer, have more energy. Fitness, wellness, nutrition and mental health niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+          <div class="three-market-card" onclick="selectMarket(this,'wealth')">
+            <div class="three-market-top">
+              <div class="three-market-num">02</div>
+              <div class="three-market-icon">💸</div>
+            </div>
+            <div class="three-market-label">WEALTH</div>
+            <div class="three-market-title">Build security &amp; freedom</div>
+            <p class="three-market-text">People want to make more money, build security, and create freedom. Business, finance, side hustles, and investing niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+          <div class="three-market-card" onclick="selectMarket(this,'relationship')">
+            <div class="three-market-top">
+              <div class="three-market-num">03</div>
+              <div class="three-market-icon">💞</div>
+            </div>
+            <div class="three-market-label">RELATIONSHIP</div>
+            <div class="three-market-title">Love &amp; belonging</div>
+            <p class="three-market-text">People want love, connection, and belonging. Dating, confidence, self-improvement, and family niches live here.</p>
+            <div class="three-market-check">✓ My market</div>
+          </div>
+        </div>
+
+        <div class="three-market-insight">
+          The most powerful niches sit at the intersection of two markets. <strong>"Financial confidence for women"</strong> touches Wealth and Relationships. <strong>"Healthy habits for busy moms"</strong> touches Health and Relationships. The overlap creates a deeply passionate, specific audience — exactly what you want.
+        </div>
+
+
+        <!-- CHAPTER 1 PROGRESS -->
         <div class="ch2-progress-bar-wrap" style="margin-top:0;">
-          <div class="ch2-progress-label"><span>Chapter 6 Progress</span><span id="ch6-progress-pct">0 / 4 unlocked</span></div>
+          <div class="ch2-progress-label"><span>Chapter 1 Progress</span><span id="ch6-progress-pct">0 / 4 unlocked</span></div>
           <div class="ch2-bar"><div class="ch2-bar-fill" id="ch6-bar" style="width:0%"></div></div>
           <div class="ch2-milestones">
-            <span class="ch6-milestone">Traps Identified</span>
-            <span class="ch6-milestone">Score Taken</span>
-            <span class="ch6-milestone">Why Written</span>
-            <span class="ch6-milestone">Contract Signed ✦</span>
+            <span class="ch6-milestone">Market Chosen</span>
+            <span class="ch6-milestone">Niche Validated</span>
+            <span class="ch6-milestone">Research Done</span>
+            <span class="ch6-milestone">Action Taken ✦</span>
           </div>
         </div>
 
-        <!-- ══ 4 MINDSET TRAPS ══ -->
-        <div class="section-label" style="margin-top:0;">The 4 Killers</div>
-        <h2 class="section-title">The 4 mindset traps that kill Instagram accounts</h2>
-        <p class="section-text">Every account that fails falls into one or more of these traps. Name them, and they lose their power over you.</p>
+        <!-- BEST NICHES TABLE -->
+        <div class="section-label">Top Niches Right Now</div>
+        <h2 class="section-title">Best <em style="font-style:italic;color:var(--accent);">niches</em> for faceless theme pages right now</h2>
+        <p class="section-text">These niches have proven money, passionate audiences, and work without a face.</p>
 
-        <div class="mindset-traps">
-          <div class="trap-card">
-            <div class="trap-num">01</div>
-            <div class="trap-body">
-              <div class="trap-name">Perfectionism Paralysis</div>
-              <div class="trap-desc">The enemy dressed as a virtue. While you are perfecting, you are not posting. While you are not posting, you are not growing. Good enough and posted beats perfect and draft.</div>
-            </div>
+        <div class="niche-table-wrap">
+          <div class="niche-table-header">
+            <div>NICHE</div><div>WHY IT WORKS</div>
           </div>
-          <div class="trap-card">
-            <div class="trap-num">02</div>
-            <div class="trap-body">
-              <div class="trap-name">The Comparison Spiral</div>
-              <div class="trap-desc">Instagram is designed to show you aspirational content all day. The only useful comparison is to who you were last week. Block. Mute. Focus on your own data.</div>
-            </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Business &amp; Wealth</span></div>
+            <div class="niche-row-text">The gold standard. Aspirational audience, willing to spend. A 200k page can charge $150–$300/shoutout, two to three times daily.</div>
           </div>
-          <div class="trap-card">
-            <div class="trap-num">03</div>
-            <div class="trap-body">
-              <div class="trap-name">The Inconsistency Cycle</div>
-              <div class="trap-desc">Five posts a week for three months beats 20 in week one and silence after. The algorithm rewards reliability over bursts. Show up even when results are slow.</div>
-            </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Female Empowerment</span></div>
+            <div class="niche-row-text">Self-worth, confidence, ambition. Passionate, loyal, highly shareable. Strong monetisation through coaching, journals, courses.</div>
           </div>
-          <div class="trap-card">
-            <div class="trap-num">04</div>
-            <div class="trap-body">
-              <div class="trap-name">Outcome Dependency</div>
-              <div class="trap-desc">The first 60–90 days are universally slow. Every major account lived this phase. Trust the process — results arrive on a delay, not in real time.</div>
-            </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Health &amp; Wellness</span></div>
+            <div class="niche-row-text">Inherently visual and shareable. Reels regularly hit millions of views. Strong supplement, app, and digital programme affiliates.</div>
           </div>
-        </div>
-
-        <!-- ══ THE HEDONIC TREADMILL ══ -->
-        <div class="section-label">Protecting Your Joy</div>
-        <h2 class="section-title">Working with the treadmill — four practices that protect your joy</h2>
-        <p class="section-text">The hedonic treadmill describes our mind's tendency to return to a baseline of happiness regardless of what happens. You hit 10,000 followers, joy lasts 48 hours, then 20,000 becomes the new goal. <em>Not a character flaw — neurological wiring.</em></p>
-
-        <div class="joy-practices-box">
-          <div class="joy-practices-label">WORKING WITH THE TREADMILL</div>
-          <div class="joy-practices-title">Four practices that protect your joy.</div>
-          <div class="joy-practices-grid">
-            <div class="joy-practice">
-              <div class="joy-practice-title">CELEBRATE DELIBERATELY</div>
-              <div class="joy-practice-desc">Build a ritual for every milestone. Tell someone. Write it down. Feel it before moving on.</div>
-            </div>
-            <div class="joy-practice">
-              <div class="joy-practice-title">CHASE BALANCE, NOT METRICS</div>
-              <div class="joy-practice-desc">Set lifestyle goals alongside follower goals. What does a successful week feel like — not just perform like?</div>
-            </div>
-            <div class="joy-practice">
-              <div class="joy-practice-title">PROCESS OVER OUTCOME</div>
-              <div class="joy-practice-desc">Design your life so the daily process itself is rewarding. If the work is enjoyable, you win every day regardless of what the counter says.</div>
-            </div>
-            <div class="joy-practice">
-              <div class="joy-practice-title">DEFINE ENOUGH</div>
-              <div class="joy-practice-desc">Decide what enough looks like before you start. $5k/mo? 3 hours of work daily? Honour it when you reach it.</div>
-            </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Mindset &amp; Personal Dev</span></div>
+            <div class="niche-row-text">Evergreen and relentlessly shareable. Quote posts, carousel infographics, short clips all work. Multiple monetisation paths.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Luxury Lifestyle</span></div>
+            <div class="niche-row-text">Aspiration-driven. High engagement on aesthetic content. Fashion, travel, and home décor affiliates convert well.</div>
+          </div>
+          <div class="niche-table-row">
+            <div><span class="niche-pill">Parenting &amp; Family</span></div>
+            <div class="niche-row-text">Deeply emotional audience. Massive reach potential. Products, courses, and community monetise strongly.</div>
           </div>
         </div>
 
-        <div class="ch3-quote">
-          <div class="ch3-quote-mark">"</div>
-          <p class="ch3-quote-text">The creators who grow the fastest are not the ones who chase followers the hardest. They are the ones who serve their audience most genuinely. Growth is a byproduct of value.</p>
+        <!-- NICHE BRAINSTORM -->
+        <div class="section-label">Your Niche</div>
+        <h2 class="section-title">Niche Brainstorm</h2>
+        <p class="section-text">List your top niche ideas. Then run each through the 3 filters below.</p>
+
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">My Niche Ideas</div></div></div><div class="worksheet-sub">List up to 5 niches you're drawn to. You'll validate them in the next section.</div>
+          <div class="field-row"><label class="field-label">Niche Idea #1</label><input class="field-input" type="text" placeholder="e.g. Female financial freedom"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #2</label><input class="field-input" type="text" placeholder="e.g. Minimalist aesthetic lifestyle"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #3</label><input class="field-input" type="text" placeholder="e.g. Mindset for ambitious women"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #4</label><input class="field-input" type="text" placeholder="e.g. Healthy habits for busy moms"></div>
+          <div class="field-row"><label class="field-label">Niche Idea #5</label><input class="field-input" type="text" placeholder="e.g. Luxury travel on a budget"></div>
         </div>
 
-        <!-- ══ EXERCISE 1: MINDSET SCORE ══ -->
-        <div class="section-label">Exercise 1</div>
-        <h2 class="section-title">My Mindset Score</h2>
-        <p class="section-text">Mark where you are now and where you want to be across six mindset dimensions. Awareness is the first step to change.</p>
+        <!-- PROOF OF CONCEPT CHECK -->
+        <div class="section-label">Validation</div>
+        <h2 class="section-title">The Proof of Concept Check</h2>
+        <p class="section-text">Before committing to any niche, run this 4-part validation. It takes 30–60 minutes and saves months of wasted effort.</p>
 
-        <div class="worksheet" id="ch6-ex1" onclick="unlockCh6Step(1)">
-          <div class="exercise-counter"><div class="exercise-num">1</div><div class="exercise-title-wrap"><div class="worksheet-title">Mindset Scale Assessment</div></div></div>
-          <div class="worksheet-sub">For each row, select where you currently operate — and where you want to be.</div>
-          <div class="voice-scale">
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait for motivation to act</span><div class="voice-radios"><input type="radio" name="ms1" value="1"><input type="radio" name="ms1" value="2"><input type="radio" name="ms1" value="3"><input type="radio" name="ms1" value="4"><input type="radio" name="ms1" value="5"></div><span class="voice-right" style="font-size:12px;">I act regardless of how I feel</span></div>
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I compare my page to others constantly</span><div class="voice-radios"><input type="radio" name="ms2" value="1"><input type="radio" name="ms2" value="2"><input type="radio" name="ms2" value="3"><input type="radio" name="ms2" value="4"><input type="radio" name="ms2" value="5"></div><span class="voice-right" style="font-size:12px;">I only compare to my past self</span></div>
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I wait until content is perfect</span><div class="voice-radios"><input type="radio" name="ms3" value="1"><input type="radio" name="ms3" value="2"><input type="radio" name="ms3" value="3"><input type="radio" name="ms3" value="4"><input type="radio" name="ms3" value="5"></div><span class="voice-right" style="font-size:12px;">I post and learn from the data</span></div>
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I expect quick results</span><div class="voice-radios"><input type="radio" name="ms4" value="1"><input type="radio" name="ms4" value="2"><input type="radio" name="ms4" value="3"><input type="radio" name="ms4" value="4"><input type="radio" name="ms4" value="5"></div><span class="voice-right" style="font-size:12px;">I trust the long-game process</span></div>
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">I work for external validation</span><div class="voice-radios"><input type="radio" name="ms5" value="1"><input type="radio" name="ms5" value="2"><input type="radio" name="ms5" value="3"><input type="radio" name="ms5" value="4"><input type="radio" name="ms5" value="5"></div><span class="voice-right" style="font-size:12px;">I work for my own defined goals</span></div>
-            <div class="voice-row"><span class="voice-left" style="font-size:12px;">Setbacks feel like failures</span><div class="voice-radios"><input type="radio" name="ms6" value="1"><input type="radio" name="ms6" value="2"><input type="radio" name="ms6" value="3"><input type="radio" name="ms6" value="4"><input type="radio" name="ms6" value="5"></div><span class="voice-right" style="font-size:12px;">Setbacks are information</span></div>
+        <div class="poc-grid">
+          <div class="poc-card">
+            <div class="poc-num">1</div>
+            <div class="poc-title">The Instagram Search Test</div>
+            <p class="poc-text">Search niche keywords on Instagram (Accounts tab). 5–10 accounts with 50k+ followers posting consistently = <strong>healthy market</strong>. <strong>Ghost town</strong> = too small or too new.</p>
           </div>
-          <div class="field-row" style="margin-top:16px;"><label class="field-label">My biggest mindset gap (the row I scored lowest on)</label><textarea class="field-input" rows="2" placeholder="e.g. I wait for motivation — I need to build an action-first system"></textarea></div>
-        </div>
-
-        <!-- ══ WEEKLY SCHEDULE ══ -->
-        <div class="section-label">The Sustainable System</div>
-        <h2 class="section-title">The Side-Hustling Woman's Weekly Schedule</h2>
-        <p class="section-text">Five to seven hours a week. That is what it takes to run a faceless Instagram brand once your system is in place. Here is the breakdown that makes it sustainable.</p>
-
-        <table class="data-table">
-          <thead><tr><th>Day</th><th>Time</th><th>Action</th></tr></thead>
-          <tbody>
-            <tr><td><strong style="color:var(--burgundy);">Sunday</strong></td><td>30–45 min</td><td>Weekly review — Insights, note what worked, plan next week's topics.</td></tr>
-            <tr><td><strong style="color:var(--burgundy);">Monday</strong></td><td>20 min</td><td>Post content + 15 min HTN engagement.</td></tr>
-            <tr><td>Tuesday</td><td>2–3 hrs</td><td>Batch creation — design and write 5–7 posts. Schedule via Creator Studio or Later.</td></tr>
-            <tr><td><strong style="color:var(--burgundy);">Wednesday</strong></td><td>20 min</td><td>Post + engage + reply to all comments from last 48 hours.</td></tr>
-            <tr><td>Thursday</td><td>20 min</td><td>Post + add Stories — a poll, tip, or question box.</td></tr>
-            <tr><td><strong style="color:var(--burgundy);">Friday</strong></td><td>20 min</td><td>Post your strongest content of the week + engage.</td></tr>
-            <tr><td>Saturday</td><td>15 min</td><td>Check Stories, reply to DMs, capture content ideas for next week.</td></tr>
-          </tbody>
-        </table>
-
-        <div class="she-boss-tip">
-          <div class="she-boss-icon">♦</div>
-          <div>
-            <div class="she-boss-label">WRITE YOUR WHY</div>
-            <p>Not <em>"I want freedom."</em> Write: <em>"I want to pick my daughter up from school every single day without asking permission."</em> The specific, visceral version is the one that pulls you through slow weeks.</p>
+          <div class="poc-card">
+            <div class="poc-num">2</div>
+            <div class="poc-title">The Growth Rate Check</div>
+            <p class="poc-text">Take your top 10 accounts to Socialblade.com. You want <strong>consistent steady growth</strong> over 30–90 days. 200–500 followers/day means they cracked the algorithm — replicate it.</p>
+          </div>
+          <div class="poc-card">
+            <div class="poc-num">3</div>
+            <div class="poc-title">The Money Test</div>
+            <p class="poc-text">Browse top accounts for 48 hours. Are they promoting in Stories? Shoutout posts for coaches? Affiliate links? <strong>Visible monetisation</strong> = proof money flows.</p>
+          </div>
+          <div class="poc-card">
+            <div class="poc-num">4</div>
+            <div class="poc-title">The Engagement Check</div>
+            <p class="poc-text">Measure save and share ratios on recent posts. <strong>High saves</strong> = audience finds it useful. <strong>High shares</strong> = it moves them emotionally. Both indicate buyers.</p>
           </div>
         </div>
 
-        <!-- ══ EXERCISE 2: MY WHY ══ -->
-        <div class="section-label">Exercise 2 — The Most Important Exercise</div>
-        <h2 class="section-title">My Why &amp; My Enough</h2>
-        <p class="section-text">The most important exercise in this entire workbook. Be specific — not abstract. Vague goals create vague motivation.</p>
-
-        <div class="worksheet" id="ch6-ex2" onclick="unlockCh6Step(2)">
-          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Why &amp; My Enough</div></div></div>
-          <div class="worksheet-sub">Write this in one sitting. Return to it when motivation drops. This is your anchor.</div>
-          <div class="audit-field"><label class="audit-mini-label">MY VISCERAL WHY FOR BUILDING THIS BRAND (PAINT THE EXACT PICTURE)</label><textarea class="field-input" rows="4" placeholder="e.g. I want to pick my daughter up from school every single day without asking permission. I want to work from our kitchen table, in my own time, building something that is ours..."></textarea></div>
-          <div class="audit-field"><label class="audit-mini-label">WHAT "ENOUGH" LOOKS LIKE — SPECIFIC INCOME, SPECIFIC LIFESTYLE, SPECIFIC FREEDOM</label><textarea class="field-input" rows="3" placeholder="e.g. $5,000/mo. 3 hours of focused work daily. Friday afternoons off. Family holidays twice a year without checking approval..."></textarea></div>
-          <div class="audit-field"><label class="audit-mini-label">3 PROCESS WINS I WILL CELEBRATE EVERY WEEK REGARDLESS OF FOLLOWER COUNT</label>
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 1 (e.g. I posted consistently all 5 days)">
-            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Process win 2 (e.g. I created my content batch in one sitting)">
-            <input class="field-input" type="text" placeholder="Process win 3 (e.g. I replied to every comment within the hour)">
-          </div>
-          <div class="audit-field"><label class="audit-mini-label">MY ACCOUNTABILITY PARTNER — NAME + WHAT I SHARE WITH THEM WEEKLY</label><input class="field-input" type="text" placeholder="e.g. My friend Sarah — I share my weekly stats and one win every Sunday"></div>
+        <div class="info-box" style="margin:8px 0 32px;">
+          <div style="display:inline-block;background:var(--burgundy);color:white;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:20px;margin-bottom:10px;">IMPORTANT ADVICE</div>
+          <p>Do not choose your niche based on what you think will be popular. <strong>Choose a niche you can create content about for at least 12 months without burning out.</strong> Consistency is your most powerful competitive advantage — and passion is what sustains consistency.</p>
         </div>
 
-        <!-- ══ EXERCISE 3: COMMITMENT CONTRACT ══ -->
-        <div class="section-label">Exercise 3</div>
-        <h2 class="section-title">My 90-Day Commitment Contract</h2>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">2</div><div class="exercise-title-wrap"><div class="worksheet-title">My Niche Validation Scorecard</div></div></div><div class="worksheet-sub">Run your top niche through this checklist. <strong>4 of 6</strong> = go for it. <strong>All 6</strong> = all in.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>5+ accounts found with 50k+ followers in this niche</span></li>
+            <li><input type="checkbox"><span>At least 3 are growing consistently (Socialblade.com)</span></li>
+            <li><input type="checkbox"><span>Active shoutout selling or product promotion visible on top pages</span></li>
+            <li><input type="checkbox"><span>Products available on affiliate marketplaces (Digistore24, Clickbank)</span></li>
+            <li><input type="checkbox"><span>Strong engagement — saves, shares, and comments on top posts</span></li>
+            <li><input type="checkbox"><span>I am genuinely passionate and could create content for 12+ months</span></li>
+          </ul>
+          <div class="field-row" style="margin-top:16px;"><label class="field-label">My Chosen Niche</label><input class="field-input" type="text" placeholder="Write your final niche here"></div>
+        </div>
 
-        <div class="worksheet" id="ch6-ex3" onclick="unlockCh6Step(3)">
-          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Commitment Contract</div></div></div>
-          <div class="worksheet-sub">90 days of consistency. No conclusions drawn before then. Sign and return to this when it gets hard.</div>
-          <div class="field-row"><label class="field-label">I commit to posting __ times per week for 90 days</label>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
-              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 3× per week</label>
-              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 4× per week</label>
-              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> 5× per week</label>
-              <label class="choice-pill"><input type="radio" name="post-freq" style="display:none;"> Daily</label>
-            </div>
+        <!-- MARKET RESEARCH -->
+        <div class="section-label">Market Research</div>
+        <h2 class="section-title">My Market Research Findings</h2>
+        <p class="section-text">Research up to 10 competitor pages using Socialblade and Viralfindr. The more data you collect, the sharper your strategy. After entering all pages, your <strong>Top 10 Ranking</strong> auto-calculates below.</p>
+
+        <div id="research-pages"></div>
+
+        <button class="add-page-btn" onclick="addResearchPage()">+ Add a Page</button>
+
+        <!-- AUTO RANKING -->
+        <div class="section-label" >Auto Ranking</div>
+        <h2 class="section-title">Your Top 10 Pages — Ranked Automatically</h2>
+        <p class="section-text">Based on avg followers growth/month and avg likes/post. Updates live as you fill in data.</p>
+        <div id="auto-ranking" class="ranking-table">
+          <div class="ranking-header"><span>#</span><span>Handle</span><span>Followers</span><span>Avg Likes</span><span>Growth/mo</span><span>Score</span></div>
+          <div id="ranking-rows"><div style="color:#8A7070;font-size:13px;padding:16px 0;">Add pages above to see your ranking.</div></div>
+        </div>
+
+        <!-- MARKET RESEARCH EXERCISES (screenshots 6&7) -->
+        <div class="section-label" >Research Findings</div>
+
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">3</div><div class="exercise-title-wrap"><div class="worksheet-title">My Market Research Findings</div></div></div><div class="worksheet-sub">After your research on Socialblade and Viralfindr, record your top discoveries.</div>
+          <div class="field-row"><label class="field-label">My top 3 big accounts (100k+) and why they work</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Account 2">
+            <input class="field-input" type="text" placeholder="Account 3">
           </div>
-          <div class="field-row"><label class="field-label">My non-negotiable posting days</label><input class="field-input" type="text" placeholder="e.g. Mon, Tue, Thu, Fri, Sat"></div>
-          <div class="field-row"><label class="field-label">When I feel like quitting, I will read this</label><textarea class="field-input" rows="3" placeholder="Write a message to your future self who wants to quit. Make it real. Make it pull you back."></textarea></div>
-          <div class="two-col">
-            <div class="field-row"><label class="field-label">My 90-day start date</label><input class="field-input" type="date"></div>
-            <div class="field-row"><label class="field-label">My review date (day 90)</label><input class="field-input" type="date"></div>
+          <div class="field-row"><label class="field-label">Content types that perform best in my niche (from Viralfindr)</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Content type 2">
+            <input class="field-input" type="text" placeholder="Content type 3">
+          </div>
+          <div class="field-row"><label class="field-label">Monetisation methods I observed on top pages</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 1">
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Method 2">
+            <input class="field-input" type="text" placeholder="Method 3">
+          </div>
+          <div class="field-row"><label class="field-label">The emerging trend or sub-niche I spotted</label>
+            <input class="field-input" style="margin-bottom:6px;" type="text" placeholder="Trend 1">
+            <input class="field-input" type="text" placeholder="Trend 2">
           </div>
         </div>
 
-        <!-- ══ EXERCISE 4: WEEKLY ROUTINE ══ -->
-        <div class="section-label">Exercise 4</div>
-        <h2 class="section-title">Design my creator routine</h2>
+        <div class="worksheet">
+          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 01 — Action Steps</div></div></div><div class="worksheet-sub">Complete these before moving to Chapter 2.</div>
+          <ul class="checklist">
+            <li><input type="checkbox"><span>List 3 potential niches you are genuinely passionate about.</span></li>
+            <li><input type="checkbox"><span>Run the 4-part Proof of Concept Check on each one.</span></li>
+            <li><input type="checkbox"><span>Choose your winner niche.</span></li>
+            <li><input type="checkbox"><span>Create two Google Sheets — Big Accounts and Small Accounts — and begin research.</span></li>
+            <li><input type="checkbox"><span>Sign up for Socialblade.com (free) and Viralfindr.com.</span></li>
+            <li><input type="checkbox"><span>Build your viral content database: top 10 posts from 5 big and 5 small accounts in your niche.</span></li>
+          </ul>
+        </div>
 
-        <div class="worksheet" id="ch6-ex4" onclick="unlockCh6Step(4)">
-          <div class="exercise-counter"><div class="exercise-num">4</div><div class="exercise-title-wrap"><div class="worksheet-title">My Creator Weekly Routine</div></div></div>
-          <div class="worksheet-sub">Adapt the schedule above to your life. Block these hours in your calendar now.</div>
-          <div class="weekly-planner" style="grid-template-columns:repeat(7,1fr);">
-            <div class="day-card"><div class="day-label">SUN</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Weekly review"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 8pm"></div></div>
-            <div class="day-card"><div class="day-label">MON</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + HTN"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
-            <div class="day-card"><div class="day-label">TUE</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Batch create"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7pm"></div></div>
-            <div class="day-card"><div class="day-label">WED</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
-            <div class="day-card"><div class="day-label">THU</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Post + Stories"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
-            <div class="day-card"><div class="day-label">FRI</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="Best post + engage"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 7am"></div></div>
-            <div class="day-card"><div class="day-label">SAT</div><div class="day-fields"><label>ACTION</label><input class="field-input" type="text" placeholder="DMs + ideas"><label>TIME</label><input class="field-input" type="text" placeholder="e.g. 10am"></div></div>
-          </div>
+        <div class="quote-block">
+          <div class="quote-mark">"</div>
+          <p>Choose a niche you can create content about for 12 months without burning out. Consistency is your edge and passion sustains consistency.</p>
         </div>
 
         <div class="prompt-box">
-          <div class="prompt-box-label"><span>✦ Mindset Reset Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
-          <p class="prompt-box-text">"I've been building my faceless Instagram page for [X weeks/months]. I'm feeling [describe what's blocking you]. Give me a realistic perspective check, a mindset reframe, and 3 concrete actions I should take this week to get back on track. Be direct and warm — not toxic positivity."</p>
+          <div class="prompt-box-label"><span>✦ Niche Validation Prompt</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+          <p class="prompt-box-text">"I'm considering building a faceless Instagram page in the [niche] space. Validate this niche: 1) How passionate is this audience, 2) What products/services people spend money on, 3) Examples of successful faceless pages in this space, 4) The biggest content opportunities I'm missing."</p>
         </div>
 
-        <div class="section-label">Chapter 6 — Action Steps</div>
-        <div class="worksheet">
-          <div class="exercise-counter"><div class="exercise-num">✦</div><div class="exercise-title-wrap"><div class="worksheet-title">Chapter 06 — Action Steps</div></div></div>
-          <div class="worksheet-sub">Complete these before moving to Chapter 7.</div>
-          <ul class="checklist">
-            <li><input type="checkbox"><span>Complete the Mindset Scale — identify your biggest gap and name it.</span></li>
-            <li><input type="checkbox"><span>Write your visceral Why — specific, emotional, present-tense.</span></li>
-            <li><input type="checkbox"><span>Define your "Enough" — income, time, freedom. Write it down and put it somewhere visible.</span></li>
-            <li><input type="checkbox"><span>Sign your 90-day commitment contract and block the posting days in your calendar.</span></li>
-            <li><input type="checkbox"><span>Design your creator weekly routine and set recurring calendar blocks.</span></li>
-            <li><input type="checkbox"><span>Tell one person about your brand. Accountability is the most underrated growth tool.</span></li>
-          </ul>
-        </div>
       </div>
       <div class="chapter-nav">
-        <button class="nav-btn" onclick="showChapter(5)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The 7 Revenue Streams</span></button>
-        <button class="nav-btn next" onclick="showChapter(7)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">The Scale Toolkit</span></button>
+        <button class="nav-btn" onclick="showChapter(5)"><span class="nav-btn-label">← PREVIOUS</span><span class="nav-btn-title">The Growth Formula</span></button>
+        <button class="nav-btn next" onclick="showChapter(2)"><span class="nav-btn-label">NEXT →</span><span class="nav-btn-title">Brand Identity & Page Setup</span></button>
       </div>
     </div>
 
