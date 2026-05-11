@@ -93,49 +93,208 @@
   /* ── APP ── */
   #app{display:none;min-height:100vh;}
 
-  /* ── SIDEBAR ── */
-  .sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:100;overflow-y:auto;border-radius:0 24px 24px 0;}
+  /* ══════════════════════════════════
+     SIDEBAR — MindxAI style
+  ══════════════════════════════════ */
+  .sidebar{
+    position:fixed;left:0;top:0;bottom:0;
+    width:var(--sidebar-w);
+    background:var(--surface);
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;
+    z-index:100;overflow-y:auto;
+    border-radius:0; /* flat, no radius */
+  }
   .sidebar::-webkit-scrollbar{width:3px;}
   .sidebar::-webkit-scrollbar-thumb{background:var(--border);}
-  .sidebar-header{padding:24px 20px 18px;border-bottom:1px solid var(--border);margin:0 0 8px;}
-  .sidebar-brand-name{font-family:'Instrument Serif',serif;font-size:17px;font-weight:300;color:var(--text);display:block;line-height:1.3;text-align:center;}
+
+  /* Logo / brand at top */
+  .sidebar-header{
+    padding:20px 20px 16px;
+    border-bottom:1px solid var(--border);
+    display:flex;align-items:center;gap:10px;
+  }
+  .sidebar-logo-mark{
+    width:34px;height:34px;border-radius:10px;
+    background:var(--burgundy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .sidebar-logo-mark svg { display:block; }
+  .sidebar-brand-name{
+    font-family:'Instrument Serif',serif;
+    font-size:13px;font-weight:400;
+    color:var(--text);line-height:1.3;
+    display:block;
+  }
   .sidebar-brand-name em{font-style:italic;color:var(--burgundy);}
-  .sidebar-by{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);display:block;margin-top:5px;text-align:center;}
-  .sidebar-nav{flex:1;padding:6px 10px;display:flex;flex-direction:column;gap:1px;}
-  .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;cursor:pointer;border-radius:var(--radius-sm);transition:var(--transition);border:1px solid transparent;background:#f7f6f5;}
-  .nav-item:hover{background:#edd7df;border-color:rgba(219,188,199,0.4);}
-  .nav-item.active{background:#edd7df;border-color:rgba(219,188,199,0.5);box-shadow:none;}
-  .nav-num{width:22px;height:22px;border-radius:50%;background:rgba(92,36,52,0.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:400;color:var(--text-muted);flex-shrink:0;transition:var(--transition);font-family:'DM Sans',sans-serif;}
-  .nav-item.active .nav-num{background:#edd7df;border-color:rgba(219,188,199,0.8);color:var(--burgundy);font-weight:600;}
-  .nav-item:hover .nav-num{background:rgba(255,255,255,0.7);border-color:rgba(219,188,199,0.6);color:var(--burgundy);}
-  .nav-item:hover .nav-tag{background:#edd7df;border-color:rgba(219,188,199,0.5);}
-  .nav-label{flex:1;font-size:12px;font-weight:300;color:var(--text-muted);line-height:1.3;font-family:'DM Sans',sans-serif;}
+  .sidebar-by{display:none;}
+
+  /* Nav section groups */
+  .sidebar-nav{flex:1;padding:8px 12px 8px;display:flex;flex-direction:column;gap:0;}
+
+  .nav-group-label{
+    font-size:9px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--text-dim);
+    padding:16px 8px 6px;
+    font-family:'DM Sans',sans-serif;
+  }
+
+  .nav-item{
+    display:flex;align-items:center;gap:10px;
+    padding:8px 10px;cursor:pointer;
+    border-radius:8px;transition:var(--transition);
+    border:none;background:transparent;
+    margin-bottom:1px;
+  }
+  .nav-item:hover{background:rgba(219,188,199,0.18);}
+  .nav-item.active{background:rgba(219,188,199,0.28);}
+
+  /* Icon circle replaces the number pill */
+  .nav-num{
+    width:28px;height:28px;border-radius:8px;
+    background:rgba(92,36,52,0.07);
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:600;color:var(--text-muted);
+    flex-shrink:0;transition:var(--transition);
+    font-family:'DM Sans',sans-serif;
+    border:none;
+  }
+  .nav-item.active .nav-num{
+    background:var(--burgundy);color:white;
+  }
+  .nav-item:hover .nav-num{background:rgba(92,36,52,0.12);color:var(--burgundy);}
+
+  .nav-label{
+    flex:1;font-size:12.5px;font-weight:400;
+    color:var(--text-muted);line-height:1.2;
+    font-family:'DM Sans',sans-serif;
+  }
   .nav-item.active .nav-label{color:var(--text);font-weight:500;}
   .nav-item:hover .nav-label{color:var(--text);}
-  .nav-tag{font-size:7.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-pill);background:#f7f6f5;color:var(--burgundy);white-space:nowrap;border:1px solid rgba(92,36,52,0.12);transition:var(--transition);}
-  .nav-item.active .nav-tag{background:#edd7df;border-color:rgba(219,188,199,0.6);color:var(--burgundy);}
-  .sidebar-footer{padding:12px 14px 20px;border-top:1px solid var(--border);}
+
+  /* Tag hidden by default — show as tiny dot indicator */
+  .nav-tag{display:none;}
+  .nav-item.active::after{
+    content:'';width:5px;height:5px;border-radius:50%;
+    background:var(--burgundy);flex-shrink:0;
+  }
+
+  /* Sidebar footer with user card */
+  .sidebar-footer{
+    padding:12px 16px 16px;
+    border-top:1px solid var(--border);
+  }
   .progress-wrap{margin-bottom:12px;}
   .progress-label{display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:5px;font-weight:400;font-family:'DM Sans',sans-serif;}
   .progress-bar{height:3px;background:#fff8fa;border-radius:2px;overflow:hidden;}
   .progress-fill{height:100%;background:#dbbcc7;border-radius:2px;transition:width .5s ease;}
-  .btn-logout{width:100%;padding:9px;background:transparent;border:1px solid var(--border);border-radius:var(--radius-pill);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;transition:var(--transition);}
-  .btn-logout:hover{border-color:var(--border-hover);color:var(--text);background:rgba(255,255,255,0.6);}
 
-  /* ── TOPBAR ── */
-  .topbar{position:fixed;top:0;left:var(--sidebar-w);right:0;height:52px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:50;}
-  .topbar-search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:8px 16px;width:200px;transition:var(--transition);}
-  .topbar-search:focus-within{border-color:var(--border-hover);box-shadow:0 0 0 3px rgba(92,36,52,0.06);}
-  .topbar-search input{border:none;background:transparent;font-family:'Instrument Serif',serif;font-size:14px;font-weight:300;color:var(--text);outline:none;width:100%;}
-  .topbar-search input::placeholder{color:var(--text-dim);font-family:'Instrument Serif',serif;font-weight:300;}
-  .topbar-avatar{display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 12px 5px 5px;border-radius:var(--radius-pill);transition:var(--transition);border:1px solid var(--border);background:var(--surface);}
+  /* User card at bottom */
+  .sidebar-user-card{
+    display:flex;align-items:center;gap:10px;
+    padding:10px;border-radius:10px;
+    background:var(--bg);border:1px solid var(--border);
+    cursor:pointer;transition:var(--transition);
+    margin-bottom:10px;
+  }
+  .sidebar-user-card:hover{border-color:var(--border-hover);}
+  .sidebar-user-av{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--burgundy);color:white;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:500;flex-shrink:0;
+    position:relative;overflow:hidden;
+  }
+  .sidebar-user-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;position:absolute;top:0;left:0;}
+  .sidebar-user-info{flex:1;min-width:0;}
+  .sidebar-user-name{font-size:12px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sidebar-user-email{font-size:10px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sidebar-user-dot{width:8px;height:8px;border-radius:50%;background:#5CB85C;flex-shrink:0;}
+
+  .btn-logout{
+    width:100%;padding:8px;background:transparent;
+    border:1px solid var(--border);border-radius:8px;
+    font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;
+    letter-spacing:.06em;text-transform:uppercase;
+    color:var(--text-dim);cursor:pointer;transition:var(--transition);
+  }
+  .btn-logout:hover{border-color:var(--border-hover);color:var(--text);}
+
+  /* ══════════════════════════════════
+     TOPBAR — MindxAI style
+  ══════════════════════════════════ */
+  .topbar{
+    position:fixed;top:0;left:var(--sidebar-w);right:0;
+    height:56px;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 28px;z-index:50;
+    gap:16px;
+  }
+
+  /* Search — left side, larger */
+  .topbar-search{
+    display:flex;align-items:center;gap:8px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-pill);
+    padding:8px 18px;width:240px;
+    transition:var(--transition);
+  }
+  .topbar-search:focus-within{
+    border-color:var(--border-hover);
+    box-shadow:0 0 0 3px rgba(92,36,52,0.06);
+  }
+  .topbar-search svg{color:var(--text-dim);flex-shrink:0;}
+  .topbar-search input{
+    border:none;background:transparent;
+    font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;
+    color:var(--text);outline:none;width:100%;
+  }
+  .topbar-search input::placeholder{color:var(--text-dim);}
+
+  /* Right side of topbar */
+  .topbar-right{display:flex;align-items:center;gap:10px;}
+
+  .topbar-icon-btn{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--bg);border:1px solid var(--border);
+    cursor:pointer;transition:var(--transition);color:var(--text-muted);
+    font-size:15px;
+  }
+  .topbar-icon-btn:hover{border-color:var(--border-hover);color:var(--burgundy);}
+
+  /* Avatar pill — right side */
+  .topbar-avatar{
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+    padding:4px 12px 4px 4px;
+    border-radius:var(--radius-pill);
+    transition:var(--transition);
+    border:1px solid var(--border);background:var(--bg);
+  }
   .topbar-avatar:hover{border-color:var(--border-hover);box-shadow:var(--shadow);}
-  .avatar-circle{width:30px;height:30px;border-radius:50%;background:var(--burgundy);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:500;position:relative;flex-shrink:0;}
+  .avatar-circle{
+    width:28px;height:28px;border-radius:50%;
+    background:var(--burgundy);
+    display:flex;align-items:center;justify-content:center;
+    color:white;font-size:11px;font-weight:500;
+    position:relative;flex-shrink:0;overflow:hidden;
+  }
+  .avatar-circle img{width:100%;height:100%;object-fit:cover;border-radius:50%;position:absolute;top:0;left:0;}
   .avatar-dot{position:absolute;bottom:0;right:0;width:8px;height:8px;border-radius:50%;background:#5CB85C;border:2px solid var(--bg);}
-  .avatar-name{font-size:12px;font-weight:400;color:var(--text-muted);}
+  .avatar-name{font-size:12px;font-weight:500;color:var(--text);}
 
   /* ── MAIN ── */
-  .main{margin-left:var(--sidebar-w);padding-top:52px;min-height:100vh;background:var(--bg);width:calc(100% - var(--sidebar-w));}
+  .main{
+    margin-left:var(--sidebar-w);
+    padding-top:56px;
+    min-height:100vh;
+    background:var(--bg);
+    width:calc(100% - var(--sidebar-w));
+  }
   .chapter-page{display:none;animation:fadeIn .3s cubic-bezier(.4,0,.2,1);}
   .chapter-page.active{display:block;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
@@ -1487,43 +1646,99 @@
 <!-- APP -->
 <div id="app">
   <aside class="sidebar">
+    <!-- Logo -->
     <div class="sidebar-header">
-      <span class="sidebar-brand-name">The Faceless Brand<br><em>Business Model</em></span>
-      <span class="sidebar-by">By The Female Hustlers®</span>
+      <div class="sidebar-logo-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+      </div>
+      <div>
+        <span class="sidebar-brand-name">The Faceless Brand<br><em>Business Model</em></span>
+      </div>
     </div>
-    <div class="sidebar-divider"></div>
+
     <nav class="sidebar-nav">
-      <div class="nav-item active" onclick="showChapter(0)" id="nav-0"><div class="nav-num">0</div><span class="nav-label">The Introduction</span><span class="nav-tag">Open</span></div>
-      <div class="nav-item" onclick="showChapter(1)" id="nav-1"><div class="nav-num">1</div><span class="nav-label">The Success Mindset</span><span class="nav-tag">Mindset</span></div>
-      <div class="nav-item" onclick="showChapter(2)" id="nav-2"><div class="nav-num">2</div><span class="nav-label">Brand Identity & Page Setup</span><span class="nav-tag">Brand</span></div>
-      <div class="nav-item" onclick="showChapter(3)" id="nav-3"><div class="nav-num">3</div><span class="nav-label">Brand Identity &amp; Page Setup</span><span class="nav-tag">Brand</span></div>
-      <div class="nav-item" onclick="showChapter(4)" id="nav-4"><div class="nav-num">4</div><span class="nav-label">The Content System</span><span class="nav-tag">Strategy</span></div>
-      <div class="nav-item" onclick="showChapter(5)" id="nav-5"><div class="nav-num">5</div><span class="nav-label">The Growth Formula</span><span class="nav-tag">Strategy</span></div>
-      <div class="nav-item" onclick="showChapter(6)" id="nav-6"><div class="nav-num">6</div><span class="nav-label">The 7 Revenue Streams</span><span class="nav-tag">Revenue</span></div>
-      <div class="nav-item" onclick="showChapter(7)" id="nav-7"><div class="nav-num">7</div><span class="nav-label">The Scale Toolkit</span><span class="nav-tag">Scale</span></div>
-      <div class="nav-item" onclick="showChapter(8)" id="nav-8"><div class="nav-num">8</div><span class="nav-label">Launch &amp; Keep Going</span><span class="nav-tag">Act</span></div>
+
+      <!-- Dashboard -->
+      <div class="nav-group-label">Overview</div>
+      <div class="nav-item active" onclick="showChapter(0)" id="nav-0">
+        <div class="nav-num">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
+        <span class="nav-label">Dashboard</span>
+      </div>
+
+      <!-- Chapters -->
+      <div class="nav-group-label">Chapters</div>
+      <div class="nav-item" onclick="showChapter(1)" id="nav-1">
+        <div class="nav-num">1</div>
+        <span class="nav-label">The Success Mindset</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(2)" id="nav-2">
+        <div class="nav-num">2</div>
+        <span class="nav-label">Niche Selection Mastery</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(3)" id="nav-3">
+        <div class="nav-num">3</div>
+        <span class="nav-label">Brand Identity &amp; Page Setup</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(4)" id="nav-4">
+        <div class="nav-num">4</div>
+        <span class="nav-label">The Content System</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(5)" id="nav-5">
+        <div class="nav-num">5</div>
+        <span class="nav-label">The Growth Formula</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(6)" id="nav-6">
+        <div class="nav-num">6</div>
+        <span class="nav-label">The 7 Revenue Streams</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(7)" id="nav-7">
+        <div class="nav-num">7</div>
+        <span class="nav-label">The Scale Toolkit</span>
+      </div>
+      <div class="nav-item" onclick="showChapter(8)" id="nav-8">
+        <div class="nav-num">✦</div>
+        <span class="nav-label">Launch &amp; Keep Going</span>
+      </div>
+
     </nav>
-    <div class="sidebar-footer-divider"></div>
+
     <div class="sidebar-footer">
       <div class="progress-wrap">
         <div class="progress-label"><span>Your Progress</span><span id="progress-pct">0%</span></div>
         <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
       </div>
+      <!-- User card -->
+      <div class="sidebar-user-card" onclick="openProfile()">
+        <div class="sidebar-user-av" id="sidebar-av">
+          <span id="sidebar-av-initials">?</span>
+        </div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebar-user-name">My Account</div>
+          <div class="sidebar-user-email" id="sidebar-user-email">your@email.com</div>
+        </div>
+        <div class="sidebar-user-dot"></div>
+      </div>
       <button class="btn-logout" onclick="handleLogout()">Sign Out</button>
     </div>
   </aside>
 
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-search">
-      <svg width="14" height="14" fill="none" stroke="var(--text-dim)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="search-input" placeholder="Explore" oninput="handleSearch(this.value)" onkeydown="if(event.key==='Escape')clearSearch()">
+      <svg width="13" height="13" fill="none" stroke="var(--text-dim)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Explore chapters..." oninput="handleSearch(this.value)" onkeydown="if(event.key==='Escape')clearSearch()">
     </div>
-    <div class="topbar-avatar" onclick="openProfile()" title="My Profile">
-      <div class="avatar-circle" id="avatar-circle">
-        <span id="avatar-initials">?</span>
-        <div class="avatar-dot"></div>
+    <div class="topbar-right">
+      <div class="topbar-icon-btn" title="Notifications">🔔</div>
+      <div class="topbar-avatar" onclick="openProfile()" title="My Profile">
+        <div class="avatar-circle" id="avatar-circle">
+          <span id="avatar-initials">?</span>
+          <div class="avatar-dot"></div>
+        </div>
+        <span class="avatar-name" id="avatar-name">My Account</span>
       </div>
-      <span class="avatar-name" id="avatar-name">My Account</span>
     </div>
   </div>
 
